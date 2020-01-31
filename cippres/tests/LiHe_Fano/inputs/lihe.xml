@@ -1,0 +1,34 @@
+<input>
+
+  <cirun>
+  
+    <general>
+     <spin> 2 </spin>
+     <electron na='3' nb='2' />
+    </general>
+
+    <block>
+     <space ne='2' imo='1' fmo='1' />
+     <space ne='1' imo='2' fmo='2' />
+     <space ne='1' imo='3' fmo='3' />
+     <space ne='1' imo='4' fmo='160' />
+    </block>
+
+  </cirun>
+
+  <cirun>
+
+    <general>
+      <spin> 2 </spin>
+      <electron na='3' nb='2' />
+    </general>
+
+   <block>
+     <space ne='2' imo='1' fmo='1' />
+     <space ne='2' imo='2' fmo='2' />
+     <space ne='1' imo='4' fmo='160' />
+   </block>
+
+  </cirun>
+
+</input>

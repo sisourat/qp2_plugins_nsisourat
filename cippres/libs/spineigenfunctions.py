@@ -111,7 +111,6 @@ def ne3spin2(paired,unpaired,irun):
     print >> flist, "-0.40824829046386307"," a ",'  '.join(map(str, paired)),str(unpaired[1]),str(unpaired[2])," b ",'  '.join(map(str, paired)),str(unpaired[0])
     print  >> flist, "0.40824829046386307"," a ",'  '.join(map(str, paired)),str(unpaired[0]),str(unpaired[2])," b ",'  '.join(map(str, paired)),str(unpaired[1])
     print  >> flist, "0.81649658092772615"," a ",'  '.join(map(str, paired)),str(unpaired[0]),str(unpaired[1])," b ",'  '.join(map(str, paired)),str(unpaired[2])
-    return 1
     return 2
 
 def ne4spin1(paired,unpaired,irun):
