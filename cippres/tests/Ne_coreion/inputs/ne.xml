@@ -1,0 +1,667 @@
+<input>
+
+  <cirun>
+
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 1 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 8 ' imo=' 2 ' fmo=' 5 ' />
+    </block>
+
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 32 ' fmo=' 32 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 33 ' fmo=' 33 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 34 ' fmo=' 34 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 35 ' fmo=' 35 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 36 ' fmo=' 36 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 37 ' fmo=' 37 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 38 ' fmo=' 38 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 39 ' fmo=' 39 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 40 ' fmo=' 40 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 41 ' fmo=' 41 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 42 ' fmo=' 42 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 43 ' fmo=' 43 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 44 ' fmo=' 44 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 45 ' fmo=' 45 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 46 ' fmo=' 46 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 47 ' fmo=' 47 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 48 ' fmo=' 48 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 49 ' fmo=' 49 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 50 ' fmo=' 50 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 51 ' fmo=' 51 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 52 ' fmo=' 52 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 53 ' fmo=' 53 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 54 ' fmo=' 54 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 55 ' fmo=' 55 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 56 ' fmo=' 56 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 57 ' fmo=' 57 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 58 ' fmo=' 58 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 59 ' fmo=' 59 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 60 ' fmo=' 60 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 61 ' fmo=' 61 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 62 ' fmo=' 62 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 63 ' fmo=' 63 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 64 ' fmo=' 64 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 65 ' fmo=' 65 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 66 ' fmo=' 66 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 67 ' fmo=' 67 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 68 ' fmo=' 68 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 69 ' fmo=' 69 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 70 ' fmo=' 70 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 71 ' fmo=' 71 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 72 ' fmo=' 72 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 73 ' fmo=' 73 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 74 ' fmo=' 74 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 75 ' fmo=' 75 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 76 ' fmo=' 76 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 77 ' fmo=' 77 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 78 ' fmo=' 78 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 79 ' fmo=' 79 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 80 ' fmo=' 80 ' />
+    </block>
+  </cirun>
+
+  <cirun>
+    <general>
+      <spin> 2 </spin>
+      <electron na=' 5 ' nb=' 4 ' />
+    </general>
+
+    <block>
+      <space ne=' 2 ' imo=' 1 ' fmo=' 1 ' />
+      <space ne=' 6 ' imo=' 2 ' fmo=' 5 ' />
+      <space ne=' 1 ' imo=' 81 ' fmo=' 81 ' />
+    </block>
+  </cirun>
+
+</input>

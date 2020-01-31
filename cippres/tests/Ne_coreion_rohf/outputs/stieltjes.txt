@@ -1,0 +1,60 @@
+  MAXORD=          26
+ Performs Stieltjes at order           5
+ Performs Stieltjes at order           6
+ Performs Stieltjes at order           7
+ Performs Stieltjes at order           8
+ Performs Stieltjes at order           9
+ Performs Stieltjes at order          10
+ Performs Stieltjes at order          11
+ Performs Stieltjes at order          12
+ Performs Stieltjes at order          13
+ Performs Stieltjes at order          14
+ Performs Stieltjes at order          15
+ Performs Stieltjes at order          16
+ Performs Stieltjes at order          17
+ Performs Stieltjes at order          18
+ Performs Stieltjes at order          19
+ Performs Stieltjes at order          20
+ Performs Stieltjes at order          21
+ Performs Stieltjes at order          22
+ Performs Stieltjes at order          23
+ Performs Stieltjes at order          24
+ Performs Stieltjes at order          25
+ Performs Stieltjes at order          26
+ Interp at order          11
+ 11       161.645747083069705 in meV
+ Interp at order          12
+ 12       163.514405768006196 in meV
+ Interp at order          13
+ 13       167.779786129891404 in meV
+ Interp at order          14
+ 14       167.917596868553231 in meV
+ Interp at order          15
+ 15       166.881548645458433 in meV
+ Interp at order          16
+ 16       166.498155019530414 in meV
+ Interp at order          17
+ 17       163.736569103714710 in meV
+ Interp at order          18
+ 18       160.579277694083749 in meV
+ Interp at order          19
+ 19       152.873984629054835 in meV
+ Interp at order          20
+ 20       151.723847418344442 in meV
+ Interp at order          21
+ 21       147.865264933525778 in meV
+ Interp at order          22
+ 22       147.445343657634647 in meV
+ Interp at order          23
+ 23       146.628194923349716 in meV
+ Interp at order          24
+ 24       146.583147152288686 in meV
+ Interp at order          25
+ 25       145.690980514778689 in meV
+ Interp at order          26
+ 26       145.497980783795080 in meV
+      0.005748736334       0.000080754454 in au
+    156.423115658983       2.197328704301 in meV
+TOTAL RATE
+      0.005389495531 in au
+    146.648173390428 in meV

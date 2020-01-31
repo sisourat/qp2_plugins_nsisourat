@@ -1,0 +1,1921 @@
+----- GAMESS execution script 'rungms' -----
+This job is running on host node05
+under operating system Linux at Wed Jan 22 12:27:15 CET 2020
+PBS has assigned the following compute nodes to this run:
+node05
+Available scratch disk space (Kbyte units) at beginning of the job is
+Filesystem               1K-blocks  Used  Available Use% Mounted on
+/dev/mapper/centos-home 1894166888 43228 1894123660   1% /home
+GAMESS temporary binary files will be written to /home/scratch/PBS_29122.mendeleiev/scr
+GAMESS supplementary output files will be written to /home/scratch/PBS_29122.mendeleiev/scr
+Copying input file guga.inp to your run's scratch directory...
+
+ Distributed Data Interface kickoff program.
+ Initiating 1 compute processes on 1 nodes to run the following command:
+ /mnt/nfs/home/common/gamess//gamess.16.x guga 
+
+          ******************************************************
+          *         GAMESS VERSION =  5 DEC 2014 (R1)          *
+          *             FROM IOWA STATE UNIVERSITY             *
+          * M.W.SCHMIDT, K.K.BALDRIDGE, J.A.BOATZ, S.T.ELBERT, *
+          *   M.S.GORDON, J.H.JENSEN, S.KOSEKI, N.MATSUNAGA,   *
+          *          K.A.NGUYEN, S.J.SU, T.L.WINDUS,           *
+          *       TOGETHER WITH M.DUPUIS, J.A.MONTGOMERY       *
+          *         J.COMPUT.CHEM.  14, 1347-1363(1993)        *
+          **************** 64 BIT INTEL VERSION ****************
+
+  SINCE 1993, STUDENTS AND POSTDOCS WORKING AT IOWA STATE UNIVERSITY
+  AND ALSO IN THEIR VARIOUS JOBS AFTER LEAVING ISU HAVE MADE IMPORTANT
+  CONTRIBUTIONS TO THE CODE:
+     IVANA ADAMOVIC, CHRISTINE AIKENS, YURI ALEXEEV, POOJA ARORA,
+     ANDREY ASADCHEV, ROB BELL, PRADIPTA BANDYOPADHYAY, JONATHAN BENTZ,
+     BRETT BODE, KURT BRORSEN, CALEB CARLIN, GALINA CHABAN, WEI CHEN,
+     CHEOL HO CHOI, PAUL DAY, ALBERT DEFUSCO, NUWAN DESILVA, TIM DUDLEY,
+     DMITRI FEDOROV, GRAHAM FLETCHER, MARK FREITAG, KURT GLAESEMANN,
+     DAN KEMP, GRANT MERRILL, NORIYUKI MINEZAWA, JONATHAN MULLIN,
+     TAKESHI NAGATA, SEAN NEDD, HEATHER NETZLOFF, BOSILJKA NJEGIC, RYAN OLSON,
+     MIKE PAK, SPENCER PRUITT, LUKE ROSKOP, JIM SHOEMAKER, LYUDMILA SLIPCHENKO,
+     TONY SMITH, SAROM SOK, JIE SONG, TETSUYA TAKETSUGU, SIMON WEBB,
+     PENG XU, SOOHAENG YOO, FEDERICO ZAHARIEV
+
+  ADDITIONAL CODE HAS BEEN PROVIDED BY COLLABORATORS IN OTHER GROUPS:
+     IOWA STATE UNIVERSITY:
+          JOE IVANIC, AARON WEST, LAIMUTIS BYTAUTAS, KLAUS RUEDENBERG
+     UNIVERSITY OF TOKYO: KIMIHIKO HIRAO, TAKAHITO NAKAJIMA,
+          TAKAO TSUNEDA, MUNEAKI KAMIYA, SUSUMU YANAGISAWA,
+          KIYOSHI YAGI, MAHITO CHIBA, SEIKEN TOKURA, NAOAKI KAWAKAMI
+     UNIVERSITY OF AARHUS: FRANK JENSEN
+     UNIVERSITY OF IOWA: VISVALDAS KAIRYS, HUI LI
+     NATIONAL INST. OF STANDARDS AND TECHNOLOGY: WALT STEVENS, DAVID GARMER
+     UNIVERSITY OF PISA: BENEDETTA MENNUCCI, JACOPO TOMASI
+     UNIVERSITY OF MEMPHIS: HENRY KURTZ, PRAKASHAN KORAMBATH
+     UNIVERSITY OF ALBERTA: TOBY ZENG, MARIUSZ KLOBUKOWSKI
+     UNIVERSITY OF NEW ENGLAND: MARK SPACKMAN
+     MIE UNIVERSITY: HIROAKI UMEDA
+     NAT. INST. OF ADVANCED INDUSTRIAL SCIENCE AND TECHNOLOGY: KAZUO KITAURA
+     MICHIGAN STATE UNIVERSITY:
+          KAROL KOWALSKI, MARTA WLOCH, JEFFREY GOUR, JESSE LUTZ,
+          WEI LI, PIOTR PIECUCH
+     UNIVERSITY OF SILESIA: MONIKA MUSIAL, STANISLAW KUCHARSKI
+     FACULTES UNIVERSITAIRES NOTRE-DAME DE LA PAIX:
+          OLIVIER QUINET, BENOIT CHAMPAGNE
+     UNIVERSITY OF CALIFORNIA - SANTA BARBARA: BERNARD KIRTMAN
+     INSTITUTE FOR MOLECULAR SCIENCE:
+          KAZUYA ISHIMURA, MICHIO KATOUDA, AND SHIGERU NAGASE
+     UNIVERSITY OF NOTRE DAME: ANNA POMOGAEVA, DAN CHIPMAN
+     KYUSHU UNIVERSITY:
+          HARUYUKI NAKANO,
+          FENG LONG GU, JACEK KORCHOWIEC, MARCIN MAKOWSKI, AND YURIKO AOKI,
+          HIROTOSHI MORI AND EISAKU MIYOSHI
+     PENNSYLVANIA STATE UNIVERSITY:
+          TZVETELIN IORDANOV, CHET SWALINA, JONATHAN SKONE,
+          SHARON HAMMES-SCHIFFER
+     WASEDA UNIVERSITY:
+          MASATO KOBAYASHI, TOMOKO AKAMA, TSUGUKI TOUMA,
+          TAKESHI YOSHIKAWA, YASUHIRO IKABATA, HIROMI NAKAI
+     NANJING UNIVERSITY: SHUHUA LI
+     UNIVERSITY OF NEBRASKA:
+          PEIFENG SU, DEJUN SI, NANDUN THELLAMUREGE, YALI WANG, HUI LI
+     UNIVERSITY OF ZURICH: ROBERTO PEVERATI, KIM BALDRIDGE
+     N. COPERNICUS UNIVERSITY AND JACKSON STATE UNIVERSITY:
+          MARIA BARYSZ
+     UNIVERSITY OF COPENHAGEN: CASPER STEINMANN
+     TOKYO INSTITUTE OF TECHNOLOGY: HIROYA NAKATA
+     NAGOYA UNIVERSITY: YOSHIO NISHIMOTO, STEPHAN IRLE
+
+ EXECUTION OF GAMESS BEGUN Wed Jan 22 12:27:15 2020
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD> $CONTRL SCFTYP=RHF CITYP=GUGA ICHARG=0 ISPHER=1 $END                           
+ INPUT CARD> $CONTRL MULT=1 RUNTYP=TRANSITN $END                                            
+ INPUT CARD> $CONTRL ICUT=20 ITOL=30 $END                                                   
+ INPUT CARD> $SCF    CONV=1d-7 FDIFF=.FALSE. $END                                           
+ INPUT CARD>                                                                                
+ INPUT CARD> $GUESS GUESS=MOREAD NORB=23 $END                                               
+ INPUT CARD>                                                                                
+ INPUT CARD> $DRT1 FORS=.F. NOIRR=-2 FOCI=.F.  GROUP=C1 IEXCIT=2                            
+ INPUT CARD> ISTSYM=1 NFZC=0 NDOC=1 NVAL=9 MXNINT=5774280 $END                              
+ INPUT CARD>                                                                                
+ INPUT CARD> $TRANST OPERAT=DM NFZC=0 NOCC=10 NUMVEC=1 NUMCI=1                              
+ INPUT CARD>         IROOTS(1)=10,10 NOSYM=1 NSTATE(1)=10,10 ETOL=200 $END                  
+ INPUT CARD>                                                                                
+ INPUT CARD> $GUGDIA NSTATE=10 MAXDIA=5000 MXXPAN=5000 ITERMX=200 $END                      
+ INPUT CARD>                                                                                
+ INPUT CARD> $SYSTEM TIMLIM=525600 MEMORY=52004268 $END                                     
+ INPUT CARD> $INTGRL NINTMX=50000 NDAR=100000            $END                               
+ INPUT CARD> $SYSTEM TIMLIM=9999 MEMORY=600000000        $END                               
+ INPUT CARD>                                                                                
+ INPUT CARD> $DATA                                                                          
+ INPUT CARD> RHF/6-31G(d) H2                                                                
+ INPUT CARD>CN       1                                                                      
+ INPUT CARD>                                                                                
+ INPUT CARD>HELIUM      2.0      0.0000000000      0.0000000000      0.0000000000           
+ INPUT CARD>   S       6                                                                    
+ INPUT CARD>     1            234.0000000000  0.00258700                                    
+ INPUT CARD>     2             35.1600000000  0.01953300                                    
+ INPUT CARD>     3              7.9890000000  0.09099800                                    
+ INPUT CARD>     4              2.2120000000  0.27205000                                    
+ INPUT CARD>     5              0.6669000000  0.47806500                                    
+ INPUT CARD>     6              0.2089000000  0.30773700                                    
+ INPUT CARD>   S       1                                                                    
+ INPUT CARD>     1              0.6669000000  1.00000000                                    
+ INPUT CARD>   S       1                                                                    
+ INPUT CARD>     1              0.2089000000  1.00000000                                    
+ INPUT CARD>   S       1                                                                    
+ INPUT CARD>     1              0.0513800000  1.00000000                                    
+ INPUT CARD>   P       1                                                                    
+ INPUT CARD>     1              3.0440000000  1.00000000                                    
+ INPUT CARD>   P       1                                                                    
+ INPUT CARD>     1              0.7580000000  1.00000000                                    
+ INPUT CARD>   P       1                                                                    
+ INPUT CARD>     1              0.1993000000  1.00000000                                    
+ INPUT CARD>   D       1                                                                    
+ INPUT CARD>     1              1.9650000000  1.00000000                                    
+ INPUT CARD>   D       1                                                                    
+ INPUT CARD>     1              0.4592000000  1.00000000                                    
+ INPUT CARD>                                                                                
+ INPUT CARD> $END                                                                           
+ INPUT CARD>--- CLOSED SHELL ORBITALS --- GENERATED AT Fri Jan 17 14:44:50 2020             
+  600000000 WORDS OF MEMORY AVAILABLE
+
+
+     RUN TITLE
+     ---------
+  RHF/6-31G(d) H2                                                                
+
+ THE POINT GROUP OF THE MOLECULE IS CN      
+ THE ORDER OF THE PRINCIPAL AXIS IS     1
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ HELIUM      2.0     0.0000000000        0.0000000000        0.0000000000
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 HELI  
+
+   1 HELI    0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+     ATOMIC BASIS SET
+     ----------------
+ THE CONTRACTED PRIMITIVE FUNCTIONS HAVE BEEN UNNORMALIZED
+ THE CONTRACTED BASIS FUNCTIONS ARE NOW NORMALIZED TO UNITY
+
+  SHELL TYPE  PRIMITIVE        EXPONENT          CONTRACTION COEFFICIENT(S)
+
+ HELIUM    
+
+      1   S       1           234.0000000    0.002587000273
+      1   S       2            35.1600000    0.019533002058
+      1   S       3             7.9890000    0.090998009586
+      1   S       4             2.2120000    0.272050028659
+      1   S       5             0.6669000    0.478065050362
+      1   S       6             0.2089000    0.307737032419
+
+      2   S       7             0.6669000    1.000000000000
+
+      3   S       8             0.2089000    1.000000000000
+
+      4   S       9             0.0513800    1.000000000000
+
+      5   P      10             3.0440000    1.000000000000
+
+      6   P      11             0.7580000    1.000000000000
+
+      7   P      12             0.1993000    1.000000000000
+
+      8   D      13             1.9650000    1.000000000000
+
+      9   D      14             0.4592000    1.000000000000
+
+ TOTAL NUMBER OF BASIS SET SHELLS             =    9
+ NUMBER OF CARTESIAN GAUSSIAN BASIS FUNCTIONS =   25
+ NOTE: THIS RUN WILL RESTRICT THE MO VARIATION SPACE TO SPHERICAL HARMONICS.
+ THE NUMBER OF ORBITALS KEPT IN THE VARIATIONAL SPACE WILL BE PRINTED LATER.
+ NUMBER OF ELECTRONS                          =    2
+ CHARGE OF MOLECULE                           =    0
+ SPIN MULTIPLICITY                            =    1
+ NUMBER OF OCCUPIED ORBITALS (ALPHA)          =    1
+ NUMBER OF OCCUPIED ORBITALS (BETA )          =    1
+ TOTAL NUMBER OF ATOMS                        =    1
+ THE NUCLEAR REPULSION ENERGY IS        0.0000000000
+
+ THIS MOLECULE IS RECOGNIZED AS BEING LINEAR,
+ ORBITAL LZ DEGENERACY TOLERANCE ETOLLZ= 1.00E-06
+
+     $CONTRL OPTIONS
+     ---------------
+ SCFTYP=RHF          RUNTYP=TRANSITN     EXETYP=RUN     
+ MPLEVL=       0     CITYP =GUGA         CCTYP =NONE         VBTYP =NONE    
+ DFTTYP=NONE         TDDFT =NONE    
+ MULT  =       1     ICHARG=       0     NZVAR =       0     COORD =UNIQUE  
+ PP    =NONE         RELWFN=NONE         LOCAL =NONE         NUMGRD=       F
+ ISPHER=       1     NOSYM =       0     MAXIT =      30     UNITS =ANGS    
+ PLTORB=       F     MOLPLT=       F     AIMPAC=       F     FRIEND=        
+ NPRINT=       7     IREST =       0     GEOM  =INPUT   
+ NORMF =       0     NORMP =       0     ITOL  =      30     ICUT  =      20
+ INTTYP=BEST         GRDTYP=BEST         QMTTOL= 1.0E-06
+
+     $SYSTEM OPTIONS
+     ---------------
+  REPLICATED MEMORY=   600000000 WORDS (ON EVERY NODE).
+ DISTRIBUTED MEMDDI=           0 MILLION WORDS IN AGGREGATE,
+ MEMDDI DISTRIBUTED OVER   1 PROCESSORS IS           0 WORDS/PROCESSOR.
+ TOTAL MEMORY REQUESTED ON EACH PROCESSOR=   600000000 WORDS.
+ TIMLIM=        9999.00 MINUTES, OR       6.9 DAYS.
+ PARALL= F  BALTYP=  DLB     KDIAG=    0  COREFL= F
+ MXSEQ2=     300 MXSEQ3=     150  mem10=         0
+
+          ----------------
+          PROPERTIES INPUT
+          ----------------
+
+     MOMENTS            FIELD           POTENTIAL          DENSITY
+ IEMOM =       1   IEFLD =       0   IEPOT =       0   IEDEN =       0
+ WHERE =COMASS     WHERE =NUCLEI     WHERE =NUCLEI     WHERE =NUCLEI  
+ OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH    
+ IEMINT=       0   IEFINT=       0                     IEDINT=       0
+                                                       MORB  =       0
+          EXTRAPOLATION IN EFFECT
+          SOSCF IN EFFECT
+ ORBITAL PRINTING OPTION: NPREO=     1    25     2     1
+
+     -------------------------------
+     INTEGRAL TRANSFORMATION OPTIONS
+     -------------------------------
+     NWORD  =            0
+     CUTOFF = 1.0E-09     MPTRAN =       0
+     DIRTRF =       F     AOINTS =DUP     
+
+          ----------------------
+          INTEGRAL INPUT OPTIONS
+          ----------------------
+ NOPK  =       1 NORDER=       0 SCHWRZ=       F
+
+     ------------------------------------------
+     THE POINT GROUP IS CN , NAXIS= 1, ORDER= 1
+     ------------------------------------------
+
+ -- VARIATIONAL SPACE WILL BE RESTRICTED TO PURE SPHERICAL HARMONICS ONLY --
+ AFTER EXCLUDING CONTAMINANT COMBINATIONS FROM THE CARTESIAN GAUSSIAN BASIS
+ SET, THE NUMBER OF SPHERICAL HARMONICS KEPT IN THE VARIATION SPACE IS   23
+
+     DIMENSIONS OF THE SYMMETRY SUBSPACES ARE
+ A   =   23
+
+ ..... DONE SETTING UP THE RUN .....
+ STEP CPU TIME =     0.03 TOTAL CPU TIME =        0.0 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        0.1 SECONDS, CPU UTILIZATION IS  42.86%
+
+     ------------------------
+     TRANSITION MOMENT DRIVER
+     ------------------------
+
+     -------------------------------
+     INPUT FOR TRANSITION MOMENT RUN
+     -------------------------------
+     OPERAT=DM           NFZC  =       0     NOCC  =      10
+     NUMCI =       1     NUMVEC=       1     SYMTOL=   1.0E-04
+     IPRHSO=       0     NOSYM =       1     ETOL  =   200.000000
+     UPPER ENERGY LIMIT FOR SPIN-ORBIT CI MATRIX   =      100.000 HARTREE.
+     TMOMNT=       F     SKIPDM=       T     PRTPRM=       F
+     SLOWFF=       F     PHYSRC=       F     MODPAR=       3
+     JZ    =       1     PARMP =      -2     ZEFTYP=TRUE    
+     MCP2E =       0     ONECNT=       0     NFFBUF=      -1
+     EEQTOL=   0.10E-05  ISTNO =  0  0
+     DEGTOL= .0200 .0020
+
+     L2VAL =        -1
+     IROOTS=        10
+     NSTATE=        10
+     IVEX  =         1
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =        0.0 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        0.1 SECONDS, CPU UTILIZATION IS  33.33%
+ OPENING FILE SOCCDAT WITH       6 LOGICAL RECORDS OF       0 WORDS
+ WITH A MAXIMUM OF           6 PHYSICAL RECORDS OF    2048 WORDS
+
+ STATISTICS FOR GENERATION OF SYMMETRY ORBITAL -Q- MATRIX
+ NUMBER OF CARTESIAN ATOMIC ORBITALS=         25
+ NUMBER OF SPHERICAL CONTAMINANTS DROPPED=     2
+ NUMBER OF LINEARLY DEPENDENT MOS DROPPED=     0
+ TOTAL NUMBER OF MOS IN VARIATION SPACE=      23
+
+
+          ----------------------
+          CORRESPONDING ORBITALS
+          ----------------------
+ THE CORRESPONDING ORBITAL OVERLAPS ARE
+  1.0000000000 1.0000000000 1.0000000000 1.0000000000 1.0000000000
+  1.0000000000 1.0000000000 1.0000000000 1.0000000000 1.0000000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        0.0 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        0.1 SECONDS, CPU UTILIZATION IS  28.57%
+
+                    ----------------------
+                    AO INTEGRAL TECHNOLOGY
+                    ----------------------
+     S,P,L SHELL ROTATED AXIS INTEGRALS, REPROGRAMMED BY
+        KAZUYA ISHIMURA (IMS) AND JOSE SIERRA (SYNSTAR).
+     S,P,D,L SHELL ROTATED AXIS INTEGRALS PROGRAMMED BY
+        KAZUYA ISHIMURA (INSTITUTE FOR MOLECULAR SCIENCE).
+     S,P,D,F,G SHELL TO TOTAL QUARTET ANGULAR MOMENTUM SUM 5,
+        ERIC PROGRAM BY GRAHAM FLETCHER (ELORET AND NASA ADVANCED
+        SUPERCOMPUTING DIVISION, AMES RESEARCH CENTER).
+     S,P,D,F,G,L SHELL GENERAL RYS QUADRATURE PROGRAMMED BY
+        MICHEL DUPUIS (PACIFIC NORTHWEST NATIONAL LABORATORY).
+
+          --------------------
+          2 ELECTRON INTEGRALS
+          --------------------
+
+ THE -PK- OPTION IS OFF, THE INTEGRALS ARE NOT IN SUPERMATRIX FORM.
+ STORING   50000 INTEGRALS/RECORD ON DISK, USING 12 BYTES/INTEGRAL.
+ TWO ELECTRON INTEGRAL EVALUATION REQUIRES  195441 WORDS OF MEMORY.
+ II,JST,KST,LST =  1  1  1  1 NREC =         1 INTLOC =    1
+ II,JST,KST,LST =  2  1  1  1 NREC =         1 INTLOC =    2
+ II,JST,KST,LST =  3  1  1  1 NREC =         1 INTLOC =    7
+ II,JST,KST,LST =  4  1  1  1 NREC =         1 INTLOC =   22
+ II,JST,KST,LST =  5  1  1  1 NREC =         1 INTLOC =   56
+ II,JST,KST,LST =  6  1  1  1 NREC =         1 INTLOC =  125
+ II,JST,KST,LST =  7  1  1  1 NREC =         1 INTLOC =  329
+ II,JST,KST,LST =  8  1  1  1 NREC =         1 INTLOC =  776
+ II,JST,KST,LST =  9  1  1  1 NREC =         1 INTLOC = 2864
+ TOTAL NUMBER OF NONZERO TWO-ELECTRON INTEGRALS =                7966
+          1 INTEGRAL RECORDS WERE STORED ON DISK FILE  8.
+  ...... END OF TWO-ELECTRON INTEGRALS .....
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =        0.0 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        0.2 SECONDS, CPU UTILIZATION IS  23.81%
+ ...... END OF ORBITAL SELECTION ......
+
+
+     -------------------------
+      1-ST     CI CALCULATION
+     -------------------------
+
+          -----------------------     ----------------------------
+          GUGA DISTINCT ROW TABLE     WRITTEN BY B.R.BROOKS,P.SAXE
+          -----------------------     ----------------------------
+
+      GROUP=C1           NPRT=       0
+       FORS=       F   INTACT=       F
+       FOCI=       F   MXNINT= 5774280
+       SOCI=       F   MXNEME=   10000
+     IEXCIT=       2
+
+      -CORE-    -INTERNAL-  -EXTERNAL-
+     NFZC=   0   NDOC=   1   NEXT=   0
+     NMCC=   0   NAOS=   0   NFZV=   0
+                 NBOS=   0
+                 NALP=   0
+                 NVAL=   9
+
+ THE MAXIMUM ELECTRON EXCITATION WILL BE   2
+
+ THE FOLLOWING ANALYSIS IS BASED UPON THE $DATA POINT GROUP:
+
+ SYMMETRIES FOR THE   0 CORE,  10 ACTIVE,   0 EXTERNAL MO-S ARE
+   ACTIVE= A     A     A     A     A     A     A     A     A     A   
+           DOC   VAL   VAL   VAL   VAL   VAL   VAL   VAL   VAL   VAL 
+
+ THE FOLLOWING ANALYSIS IS BASED UPON THE $DRT POINT GROUP:
+
+ SYMMETRIES FOR THE   0 CORE,  10 ACTIVE,   0 EXTERNAL MO-S ARE
+   ACTIVE= A     A     A     A     A     A     A     A     A     A   
+           DOC   VAL   VAL   VAL   VAL   VAL   VAL   VAL   VAL   VAL 
+
+ MOLECULAR CHARGE          =    0
+ NUMBER OF ALPHA ELECTRONS =    1
+ NUMBER OF  BETA ELECTRONS =    1
+
+ THE ELECTRONIC STATE IS  1-A   
+
+ THE DISTINCT ROW TABLE HAS        29 ROWS.
+  THE WAVEFUNCTION CONTAINS        55 WALKS (CSF-S).
+
+ TOTAL NUMBER OF INTEGRALS =       1835
+ NUMBER OF INTEGRALS/GROUP =       1835
+ NUMBER OF INTEGRAL GROUPS =          1
+ MAXIMUM RECORD SIZES ARE     500 FOR UNIT 11      55 FOR UNIT 12
+                           100001 FOR UNIT 15  100001 FOR UNIT 16
+ ...... END OF -DRT- GENERATION ...... 
+ STEP CPU TIME =     1.25 TOTAL CPU TIME =        1.3 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        1.5 SECONDS, CPU UTILIZATION IS  87.25%
+
+     --------------------------------------------
+     PARTIAL TWO ELECTRON INTEGRAL TRANSFORMATION
+     --------------------------------------------
+
+ NUMBER OF CORE MOLECULAR ORBITALS     =    0
+ NUMBER OF OCCUPIED MOLECULAR ORBITALS =   10
+ TOTAL NUMBER OF MOLECULAR ORBITALS    =   10
+ TOTAL NUMBER OF ATOMIC ORBITALS       =   25
+ THRESHOLD FOR KEEPING TRANSFORMED 2E- INTEGRALS = 1.000E-09
+ AO INTEGRALS WILL BE READ IN FROM DISK...
+
+ PLAN A: REQUIREMENTS FOR FULLY IN-MEMORY TRANSFORMATION:
+ # OF WORDS AVAILABLE =            598712655
+ # OF WORDS NEEDED    =               284427
+
+ CHOOSING IN MEMORY PARTIAL TRANSFORMATION...
+ TOTAL NUMBER OF TRANSFORMED 2E- INTEGRALS KEPT =          595
+ ... END OF INTEGRAL TRANSFORMATION ...
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.3 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        1.6 SECONDS, CPU UTILIZATION IS  83.87%
+
+          ------------------------
+          GUGA-CI INTEGRAL SORTING
+          ------------------------
+
+   5874521 WORDS NEEDED TO SORT           1835 GUGA INTEGRALS IN MEMORY
+ 598712655 WORDS ARE AVAILABLE
+ CHOOSING IN-MEMORY SORTING...
+ IN CORE ALGORITHM SORTED             55 NON-ZERO 1E- INTEGRALS
+ IN CORE ALGORITHM SORTED            595 NON-ZERO 2E- INTEGRALS
+ ...... END OF INTEGRAL SORTING ...... 
+ STEP CPU TIME =     0.05 TOTAL CPU TIME =        1.3 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        2.1 SECONDS, CPU UTILIZATION IS  63.98%
+
+ -------------------------     ---------------------------------------
+ ENERGY MATRIX CALCULATION     WRITTEN BY B.R.BROOKS,W.D.LAIDIG,P.SAXE
+ -------------------------     ---------------------------------------
+
+ COMPUTING THE HAMILTONIAN FOR THE        55 CSF-S...
+
+        1750 IS THE TOTAL NUMBER OF GENERATED LOOPS
+        1750 WERE CREATED BY THE LOOP-DRIVEN ALGORITHM
+           0 WERE CREATED IMPLICITLY
+
+         628 IS THE TOTAL NUMBER OF PROCESSED LOOPS
+          73     DIAGONAL LOOPS ARE STORED ON WORK15 IN     1 BUFFERS OF  10000 ELEMENTS.
+         555 OFF DIAGONAL LOOPS ARE STORED ON WORK16 IN     1 BUFFERS OF  10000 ELEMENTS.
+ ...... END OF ENERGY MATRIX CALCULATION ...... 
+ STEP CPU TIME =     0.03 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        2.2 SECONDS, CPU UTILIZATION IS  63.01%
+
+          -----------------------------------------
+          DAVIDSON METHOD CI-MATRIX DIAGONALIZATION
+                   WRITTEN BY STEVE ELBERT
+          -----------------------------------------
+ NUMBER OF STATES REQUESTED =    10
+ MAX. NUMB. OF EXPAN. VEC   =  5000
+ MAX. NUMB. IMPROVED STATES =    10
+ MAX. NUMB. OF ITERATIONS   =   200
+ CONVERGENCE CRITERION      =    1.0E-06
+
+ CHOOSING TO SOLVE SECULAR EQUATION IN MEMORY
+ NUMBER OF WORDS AVAILABLE =  598712655
+ NUMBER OF WORDS USED      =   25037860
+ ENERGY MATRIX BUFFER SIZE =      10000
+ SOLUTION FOUND WITH DIRECT METHOD
+
+ STATE #    1  ENERGY =      -2.868636269
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+        1    0.998515  2000000000
+
+ THE PROJECTION OF THIS CI STATE ONTO SPACE SYMMETRY A    WEIGHS 1.0000E+00
+
+
+ STATE #    2  ENERGY =      -2.117110900
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+       16    0.059032  1000010000
+       46    0.981956  1100000000
+       51   -0.137666  0100010000
+       55   -0.113154  0200000000
+
+ THE PROJECTION OF THIS CI STATE ONTO SPACE SYMMETRY A    WEIGHS 1.0000E+00
+
+
+ STATE #    3  ENERGY =      -1.950296847
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+       22    0.921262  1000100000
+       27   -0.138684  0000110000
+       29    0.334420  1001000000
+       34   -0.050343  0001010000
+       37   -0.096065  1010000000
+       52   -0.080518  0100100000
+
+ THE PROJECTION OF THIS CI STATE ONTO SPACE SYMMETRY A    WEIGHS 1.0000E+00
+
+
+ STATE #    4  ENERGY =      -1.949757809
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+       22    0.296671  1000100000
+       29   -0.612930  1001000000
+       34    0.092698  0001010000
+       37    0.711355  1010000000
+       42   -0.107584  0010010000
+       53    0.053850  0101000000
+       54   -0.062498  0110000000
+
+ THE PROJECTION OF THIS CI STATE ONTO SPACE SYMMETRY A    WEIGHS 1.0000E+00
+
+
+ STATE #    5  ENERGY =      -1.949629588
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+       22   -0.181776  1000100000
+       29    0.694409  1001000000
+       34   -0.105137  0001010000
+       37    0.674138  1010000000
+       42   -0.102067  0010010000
+       53   -0.061085  0101000000
+       54   -0.059301  0110000000
+
+ THE PROJECTION OF THIS CI STATE ONTO SPACE SYMMETRY A    WEIGHS 1.0000E+00
+
+
+ STATE #    6  ENERGY =      -1.494843592
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+       16    0.983296  1000010000
+       21   -0.153834  0000020000
+       46   -0.063368  1100000000
+
+ THE PROJECTION OF THIS CI STATE ONTO SPACE SYMMETRY A    WEIGHS 1.0000E+00
+
+
+ STATE #    7  ENERGY =      -0.970422915
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+        2   -0.418384  1000000001
+        4    0.658903  1000000010
+        7    0.595899  1000000100
+       17    0.057103  0000010001
+       18   -0.089930  0000010010
+       19   -0.081331  0000010100
+       36    0.067590  0002000000
+       45   -0.076154  0020000000
+
+ THE PROJECTION OF THIS CI STATE ONTO SPACE SYMMETRY A    WEIGHS 1.0000E+00
+
+
+ STATE #    8  ENERGY =      -0.970273055
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+        2    0.705997  1000000001
+        4    0.571538  1000000010
+        7   -0.123487  1000000100
+       11   -0.352521  1000001000
+       17   -0.096473  0000010001
+       18   -0.078100  0000010010
+       28   -0.071477  0000200000
+       35   -0.060668  0001100000
+       47   -0.051874  0100000001
+
+ THE PROJECTION OF THIS CI STATE ONTO SPACE SYMMETRY A    WEIGHS 1.0000E+00
+
+
+ STATE #    9  ENERGY =      -0.970235093
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+        2    0.519230  1000000001
+        4   -0.332591  1000000010
+        7    0.723337  1000000100
+       11    0.247258  1000001000
+       17   -0.070973  0000010001
+       19   -0.098873  0000010100
+       35   -0.065594  0001100000
+       43   -0.072344  0010100000
+       49   -0.053158  0100000100
+
+ THE PROJECTION OF THIS CI STATE ONTO SPACE SYMMETRY A    WEIGHS 1.0000E+00
+
+
+ STATE #   10  ENERGY =      -0.970192629
+
+      CSF      COEF    OCCUPANCY (IGNORING CORE)
+      ---      ----    --------- --------- -----
+        2    0.146785  1000000001
+        4    0.305350  1000000010
+        7   -0.266602  1000000100
+       11    0.882419  1000001000
+       20   -0.120659  0000011000
+       35    0.052843  0001100000
+       43   -0.071165  0010100000
+       50   -0.064862  0100001000
+
+ THE PROJECTION OF THIS CI STATE ONTO SPACE SYMMETRY A    WEIGHS 1.0000E+00
+
+
+ RENORMALIZED DAVIDSON CORRECTION FOR     1-REFERENCE CI.
+ C0SQ= 0.997033 EREF=       -2.861183 E-E(REF)=   0.007453 E(Q)=   0.000022
+ GIVES A E(SD+Q) ESTIMATE OF       -2.8686584503
+ ...... END OF CI-MATRIX DIAGONALIZATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        2.4 SECONDS, CPU UTILIZATION IS  57.02%
+
+          ---------------------
+          STORE CSF INFORMATION
+          --------------------
+
+ READING THE DRT FILE
+ TITLE=DRT1    Wed Jan 22 12:27:15 2020                                                
+ NUMBER OF CONFIGURATIONS =         55
+
+ READING THE CI VECTOR FILE
+ RUN TITLE= RHF/6-31G(d) H2                                                                
+ DRT TITLE=DRT1    Wed Jan 22 12:27:15 2020                                                
+    10 STATES WERE COMPUTED, NWKS=        55
+
+ STORING CSF AND CI COEF. INFORMATION FOR   10 STATES ON FILE  17.
+     ENERGIES ARE ...
+      -2.8686363     -2.1171109     -1.9502968     -1.9497578     -1.9496296
+      -1.4948436     -0.9704229     -0.9702731     -0.9702351     -0.9701926
+ ...... DONE STORING CSF INFORMATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        2.4 SECONDS, CPU UTILIZATION IS  56.33%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        2.5 SECONDS, CPU UTILIZATION IS  55.87%
+
+ ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+ THE SYMMETRIES OF THE ANGULAR MOMENTUM L AND TRANSLATION R:
+ LX BELONGS TO A   
+ LY BELONGS TO A   
+ LZ BELONGS TO A   
+ RX BELONGS TO A   
+ RY BELONGS TO A   
+ RZ BELONGS TO A   
+ SOC INTEGRALS NEED BE CALCULATED FOR LX: NAY 
+ SOC INTEGRALS NEED BE CALCULATED FOR LY: NAY 
+ SOC INTEGRALS NEED BE CALCULATED FOR LZ: NAY 
+
+     ---------------------------
+     RADIATIVE TRANSITION MOMENT
+             SHIRO KOSEKI
+     ---------------------------
+
+ ...... DONE WITH DIPOLE INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        2.5 SECONDS, CPU UTILIZATION IS  55.42%
+
+ ...... DONE WITH DIPOLE VELOCITY INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        2.5 SECONDS, CPU UTILIZATION IS  54.98%
+
+          ------------------
+          TRANSITION MOMENTS
+          ------------------
+
+       4759 WORDS OF MEMORY ARE REQUIRED.
+
+ RECOVER CI INFORMATION OF STATE 1.  IROOTS=   10
+
+ THE FOLLOWING LEGEND IS USED BELOW:
+ [C] - THE MATRIX ELEMENT ACTUALLY CALCULATED
+ [Z] - ZERO BY POINT GROUP SYMMETRY
+
+ [Z]'S ARE ACTUALLY CALCULATED.
+
+
+          ---- LENGTH FORM ----
+
+ THE NEXT PAIR ARE THE SAME STATE, SO THIS IS AN EXPECTATION VALUE,
+ RATHER THAN A TRANSITION MOMENT.
+
+ CI STATE NUMBER=  1  1 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.8686362687       -2.8686362687
+ TRANSITION ENERGY=  0.0000E+00 [1/SEC] =        0.00 [1/CM] =        0.00 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        2.5 SECONDS, CPU UTILIZATION IS  54.76%
+
+ CI STATE NUMBER=  1  2 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.8686362687       -2.1171109001
+ TRANSITION ENERGY=  4.9448E+15 [1/SEC] =   164936.98 [1/CM] =       20.45 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  3.4516E-22 1/SEC; B=  1.5407E-23 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        2.6 SECONDS, CPU UTILIZATION IS  53.70%
+
+ CI STATE NUMBER=  1  3 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.8686362687       -1.9502968469
+ TRANSITION ENERGY=  6.0424E+15 [1/SEC] =   201547.59 [1/CM] =       24.99 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =   -0.760667    0.072498    0.039054    0.765111 E*BOHR
+ TRANSITION DIPOLE =   -1.933437    0.184274    0.099267    1.944734 DEBYE
+ OSCILLATOR STRENGTH =    0.358394
+ EINSTEIN COEFFICIENTS: A=  9.7107E+09 1/SEC; B=  2.3756E+08 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        2.6 SECONDS, CPU UTILIZATION IS  52.87%
+
+ CI STATE NUMBER=  1  4 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.8686362687       -1.9497578089
+ TRANSITION ENERGY=  6.0459E+15 [1/SEC] =   201665.89 [1/CM] =       25.00 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =   -0.064036   -0.748674    0.142565    0.764812 E*BOHR
+ TRANSITION DIPOLE =   -0.162764   -1.902954    0.362367    1.943974 DEBYE
+ OSCILLATOR STRENGTH =    0.358325
+ EINSTEIN COEFFICIENTS: A=  9.7202E+09 1/SEC; B=  2.3738E+08 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        2.7 SECONDS, CPU UTILIZATION IS  52.08%
+
+ CI STATE NUMBER=  1  5 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.8686362687       -1.9496295877
+ TRANSITION ENERGY=  6.0468E+15 [1/SEC] =   201694.03 [1/CM] =       25.01 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =   -0.051721   -0.138460   -0.750345    0.764764 E*BOHR
+ TRANSITION DIPOLE =   -0.131462   -0.351932   -1.907202    1.943852 DEBYE
+ OSCILLATOR STRENGTH =    0.358330
+ EINSTEIN COEFFICIENTS: A=  9.7230E+09 1/SEC; B=  2.3735E+08 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        2.7 SECONDS, CPU UTILIZATION IS  51.30%
+
+ CI STATE NUMBER=  1  6 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.8686362687       -1.4948435925
+ TRANSITION ENERGY=  9.0391E+15 [1/SEC] =   301505.74 [1/CM] =       37.38 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  5.1099E-23 1/SEC; B=  3.7342E-25 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        2.7 SECONDS, CPU UTILIZATION IS  50.55%
+
+ CI STATE NUMBER=  1  7 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.8686362687       -0.9704229152
+ TRANSITION ENERGY=  1.2490E+16 [1/SEC] =   416600.14 [1/CM] =       51.65 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  1.5052E-21 1/SEC; B=  4.1698E-24 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        2.8 SECONDS, CPU UTILIZATION IS  49.82%
+
+ CI STATE NUMBER=  1  8 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.8686362687       -0.9702730552
+ TRANSITION ENERGY=  1.2491E+16 [1/SEC] =   416633.03 [1/CM] =       51.66 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  8.4610E-22 1/SEC; B=  2.3433E-24 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        2.8 SECONDS, CPU UTILIZATION IS  48.94%
+
+ CI STATE NUMBER=  1  9 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.8686362687       -0.9702350934
+ TRANSITION ENERGY=  1.2491E+16 [1/SEC] =   416641.36 [1/CM] =       51.66 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  4.8842E-22 1/SEC; B=  1.3526E-24 SEC/G
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        2.9 SECONDS, CPU UTILIZATION IS  48.60%
+
+ CI STATE NUMBER=  1 10 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.8686362687       -0.9701926287
+ TRANSITION ENERGY=  1.2491E+16 [1/SEC] =   416650.68 [1/CM] =       51.66 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  7.1092E-22 1/SEC; B=  1.9686E-24 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        2.9 SECONDS, CPU UTILIZATION IS  47.93%
+
+ THE NEXT PAIR ARE THE SAME STATE, SO THIS IS AN EXPECTATION VALUE,
+ RATHER THAN A TRANSITION MOMENT.
+
+ CI STATE NUMBER=  2  2 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.1171109001       -2.1171109001
+ TRANSITION ENERGY=  0.0000E+00 [1/SEC] =        0.00 [1/CM] =        0.00 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        2.9 SECONDS, CPU UTILIZATION IS  47.28%
+
+ CI STATE NUMBER=  2  3 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.1171109001       -1.9502968469
+ TRANSITION ENERGY=  1.0976E+15 [1/SEC] =    36610.61 [1/CM] =        4.54 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =   -1.056045    0.100651    0.054219    1.062215 E*BOHR
+ TRANSITION DIPOLE =   -2.684219    0.255830    0.137813    2.699902 DEBYE
+ OSCILLATOR STRENGTH =    0.125478
+ EINSTEIN COEFFICIENTS: A=  1.1218E+08 1/SEC; B=  4.5789E+08 SEC/G
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.0 SECONDS, CPU UTILIZATION IS  46.98%
+
+ CI STATE NUMBER=  2  4 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.1171109001       -1.9497578089
+ TRANSITION ENERGY=  1.1011E+15 [1/SEC] =    36728.92 [1/CM] =        4.55 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =   -0.088912   -1.039519    0.197949    1.061927 E*BOHR
+ TRANSITION DIPOLE =   -0.225995   -2.642214    0.503140    2.699170 DEBYE
+ OSCILLATOR STRENGTH =    0.125815
+ EINSTEIN COEFFICIENTS: A=  1.1321E+08 1/SEC; B=  4.5764E+08 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.0 SECONDS, CPU UTILIZATION IS  46.36%
+
+ CI STATE NUMBER=  2  5 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.1171109001       -1.9496295877
+ TRANSITION ENERGY=  1.1020E+15 [1/SEC] =    36757.06 [1/CM] =        4.56 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =   -0.071814   -0.192251   -1.041850    1.061871 E*BOHR
+ TRANSITION DIPOLE =   -0.182534   -0.488656   -2.648140    2.699027 DEBYE
+ OSCILLATOR STRENGTH =    0.125898
+ EINSTEIN COEFFICIENTS: A=  1.1346E+08 1/SEC; B=  4.5759E+08 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.1 SECONDS, CPU UTILIZATION IS  45.60%
+
+ CI STATE NUMBER=  2  6 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.1171109001       -1.4948435925
+ TRANSITION ENERGY=  4.0943E+15 [1/SEC] =   136568.76 [1/CM] =       16.93 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  2.3350E-22 1/SEC; B=  1.8361E-23 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.1 SECONDS, CPU UTILIZATION IS  45.02%
+
+ CI STATE NUMBER=  2  7 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.1171109001       -0.9704229152
+ TRANSITION ENERGY=  7.5448E+15 [1/SEC] =   251663.16 [1/CM] =       31.20 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  1.4471E-21 1/SEC; B=  1.8184E-23 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.2 SECONDS, CPU UTILIZATION IS  44.44%
+
+ CI STATE NUMBER=  2  8 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.1171109001       -0.9702730552
+ TRANSITION ENERGY=  7.5458E+15 [1/SEC] =   251696.05 [1/CM] =       31.21 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  1.3487E-21 1/SEC; B=  1.6941E-23 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.2 SECONDS, CPU UTILIZATION IS  43.89%
+
+ CI STATE NUMBER=  2  9 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.1171109001       -0.9702350934
+ TRANSITION ENERGY=  7.5461E+15 [1/SEC] =   251704.38 [1/CM] =       31.21 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  1.6234E-21 1/SEC; B=  2.0390E-23 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.2 SECONDS, CPU UTILIZATION IS  43.34%
+
+ CI STATE NUMBER=  2 10 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.1171109001       -0.9701926287
+ TRANSITION ENERGY=  7.5464E+15 [1/SEC] =   251713.70 [1/CM] =       31.21 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  8.9021E-22 1/SEC; B=  1.1180E-23 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.3 SECONDS, CPU UTILIZATION IS  42.81%
+
+ THE NEXT PAIR ARE THE SAME STATE, SO THIS IS AN EXPECTATION VALUE,
+ RATHER THAN A TRANSITION MOMENT.
+
+ CI STATE NUMBER=  3  3 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9502968469       -1.9502968469
+ TRANSITION ENERGY=  0.0000E+00 [1/SEC] =        0.00 [1/CM] =        0.00 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.3 SECONDS, CPU UTILIZATION IS  42.17%
+
+ CI STATE NUMBER=  3  4 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9502968469       -1.9497578089
+ TRANSITION ENERGY=  3.5467E+12 [1/SEC] =      118.30 [1/CM] =        0.01 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  9.6669E-32 1/SEC; B=  1.1694E-23 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.4 SECONDS, CPU UTILIZATION IS  41.67%
+
+ CI STATE NUMBER=  3  5 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9502968469       -1.9496295877
+ TRANSITION ENERGY=  4.3904E+12 [1/SEC] =      146.44 [1/CM] =        0.02 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  3.3764E-31 1/SEC; B=  2.1533E-23 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.4 SECONDS, CPU UTILIZATION IS  41.18%
+
+ CI STATE NUMBER=  3  6 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9502968469       -1.4948435925
+ TRANSITION ENERGY=  2.9967E+15 [1/SEC] =    99958.15 [1/CM] =       12.39 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =   -0.622772    0.059356    0.031974    0.626411 E*BOHR
+ TRANSITION DIPOLE =   -1.582940    0.150869    0.081271    1.592189 DEBYE
+ OSCILLATOR STRENGTH =    0.119144
+ EINSTEIN COEFFICIENTS: A=  7.9403E+08 1/SEC; B=  1.5924E+08 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.4 SECONDS, CPU UTILIZATION IS  40.70%
+
+ CI STATE NUMBER=  3  7 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9502968469       -0.9704229152
+ TRANSITION ENERGY=  6.4473E+15 [1/SEC] =   215052.55 [1/CM] =       26.66 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  3.1463E-06 1/SEC; B=  6.3363E-08 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.5 SECONDS, CPU UTILIZATION IS  40.23%
+
+ CI STATE NUMBER=  3  8 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9502968469       -0.9702730552
+ TRANSITION ENERGY=  6.4482E+15 [1/SEC] =   215085.44 [1/CM] =       26.67 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =   -0.909583    0.086692    0.046700    0.914897 E*BOHR
+ TRANSITION DIPOLE =   -2.311946    0.220350    0.118700    2.325454 DEBYE
+ OSCILLATOR STRENGTH =    0.546877
+ EINSTEIN COEFFICIENTS: A=  1.6875E+10 1/SEC; B=  3.3969E+08 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.5 SECONDS, CPU UTILIZATION IS  39.77%
+
+ CI STATE NUMBER=  3  9 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9502968469       -0.9702350934
+ TRANSITION ENERGY=  6.4485E+15 [1/SEC] =   215093.77 [1/CM] =       26.67 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =   -0.053789   -0.143998   -0.780357    0.795353 E*BOHR
+ TRANSITION DIPOLE =   -0.136720   -0.366009   -1.983485    2.021600 DEBYE
+ OSCILLATOR STRENGTH =    0.413315
+ EINSTEIN COEFFICIENTS: A=  1.2755E+10 1/SEC; B=  2.5672E+08 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.6 SECONDS, CPU UTILIZATION IS  39.22%
+
+ CI STATE NUMBER=  3 10 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9502968469       -0.9701926287
+ TRANSITION ENERGY=  6.4488E+15 [1/SEC] =   215103.09 [1/CM] =       26.67 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =   -0.066558   -0.778156    0.148179    0.794930 E*BOHR
+ TRANSITION DIPOLE =   -0.169174   -1.977891    0.376638    2.020527 DEBYE
+ OSCILLATOR STRENGTH =    0.412894
+ EINSTEIN COEFFICIENTS: A=  1.2743E+10 1/SEC; B=  2.5644E+08 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.6 SECONDS, CPU UTILIZATION IS  38.78%
+
+ THE NEXT PAIR ARE THE SAME STATE, SO THIS IS AN EXPECTATION VALUE,
+ RATHER THAN A TRANSITION MOMENT.
+
+ CI STATE NUMBER=  4  4 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9497578089       -1.9497578089
+ TRANSITION ENERGY=  0.0000E+00 [1/SEC] =        0.00 [1/CM] =        0.00 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.7 SECONDS, CPU UTILIZATION IS  38.63%
+
+ CI STATE NUMBER=  4  5 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9497578089       -1.9496295877
+ TRANSITION ENERGY=  8.4365E+11 [1/SEC] =       28.14 [1/CM] =        0.00 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  3.9016E-33 1/SEC; B=  3.5068E-23 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.7 SECONDS, CPU UTILIZATION IS  38.21%
+
+ CI STATE NUMBER=  4  6 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9497578089       -1.4948435925
+ TRANSITION ENERGY=  2.9932E+15 [1/SEC] =    99839.84 [1/CM] =       12.38 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =   -0.052337   -0.611903    0.116521    0.625094 E*BOHR
+ TRANSITION DIPOLE =   -0.133030   -1.555315    0.296169    1.588841 DEBYE
+ OSCILLATOR STRENGTH =    0.118503
+ EINSTEIN COEFFICIENTS: A=  7.8789E+08 1/SEC; B=  1.5857E+08 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.7 SECONDS, CPU UTILIZATION IS  37.80%
+
+ CI STATE NUMBER=  4  7 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9497578089       -0.9704229152
+ TRANSITION ENERGY=  6.4437E+15 [1/SEC] =   214934.24 [1/CM] =       26.65 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =   -0.053925   -0.144362   -0.782331    0.797365 E*BOHR
+ TRANSITION DIPOLE =   -0.137066   -0.366934   -1.988503    2.026715 DEBYE
+ OSCILLATOR STRENGTH =    0.415101
+ EINSTEIN COEFFICIENTS: A=  1.2791E+10 1/SEC; B=  2.5802E+08 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.8 SECONDS, CPU UTILIZATION IS  37.40%
+
+ CI STATE NUMBER=  4  8 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9497578089       -0.9702730552
+ TRANSITION ENERGY=  6.4447E+15 [1/SEC] =   214967.13 [1/CM] =       26.65 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.044039    0.514884   -0.098046    0.525983 E*BOHR
+ TRANSITION DIPOLE =    0.111938    1.308716   -0.249210    1.336926 DEBYE
+ OSCILLATOR STRENGTH =    0.180655
+ EINSTEIN COEFFICIENTS: A=  5.5683E+09 1/SEC; B=  1.1227E+08 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.8 SECONDS, CPU UTILIZATION IS  36.91%
+
+ CI STATE NUMBER=  4  9 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9497578089       -0.9702350934
+ TRANSITION ENERGY=  6.4449E+15 [1/SEC] =   214975.46 [1/CM] =       26.65 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  3.2285E-04 1/SEC; B=  6.5089E-06 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.9 SECONDS, CPU UTILIZATION IS  36.53%
+
+ CI STATE NUMBER=  4 10 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9497578089       -0.9701926287
+ TRANSITION ENERGY=  6.4452E+15 [1/SEC] =   214984.78 [1/CM] =       26.66 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =   -0.790424    0.075335    0.040582    0.795042 E*BOHR
+ TRANSITION DIPOLE =   -2.009072    0.191483    0.103150    2.020811 DEBYE
+ OSCILLATOR STRENGTH =    0.412783
+ EINSTEIN COEFFICIENTS: A=  1.2725E+10 1/SEC; B=  2.5652E+08 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.9 SECONDS, CPU UTILIZATION IS  36.15%
+
+ THE NEXT PAIR ARE THE SAME STATE, SO THIS IS AN EXPECTATION VALUE,
+ RATHER THAN A TRANSITION MOMENT.
+
+ CI STATE NUMBER=  5  5 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9496295877       -1.9496295877
+ TRANSITION ENERGY=  0.0000E+00 [1/SEC] =        0.00 [1/CM] =        0.00 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        3.9 SECONDS, CPU UTILIZATION IS  35.79%
+
+ CI STATE NUMBER=  5  6 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9496295877       -1.4948435925
+ TRANSITION ENERGY=  2.9923E+15 [1/SEC] =    99811.70 [1/CM] =       12.38 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =   -0.042262   -0.113138   -0.613123    0.624905 E*BOHR
+ TRANSITION DIPOLE =   -0.107420   -0.287571   -1.558414    1.588361 DEBYE
+ OSCILLATOR STRENGTH =    0.118398
+ EINSTEIN COEFFICIENTS: A=  7.8675E+08 1/SEC; B=  1.5847E+08 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.0 SECONDS, CPU UTILIZATION IS  35.43%
+
+ CI STATE NUMBER=  5  7 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9496295877       -0.9704229152
+ TRANSITION ENERGY=  6.4429E+15 [1/SEC] =   214906.10 [1/CM] =       26.65 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =   -0.066765   -0.780579    0.148641    0.797406 E*BOHR
+ TRANSITION DIPOLE =   -0.169700   -1.984050    0.377810    2.026818 DEBYE
+ OSCILLATOR STRENGTH =    0.415089
+ EINSTEIN COEFFICIENTS: A=  1.2787E+10 1/SEC; B=  2.5804E+08 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.0 SECONDS, CPU UTILIZATION IS  35.07%
+
+ CI STATE NUMBER=  5  8 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9496295877       -0.9702730552
+ TRANSITION ENERGY=  6.4439E+15 [1/SEC] =   214938.99 [1/CM] =       26.65 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.026162    0.070037    0.379544    0.386838 E*BOHR
+ TRANSITION DIPOLE =    0.066497    0.178016    0.964713    0.983251 DEBYE
+ OSCILLATOR STRENGTH =    0.097703
+ EINSTEIN COEFFICIENTS: A=  3.0107E+09 1/SEC; B=  6.0728E+07 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.1 SECONDS, CPU UTILIZATION IS  34.64%
+
+ CI STATE NUMBER=  5  9 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9496295877       -0.9702350934
+ TRANSITION ENERGY=  6.4441E+15 [1/SEC] =   214947.32 [1/CM] =       26.65 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =   -0.790884    0.075378    0.040606    0.795505 E*BOHR
+ TRANSITION DIPOLE =   -2.010242    0.191594    0.103210    2.021987 DEBYE
+ OSCILLATOR STRENGTH =    0.413192
+ EINSTEIN COEFFICIENTS: A=  1.2734E+10 1/SEC; B=  2.5681E+08 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.1 SECONDS, CPU UTILIZATION IS  34.31%
+
+ CI STATE NUMBER=  5 10 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9496295877       -0.9701926287
+ TRANSITION ENERGY=  6.4444E+15 [1/SEC] =   214956.64 [1/CM] =       26.65 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  3.6581E-04 1/SEC; B=  7.3767E-06 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.2 SECONDS, CPU UTILIZATION IS  33.98%
+
+ THE NEXT PAIR ARE THE SAME STATE, SO THIS IS AN EXPECTATION VALUE,
+ RATHER THAN A TRANSITION MOMENT.
+
+ CI STATE NUMBER=  6  6 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.4948435925       -1.4948435925
+ TRANSITION ENERGY=  0.0000E+00 [1/SEC] =        0.00 [1/CM] =        0.00 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.2 SECONDS, CPU UTILIZATION IS  33.65%
+
+ CI STATE NUMBER=  6  7 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.4948435925       -0.9704229152
+ TRANSITION ENERGY=  3.4505E+15 [1/SEC] =   115094.40 [1/CM] =       14.27 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  1.0746E-22 1/SEC; B=  1.4117E-23 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.2 SECONDS, CPU UTILIZATION IS  33.33%
+
+ CI STATE NUMBER=  6  8 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.4948435925       -0.9702730552
+ TRANSITION ENERGY=  3.4515E+15 [1/SEC] =   115127.29 [1/CM] =       14.27 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  3.4241E-24 1/SEC; B=  4.4945E-25 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.3 SECONDS, CPU UTILIZATION IS  33.02%
+
+ CI STATE NUMBER=  6  9 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.4948435925       -0.9702350934
+ TRANSITION ENERGY=  3.4518E+15 [1/SEC] =   115135.62 [1/CM] =       14.28 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  1.6275E-23 1/SEC; B=  2.1358E-24 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.3 SECONDS, CPU UTILIZATION IS  32.64%
+
+ CI STATE NUMBER=  6 10 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.4948435925       -0.9701926287
+ TRANSITION ENERGY=  3.4520E+15 [1/SEC] =   115144.94 [1/CM] =       14.28 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  7.1244E-23 1/SEC; B=  9.3472E-24 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.4 SECONDS, CPU UTILIZATION IS  32.34%
+
+ THE NEXT PAIR ARE THE SAME STATE, SO THIS IS AN EXPECTATION VALUE,
+ RATHER THAN A TRANSITION MOMENT.
+
+ CI STATE NUMBER=  7  7 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -0.9704229152       -0.9704229152
+ TRANSITION ENERGY=  0.0000E+00 [1/SEC] =        0.00 [1/CM] =        0.00 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.4 SECONDS, CPU UTILIZATION IS  32.05%
+
+ CI STATE NUMBER=  7  8 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -0.9704229152       -0.9702730552
+ TRANSITION ENERGY=  9.8603E+11 [1/SEC] =       32.89 [1/CM] =        0.00 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  5.5649E-34 1/SEC; B=  3.1329E-24 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.4 SECONDS, CPU UTILIZATION IS  31.76%
+
+ CI STATE NUMBER=  7  9 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -0.9704229152       -0.9702350934
+ TRANSITION ENERGY=  1.2358E+12 [1/SEC] =       41.22 [1/CM] =        0.01 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  9.4462E-33 1/SEC; B=  2.7012E-23 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.5 SECONDS, CPU UTILIZATION IS  31.47%
+
+ CI STATE NUMBER=  7 10 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -0.9704229152       -0.9701926287
+ TRANSITION ENERGY=  1.5152E+12 [1/SEC] =       50.54 [1/CM] =        0.01 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  2.8283E-33 1/SEC; B=  4.3880E-24 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.5 SECONDS, CPU UTILIZATION IS  31.19%
+
+ THE NEXT PAIR ARE THE SAME STATE, SO THIS IS AN EXPECTATION VALUE,
+ RATHER THAN A TRANSITION MOMENT.
+
+ CI STATE NUMBER=  8  8 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -0.9702730552       -0.9702730552
+ TRANSITION ENERGY=  0.0000E+00 [1/SEC] =        0.00 [1/CM] =        0.00 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.6 SECONDS, CPU UTILIZATION IS  30.85%
+
+ CI STATE NUMBER=  8  9 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -0.9702730552       -0.9702350934
+ TRANSITION ENERGY=  2.4978E+11 [1/SEC] =        8.33 [1/CM] =        0.00 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  6.6427E-35 1/SEC; B=  2.3006E-23 SEC/G
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.6 SECONDS, CPU UTILIZATION IS  30.80%
+
+ CI STATE NUMBER=  8 10 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -0.9702730552       -0.9701926287
+ TRANSITION ENERGY=  5.2918E+11 [1/SEC] =       17.65 [1/CM] =        0.00 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  2.1082E-34 1/SEC; B=  7.6782E-24 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.7 SECONDS, CPU UTILIZATION IS  30.54%
+
+ THE NEXT PAIR ARE THE SAME STATE, SO THIS IS AN EXPECTATION VALUE,
+ RATHER THAN A TRANSITION MOMENT.
+
+ CI STATE NUMBER=  9  9 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -0.9702350934       -0.9702350934
+ TRANSITION ENERGY=  0.0000E+00 [1/SEC] =        0.00 [1/CM] =        0.00 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.7 SECONDS, CPU UTILIZATION IS  30.28%
+
+ CI STATE NUMBER=  9 10 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -0.9702350934       -0.9701926287
+ TRANSITION ENERGY=  2.7940E+11 [1/SEC] =        9.32 [1/CM] =        0.00 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ OSCILLATOR STRENGTH =    0.000000
+ EINSTEIN COEFFICIENTS: A=  2.5303E-34 1/SEC; B=  6.2608E-23 SEC/G
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.7 SECONDS, CPU UTILIZATION IS  30.02%
+
+ THE NEXT PAIR ARE THE SAME STATE, SO THIS IS AN EXPECTATION VALUE,
+ RATHER THAN A TRANSITION MOMENT.
+
+ CI STATE NUMBER= 10 10 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -0.9701926287       -0.9701926287
+ TRANSITION ENERGY=  0.0000E+00 [1/SEC] =        0.00 [1/CM] =        0.00 [EV]
+                          X [C]       Y [C]       Z [C]       NORM
+ CENTER OF MASS    =    0.000000    0.000000    0.000000             BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 E*BOHR
+ TRANSITION DIPOLE =    0.000000    0.000000    0.000000    0.000000 DEBYE
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.8 SECONDS, CPU UTILIZATION IS  29.77%
+
+          ---- VELOCITY FORM ----
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.8 SECONDS, CPU UTILIZATION IS  29.46%
+
+ CI STATE NUMBER=  1  2 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.8686362687       -2.1171109001
+ TRANSITION ENERGY=  4.9448E+15 [1/SEC] =   164936.98 [1/CM] =       20.45 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS    0.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.9 SECONDS, CPU UTILIZATION IS  29.22%
+
+ CI STATE NUMBER=  1  3 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.8686362687       -1.9502968469
+ TRANSITION ENERGY=  6.0424E+15 [1/SEC] =   201547.59 [1/CM] =       24.99 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> = -0.652551  0.062194  0.033503  0.656364 E/BOHR
+ OSCILLATOR STRENGTH IS    0.312748
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.9 SECONDS, CPU UTILIZATION IS  28.98%
+
+ CI STATE NUMBER=  1  4 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.8686362687       -1.9497578089
+ TRANSITION ENERGY=  6.0459E+15 [1/SEC] =   201665.89 [1/CM] =       25.00 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> = -0.054957 -0.642533  0.122353  0.656383 E/BOHR
+ OSCILLATOR STRENGTH IS    0.312583
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        4.9 SECONDS, CPU UTILIZATION IS  28.74%
+
+ CI STATE NUMBER=  1  5 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.8686362687       -1.9496295877
+ TRANSITION ENERGY=  6.0468E+15 [1/SEC] =   201694.03 [1/CM] =       25.01 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> = -0.044391 -0.118837 -0.644005  0.656380 E/BOHR
+ OSCILLATOR STRENGTH IS    0.312537
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.0 SECONDS, CPU UTILIZATION IS  28.51%
+
+ CI STATE NUMBER=  1  6 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.8686362687       -1.4948435925
+ TRANSITION ENERGY=  9.0391E+15 [1/SEC] =   301505.74 [1/CM] =       37.38 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS    0.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.0 SECONDS, CPU UTILIZATION IS  28.29%
+
+ CI STATE NUMBER=  1  7 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.8686362687       -0.9704229152
+ TRANSITION ENERGY=  1.2490E+16 [1/SEC] =   416600.14 [1/CM] =       51.65 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS    0.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.1 SECONDS, CPU UTILIZATION IS  28.01%
+
+ CI STATE NUMBER=  1  8 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.8686362687       -0.9702730552
+ TRANSITION ENERGY=  1.2491E+16 [1/SEC] =   416633.03 [1/CM] =       51.66 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS    0.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.1 SECONDS, CPU UTILIZATION IS  27.79%
+
+ CI STATE NUMBER=  1  9 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.8686362687       -0.9702350934
+ TRANSITION ENERGY=  1.2491E+16 [1/SEC] =   416641.36 [1/CM] =       51.66 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS    0.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.2 SECONDS, CPU UTILIZATION IS  27.57%
+
+ CI STATE NUMBER=  1 10 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.8686362687       -0.9701926287
+ TRANSITION ENERGY=  1.2491E+16 [1/SEC] =   416650.68 [1/CM] =       51.66 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS    0.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.2 SECONDS, CPU UTILIZATION IS  27.36%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.2 SECONDS, CPU UTILIZATION IS  27.15%
+
+ CI STATE NUMBER=  2  3 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.1171109001       -1.9502968469
+ TRANSITION ENERGY=  1.0976E+15 [1/SEC] =    36610.61 [1/CM] =        4.54 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.168149 -0.016026 -0.008633  0.169131 E/BOHR
+ OSCILLATOR STRENGTH IS    0.114321
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.2 SECONDS, CPU UTILIZATION IS  27.05%
+
+ CI STATE NUMBER=  2  4 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.1171109001       -1.9497578089
+ TRANSITION ENERGY=  1.1011E+15 [1/SEC] =    36728.92 [1/CM] =        4.55 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.014181  0.165802 -0.031573  0.169376 E/BOHR
+ OSCILLATOR STRENGTH IS    0.114282
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.3 SECONDS, CPU UTILIZATION IS  26.84%
+
+ CI STATE NUMBER=  2  5 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.1171109001       -1.9496295877
+ TRANSITION ENERGY=  1.1020E+15 [1/SEC] =    36757.06 [1/CM] =        4.56 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.011459  0.030677  0.166244  0.169438 E/BOHR
+ OSCILLATOR STRENGTH IS    0.114279
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.3 SECONDS, CPU UTILIZATION IS  26.64%
+
+ CI STATE NUMBER=  2  6 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.1171109001       -1.4948435925
+ TRANSITION ENERGY=  4.0943E+15 [1/SEC] =   136568.76 [1/CM] =       16.93 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS    0.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.4 SECONDS, CPU UTILIZATION IS  26.44%
+
+ CI STATE NUMBER=  2  7 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.1171109001       -0.9704229152
+ TRANSITION ENERGY=  7.5448E+15 [1/SEC] =   251663.16 [1/CM] =       31.20 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS    0.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.4 SECONDS, CPU UTILIZATION IS  26.20%
+
+ CI STATE NUMBER=  2  8 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.1171109001       -0.9702730552
+ TRANSITION ENERGY=  7.5458E+15 [1/SEC] =   251696.05 [1/CM] =       31.21 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS    0.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.5 SECONDS, CPU UTILIZATION IS  26.01%
+
+ CI STATE NUMBER=  2  9 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.1171109001       -0.9702350934
+ TRANSITION ENERGY=  7.5461E+15 [1/SEC] =   251704.38 [1/CM] =       31.21 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS    0.000000
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.5 SECONDS, CPU UTILIZATION IS  26.00%
+
+ CI STATE NUMBER=  2 10 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -2.1171109001       -0.9701926287
+ TRANSITION ENERGY=  7.5464E+15 [1/SEC] =   251713.70 [1/CM] =       31.21 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS    0.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.5 SECONDS, CPU UTILIZATION IS  25.81%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.6 SECONDS, CPU UTILIZATION IS  25.63%
+
+ CI STATE NUMBER=  3  4 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9502968469       -1.9497578089
+ TRANSITION ENERGY=  3.5467E+12 [1/SEC] =      118.30 [1/CM] =        0.01 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS  -10.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.6 SECONDS, CPU UTILIZATION IS  25.54%
+
+ CI STATE NUMBER=  3  5 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9502968469       -1.9496295877
+ TRANSITION ENERGY=  4.3904E+12 [1/SEC] =      146.44 [1/CM] =        0.02 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS  -10.000000
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.6 SECONDS, CPU UTILIZATION IS  25.53%
+
+ CI STATE NUMBER=  3  6 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9502968469       -1.4948435925
+ TRANSITION ENERGY=  2.9967E+15 [1/SEC] =    99958.15 [1/CM] =       12.39 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.143766 -0.013702 -0.007381  0.144606 E/BOHR
+ OSCILLATOR STRENGTH IS    0.030608
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.7 SECONDS, CPU UTILIZATION IS  25.35%
+
+ CI STATE NUMBER=  3  7 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9502968469       -0.9704229152
+ TRANSITION ENERGY=  6.4473E+15 [1/SEC] =   215052.55 [1/CM] =       26.66 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS    0.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.7 SECONDS, CPU UTILIZATION IS  25.17%
+
+ CI STATE NUMBER=  3  8 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9502968469       -0.9702730552
+ TRANSITION ENERGY=  6.4482E+15 [1/SEC] =   215085.44 [1/CM] =       26.67 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> = -0.278643  0.026557  0.014306  0.280271 E/BOHR
+ OSCILLATOR STRENGTH IS    0.053435
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.8 SECONDS, CPU UTILIZATION IS  24.96%
+
+ CI STATE NUMBER=  3  9 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9502968469       -0.9702350934
+ TRANSITION ENERGY=  6.4485E+15 [1/SEC] =   215093.77 [1/CM] =       26.67 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> = -0.016437 -0.044004 -0.238466  0.243048 E/BOHR
+ OSCILLATOR STRENGTH IS    0.040183
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.8 SECONDS, CPU UTILIZATION IS  24.78%
+
+ CI STATE NUMBER=  3 10 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9502968469       -0.9701926287
+ TRANSITION ENERGY=  6.4488E+15 [1/SEC] =   215103.09 [1/CM] =       26.67 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> = -0.020352 -0.237943  0.045310  0.243072 E/BOHR
+ OSCILLATOR STRENGTH IS    0.040189
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.9 SECONDS, CPU UTILIZATION IS  24.62%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.9 SECONDS, CPU UTILIZATION IS  24.45%
+
+ CI STATE NUMBER=  4  5 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9497578089       -1.9496295877
+ TRANSITION ENERGY=  8.4365E+11 [1/SEC] =       28.14 [1/CM] =        0.00 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS  -10.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.9 SECONDS, CPU UTILIZATION IS  24.41%
+
+ CI STATE NUMBER=  4  6 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9497578089       -1.4948435925
+ TRANSITION ENERGY=  2.9932E+15 [1/SEC] =    99839.84 [1/CM] =       12.38 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.012100  0.141471 -0.026939  0.144521 E/BOHR
+ OSCILLATOR STRENGTH IS    0.030608
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        5.9 SECONDS, CPU UTILIZATION IS  24.20%
+
+ CI STATE NUMBER=  4  7 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9497578089       -0.9704229152
+ TRANSITION ENERGY=  6.4437E+15 [1/SEC] =   214934.24 [1/CM] =       26.65 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> = -0.016437 -0.044002 -0.238455  0.243037 E/BOHR
+ OSCILLATOR STRENGTH IS    0.040209
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.0 SECONDS, CPU UTILIZATION IS  24.04%
+
+ CI STATE NUMBER=  4  8 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9497578089       -0.9702730552
+ TRANSITION ENERGY=  6.4447E+15 [1/SEC] =   214967.13 [1/CM] =       26.65 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.013489  0.157711 -0.030032  0.161111 E/BOHR
+ OSCILLATOR STRENGTH IS    0.017667
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.0 SECONDS, CPU UTILIZATION IS  23.88%
+
+ CI STATE NUMBER=  4  9 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9497578089       -0.9702350934
+ TRANSITION ENERGY=  6.4449E+15 [1/SEC] =   214975.46 [1/CM] =       26.65 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS    0.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.1 SECONDS, CPU UTILIZATION IS  23.72%
+
+ CI STATE NUMBER=  4 10 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9497578089       -0.9701926287
+ TRANSITION ENERGY=  6.4452E+15 [1/SEC] =   214984.78 [1/CM] =       26.66 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> = -0.241771  0.023043  0.012413  0.243183 E/BOHR
+ OSCILLATOR STRENGTH IS    0.040248
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.1 SECONDS, CPU UTILIZATION IS  23.61%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.1 SECONDS, CPU UTILIZATION IS  23.49%
+
+ CI STATE NUMBER=  5  6 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9496295877       -1.4948435925
+ TRANSITION ENERGY=  2.9923E+15 [1/SEC] =    99811.70 [1/CM] =       12.38 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.009770  0.026154  0.141736  0.144459 E/BOHR
+ OSCILLATOR STRENGTH IS    0.030591
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.1 SECONDS, CPU UTILIZATION IS  23.45%
+
+ CI STATE NUMBER=  5  7 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9496295877       -0.9704229152
+ TRANSITION ENERGY=  6.4429E+15 [1/SEC] =   214906.10 [1/CM] =       26.65 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> = -0.020351 -0.237929  0.045307  0.243058 E/BOHR
+ OSCILLATOR STRENGTH IS    0.040221
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.2 SECONDS, CPU UTILIZATION IS  23.34%
+
+ CI STATE NUMBER=  5  8 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9496295877       -0.9702730552
+ TRANSITION ENERGY=  6.4439E+15 [1/SEC] =   214938.99 [1/CM] =       26.65 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.008022  0.021476  0.116381  0.118618 E/BOHR
+ OSCILLATOR STRENGTH IS    0.009578
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.2 SECONDS, CPU UTILIZATION IS  23.19%
+
+ CI STATE NUMBER=  5  9 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9496295877       -0.9702350934
+ TRANSITION ENERGY=  6.4441E+15 [1/SEC] =   214947.32 [1/CM] =       26.65 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> = -0.241767  0.023043  0.012413  0.243180 E/BOHR
+ OSCILLATOR STRENGTH IS    0.040254
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.2 SECONDS, CPU UTILIZATION IS  23.08%
+
+ CI STATE NUMBER=  5 10 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.9496295877       -0.9701926287
+ TRANSITION ENERGY=  6.4444E+15 [1/SEC] =   214956.64 [1/CM] =       26.65 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS    0.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.3 SECONDS, CPU UTILIZATION IS  22.97%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.4 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.3 SECONDS, CPU UTILIZATION IS  22.82%
+
+ CI STATE NUMBER=  6  7 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.4948435925       -0.9704229152
+ TRANSITION ENERGY=  3.4505E+15 [1/SEC] =   115094.40 [1/CM] =       14.27 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS    0.000000
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =        1.5 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.3 SECONDS, CPU UTILIZATION IS  22.94%
+
+ CI STATE NUMBER=  6  8 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.4948435925       -0.9702730552
+ TRANSITION ENERGY=  3.4515E+15 [1/SEC] =   115127.29 [1/CM] =       14.27 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS    0.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.5 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.4 SECONDS, CPU UTILIZATION IS  22.83%
+
+ CI STATE NUMBER=  6  9 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.4948435925       -0.9702350934
+ TRANSITION ENERGY=  3.4518E+15 [1/SEC] =   115135.62 [1/CM] =       14.28 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS    0.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.5 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.4 SECONDS, CPU UTILIZATION IS  22.73%
+
+ CI STATE NUMBER=  6 10 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -1.4948435925       -0.9701926287
+ TRANSITION ENERGY=  3.4520E+15 [1/SEC] =   115144.94 [1/CM] =       14.28 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS    0.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.5 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.4 SECONDS, CPU UTILIZATION IS  22.59%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.5 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.4 SECONDS, CPU UTILIZATION IS  22.48%
+
+ CI STATE NUMBER=  7  8 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -0.9704229152       -0.9702730552
+ TRANSITION ENERGY=  9.8603E+11 [1/SEC] =       32.89 [1/CM] =        0.00 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS  -10.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.5 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.5 SECONDS, CPU UTILIZATION IS  22.45%
+
+ CI STATE NUMBER=  7  9 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -0.9704229152       -0.9702350934
+ TRANSITION ENERGY=  1.2358E+12 [1/SEC] =       41.22 [1/CM] =        0.01 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS  -10.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.5 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.5 SECONDS, CPU UTILIZATION IS  22.34%
+
+ CI STATE NUMBER=  7 10 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -0.9704229152       -0.9701926287
+ TRANSITION ENERGY=  1.5152E+12 [1/SEC] =       50.54 [1/CM] =        0.01 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS  -10.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.5 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.5 SECONDS, CPU UTILIZATION IS  22.24%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.5 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.6 SECONDS, CPU UTILIZATION IS  22.10%
+
+ CI STATE NUMBER=  8  9 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -0.9702730552       -0.9702350934
+ TRANSITION ENERGY=  2.4978E+11 [1/SEC] =        8.33 [1/CM] =        0.00 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS  -10.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.5 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.6 SECONDS, CPU UTILIZATION IS  22.07%
+
+ CI STATE NUMBER=  8 10 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -0.9702730552       -0.9701926287
+ TRANSITION ENERGY=  5.2918E+11 [1/SEC] =       17.65 [1/CM] =        0.00 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS  -10.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.5 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.6 SECONDS, CPU UTILIZATION IS  21.97%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.5 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.6 SECONDS, CPU UTILIZATION IS  21.87%
+
+ CI STATE NUMBER=  9 10 STATE MULTIPLICITY=  1  1
+ NUMBER OF CSF-S=        55        55
+ STATE ENERGIES           -0.9702350934       -0.9701926287
+ TRANSITION ENERGY=  2.7940E+11 [1/SEC] =        9.32 [1/CM] =        0.00 [EV]
+                             X [C]     Y [C]     Z [C]     NORM
+ DIPOLE VELOCITY <D/DQ> =  0.000000  0.000000  0.000000  0.000000 E/BOHR
+ OSCILLATOR STRENGTH IS  -10.000000
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.5 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.6 SECONDS, CPU UTILIZATION IS  21.84%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.5 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.7 SECONDS, CPU UTILIZATION IS  21.74%
+
+ ....... DONE WITH TRANSITION MOMENT .......
+
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =        1.5 (    0.0 MIN)
+ TOTAL WALL CLOCK TIME=        6.7 SECONDS, CPU UTILIZATION IS  21.71%
+              26325370  WORDS OF DYNAMIC MEMORY USED
+ EXECUTION OF GAMESS TERMINATED NORMALLY Wed Jan 22 12:27:22 2020
+ DDI: 263640 bytes (0.3 MB / 0 MWords) used by master data server.
+
+ ----------------------------------------
+ CPU timing information for all processes
+ ========================================
+ 0: 0.344 + 1.136 = 1.480
+ ----------------------------------------
+ ddikick.x: exited gracefully.
+----- accounting info -----
+Files used on the master node node05 were:
+-rw-rw-r--. 1 nicolas nicolas    14274 Jan 22 12:27 /home/scratch/PBS_29122.mendeleiev/scr/guga.dat
+-rw-rw-r--. 1 nicolas nicolas    11280 Jan 22 12:27 /home/scratch/PBS_29122.mendeleiev/scr/guga.F05
+-rw-rw-r--. 1 nicolas nicolas   600016 Jan 22 12:27 /home/scratch/PBS_29122.mendeleiev/scr/guga.F08
+-rw-rw-r--. 1 nicolas nicolas   600464 Jan 22 12:27 /home/scratch/PBS_29122.mendeleiev/scr/guga.F09
+-rw-rw-r--. 1 nicolas nicolas  1537840 Jan 22 12:27 /home/scratch/PBS_29122.mendeleiev/scr/guga.F10
+-rw-rw-r--. 1 nicolas nicolas    82624 Jan 22 12:27 /home/scratch/PBS_29122.mendeleiev/scr/guga.F11
+-rw-rw-r--. 1 nicolas nicolas     4664 Jan 22 12:27 /home/scratch/PBS_29122.mendeleiev/scr/guga.F12
+-rw-rw-r--. 1 nicolas nicolas 46194248 Jan 22 12:27 /home/scratch/PBS_29122.mendeleiev/scr/guga.F14
+-rw-rw-r--. 1 nicolas nicolas   160664 Jan 22 12:27 /home/scratch/PBS_29122.mendeleiev/scr/guga.F15
+-rw-rw-r--. 1 nicolas nicolas   200216 Jan 22 12:27 /home/scratch/PBS_29122.mendeleiev/scr/guga.F16
+-rw-rw-r--. 1 nicolas nicolas     4928 Jan 22 12:27 /home/scratch/PBS_29122.mendeleiev/scr/guga.F17
+-rw-rw-r--. 1 nicolas nicolas    32768 Jan 22 12:27 /home/scratch/PBS_29122.mendeleiev/scr/guga.F40
+Wed Jan 22 12:27:25 CET 2020
+0.156u 0.126s 0:10.08 2.6%	0+0k 0+40io 0pf+0w

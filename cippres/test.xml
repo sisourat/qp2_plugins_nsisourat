@@ -1,0 +1,38 @@
+<input>
+  
+ <cirun>
+  <general>
+   <spin> 1 </spin>
+   <electron na='1' nb='1' />
+  </general>
+
+  <block>
+    <space ne='2' imo='1' fmo='5' />
+  </block>
+
+ </cirun>
+
+ <cirun>
+
+  <general>
+   <spin> 1 </spin>
+   <electron na='1' nb='1' />
+  </general>
+
+  <block>
+    <space ne='2' imo='1' fmo='1' />
+  </block>
+
+  <block>
+    <space ne='2' imo='2' fmo='2' />
+  </block>
+
+  <block>
+    <space ne='2' imo='3' fmo='3' />
+  </block>
+
+ </cirun>
+
+</input>
+
+
