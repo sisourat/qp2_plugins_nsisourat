@@ -6,7 +6,7 @@ subroutine read_csf_basis(csf)
   END_DOC
 
   integer(bit_kind), intent(out) :: csf(N_int,2,n_det_max_csf, n_csf_max ,n_ciruns_cippres)
-  integer                        :: N_int2
+  integer                        :: N_int2, N_int
   integer                        :: i,k
 
   call ezfio_get_determinants_N_int(N_int2)
