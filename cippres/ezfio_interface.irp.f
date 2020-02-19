@@ -3,6 +3,42 @@
 ! from file /home/common/quantum_package/src/cippres/EZFIO.cfg
 
 
+BEGIN_PROVIDER [ character*(32), finput_stieltjes  ]
+  implicit none
+  BEGIN_DOC
+! text file containing input data for Stieltjes code (decay width or photoionization cross section)
+  END_DOC
+
+  logical                        :: has
+  PROVIDE ezfio_filename
+  if (mpi_master) then
+    
+    call ezfio_has_cippres_finput_stieltjes(has)
+    if (has) then
+      write(6,'(A)') '.. >>>>> [ IO READ: finput_stieltjes ] <<<<< ..'
+      call ezfio_get_cippres_finput_stieltjes(finput_stieltjes)
+    else
+      print *, 'cippres/finput_stieltjes not found in EZFIO file'
+      stop 1
+    endif
+  endif
+  IRP_IF MPI_DEBUG
+    print *,  irp_here, mpi_rank
+    call MPI_BARRIER(MPI_COMM_WORLD, ierr)
+  IRP_ENDIF
+  IRP_IF MPI
+    include 'mpif.h'
+    integer :: ierr
+    call MPI_BCAST( finput_stieltjes, 1*32, MPI_CHARACTER, 0, MPI_COMM_WORLD, ierr)
+    if (ierr /= MPI_SUCCESS) then
+      stop 'Unable to read finput_stieltjes with MPI'
+    endif
+  IRP_ENDIF
+
+  call write_time(6)
+
+END_PROVIDER
+
 BEGIN_PROVIDER [ integer, ifcsf  ]
   implicit none
   BEGIN_DOC

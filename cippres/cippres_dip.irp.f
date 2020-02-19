@@ -50,6 +50,12 @@ program cippres_dip
       enddo
       print*,'Nuclear Contribution to be added to "diagonal" elements',nucl_contrib 
 
+      open(unit=10,file='dip.out')   
+      do i = 1, n_csf_cippres(ici2) 
+        write(10,*), edip_couplings_cippres(i,1), dip_couplings_cippres(i,1)
+      enddo
+      close(10)
+
 !      call ezfio_set_cippres_ifcsf(3)
      endif
 

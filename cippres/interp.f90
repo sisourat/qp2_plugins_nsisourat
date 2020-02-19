@@ -10,10 +10,10 @@ subroutine interp(xa,ya,n,x,y)
 implicit none
 
 integer, intent(in) :: n
-real*16, dimension(n), intent(in) :: xa, ya
-real*16 :: x, y
+real*8, dimension(n), intent(in) :: xa, ya
+real*8 :: x, y
 
-real*16 :: a
+real*8 :: a
 integer :: i, j
 
 !! Linear interpolation
@@ -39,7 +39,7 @@ end subroutine interp
 
       SUBROUTINE hunt(xx,n,x,jlo)
       INTEGER jlo,n
-      REAL*16 x,xx(n)
+      REAL*8 x,xx(n)
       INTEGER inc,jhi,jm
       LOGICAL ascnd
       ascnd=xx(n).gt.xx(1)
@@ -85,7 +85,7 @@ end subroutine interp
 
       SUBROUTINE locate(xx,n,x,j)
       INTEGER j,n
-      REAL*16 x,xx(n)
+      REAL*8 x,xx(n)
       INTEGER jl,jm,ju
       jl=0
       ju=n+1

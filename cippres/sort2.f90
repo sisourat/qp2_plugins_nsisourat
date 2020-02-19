@@ -1,9 +1,9 @@
  SUBROUTINE sort2(n,arr,brr)
       INTEGER n,M,NSTACK
-      REAL*16 arr(n),brr(n)
+      REAL*8 arr(n),brr(n)
       PARAMETER (M=7,NSTACK=50)
       INTEGER i,ir,j,jstack,k,l,istack(NSTACK)
-      REAL*16 a,b,temp
+      REAL*8 a,b,temp
       jstack=0
       l=1
       ir=n
