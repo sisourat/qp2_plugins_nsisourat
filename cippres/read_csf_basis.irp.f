@@ -10,7 +10,7 @@ subroutine read_csf_basis(csf)
   integer                        :: i,k
 
   call ezfio_get_determinants_N_int(N_int2)
-  ASSERT (N_int2 == Nint)
+  ASSERT (N_int2 == N_int)
   call ezfio_get_determinants_bit_kind(k)
   ASSERT (k == bit_kind)
   if(bit_kind .ne. 8)then
