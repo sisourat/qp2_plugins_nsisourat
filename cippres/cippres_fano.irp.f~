@@ -41,6 +41,7 @@ program cippres_fano
       print*, "NICO ici2 ",ici2
       open(unit=10,file='fano.out')   
       do i = 1, n_csf_cippres(ici2) 
+        print*, e_couplings_cippres(i,1), twoe_couplings_cippres(i,1)
         write(10,*), e_couplings_cippres(i,1), twoe_couplings_cippres(i,1)
       enddo
       close(10)
