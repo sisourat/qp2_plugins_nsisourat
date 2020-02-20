@@ -1,0 +1,212 @@
+BEGIN_PROVIDER [ double precision, one_e_dm_ao, (ao_num,ao_num,N_states) ]
+   BEGIN_DOC
+   ! One body spin density matrix on the |AO| basis : $\rho_{AO}(\alpha) + \rho_{AO}(\beta)$
+   END_DOC
+   implicit none
+   integer                        :: i,j,k,l,istate
+   double precision               :: dm_mo
+
+   one_e_dm_ao = 0.d0
+   do k = 1, ao_num
+     do l = 1, ao_num
+       do i = 1, mo_num
+         do j = 1, mo_num
+          do istate = 1, N_states
+            dm_mo = myone_e_dm_mo(j,i,istate)
+            !    if(dabs(dm_mo).le.1.d-10)cycle
+            one_e_dm_ao(l,k,istate) += mo_coef(k,i) * mo_coef(l,j) * dm_mo
+          enddo
+         enddo
+       enddo
+     enddo
+   enddo
+
+END_PROVIDER
+
+BEGIN_PROVIDER [ double precision, myone_e_dm_mo, (mo_num,mo_num,N_states) ]
+   implicit none
+   BEGIN_DOC
+   ! One-body density matrix
+   END_DOC
+   myone_e_dm_mo = one_e_dm_mo_alpha + one_e_dm_mo_beta
+END_PROVIDER
+
+BEGIN_PROVIDER [double precision, my_population, (ao_num,ao_num,N_states)]
+ implicit none
+ integer :: i,j,istate
+ BEGIN_DOC
+! 
+! 
+ END_DOC
+ my_population = 0.d0
+ do i = 1, ao_num
+  do j = 1, ao_num
+   do istate = 1, N_states
+     my_population(j,i,istate) = one_e_dm_ao(i,j,istate) * ao_overlap(i,j)
+   enddo
+  enddo
+ enddo
+END_PROVIDER
+
+BEGIN_PROVIDER [double precision, pop, (ao_num,N_states)]
+ implicit none
+ pop = 0.d0
+ integer :: i,j,istate
+ BEGIN_DOC
+! 
+ END_DOC
+ do i = 1, ao_num
+  do j = 1, ao_num
+   do istate = 1, N_states
+     pop(i,istate) += my_population(j,i,istate)
+   enddo
+  enddo
+ enddo
+
+END_PROVIDER
+
+BEGIN_PROVIDER [double precision, mulliken_population, (nucl_num,N_states)]
+ implicit none
+ integer :: i,j,istate
+ BEGIN_DOC
+!ATOMIC POPULATION
+ END_DOC
+ mulliken_population = 0.d0
+ do i = 1, ao_num
+  do istate = 1, N_states
+    mulliken_population(ao_nucl(i),istate) += spin_gross_orbital_product(i)
+  enddo
+ enddo
+
+ do i = 1, ao_num
+  do j = 1, ao_num
+   spin_gross_orbital_product(i) += spin_population(j,i)
+  enddo
+ enddo
+END_PROVIDER
+
+ BEGIN_PROVIDER [double precision, myelectronic_population_alpha, (ao_num,ao_num,N_states)]
+&BEGIN_PROVIDER [double precision, myelectronic_population_beta, (ao_num,ao_num,N_states)]
+ implicit none
+ integer :: i,j,istate
+ BEGIN_DOC
+! myspin population alpha and beta on the ao basis :
+ END_DOC
+ myelectronic_population_alpha = 0.d0
+ myelectronic_population_beta = 0.d0
+ do i = 1, ao_num
+  do j = 1, ao_num
+   do istate = 1, N_states 
+     myelectronic_population_alpha(j,i,istate) = one_e_dm_mo_alpha(i,j,istate) * ao_overlap(i,j)
+     myelectronic_population_beta(j,i,istate) = one_e_dm_mo_beta(i,j,istate) * ao_overlap(i,j)
+   enddo
+  enddo
+ enddo
+! do i = 1, ao_num
+!  do j = 1, ao_num
+!     print*,j,i, myelectronic_population_alpha(j,i,1),myelectronic_population_beta(j,i,1)
+!  enddo
+! enddo
+! stop
+
+END_PROVIDER
+
+ BEGIN_PROVIDER [double precision, mygross_orbital_product_alpha, (ao_num,N_states)]
+&BEGIN_PROVIDER [double precision, mygross_orbital_product_beta, (ao_num,N_states)]
+ implicit none
+ mygross_orbital_product_alpha = 0.d0
+ mygross_orbital_product_beta = 0.d0
+ integer :: i,j,istate
+ BEGIN_DOC
+! gross orbital product 
+ END_DOC
+ do i = 1, ao_num
+  do j = 1, ao_num
+   do istate = 1, N_states
+     mygross_orbital_product_alpha(i,istate) += myelectronic_population_alpha(j,i,istate)
+     mygross_orbital_product_beta(i,istate) += myelectronic_population_beta(j,i,istate)
+   enddo
+  enddo
+ enddo
+
+END_PROVIDER
+
+ BEGIN_PROVIDER [double precision, mymulliken_densities_alpha, (nucl_num,N_states)]
+&BEGIN_PROVIDER [double precision, mymulliken_densities_beta, (nucl_num,N_states)]
+ implicit none
+ integer :: i,j,istate
+ BEGIN_DOC
+!
+ END_DOC
+ mymulliken_densities_alpha = 0.d0
+ mymulliken_densities_beta = 0.d0
+ do i = 1, ao_num
+  do istate = 1, N_states
+    mymulliken_densities_alpha(ao_nucl(i),istate) += mygross_orbital_product_alpha(i,istate)
+    mymulliken_densities_beta(ao_nucl(i),istate) += mygross_orbital_product_beta(i,istate)
+  enddo
+ enddo
+
+END_PROVIDER
+
+ BEGIN_PROVIDER [double precision, mymulliken_spin_densities, (nucl_num,N_states)]
+ implicit none
+ integer :: i,j,istate
+ BEGIN_DOC
+!
+ END_DOC
+ mymulliken_spin_densities = 0.d0
+ do i = 1, ao_num
+  do istate = 1, N_states
+    mymulliken_spin_densities(ao_nucl(i),istate) = mymulliken_densities_alpha(ao_nucl(i),istate) + mymulliken_densities_beta(ao_nucl(i),istate)
+  enddo
+ enddo
+
+END_PROVIDER
+
+
+
+subroutine myprint_mulliken_sd
+ implicit none
+ double precision :: accu
+ integer :: i
+ integer :: j
+ integer :: istate
+ do istate = 1, N_states
+ print*,"*********************************************************************************"
+   print*,'Mulliken spin densities for state', istate
+   accu= 0.d0
+   do i = 1, nucl_num
+    print*,i,nucl_charge(i),mulliken_population(i,istate)
+    accu += mulliken_population(i,istate)
+   enddo
+  print*,'Sum of Mulliken SD = ',accu
+! print*,'AO POPULATIONS'
+! accu = 0.d0
+! do i = 1, ao_num
+!  accu += (mygross_orbital_product_alpha(i,istate)+mygross_orbital_product_alpha(i,istate))
+!  write(*,'(1X,I3,1X,A4,1X,I2,1X,A4,1X,F10.7)')i,trim(element_name(int(nucl_charge(ao_nucl(i))))),ao_nucl(i),trim(l_to_character(ao_l(i))),mygross_orbital_product_alpha(i,istate)+mygross_orbital_product_alpha(i,istate)
+! enddo
+! print*,'sum = ',accu
+!  accu = 0.d0
+!  print*,'Angular momentum analysis'
+!  do i = 0,  ao_l_max
+!   accu += myspin_population_angular_momentum(i)
+!   print*,' ',trim(l_to_character(i)),myspin_population_angular_momentum(i)
+!  print*,'sum = ',accu
+!  enddo
+!  print*,'Angular momentum analysis per atom'
+!  print*,'Angular momentum analysis'
+!  do j = 1,nucl_num
+!   accu = 0.d0
+!   do i = 0,  ao_l_max
+!    accu += myspin_population_angular_momentum_per_atom(i,j)
+!    write(*,'(1X,I3,1X,A4,1X,A4,1X,F10.7)')j,trim(element_name(int(nucl_charge(j)))),trim(l_to_character(i)),myspin_population_angular_momentum_per_atom(i,j)
+!    print*,'sum = ',accu
+!   enddo
+!   enddo
+ print*,"*********************************************************************************"
+ enddo
+
+end
+
