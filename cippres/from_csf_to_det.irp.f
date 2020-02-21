@@ -32,6 +32,7 @@ subroutine from_csf_to_det(irun)
  touch psi_det psi_coef 
  print*,'N_det_alpha_unique',N_det_alpha_unique
  print*,'N_det_beta_unique ',N_det_beta_unique
+ print*,'*N_det,N_states    = ',N_det,N_states
 
  double precision, allocatable :: coef_alpha_beta(:,:,:)
  integer(bit_kind), allocatable :: psi_alpha_uniq_tmp(:,:), psi_beta_uniq_tmp(:,:)
@@ -68,14 +69,14 @@ subroutine from_csf_to_det(irun)
  do j = 1, n_alpha_tmp 
   do i = 1, n_beta_tmp 
    idet_tmp += 1
-   psi_det(:,1,idet_tmp) = psi_alpha_uniq_tmp(:,i)
-   psi_det(:,2,idet_tmp) = psi_beta_uniq_tmp(:,j)
+   psi_det(:,1,idet_tmp) = psi_alpha_uniq_tmp(:,j)
+   psi_det(:,2,idet_tmp) = psi_beta_uniq_tmp(:,i)
 !  print*,'i,j'
 !  call print_det(psi_det(1,1,idet_tmp),N_int)
 !  call print_det(psi_det(1,2,idet_tmp),N_int)
 !  print*,''
    do istate = 1, N_states
-    psi_coef(idet_tmp,istate) = coef_alpha_beta(i,j,istate)
+    psi_coef(idet_tmp,istate) = coef_alpha_beta(j,i,istate)
    enddo
   enddo
  enddo
@@ -87,11 +88,14 @@ subroutine from_csf_to_det(irun)
   accu = 0.d0
   do i = 1, N_det
    do j = 1, N_det
+!    print*,'i,j',i,j
+!    call print_det(psi_det(1,1,i),N_int)
+!    call print_det(psi_det(1,1,j),N_int)
     call i_H_j(psi_det(1,1,i),psi_det(1,1,j),N_int,hij)
     accu += hij * psi_coef(j,istate) * psi_coef(i,istate) 
    enddo
   enddo
-! print*,'accu              = ',accu
+  print*,'accu              = ',accu+nuclear_repulsion
   print*,'eigvalues_cippres = ',eigvalues_cippres(istate,irun)
  enddo
  

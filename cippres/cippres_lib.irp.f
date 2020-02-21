@@ -105,6 +105,7 @@ END_PROVIDER
  double precision, allocatable :: eigval(:),eigvec(:,:),hmat(:,:)
  logical :: exists
 
+
  call ezfio_has_cippres_eigvalues_cippres(exists)
  if (exists) then
    call ezfio_has_cippres_eigvectors_cippres(exists)
@@ -117,19 +118,22 @@ END_PROVIDER
 
  else
 
+
   do irun = 1, n_ciruns_cippres
     allocate(eigval(n_csf_cippres(irun)),eigvec(n_csf_cippres(irun),n_csf_cippres(irun)),hmat(n_csf_cippres(irun),n_csf_cippres(irun)))
 
     hmat(:,:) = H_matrix_cippres(1:n_csf_cippres(irun),1:n_csf_cippres(irun),irun)
 
     call lapack_diagd(eigval,eigvec,hmat,n_csf_cippres(irun),n_csf_cippres(irun)) 
-    eigvalues_cippres(:,irun) = eigval(:)
+    eigvalues_cippres(:,irun) = 0d0
+    eigvalues_cippres(1:n_csf_cippres(irun),irun) = eigval(:)
 
     do j = 1, n_csf_cippres(irun)
       print*,'eigval',irun,j,eigval(j)
     enddo
 
-    eigvectors_cippres(:,:,irun) = eigvec(:,:)
+    eigvectors_cippres(:,:,irun) = 0d0
+    eigvectors_cippres(1:n_csf_cippres(irun),1:n_csf_cippres(irun),irun) = eigvec(:,:)
 !    do j = 1, n_csf_cippres(irun)
 !     do i = 1, n_csf_cippres(irun)
 !       print*, j,i,eigvectors_cippres(j,i,irun)

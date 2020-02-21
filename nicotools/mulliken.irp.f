@@ -1,3 +1,42 @@
+BEGIN_PROVIDER [ double precision, pop_ao_per_mo, (ao_num,ao_num,mo_num) ]
+&BEGIN_PROVIDER [double precision, gop_per_mo, (ao_num,mo_num)]
+&BEGIN_PROVIDER [double precision, mulliken_population_per_mo, (nucl_num,mo_num)]
+
+   BEGIN_DOC
+   ! 
+   END_DOC
+   implicit none
+   integer                        :: i,j,k,l
+   double precision               :: dm_mo
+
+   pop_ao_per_mo = 0.d0
+   do k = 1, ao_num
+     do l = 1, ao_num
+       do i = 1, mo_num
+           pop_ao_per_mo(l,k,i) += mo_coef(k,i) * mo_coef(l,i) * ao_overlap(k,l)
+       enddo
+     enddo
+   enddo
+
+   gop_per_mo = 0.d0
+   do i = 1, ao_num
+    do j = 1, ao_num
+     do k = 1, mo_num
+       gop_per_mo(i,k) += pop_ao_per_mo(j,i,k)
+     enddo
+    enddo
+   enddo
+
+   mulliken_population_per_mo = 0.d0
+   do i = 1, ao_num
+    do j = 1, mo_num
+     mulliken_population_per_mo(ao_nucl(i),j) += gop_per_mo(i,j)
+    enddo
+   enddo
+
+END_PROVIDER
+
+
 BEGIN_PROVIDER [ double precision, one_e_dm_ao, (ao_num,ao_num,N_states) ]
    BEGIN_DOC
    ! 
@@ -99,6 +138,33 @@ subroutine myprint_mulliken
  do i = 1, ao_num
   accu += pop(i,istate)
   write(*,'(1X,I3,1X,A4,1X,I2,1X,A4,1X,F10.7)')i,trim(element_name(int(nucl_charge(ao_nucl(i))))),ao_nucl(i),trim(l_to_character(ao_l(i))),pop(i,istate)
+ enddo
+ print*,'sum = ',accu
+ print*,"*********************************************************************************"
+ enddo
+
+end
+
+subroutine myprint_mulliken_per_mo
+ implicit none
+ double precision :: accu
+ integer :: i
+ integer :: j
+ integer :: imo
+ do imo = 1, mo_num
+ print*,"*********************************************************************************"
+ print*,'Mulliken population for MO', imo
+   accu= 0.d0
+   do i = 1, nucl_num
+    print*,i,trim(element_name(int(nucl_charge(i)))),nucl_charge(i),mulliken_population_per_mo(i,imo)
+    accu += mulliken_population_per_mo(i,imo)
+   enddo
+ print*,'Sum of Mulliken Pop. = ',accu
+ print*,'AO POPULATIONS'
+ accu = 0.d0
+ do i = 1, ao_num
+  accu += pop(i,imo)
+  write(*,'(1X,I3,1X,A4,1X,I2,1X,A4,1X,F10.7)')i,trim(element_name(int(nucl_charge(ao_nucl(i))))),ao_nucl(i),trim(l_to_character(ao_l(i))),gop_per_mo(i,imo)
  enddo
  print*,'sum = ',accu
  print*,"*********************************************************************************"
