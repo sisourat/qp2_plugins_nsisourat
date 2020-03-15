@@ -1,6 +1,6 @@
 subroutine from_csf_to_det(irun)
  implicit none
-  use bitmasks ! you need to include the bitmasks_module.f90 features
+ use bitmasks ! you need to include the bitmasks_module.f90 features
  integer, intent(in) :: irun
  integer :: i,j,k,idet_tmp,istate
  print*,'*************************************'
@@ -83,21 +83,21 @@ subroutine from_csf_to_det(irun)
 
  touch psi_det psi_coef 
 
- do istate = 1, N_states
-  double precision :: accu,hij
-  accu = 0.d0
-  do i = 1, N_det
-   do j = 1, N_det
-!    print*,'i,j',i,j
-!    call print_det(psi_det(1,1,i),N_int)
-!    call print_det(psi_det(1,1,j),N_int)
-    call i_H_j(psi_det(1,1,i),psi_det(1,1,j),N_int,hij)
-    accu += hij * psi_coef(j,istate) * psi_coef(i,istate) 
-   enddo
-  enddo
-  print*,'accu              = ',accu+nuclear_repulsion
-  print*,'eigvalues_cippres = ',eigvalues_cippres(istate,irun)
- enddo
+! do istate = 1, N_states
+!  double precision :: accu,hij
+!  accu = 0.d0
+!  do i = 1, N_det
+!   do j = 1, N_det
+!!    print*,'i,j',i,j
+!!    call print_det(psi_det(1,1,i),N_int)
+!!    call print_det(psi_det(1,1,j),N_int)
+!    call i_H_j(psi_det(1,1,i),psi_det(1,1,j),N_int,hij)
+!    accu += hij * psi_coef(j,istate) * psi_coef(i,istate) 
+!   enddo
+!  enddo
+!  print*,'accu              = ',accu+nuclear_repulsion
+!  print*,'eigvalues_cippres = ',eigvalues_cippres(istate,irun)
+! enddo
  
 end
 

@@ -19,7 +19,7 @@ program cippres_stieltjes
   real (kind=QR_K) :: shift1 
   integer :: imax1, imax2
   integer :: inmax, ishift
-  integer :: i, j, k, ichan, kord
+  integer :: i, j, k, ichan, kord, n_ord_av
   integer :: exit_cycle
   character(len=60) :: fname
 
@@ -45,7 +45,7 @@ program cippres_stieltjes
    read(10,*)ijob
   close(10)
   
-  call system('$QP_ROOT/plugins/qp_plugins_sisourat-/cippres/libs/stieltjes/stieltjes < '//trim(finput))
+  call system('$QP_ROOT/plugins/qp2_plugins_nsisourat/cippres/libs/stieltjes/stieltjes < '//trim(finput))
 
   open(unit=10,file='stieltjes.info.txt')
    read(10,*)nmin,nmax,shift1
@@ -70,17 +70,25 @@ program cippres_stieltjes
   if(ijob==1) then
 
        k = 1
+       gord(:) = 0d0
+       n_ord_av = 0
        do imax1 = nmin, nmax
          k = k + 1
          write(*,*)"#Interp at order", imax1
-         call interp(e1(1:k,imax1),g1(1:k,imax1),k,0d0,g_)  
-         g_ = 2.0d0*pi*g_
-         gord(imax1) = g_
-        write(*,'(I3,A3,F23.15,A)')imax1," ",g_*27211,' in meV'
+         if(e1(1,imax1)<0d0) then 
+           call interp(e1(1:k,imax1),g1(1:k,imax1),k,0d0,g_)  
+           n_ord_av += 1
+           g_ = 2.0d0*pi*g_
+           gord(imax1) = g_
+           write(*,'(I3,A3,F23.15,A)')imax1," ",g_*27211,' in meV'
+         else
+           write(*,*)"Wrong energy range, Stieltjes order might be too low"
+         endif
+       
        end do
 
-       gav = sum(gord(nmin:nmax))/(nmax-nmin+1)
-       stadev = sqrt(sum( (gord(nmin:nmax)-gav)**2) )/(nmax-nmin+1)
+       gav = sum(gord(:))/n_ord_av
+       stadev = sqrt(sum( (gord(:)-gav)**2) )/n_ord_av
 
        write(*,'(a)')""
        write(*,'(a)')"TOTAL RATE FROM SCHEME 1"

@@ -146,7 +146,9 @@ implicit none
           end do
           abvec(i,i)=1.q0
        end do
+       write(*,*)"nico"
        call tql2(nmax,iord,diag,offdiag,abvec,ierr)
+       write(*,*)"nico"
        if (ierr.ne.0) then
           print*, '***WARNING*** Stieltjes:'
           print*, ' the eigenvalue no. ',ierr,' failed to converge'

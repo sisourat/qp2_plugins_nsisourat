@@ -1,6 +1,6 @@
 ! DO NOT MODIFY BY HAND
 ! Created by $QP_ROOT/scripts/ezfio_interface/ei_handler.py
-! from file /home/nico/Workspace/qp2/src/cippres/EZFIO.cfg
+! from file /home/common/quantum_package/src/cippres/EZFIO.cfg
 
 
 BEGIN_PROVIDER [ character*(32), finput_stieltjes  ]

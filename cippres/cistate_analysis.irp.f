@@ -1,7 +1,8 @@
 program cistate_analysis
  implicit none
  integer :: irun,nx,i,istate
- irun = 1
+ irun = 2
+ print*,'irun=',irun
  call from_csf_to_det(irun)
  double precision :: xmax,dx,r(3),weight,accu
  double precision, allocatable :: dm_a(:),dm_b(:),mos_array(:)

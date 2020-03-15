@@ -6,7 +6,7 @@ integer :: npt
 integer, parameter :: QR_K = 16 !selected_real_kind (32)
 real (kind=QR_K), allocatable, dimension(:) :: e, g
 
-integer :: nmin=11, nmax = 26 ! according to Mueller-Plathe and Diercksen Stieltjes is inaccurate for n>=15
+integer :: nmin=11, nmax = 23 ! according to Mueller-Plathe and Diercksen Stieltjes is inaccurate for n>=15
 real (kind=QR_K), allocatable, dimension(:) :: sk, gord
 real (kind=QR_K), allocatable, dimension(:,:) ::  e1, g1
 real (kind=QR_K), allocatable, dimension(:) :: eallord,gallord
