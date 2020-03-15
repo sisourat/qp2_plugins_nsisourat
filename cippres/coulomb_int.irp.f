@@ -1,15 +1,12 @@
 BEGIN_PROVIDER [integer, n_coulomb_center]
  implicit none
  n_coulomb_center = 1
-
 END_PROVIDER 
 
 BEGIN_PROVIDER [double precision, coulomb_center, (3,n_coulomb_center)]
  implicit none
  coulomb_center = 0.d0
-
 END_PROVIDER 
-
 
 BEGIN_PROVIDER [ double precision, ao_integrals_coulomb_center, (ao_num,ao_num,n_coulomb_center)]
   BEGIN_DOC
@@ -74,7 +71,6 @@ BEGIN_PROVIDER [ double precision, ao_integrals_coulomb_center, (ao_num,ao_num,n
   enddo
   !$OMP END DO
   !$OMP END PARALLEL
-
 END_PROVIDER
 
 BEGIN_PROVIDER [double precision, mo_integrals_coulomb_center, (mo_num,mo_num,n_coulomb_center)]
