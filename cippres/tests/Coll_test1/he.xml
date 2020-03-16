@@ -1,0 +1,17 @@
+<input>
+  
+ <cirun>
+  <general>
+   <spin> 1 </spin>
+   <electron na='1' nb='1' />
+  </general>
+
+  <block>
+    <space ne='2' imo='1' fmo='5' />
+  </block>
+
+ </cirun>
+
+</input>
+
+
