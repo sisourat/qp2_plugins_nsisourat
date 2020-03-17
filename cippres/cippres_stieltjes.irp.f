@@ -31,19 +31,45 @@ program cippres_stieltjes
   integer :: ilen, jlen, ijob
   logical :: file_e
 
-  print*, 'Reads ', finput_stieltjes
+  finput='stj_input'
+  
+  if(i_stj_job==1) then ! Fano case
 
-  finput=finput_stieltjes
-  jlen=index(finput,' ')
-  inquire( file="./"//finput(1:jlen-1), exist=file_e )
-  if ( file_e .eqv. .false. ) then
-   write(*,*) finput(1:jlen-1), " does not exist"
+      if(ifanosta==0) then
+        print*, "Please set ifanosta (the initial state)"
+        print*, "qp set cippres ifanosta X "
+        stop
+      endif
+
+      open(unit=10,file=finput)   
+      write(10,*) i_stj_job
+      write(10,*) n_csf_cippres(ici2)
+      do i = 1, n_csf_cippres(ici2) 
+        write(10,'(100(e24.16,1X))') e_couplings_cippres(i,ifanosta), twoe_couplings_cippres(i,ifanosta)
+      enddo
+      close(10)
+
+  elseif(i_stj_job==2) then ! Dipole case
+
+      if(idipsta==0) then
+        print*, "Please set idipsta (the initial state)"
+        print*, "qp set cippres idipsta X "
+        stop
+      endif
+
+      open(unit=10,file=finput)   
+      write(10,*) i_stj_job
+      write(10,*) n_csf_cippres(ici2)
+      do i = 1, n_csf_cippres(ici2) 
+        write(10,*), edip_couplings_cippres(i,idipsta), dip_couplings_cippres(i,idipsta)
+      enddo
+      close(10)
+
+
+  else
+   print*, "Please set up i_stj_job correctly (1==Fano and 2==Dipole)"
    stop
   endif
-
-  open(unit=10,file=finput)
-   read(10,*)ijob
-  close(10)
   
   call system('$QP_ROOT/plugins/qp2_plugins_nsisourat/cippres/libs/stieltjes/stieltjes < '//trim(finput))
 

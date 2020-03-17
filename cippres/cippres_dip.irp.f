@@ -21,10 +21,8 @@ program cippres_dip
 ! TODO Compute dipole matrix elements between two different CI runs
 ! TODO Include Stieltjes in qp
 
-  print*,ifcsf
   if(ifcsf==2) then
 
-    print*,ici1,ici2
     if(ici1==0) then
        print*, "Please set ici1 (initial states)"
        print*, "qp set cippres ici1 X "
@@ -36,7 +34,6 @@ program cippres_dip
        print*, "qp set cippres ici2 X "
        stop
     endif
-
      
      if(ici1/=0 .and. ici2/=0) then
 !      print*,dip_couplings_cippres
@@ -50,11 +47,11 @@ program cippres_dip
       enddo
       print*,'Nuclear Contribution to be added to "diagonal" elements',nucl_contrib 
 
-      open(unit=10,file='dip.out')   
-      do i = 1, n_csf_cippres(ici2) 
-        write(10,*), edip_couplings_cippres(i,1), dip_couplings_cippres(i,1)
-      enddo
-      close(10)
+!      open(unit=10,file='dip.out')   
+!      do i = 1, n_csf_cippres(ici2) 
+!        write(10,*), edip_couplings_cippres(i,1), dip_couplings_cippres(i,1)
+!      enddo
+!      close(10)
 
 !      call ezfio_set_cippres_ifcsf(3)
      endif

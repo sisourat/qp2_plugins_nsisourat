@@ -3,22 +3,22 @@
 ! from file /home/nico/Workspace/qp2/src/cippres/EZFIO.cfg
 
 
-BEGIN_PROVIDER [ character*(32), finput_stieltjes  ]
+BEGIN_PROVIDER [ character*(32), finput_coll  ]
   implicit none
   BEGIN_DOC
-! text file containing input data for Stieltjes code (decay width or photoionization cross section)
+! xml file containing collision input info
   END_DOC
 
   logical                        :: has
   PROVIDE ezfio_filename
   if (mpi_master) then
     
-    call ezfio_has_cippres_finput_stieltjes(has)
+    call ezfio_has_cippres_finput_coll(has)
     if (has) then
-      write(6,'(A)') '.. >>>>> [ IO READ: finput_stieltjes ] <<<<< ..'
-      call ezfio_get_cippres_finput_stieltjes(finput_stieltjes)
+      write(6,'(A)') '.. >>>>> [ IO READ: finput_coll ] <<<<< ..'
+      call ezfio_get_cippres_finput_coll(finput_coll)
     else
-      print *, 'cippres/finput_stieltjes not found in EZFIO file'
+      print *, 'cippres/finput_coll not found in EZFIO file'
       stop 1
     endif
   endif
@@ -29,9 +29,45 @@ BEGIN_PROVIDER [ character*(32), finput_stieltjes  ]
   IRP_IF MPI
     include 'mpif.h'
     integer :: ierr
-    call MPI_BCAST( finput_stieltjes, 1*32, MPI_CHARACTER, 0, MPI_COMM_WORLD, ierr)
+    call MPI_BCAST( finput_coll, 1*32, MPI_CHARACTER, 0, MPI_COMM_WORLD, ierr)
     if (ierr /= MPI_SUCCESS) then
-      stop 'Unable to read finput_stieltjes with MPI'
+      stop 'Unable to read finput_coll with MPI'
+    endif
+  IRP_ENDIF
+
+  call write_time(6)
+
+END_PROVIDER
+
+BEGIN_PROVIDER [ integer, i_stj_job  ]
+  implicit none
+  BEGIN_DOC
+! if i_stj_job is 1 then cippres_stieltjes performs Fano calculations (for ifanosta state), if it is 2 cippres_stieltjes performs dipole calculations (for idipsta state)
+  END_DOC
+
+  logical                        :: has
+  PROVIDE ezfio_filename
+  if (mpi_master) then
+    
+    call ezfio_has_cippres_i_stj_job(has)
+    if (has) then
+      write(6,'(A)') '.. >>>>> [ IO READ: i_stj_job ] <<<<< ..'
+      call ezfio_get_cippres_i_stj_job(i_stj_job)
+    else
+      print *, 'cippres/i_stj_job not found in EZFIO file'
+      stop 1
+    endif
+  endif
+  IRP_IF MPI_DEBUG
+    print *,  irp_here, mpi_rank
+    call MPI_BARRIER(MPI_COMM_WORLD, ierr)
+  IRP_ENDIF
+  IRP_IF MPI
+    include 'mpif.h'
+    integer :: ierr
+    call MPI_BCAST( i_stj_job, 1, MPI_INTEGER, 0, MPI_COMM_WORLD, ierr)
+    if (ierr /= MPI_SUCCESS) then
+      stop 'Unable to read i_stj_job with MPI'
     endif
   IRP_ENDIF
 

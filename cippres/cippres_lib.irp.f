@@ -1,6 +1,11 @@
 use bitmasks ! you need to include the bitmasks_module.f90 features
 use general
 
+BEGIN_PROVIDER [integer, idipsta]
+ implicit none
+    call ezfio_get_cippres_idipsta(idipsta)
+END_PROVIDER
+
 BEGIN_PROVIDER [integer, ifanosta]
  implicit none
     call ezfio_get_cippres_ifanosta(ifanosta)

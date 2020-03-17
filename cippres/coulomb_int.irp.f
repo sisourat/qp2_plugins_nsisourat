@@ -8,6 +8,11 @@ BEGIN_PROVIDER [double precision, coulomb_center, (3,n_coulomb_center)]
  coulomb_center = 0.d0
 END_PROVIDER 
 
+BEGIN_PROVIDER [double precision, charge_coulomb_center, (n_coulomb_center)]
+ implicit none
+ charge_coulomb_center = 0.d0
+END_PROVIDER
+
 BEGIN_PROVIDER [ double precision, ao_integrals_coulomb_center, (ao_num,ao_num,n_coulomb_center)]
   BEGIN_DOC
 ! Nucleus-electron interaction in the |AO| basis set, per atom Coulomb center 
@@ -43,9 +48,9 @@ BEGIN_PROVIDER [ double precision, ao_integrals_coulomb_center, (ao_num,ao_num,n
     A_center(2) = nucl_coord(num_A,2)
     A_center(3) = nucl_coord(num_A,3)
     do  k = 1, n_coulomb_center
-      C_center(1) = coulomb_center(k,1)
-      C_center(2) = coulomb_center(k,2)
-      C_center(3) = coulomb_center(k,3)
+      C_center(1) = coulomb_center(1,k)
+      C_center(2) = coulomb_center(2,k)
+      C_center(3) = coulomb_center(3,k)
       do i = 1, ao_num
         power_B(1)= ao_power(i,1)
         power_B(2)= ao_power(i,2)

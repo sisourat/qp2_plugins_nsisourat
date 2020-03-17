@@ -31,11 +31,11 @@ program cippres_fano
        stop
     endif
 
-    if(ifanosta==0) then
-       print*, "Please set ifanosta (the initial state)"
-       print*, "qp set cippres ifanosta X "
-       stop
-    endif
+!    if(ifanosta==0) then
+!       print*, "Please set ifanosta (the initial state)"
+!       print*, "qp set cippres ifanosta X "
+!       stop
+!    endif
 
 !      call ezfio_get_cippres_ici1(ici1)
 !      call ezfio_get_cippres_ici2(ici2)
@@ -44,12 +44,12 @@ program cippres_fano
 !      print*, twoe_couplings_cippres(:,:)
 !      print*, e_couplings_cippres(:,:)
  
-      open(unit=10,file='fano.out')   
-      do i = 1, n_csf_cippres(ici2) 
-        write(*,'(100(e24.16,1X))')  (e_couplings_cippres(i,j), twoe_couplings_cippres(i,j), j=ifanosta,ifanosta+10)
-        write(10,'(100(e24.16,1X))') (e_couplings_cippres(i,j), twoe_couplings_cippres(i,j), j=ifanosta,ifanosta+10)
-      enddo
-      close(10)
+!      open(unit=10,file='fano.out')   
+!      do i = 1, n_csf_cippres(ici2) 
+!        write(*,'(100(e24.16,1X))')  (e_couplings_cippres(i,j), twoe_couplings_cippres(i,j), j=ifanosta,ifanosta+10)
+!        write(10,'(100(e24.16,1X))') (e_couplings_cippres(i,j), twoe_couplings_cippres(i,j), j=ifanosta,ifanosta+10)
+!      enddo
+!      close(10)
 
       call ezfio_set_cippres_cfano_cippres(twoe_couplings_cippres)
       call ezfio_set_cippres_efano_cippres(e_couplings_cippres)
