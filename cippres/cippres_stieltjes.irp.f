@@ -28,7 +28,7 @@ program cippres_stieltjes
   real (kind=QR_K) :: temp, gav, stadev, gtot
 
   character(len=lenmax) :: finput
-  integer :: ilen, jlen, ijob
+  integer :: ilen, jlen
   logical :: file_e
 
   finput='stj_input'
@@ -93,7 +93,7 @@ program cippres_stieltjes
     close(238)
   enddo
 
-  if(ijob==1) then
+  if(i_stj_job==1) then
 
        k = 1
        gord(:) = 0d0
@@ -145,7 +145,7 @@ program cippres_stieltjes
        write(*,'(1(f20.12,1X),a)')g_*2d0*pi, 'in au'
        write(*,'(1(f20.12,1X),a)')g_*27210*2d0*pi,'in meV'
 
-   elseif(ijob==2) then
+   elseif(i_stj_job==2) then
 
   do i = nmin, nmax
     write(fname, '(A22,I2,A4)')"photoionization.order.",i,".txt"

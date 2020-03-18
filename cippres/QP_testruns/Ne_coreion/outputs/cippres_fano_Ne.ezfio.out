@@ -1,0 +1,44 @@
+Date: 17/03/2020 17:42:49
+===============
+Quantum Package
+===============
+
+Git Commit: 
+Git Date  : 
+Git SHA1  : 
+EZFIO Dir : Ne.ezfio
+
+
+Task server running : tcp://134.157.137.180:41279
+.. >>>>> [ IO READ: ifcsf ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.007751 GB ] [ VIRT MEM :       0.091240 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.000242  s ] [ CPU  TIME:       0.020017  s ] <<<<< ..
+ 
+* mo_num                                                       109
+* N_int                                                          2
+.. >>>>> [ IO READ: io_mo_two_e_integrals ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.013763 GB ] [ VIRT MEM :       1.091358 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.108003  s ] [ CPU  TIME:       1.276342  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: mo_class ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.013893 GB ] [ VIRT MEM :       1.091358 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.108458  s ] [ CPU  TIME:       1.283016  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: no_vvvv_integrals ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.013893 GB ] [ VIRT MEM :       1.091358 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.108583  s ] [ CPU  TIME:       1.285049  s ] <<<<< ..
+ 
+ MO map initialized:               17973010
+ Reading the MO integrals
+ MO integrals provided
+.. >>>>> [ IO READ: elec_alpha_num ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.118793 GB ] [ VIRT MEM :       1.213921 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.163332  s ] [ CPU  TIME:       2.158876  s ] <<<<< ..
+ 
+Wall time: 0:00:03
+

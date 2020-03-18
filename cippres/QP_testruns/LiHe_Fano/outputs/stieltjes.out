@@ -1,0 +1,70 @@
+Date: 17/03/2020 12:24:39
+===============
+Quantum Package
+===============
+
+Git Commit: 
+Git Date  : 
+Git SHA1  : 
+EZFIO Dir : LiHe.ezfio
+
+
+Task server running : tcp://134.157.137.175:41279
+.. >>>>> [ IO READ: i_stj_job ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.007565 GB ] [ VIRT MEM :       0.091255 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.008302  s ] [ CPU  TIME:       0.005539  s ] <<<<< ..
+ 
+* mo_num                                                       247
+* N_int                                                          4
+  MAXORD=          23
+ Performs Stieltjes at order           5
+ Performs Stieltjes at order           6
+ Performs Stieltjes at order           7
+ Performs Stieltjes at order           8
+ Performs Stieltjes at order           9
+ Performs Stieltjes at order          10
+ Performs Stieltjes at order          11
+ Performs Stieltjes at order          12
+ Performs Stieltjes at order          13
+ Performs Stieltjes at order          14
+ Performs Stieltjes at order          15
+ Performs Stieltjes at order          16
+ Performs Stieltjes at order          17
+ Performs Stieltjes at order          18
+ Performs Stieltjes at order          19
+ Performs Stieltjes at order          20
+ Performs Stieltjes at order          21
+ Performs Stieltjes at order          22
+ Performs Stieltjes at order          23
+ #Interp at order          13
+ Wrong energy range, Stieltjes order might be too low
+ #Interp at order          14
+ Wrong energy range, Stieltjes order might be too low
+ #Interp at order          15
+ 15         1.519475546713987 in meV
+ #Interp at order          16
+ 16         1.406429785596759 in meV
+ #Interp at order          17
+ 17         1.247751324492079 in meV
+ #Interp at order          18
+ 18         1.328147130760937 in meV
+ #Interp at order          19
+ 19         1.541471937042724 in meV
+ #Interp at order          20
+ 20         1.490042823998640 in meV
+ #Interp at order          21
+ 21         1.201244827014015 in meV
+ #Interp at order          22
+ 22         1.386481360432301 in meV
+ #Interp at order          23
+ 23         1.493201363571937 in meV
+
+TOTAL RATE FROM SCHEME 1
+      0.000051507953       0.000021460230 in au
+      1.401531392005       0.583932868847 in meV
+TOTAL RATE FROM SCHEME 2
+      0.000046480616 in au
+      1.264737552207 in meV
+Wall time: 0:00:02
+

@@ -62,7 +62,7 @@ program cippres_prop_collision
     call ezfio_get_cippres_n_csf_cippres(n_csf_cippres)
 
     ntime= n_time
-    ntotsta = n_csf_cippres(ici1)
+    ntotsta = 10 !n_csf_cippres(ici1)
 
 !    do ib = 1, n_bimp
 !     do i = 1, n_time

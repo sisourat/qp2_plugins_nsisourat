@@ -217,7 +217,7 @@ END_PROVIDER
      enddo
     enddo
 
-   twoe_couplings_cippres(:,:) = twoe_mat(:,:)
+   twoe_couplings_cippres(1:n_csf_cippres(ici2),1:n_csf_cippres(ici1)) = twoe_mat(1:n_csf_cippres(ici2) ,1:n_csf_cippres(ici1))
 
    deallocate(twoe_csf_mat,eigval1,eigval2,eigvec1,eigvec2,twoe_mat) 
  endif

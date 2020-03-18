@@ -1,0 +1,5 @@
+bash: no job control in this shell
+[0;31m|>[m
+[nicolas@node05 PBS_29936.mendeleiev]$ exit
+ 0.00 %  in                     0 seconds 
+                                                                           fano.out: No such file or directory

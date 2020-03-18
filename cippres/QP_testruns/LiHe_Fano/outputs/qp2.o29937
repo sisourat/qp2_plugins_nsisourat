@@ -1,0 +1,1190 @@
+------------------------------------------------------
+Job is running on node node02
+node02
+node02
+node02
+node02
+node02
+node02
+node02
+node02
+node02
+node02
+node02
+node02
+node02
+node02
+node02
+------------------------------------------------------
+PBS: qsub is running on mendeleiev
+PBS: originating queue is batch
+PBS: executing queue is batch
+PBS: working directory is /home/nicolas/QP_testruns/LiHe_Fano/inputs
+PBS: execution mode is PBS_BATCH
+PBS: job identifier is 29937.mendeleiev
+PBS: job name is qp2
+PBS: node file is /var/spool/torque/aux//29937.mendeleiev
+PBS: current home directory is /home/nicolas
+PBS: PATH = /home/common/quantum_package/external/opam/default/bin::/home/common/quantum_package/external/ezfio/Python:/home/common/quantum_package/scripts:/home/common/quantum_package/scripts/ezfio_interface:/home/common/quantum_package/scripts/utility:/home/common/quantum_package/scripts/module:/home/common/quantum_package/scripts/compilation:/home/common/quantum_package/external/Python:/home/common/quantum_package/external/Python/resultsFile:/home/common/quantum_package/bin:/home/common/quantum_package/ocaml:/home/common/quantum_package/external/opam/default/bin::/home/common/quantum_package/external/ezfio/Python:/home/common/quantum_package/scripts:/home/common/quantum_package/scripts/ezfio_interface:/home/common/quantum_package/scripts/utility:/home/common/quantum_package/scripts/module:/home/common/quantum_package/scripts/compilation:/home/common/quantum_package/external/Python:/home/common/quantum_package/external/Python/resultsFile:/home/common/quantum_package/bin:/home/common/quantum_package/ocaml:/home/common/quantum_package/external/opam/default/bin:/opt/intel/compilers_and_libraries_2017.1.132/linux/bin/intel64:/opt/intel/compilers_and_libraries_2017.1.132/linux/mpi/intel64/bin:/opt/intel/debugger_2017/gdb/intel64_mic/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/common/quantum_package/external/irpf90-v1.7.5/bin:/home/common/quantum_package/external/irpf90-v1.7.5/bin:/home/common/quantum_package/external/irpf90-v1.7.5/bin
+------------------------------------------------------
+server is mendeleiev
+workdir is /home/scratch/PBS_29937.mendeleiev
+permdir is /home/nicolas/QP_testruns/LiHe_Fano/inputs
+servpermdir is mendeleiev:/home/nicolas/QP_testruns/LiHe_Fano/inputs
+------------------------------------------------------
+Job is running on node node02
+node02
+node02
+node02
+node02
+node02
+node02
+node02
+node02
+node02
+node02
+node02
+node02
+node02
+node02
+node02
+------------------------------------------------------
+ 
+ 
+Transferring files from server to compute node
+Writing files in node directory /home/scratch/PBS_29937.mendeleiev
+Files in node work directory are as follows:
+total 52
+-rw-r--r--.  1 nicolas nicolas  6013 Mar 17 10:18 he-test
+-rw-r--r--.  1 nicolas nicolas  8120 Mar 17 10:18 job_qp.sh
+drwxrwxr-x. 26 nicolas nicolas  4096 Mar 17 10:18 LiHe.ezfio
+-rw-r--r--.  1 nicolas nicolas   556 Mar 17 10:18 lihe.xml
+-rw-r--r--.  1 nicolas nicolas    40 Mar 17 10:18 LiHe.xyz
+-rw-rw-r--.  1 nicolas nicolas 16444 Mar 17 10:18 scf_log
+-rwxr-xr-x.  1 nicolas nicolas   494 Mar 17 10:18 script_running.sh
+ 
+ 
+
+                         ______
+______ _________ ___________  /_
+_  __ `/___  __ \__  ___/__  __ \
+/ /_/ / __  /_/ /_(__  ) _  / / /
+\__, /  _  .___/ /____/  /_/ /_/
+  /_/   /_/
+
+
+
+   -- Quantum  Package  Shell --
+
+Date: 17/03/2020 10:18:55
+===============
+Quantum Package
+===============
+
+Git Commit: 
+Git Date  : 
+Git SHA1  : 
+EZFIO Dir : LiHe.ezfio
+
+
+Task server running : tcp://134.157.137.177:41279
+.. >>>>> [ IO READ: io_mo_two_e_integrals ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.007538 GB ] [ VIRT MEM :       0.090466 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.008256  s ] [ CPU  TIME:       0.040125  s ] <<<<< ..
+ 
+* mo_num                                                       247
+.. >>>>> [ IO READ: mo_class ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.012165 GB ] [ VIRT MEM :       1.086674 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.025332  s ] [ CPU  TIME:       0.259609  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: no_vvvv_integrals ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.012165 GB ] [ VIRT MEM :       1.086674 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.025762  s ] [ CPU  TIME:       0.266648  s ] <<<<< ..
+ 
+* N_int                                                          4
+.. >>>>> [ IO READ: io_ao_two_e_integrals ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.012165 GB ] [ VIRT MEM :       1.086674 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.026234  s ] [ CPU  TIME:       0.274198  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: ao_num ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.012165 GB ] [ VIRT MEM :       1.086674 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.026675  s ] [ CPU  TIME:       0.281232  s ] <<<<< ..
+ 
+ AO map initialized :              720120225
+.. >>>>> [ IO READ: ao_power ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.017788 GB ] [ VIRT MEM :       1.097931 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.046372  s ] [ CPU  TIME:       0.591600  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: ao_prim_num ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.017845 GB ] [ VIRT MEM :       1.097931 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.047553  s ] [ CPU  TIME:       0.609228  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: ao_expo ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.017891 GB ] [ VIRT MEM :       1.097931 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.052324  s ] [ CPU  TIME:       0.674921  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: ao_coef ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.017998 GB ] [ VIRT MEM :       1.097931 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.056791  s ] [ CPU  TIME:       0.737062  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: ao_nucl ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.018234 GB ] [ VIRT MEM :       1.097931 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.059008  s ] [ CPU  TIME:       0.771178  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: ao_integrals_threshold ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.018234 GB ] [ VIRT MEM :       1.097931 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.059344  s ] [ CPU  TIME:       0.776568  s ] <<<<< ..
+ 
+ Providing the AO integrals
+.. >>>>> [ IO READ: nucl_num ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.032627 GB ] [ VIRT MEM :       1.251427 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.186674  s ] [ CPU  TIME:       2.591206  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: nucl_label ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.032829 GB ] [ VIRT MEM :       1.251427 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.187290  s ] [ CPU  TIME:       2.600467  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: nucl_charge ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.032864 GB ] [ VIRT MEM :       1.251427 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.187653  s ] [ CPU  TIME:       2.605916  s ] <<<<< ..
+ 
+ 
+.. >>>>> [ RES  MEM :       0.032875 GB ] [ VIRT MEM :       1.251427 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.188005  s ] [ CPU  TIME:       2.611211  s ] <<<<< ..
+ 
+
+Nuclear Coordinates (Angstroms)
+===============================
+
+================ ============ ============ ============ ============
+      Atom          Charge          X            Y            Z 
+================ ============ ============ ============ ============
+Li                   3.000000     0.000000     0.000000     0.000000
+He                   2.000000     0.000000     0.000000     4.000000
+X                    0.000000     0.000000     0.000000     2.000000
+================ ============ ============ ============ ============
+
+ Sorting the map
+ AO integrals provided:
+  Size of AO map :            2133.49774169922      MB
+  Number of AO integrals :             185907509
+  cpu  time :   1180.65391100000      s
+  wall time :   75.1992080211639      s  ( x    15.7003503370370       )
+ 
+ AO -> MO integrals transformation
+ ---------------------------------
+ 
+ Read  mo_coef
+.. >>>>> [ IO READ: mo_integrals_threshold ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       2.127834 GB ] [ VIRT MEM :       3.497837 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      75.329900  s ] [ CPU  TIME:    1182.002290  s ] <<<<< ..
+ 
+ MO map initialized:              469052506
+ i
+ |++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ +++++++++++---------|
+ j
+ |++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ +++++++++++---------|
+ k
+ |++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ +++++++++++---------|
+ l
+ |++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ +++++++++++---------|
+ Providing the molecular integrals 
+ Buffers :    482.2264     MB / core
+   34.18182     % in    34.2363219261169      s   5460.00909423828      MB
+   34.54546     % in    57.5730078220367      s   7454.35794448853      MB
+   34.90909     % in    84.7628109455109      s   8167.27595901489      MB
+   35.27273     % in    120.079473972321      s   8299.46132278442      MB
+   35.63636     % in    143.894591808319      s   8344.73533248901      MB
+   41.45454     % in    156.916979789734      s   8420.21064376831      MB
+   41.81818     % in    169.442514896393      s   8468.39830017090      MB
+   42.18182     % in    183.983973979950      s   8487.05882644653      MB
+   42.54546     % in    199.172226905823      s   8518.70540237427      MB
+   42.90909     % in    218.811852931976      s   8527.85226440430      MB
+   46.18182     % in    249.725777864456      s   8528.92488098145      MB
+   46.54546     % in    264.430052995682      s   8523.21599578857      MB
+   46.90909     % in    293.497642993927      s   8518.28736877441      MB
+   47.27273     % in    327.381352901459      s   8491.36422729492      MB
+   62.54546     % in    369.044149875641      s   8489.01740646362      MB
+   62.90909     % in    430.116338968277      s   8503.48037338257      MB
+   63.27273     % in    477.954793930054      s   8581.22994995117      MB
+   79.63636     % in    506.211888790131      s   8625.11163330078      MB
+   84.72727     % in    572.245283842087      s   8630.25107955933      MB
+   92.72727     % in    628.812232971191      s   8582.12983703613      MB
+   98.18182     % in    681.374267816544      s   8525.69417572021      MB
+ Molecular integrals provided:
+  Size of MO map              8523.88372039795      MB
+  Number of MO integrals:              432369168
+  cpu  time :   10787.4157470000      s
+  wall time :   691.640985012054      s  ( x    15.5968428429845      )
+ Molecular integrals provided
+ Writing data to disk...
+ Done
+Wall time: 0:13:44
+
+Date: 17/03/2020 10:32:39
+===============
+Quantum Package
+===============
+
+Git Commit: 
+Git Date  : 
+Git SHA1  : 
+EZFIO Dir : LiHe.ezfio
+
+
+Task server running : tcp://134.157.137.177:41279
+.. >>>>> [ IO READ: ifcsf ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.007561 GB ] [ VIRT MEM :       0.091236 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.000372  s ] [ CPU  TIME:       0.021352  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: disk_access_nuclear_repulsion ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.007736 GB ] [ VIRT MEM :       0.091236 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.000740  s ] [ CPU  TIME:       0.021721  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: nucl_num ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.007736 GB ] [ VIRT MEM :       0.091236 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.000972  s ] [ CPU  TIME:       0.021953  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: nucl_charge ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.012199 GB ] [ VIRT MEM :       1.087444 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.007053  s ] [ CPU  TIME:       0.063804  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: nucl_label ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.012260 GB ] [ VIRT MEM :       1.087444 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.007576  s ] [ CPU  TIME:       0.071558  s ] <<<<< ..
+ 
+ 
+.. >>>>> [ RES  MEM :       0.012272 GB ] [ VIRT MEM :       1.087444 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.008095  s ] [ CPU  TIME:       0.079362  s ] <<<<< ..
+ 
+
+Nuclear Coordinates (Angstroms)
+===============================
+
+================ ============ ============ ============ ============
+      Atom          Charge          X            Y            Z 
+================ ============ ============ ============ ============
+Li                   3.000000     0.000000     0.000000     0.000000
+He                   2.000000     0.000000     0.000000     4.000000
+X                    0.000000     0.000000     0.000000     2.000000
+================ ============ ============ ============ ============
+
+ 
+.. >>>>> [ RES  MEM :       0.012272 GB ] [ VIRT MEM :       1.087444 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.008319  s ] [ CPU  TIME:       0.082737  s ] <<<<< ..
+ 
+* Nuclear repulsion energy                          0.7937658163800001    
+* mo_num                                                       247
+* N_int                                                          4
+.. >>>>> [ IO READ: io_mo_two_e_integrals ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.015694 GB ] [ VIRT MEM :       1.093811 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.061608  s ] [ CPU  TIME:       0.725714  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: mo_class ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.015770 GB ] [ VIRT MEM :       1.093811 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.062322  s ] [ CPU  TIME:       0.735847  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: no_vvvv_integrals ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.015770 GB ] [ VIRT MEM :       1.093811 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.062535  s ] [ CPU  TIME:       0.739251  s ] <<<<< ..
+ 
+ MO map initialized:              469052506
+ Reading the MO integrals
+ MO integrals provided
+.. >>>>> [ IO READ: elec_alpha_num ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       4.046974 GB ] [ VIRT MEM :       5.363163 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       1.302254  s ] [ CPU  TIME:       4.939330  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: elec_beta_num ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.272499 GB ] [ VIRT MEM :       7.363655 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.192357  s ] [ CPU  TIME:      68.676456  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: io_mo_integrals_e_n ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.272499 GB ] [ VIRT MEM :       7.363655 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.192477  s ] [ CPU  TIME:      68.676580  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: ao_num ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.272507 GB ] [ VIRT MEM :       7.363655 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.192628  s ] [ CPU  TIME:      68.676731  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: io_ao_integrals_e_n ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.272507 GB ] [ VIRT MEM :       7.363655 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.192738  s ] [ CPU  TIME:      68.676841  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: ao_power ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.274742 GB ] [ VIRT MEM :       7.363655 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.195373  s ] [ CPU  TIME:      68.697700  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: ao_prim_num ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.274765 GB ] [ VIRT MEM :       7.363655 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.196202  s ] [ CPU  TIME:      68.707275  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: ao_expo ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.274769 GB ] [ VIRT MEM :       7.363655 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.200219  s ] [ CPU  TIME:      68.750569  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: ao_coef ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.274773 GB ] [ VIRT MEM :       7.363655 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.204607  s ] [ CPU  TIME:      68.802141  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: ao_nucl ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.274860 GB ] [ VIRT MEM :       7.363655 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.205929  s ] [ CPU  TIME:      68.821217  s ] <<<<< ..
+ 
+ Read  mo_coef
+.. >>>>> [ IO READ: io_mo_integrals_kinetic ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.350307 GB ] [ VIRT MEM :       7.477779 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.737025  s ] [ CPU  TIME:      73.051457  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: io_ao_integrals_kinetic ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.350307 GB ] [ VIRT MEM :       7.477779 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.737242  s ] [ CPU  TIME:      73.053202  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: io_mo_one_e_integrals ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.351677 GB ] [ VIRT MEM :       7.477779 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.760244  s ] [ CPU  TIME:      73.416815  s ] <<<<< ..
+ 
+ Providing the one-electron integrals
+.. >>>>> [ IO READ: do_pseudo ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.353630 GB ] [ VIRT MEM :       7.477779 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.760908  s ] [ CPU  TIME:      73.427327  s ] <<<<< ..
+ 
+ eigval           1           1  -10.3406353394667     
+ eigval           1           2  -10.3058257236176     
+ eigval           1           3  -10.3036615655621     
+ eigval           1           4  -10.3036615623684     
+ eigval           1           5  -10.2950095114812     
+ eigval           1           6  -10.2923495909673     
+ eigval           1           7  -10.2923495905284     
+ eigval           1           8  -10.2688235654849     
+ eigval           1           9  -10.2462681759148     
+ eigval           1          10  -10.2462681755806     
+ eigval           1          11  -10.2331685201903     
+ eigval           1          12  -10.2309498485677     
+ eigval           1          13  -10.2245181011330     
+ eigval           1          14  -10.2233621907358     
+ eigval           1          15  -10.2233621798310     
+ eigval           1          16  -10.2221349088295     
+ eigval           1          17  -10.2196380892115     
+ eigval           1          18  -10.2196380785377     
+ eigval           1          19  -10.2189388376050     
+ eigval           1          20  -10.2189388375972     
+ eigval           1          21  -10.2175046327908     
+ eigval           1          22  -10.2175046327756     
+ eigval           1          23  -10.2172920625566     
+ eigval           1          24  -10.2172920556041     
+ eigval           1          25  -10.2037365804672     
+ eigval           1          26  -10.2025056404603     
+ eigval           1          27  -10.2000504505164     
+ eigval           1          28  -10.2000504351657     
+ eigval           1          29  -10.1998531334661     
+ eigval           1          30  -10.1974372109716     
+ eigval           1          31  -10.1950388747305     
+ eigval           1          32  -10.1936550756195     
+ eigval           1          33  -10.1936356346276     
+ eigval           1          34  -10.1936355887115     
+ eigval           1          35  -10.1926436983908     
+ eigval           1          36  -10.1926436643506     
+ eigval           1          37  -10.1902768278906     
+ eigval           1          38  -10.1873087430201     
+ eigval           1          39  -10.1831439561509     
+ eigval           1          40  -10.1831439500642     
+ eigval           1          41  -10.1823042071436     
+ eigval           1          42  -10.1823042070931     
+ eigval           1          43  -10.1795117913160     
+ eigval           1          44  -10.1795117911635     
+ eigval           1          45  -10.1760926980509     
+ eigval           1          46  -10.1760202501992     
+ eigval           1          47  -10.1760201778961     
+ eigval           1          48  -10.1735020890467     
+ eigval           1          49  -10.1731791424003     
+ eigval           1          50  -10.1731789854007     
+ eigval           1          51  -10.1728121780588     
+ eigval           1          52  -10.1711873629039     
+ eigval           1          53  -10.1693965805496     
+ eigval           1          54  -10.1619215921383     
+ eigval           1          55  -10.1614913457855     
+ eigval           1          56  -10.1614913149824     
+ eigval           1          57  -10.1607532334557     
+ eigval           1          58  -10.1607532106290     
+ eigval           1          59  -10.1595933488293     
+ eigval           1          60  -10.1554976849778     
+ eigval           1          61  -10.1546872911538     
+ eigval           1          62  -10.1546872001666     
+ eigval           1          63  -10.1545436671342     
+ eigval           1          64  -10.1545436670289     
+ eigval           1          65  -10.1533346921771     
+ eigval           1          66  -10.1533346920101     
+ eigval           1          67  -10.1514938891178     
+ eigval           1          68  -10.1514937811493     
+ eigval           1          69  -10.1509021353622     
+ eigval           1          70  -10.1509019687726     
+ eigval           1          71  -10.1480654915400     
+ eigval           1          72  -10.1464417956123     
+ eigval           1          73  -10.1435806501083     
+ eigval           1          74  -10.1435806497312     
+ eigval           1          75  -10.1435447653307     
+ eigval           1          76  -10.1423524982934     
+ eigval           1          77  -10.1423524979806     
+ eigval           1          78  -10.1384749984021     
+ eigval           1          79  -10.1339638856438     
+ eigval           1          80  -10.1291956967571     
+ eigval           1          81  -10.1291956519954     
+ eigval           1          82  -10.1281624288776     
+ eigval           1          83  -10.1266211934207     
+ eigval           1          84  -10.1225341370932     
+ eigval           1          85  -10.1209479907297     
+ eigval           1          86  -10.1209478481194     
+ eigval           1          87  -10.1205779541931     
+ eigval           1          88  -10.1204157392759     
+ eigval           1          89  -10.1204155412282     
+ eigval           1          90  -10.1111683933758     
+ eigval           1          91  -10.1111681160671     
+ eigval           1          92  -10.1105190009642     
+ eigval           1          93  -10.1105190008291     
+ eigval           1          94  -10.1094567741085     
+ eigval           1          95  -10.1070708525744     
+ eigval           1          96  -10.1070706102846     
+ eigval           1          97  -10.1021252969865     
+ eigval           1          98  -10.1019139181674     
+ eigval           1          99  -10.1019139177379     
+ eigval           1         100  -10.0965378363878     
+ eigval           1         101  -10.0965376987137     
+ eigval           1         102  -10.0951958447135     
+ eigval           1         103  -10.0942676737232     
+ eigval           1         104  -10.0929603619649     
+ eigval           1         105  -10.0924193674125     
+ eigval           1         106  -10.0924193620117     
+ eigval           1         107  -10.0887648831878     
+ eigval           1         108  -10.0887648135722     
+ eigval           1         109  -10.0858116864817     
+ eigval           1         110  -10.0858115522815     
+ eigval           1         111  -10.0809750898433     
+ eigval           1         112  -10.0792126002371     
+ eigval           1         113  -10.0792121413904     
+ eigval           1         114  -10.0736959723577     
+ eigval           1         115  -10.0706692867456     
+ eigval           1         116  -10.0672269038867     
+ eigval           1         117  -10.0672268036354     
+ eigval           1         118  -10.0662194625297     
+ eigval           1         119  -10.0640436970333     
+ eigval           1         120  -10.0633953114114     
+ eigval           1         121  -10.0633953104173     
+ eigval           1         122  -10.0622308792968     
+ eigval           1         123  -10.0599488655654     
+ eigval           1         124  -10.0599487655987     
+ eigval           1         125  -10.0592331926687     
+ eigval           1         126  -10.0592331918004     
+ eigval           1         127  -10.0576261784102     
+ eigval           1         128  -10.0557478211603     
+ eigval           1         129  -10.0488109856876     
+ eigval           1         130  -10.0488106675837     
+ eigval           1         131  -10.0451972985600     
+ eigval           1         132  -10.0353225686883     
+ eigval           1         133  -10.0327539442803     
+ eigval           1         134  -10.0318535936950     
+ eigval           1         135  -10.0286428463025     
+ eigval           1         136  -10.0286428455376     
+ eigval           1         137  -10.0269319566999     
+ eigval           1         138  -10.0269319561435     
+ eigval           1         139  -10.0224466714831     
+ eigval           1         140  -10.0224462587281     
+ eigval           1         141  -10.0203712906227     
+ eigval           1         142  -10.0203708655946     
+ eigval           1         143  -10.0097759886965     
+ eigval           1         144  -10.0078311148250     
+ eigval           1         145  -10.0078310514885     
+ eigval           1         146  -10.0049949667186     
+ eigval           1         147  -10.0049514114083     
+ eigval           1         148  -10.0049513898531     
+ eigval           1         149  -10.0006842897391     
+ eigval           1         150  -9.99833707536565     
+ eigval           1         151  -9.99365046747694     
+ eigval           1         152  -9.99365003458690     
+ eigval           1         153  -9.98830530859677     
+ eigval           1         154  -9.98830530796068     
+ eigval           1         155  -9.98812988195746     
+ eigval           1         156  -9.98812968668186     
+ eigval           1         157  -9.98200095669727     
+ eigval           1         158  -9.98079938546446     
+ eigval           1         159  -9.98079917348636     
+ eigval           1         160  -9.97912629393657     
+ eigval           1         161  -9.97912595913719     
+ eigval           1         162  -9.97629712053588     
+ eigval           1         163  -9.97629711910637     
+ eigval           1         164  -9.97487046074666     
+ eigval           1         165  -9.97256995868993     
+ eigval           1         166  -9.96922000443636     
+ eigval           1         167  -9.96921946624725     
+ eigval           1         168  -9.96597898320486     
+ eigval           1         169  -9.96033778470598     
+ eigval           1         170  -9.95772810890552     
+ eigval           1         171  -9.95637037691726     
+ eigval           1         172  -9.95636987441237     
+ eigval           1         173  -9.94738828627158     
+ eigval           1         174  -9.93953802931839     
+ eigval           1         175  -9.93174208719320     
+ eigval           1         176  -9.93030727868615     
+ eigval           1         177  -9.93030727690222     
+ eigval           1         178  -9.92828853390164     
+ eigval           1         179  -9.92664724503859     
+ eigval           1         180  -9.92278310130435     
+ eigval           1         181  -9.92278310023094     
+ eigval           1         182  -9.91900447230813     
+ eigval           1         183  -9.91900428657564     
+ eigval           1         184  -9.91861361481177     
+ eigval           1         185  -9.91544079121936     
+ eigval           1         186  -9.91544047857864     
+ eigval           1         187  -9.88991549928935     
+ eigval           1         188  -9.88180984216045     
+ eigval           1         189  -9.88152024255825     
+ eigval           1         190  -9.88151995340428     
+ eigval           1         191  -9.87756348637693     
+ eigval           1         192  -9.87468599193350     
+ eigval           1         193  -9.87456502797987     
+ eigval           1         194  -9.87456469748690     
+ eigval           1         195  -9.86083577898626     
+ eigval           1         196  -9.86083553862238     
+ eigval           1         197  -9.85233560111841     
+ eigval           1         198  -9.85233550476702     
+ eigval           1         199  -9.84900542216937     
+ eigval           1         200  -9.84126630623729     
+ eigval           1         201  -9.83710084744484     
+ eigval           1         202  -9.83710084522683     
+ eigval           1         203  -9.83591092182787     
+ eigval           1         204  -9.83590978100350     
+ eigval           1         205  -9.83537679008668     
+ eigval           1         206  -9.83505704436864     
+ eigval           1         207  -9.83505704264877     
+ eigval           1         208  -9.83192981124208     
+ eigval           1         209  -9.83192873766490     
+ eigval           1         210  -9.82729109961391     
+ eigval           1         211  -9.82428985026129     
+ eigval           1         212  -9.81996300483888     
+ eigval           1         213  -9.81996298481397     
+ eigval           1         214  -9.81318438291207     
+ eigval           1         215  -9.81318428331073     
+ eigval           1         216  -9.81145140725437     
+ eigval           1         217  -9.80083425061563     
+ eigval           1         218  -9.79790032171984     
+ eigval           1         219  -9.79790008294912     
+ eigval           1         220  -9.79728189035694     
+ eigval           1         221  -9.79541917886180     
+ eigval           1         222  -9.79445854433898     
+ eigval           1         223  -9.79445854009555     
+ eigval           1         224  -9.79211731154405     
+ eigval           1         225  -9.79211710897396     
+ eigval           1         226  -9.78445436245767     
+ eigval           1         227  -9.78309669584886     
+ eigval           1         228  -9.78309668801938     
+ eigval           1         229  -9.74674057950431     
+ eigval           1         230  -9.74154593165329     
+ eigval           1         231  -9.73209310272900     
+ eigval           1         232  -9.73209309146714     
+ eigval           1         233  -9.72477187742763     
+ eigval           1         234  -9.72477186466863     
+ eigval           1         235  -9.71353262937917     
+ eigval           1         236  -9.71353246019848     
+ eigval           1         237  -9.71015123134330     
+ eigval           1         238  -9.71015098564446     
+ eigval           1         239  -9.70023664610919     
+ eigval           1         240  -9.69187682547758     
+ eigval           1         241  -9.68167191123082     
+ eigval           1         242  -9.68167179050871     
+ eigval           1         243  -9.67277409531620     
+ eigval           1         244  -9.67277404440446     
+ eigval           1         245  -9.66601181769982     
+ eigval           1         246  -9.65836220780387     
+ eigval           1         247  -9.64147041124952     
+ eigval           1         248  -9.63958529221358     
+ eigval           1         249  -9.63958484853748     
+ eigval           1         250  -9.63650510423309     
+ eigval           1         251  -9.63214964744762     
+ eigval           1         252  -9.63015713280510     
+ eigval           1         253  -9.63015670450238     
+ eigval           1         254  -9.62834874626162     
+ eigval           1         255  -9.61476414461657     
+ eigval           1         256  -9.60985163135585     
+ eigval           1         257  -9.59801630980992     
+ eigval           1         258  -9.59801556889411     
+ eigval           1         259  -9.59521446588500     
+ eigval           1         260  -9.59521378859515     
+ eigval           1         261  -9.58207448686331     
+ eigval           1         262  -9.58207415345881     
+ eigval           1         263  -9.57550001481888     
+ eigval           1         264  -9.57549964784820     
+ eigval           1         265  -9.57216525927142     
+ eigval           1         266  -9.56323490360473     
+ eigval           1         267  -9.56082933763237     
+ eigval           1         268  -9.55592986480351     
+ eigval           1         269  -9.53384770415436     
+ eigval           1         270  -9.53384769657627     
+ eigval           1         271  -9.52799809175193     
+ eigval           1         272  -9.52799809140161     
+ eigval           1         273  -9.51308864634603     
+ eigval           1         274  -9.50412555382401     
+ eigval           1         275  -9.48689715475576     
+ eigval           1         276  -9.48689709425176     
+ eigval           1         277  -9.48098996696206     
+ eigval           1         278  -9.48098990165388     
+ eigval           1         279  -9.47573921092470     
+ eigval           1         280  -9.47573914925134     
+ eigval           1         281  -9.47187592570522     
+ eigval           1         282  -9.47187584425050     
+ eigval           1         283  -9.42181628446775     
+ eigval           1         284  -9.42181626612454     
+ eigval           1         285  -9.41854226650307     
+ eigval           1         286  -9.41854222895233     
+ eigval           1         287  -9.40691189751762     
+ eigval           1         288  -9.39997033440659     
+ eigval           1         289  -9.39019757560862     
+ eigval           1         290  -9.39019742226716     
+ eigval           1         291  -9.38401066018201     
+ eigval           1         292  -9.38401046916233     
+ eigval           1         293  -9.38122416887268     
+ eigval           1         294  -9.37383113323313     
+ eigval           1         295  -9.37347825998498     
+ eigval           1         296  -9.37347776498145     
+ eigval           1         297  -9.36939739896007     
+ eigval           1         298  -9.36839697804620     
+ eigval           1         299  -9.36839652082198     
+ eigval           1         300  -9.36398608428656     
+ eigval           1         301  -9.27317715387866     
+ eigval           1         302  -9.26877829669238     
+ eigval           1         303  -9.26877758248007     
+ eigval           1         304  -9.26540211281965     
+ eigval           1         305  -9.26177393131381     
+ eigval           1         306  -9.26177320545183     
+ eigval           1         307  -9.23692097738620     
+ eigval           1         308  -9.22899374367622     
+ eigval           1         309  -9.20809948599461     
+ eigval           1         310  -9.20809930457634     
+ eigval           1         311  -9.19899807928136     
+ eigval           1         312  -9.19899790872356     
+ eigval           1         313  -9.19587103515545     
+ eigval           1         314  -9.18440695600425     
+ eigval           2           1  -11.0199111925242     
+ eigval           2           2  -11.0199111925069     
+ eigval           2           3  -11.0167033024620     
+ eigval           2           4  -10.9644247723403     
+ eigval           2           5  -10.9480825061556     
+ eigval           2           6  -10.9477780448193     
+ eigval           2           7  -10.9477780437979     
+ eigval           2           8  -10.9470355696515     
+ eigval           2           9  -10.9470355633593     
+ eigval           2          10  -10.9432362903178     
+ eigval           2          11  -10.9432362902649     
+ eigval           2          12  -10.9407848077004     
+ eigval           2          13  -10.9269239846898     
+ eigval           2          14  -10.9206751637936     
+ eigval           2          15  -10.9167388587042     
+ eigval           2          16  -10.9160990017285     
+ eigval           2          17  -10.9160989046513     
+ eigval           2          18  -10.9128587242191     
+ eigval           2          19  -10.9128586874046     
+ eigval           2          20  -10.9090524579272     
+ eigval           2          21  -10.9076236491849     
+ eigval           2          22  -10.9076236156618     
+ eigval           2          23  -10.9055197726554     
+ eigval           2          24  -10.9055197726444     
+ eigval           2          25  -10.8994433790264     
+ eigval           2          26  -10.8977589392818     
+ eigval           2          27  -10.8886535916439     
+ eigval           2          28  -10.8841964222346     
+ eigval           2          29  -10.8841964212415     
+ eigval           2          30  -10.8800155483517     
+ eigval           2          31  -10.8800155480783     
+ eigval           2          32  -10.8749908992306     
+ eigval           2          33  -10.8704396922410     
+ eigval           2          34  -10.8704391743694     
+ eigval           2          35  -10.8686350660107     
+ eigval           2          36  -10.8686350659498     
+ eigval           2          37  -10.8683756720723     
+ eigval           2          38  -10.8603639240679     
+ eigval           2          39  -10.8603639103248     
+ eigval           2          40  -10.8593418954401     
+ eigval           2          41  -10.8557157378830     
+ eigval           2          42  -10.8545657790947     
+ eigval           2          43  -10.8478320621168     
+ eigval           2          44  -10.8478319504515     
+ eigval           2          45  -10.8428039353635     
+ eigval           2          46  -10.8428038980074     
+ eigval           2          47  -10.8382576029653     
+ eigval           2          48  -10.8271665537345     
+ eigval           2          49  -10.8271665536906     
+ eigval           2          50  -10.8185464491598     
+ eigval           2          51  -10.8150058077467     
+ eigval           2          52  -10.8150058047983     
+ eigval           2          53  -10.8104262936406     
+ eigval           2          54  -10.8008756117122     
+ eigval           2          55  -10.8008747942120     
+ eigval           2          56  -10.7960887456560     
+ eigval           2          57  -10.7925847628620     
+ eigval           2          58  -10.7925845253598     
+ eigval           2          59  -10.7920604503534     
+ eigval           2          60  -10.7868250312947     
+ eigval           2          61  -10.7836986001324     
+ eigval           2          62  -10.7836986001239     
+ eigval           2          63  -10.7831537454921     
+ eigval           2          64  -10.7742451244399     
+ eigval           2          65  -10.7742451196399     
+ eigval           2          66  -10.7692123702685     
+ eigval           2          67  -10.7583007466208     
+ eigval           2          68  -10.7583007454481     
+ eigval           2          69  -10.7579887631725     
+ eigval           2          70  -10.7579885203685     
+ eigval           2          71  -10.7521596311674     
+ eigval           2          72  -10.7342362153998     
+ eigval           2          73  -10.7342360722815     
+ eigval           2          74  -10.7239416597854     
+ eigval           2          75  -10.7094326782192     
+ eigval           2          76  -10.7043895827428     
+ eigval           2          77  -10.7043891154191     
+ eigval           2          78  -10.6992221825853     
+ eigval           2          79  -10.6966538807537     
+ eigval           2          80  -10.6966538806445     
+ eigval           2          81  -10.6955450779093     
+ eigval           2          82  -10.6955441150344     
+ eigval           2          83  -10.6879158578739     
+ eigval           2          84  -10.6811695728748     
+ eigval           2          85  -10.6728522895213     
+ eigval           2          86  -10.6636285264673     
+ eigval           2          87  -10.6566626399638     
+ eigval           2          88  -10.6566626370631     
+ eigval           2          89  -10.6393946009018     
+ eigval           2          90  -10.6393944609116     
+ eigval           2          91  -10.6392595230349     
+ eigval           2          92  -10.6392595226724     
+ eigval           2          93  -10.6274044965777     
+ eigval           2          94  -10.6242960467323     
+ eigval           2          95  -10.6242956262136     
+ eigval           2          96  -10.5997236781388     
+ eigval           2          97  -10.5836291387626     
+ eigval           2          98  -10.5796238635135     
+ eigval           2          99  -10.5796238596647     
+ eigval           2         100  -10.5786627355328     
+ eigval           2         101  -10.5786624204294     
+ eigval           2         102  -10.5707815833439     
+ eigval           2         103  -10.5604548182441     
+ eigval           2         104  -10.5528261207231     
+ eigval           2         105  -10.5528248871468     
+ eigval           2         106  -10.5361917010198     
+ eigval           2         107  -10.5290133914894     
+ eigval           2         108  -10.5290131133806     
+ eigval           2         109  -10.5173537775462     
+ eigval           2         110  -10.4956459913635     
+ eigval           2         111  -10.4956459902228     
+ eigval           2         112  -10.4910975612512     
+ eigval           2         113  -10.4725806585376     
+ eigval           2         114  -10.4694542386612     
+ eigval           2         115  -10.4694542016335     
+ eigval           2         116  -10.4241721781552     
+ eigval           2         117  -10.4241718137129     
+ eigval           2         118  -10.4166557917048     
+ eigval           2         119  -10.4166557910107     
+ eigval           2         120  -10.4135575869828     
+ eigval           2         121  -10.4135571513184     
+ eigval           2         122  -10.4003424418541     
+ eigval           2         123  -10.3915526593052     
+ eigval           2         124  -10.3589990206075     
+ eigval           2         125  -10.3541700286552     
+ eigval           2         126  -10.3541697375405     
+ eigval           2         127  -10.3505161435730     
+ eigval           2         128  -10.3191628209707     
+ eigval           2         129  -10.3191619233622     
+ eigval           2         130  -10.3116537388726     
+ eigval           2         131  -10.3026016462426     
+ eigval           2         132  -10.3026016357231     
+ eigval           2         133  -10.2821873063467     
+ eigval           2         134  -10.2818700733221     
+ eigval           2         135  -10.2818698256357     
+ eigval           2         136  -10.2428271889648     
+ eigval           2         137  -10.2404234931590     
+ eigval           2         138  -10.1965427795158     
+ eigval           2         139  -10.1965427529766     
+ eigval           2         140  -10.1945147132031     
+ eigval           2         141  -10.1945147083208     
+ eigval           2         142  -10.1318743274938     
+ eigval           2         143  -10.1151028715918     
+ eigval           2         144  -10.0907133449230     
+ eigval           2         145  -10.0907130458871     
+ eigval           2         146  -10.0479400485173     
+ eigval           2         147  -10.0474096339668     
+ eigval           2         148  -10.0474091618101     
+ eigval           2         149  -10.0451457341522     
+ eigval           2         150  -10.0451457335705     
+ eigval           2         151  -9.98743941014608     
+ eigval           2         152  -9.98250478744714     
+ eigval           2         153  -9.98250470233981     
+ eigval           2         154  -9.97984697440359     
+ eigval           2         155  -9.92242097667691     
+ eigval           2         156  -9.92242095163315     
+ eigval           2         157  -9.88250321158824     
+ CI eigval =  -9.54686952308665       -9.51205990723765     
+  -9.50989574918208       -9.50989574598837       -9.50124369510121     
+  -9.49858377458732       -9.49858377414836       -9.47505774910492     
+  -9.45250235953480       -9.45250235920058       -9.43940270381033     
+  -9.43718403218766       -9.43075228475298       -9.42959637435584     
+  -9.42959636345103       -9.42836909244948       -9.42587227283150     
+  -9.42587226215771       -9.42517302122497       -9.42517302121715     
+  -9.42373881641083       -9.42373881639560       -9.42352624617660     
+  -9.42352623922410       -9.40997076408723       -9.40873982408028     
+  -9.40628463413637       -9.40628461878570       -9.40608731708608     
+  -9.40367139459159       -9.40127305835048       -9.39988925923947     
+  -9.39986981824763       -9.39986977233152       -9.39887788201077     
+  -9.39887784797058       -9.39651101151056       -9.39354292664007     
+  -9.38937813977091       -9.38937813368424       -9.38853839076361     
+  -9.38853839071307       -9.38574597493601       -9.38574597478355     
+  -9.38232688167091       -9.38225443381925       -9.38225436151607     
+  -9.37973627266669       -9.37941332602030       -9.37941316902072     
+  -9.37904636167879       -9.37742154652388       -9.37563076416957     
+  -9.36815577575830       -9.36772552940552       -9.36772549860238     
+  -9.36698741707569       -9.36698739424904       -9.36582753244935     
+  -9.36173186859777       -9.36092147477378       -9.36092138378661     
+  -9.36077785075421       -9.36077785064888       -9.35956887579709     
+  -9.35956887563005       -9.35772807273783       -9.35772796476929     
+  -9.35713631898222       -9.35713615239258       -9.35429967516000     
+  -9.35267597923232       -9.34981483372825       -9.34981483335122     
+  -9.34977894895069       -9.34858668191336       -9.34858668160061     
+  -9.34470918202213       -9.34019806926380       -9.33542988037709     
+  -9.33542983561542       -9.33439661249762       -9.33285537704066     
+  -9.32876832071315       -9.32718217434969       -9.32718203173941     
+  -9.32681213781307       -9.32664992289594       -9.32664972484822     
+  -9.31740257699578       -9.31740229968709       -9.31675318458423     
+  -9.31675318444907       -9.31569095772846       -9.31330503619438     
+  -9.31330479390455       -9.30835948060652       -9.30814810178745     
+  -9.30814810135786       -9.30277202000783       -9.30277188233373     
+  -9.30143002833350       -9.30050185734323       -9.29919454558492     
+  -9.29865355103252       -9.29865354563174       -9.29499906680781     
+  -9.29499899719224       -9.29204587010173       -9.29204573590150     
+  -9.28720927346326       -9.28544678385714       -9.28544632501044     
+  -9.27993015597773       -9.27690347036559       -9.27346108750667     
+  -9.27346098725541       -9.27245364614969       -9.27027788065332     
+  -9.26962949503140       -9.26962949403730       -9.26846506291677     
+  -9.26618304918538       -9.26618294921871       -9.26546737628867     
+  -9.26546737542035       -9.26386036203021       -9.26198200478031     
+  -9.25504516930756       -9.25504485120374       -9.25143148217999     
+  -9.24155675230834       -9.23898812790033       -9.23808777731497     
+  -9.23487702992253       -9.23487702915757       -9.23316614031990     
+  -9.23316613976353       -9.22868085510312       -9.22868044234808     
+  -9.22660547424266       -9.22660504921456       -9.21601017231646     
+  -9.21406529844504       -9.21406523510854       -9.21122915033862     
+  -9.21118559502835       -9.21118557347305       -9.20691847335913     
+  -9.20457125898564       -9.19988465109694       -9.19988421820690     
+  -9.19453949221677       -9.19453949158068       -9.19436406557745     
+  -9.19436387030186       -9.18823514031727       -9.18703356908446     
+  -9.18703335710636       -9.18536047755657       -9.18536014275718     
+  -9.18253130415588       -9.18253130272637       -9.18110464436666     
+  -9.17880414230993       -9.17545418805636       -9.17545364986725     
+  -9.17221316682486       -9.16657196832598       -9.16396229252551     
+  -9.16260456053726       -9.16260405803237       -9.15362246989158     
+  -9.14577221293839       -9.13797627081320       -9.13654146230615     
+  -9.13654146052222       -9.13452271752164       -9.13288142865859     
+  -9.12901728492434       -9.12901728385094       -9.12523865592813     
+  -9.12523847019563       -9.12484779843177       -9.12167497483936     
+  -9.12167466219864       -9.09614968290935       -9.08804402578045     
+  -9.08775442617825       -9.08775413702428       -9.08379766999693     
+  -9.08092017555350       -9.08079921159987       -9.08079888110690     
+  -9.06706996260626       -9.06706972224238       -9.05856978473841     
+  -9.05856968838702       -9.05523960578937       -9.04750048985728     
+  -9.04333503106484       -9.04333502884683       -9.04214510544787     
+  -9.04214396462350       -9.04161097370668       -9.04129122798864     
+  -9.04129122626877       -9.03816399486208       -9.03816292128490     
+  -9.03352528323391       -9.03052403388129       -9.02619718845888     
+  -9.02619716843397       -9.01941856653207       -9.01941846693073     
+  -9.01768559087437       -9.00706843423563       -9.00413450533984     
+  -9.00413426656912       -9.00351607397694       -9.00165336248180     
+  -9.00069272795898       -9.00069272371555       -8.99835149516405     
+  -8.99835129259396       -8.99068854607767       -8.98933087946886     
+  -8.98933087163938       -8.95297476312431       -8.94778011527329     
+  -8.93832728634900       -8.93832727508714       -8.93100606104763     
+  -8.93100604828863       -8.91976681299917       -8.91976664381848     
+  -8.91638541496330       -8.91638516926445       -8.90647082972919     
+  -8.89811100909758       -8.88790609485082       -8.88790597412870     
+  -8.87900827893620       -8.87900822802446       -8.87224600131982     
+  -8.86459639142387       -8.84770459486952       -8.84581947583358     
+  -8.84581903215748       -8.84273928785309       -8.83838383106762     
+  -8.83639131642510       -8.83639088812238       -8.83458292988162     
+  -8.82099832823657       -8.81608581497585       -8.80425049342992     
+  -8.80424975251411       -8.80144864950500       -8.80144797221515     
+  -8.78830867048331       -8.78830833707881       -8.78173419843888     
+  -8.78173383146820       -8.77839944289142       -8.76946908722473     
+  -8.76706352125237       -8.76216404842351       -8.74008188777436     
+  -8.74008188019627       -8.73423227537193       -8.73423227502161     
+  -8.71932282996603       -8.71035973744401       -8.69313133837576     
+  -8.69313127787176       -8.68722415058206       -8.68722408527388     
+  -8.68197339454470       -8.68197333287134       -8.67811010932522     
+  -8.67811002787050       -8.62805046808775       -8.62805044974453     
+  -8.62477645012307       -8.62477641257233       -8.61314608113762     
+  -8.60620451802659       -8.59643175922862       -8.59643160588716     
+  -8.59024484380201       -8.59024465278233       -8.58745835249268     
+  -8.58006531685312       -8.57971244360498       -8.57971194860145     
+  -8.57563158258007       -8.57463116166620       -8.57463070444198     
+  -8.57022026790656       -8.47941133749866       -8.47501248031238     
+  -8.47501176610007       -8.47163629643965       -8.46800811493381     
+  -8.46800738907183       -8.44315516100620       -8.43522792729622     
+  -8.41433366961461       -8.41433348819634       -8.40523226290136     
+  -8.40523209234355       -8.40210521877545       -8.39064113962425     
+ CI eigval =  -10.2261453761442       -10.2261453761269     
+  -10.2229374860820       -10.1706589559603       -10.1543166897756     
+  -10.1540122284393       -10.1540122274179       -10.1532697532715     
+  -10.1532697469793       -10.1494704739378       -10.1494704738849     
+  -10.1470189913204       -10.1331581683098       -10.1269093474136     
+  -10.1229730423242       -10.1223331853485       -10.1223330882713     
+  -10.1190929078391       -10.1190928710246       -10.1152866415472     
+  -10.1138578328049       -10.1138577992818       -10.1117539562754     
+  -10.1117539562644       -10.1056775626464       -10.1039931229018     
+  -10.0948877752639       -10.0904306058546       -10.0904306048615     
+  -10.0862497319717       -10.0862497316983       -10.0812250828506     
+  -10.0766738758610       -10.0766733579894       -10.0748692496307     
+  -10.0748692495698       -10.0746098556923       -10.0665981076879     
+  -10.0665980939448       -10.0655760790601       -10.0619499215030     
+  -10.0607999627147       -10.0540662457368       -10.0540661340715     
+  -10.0490381189835       -10.0490380816274       -10.0444917865853     
+  -10.0334007373545       -10.0334007373106       -10.0247806327798     
+  -10.0212399913667       -10.0212399884183       -10.0166604772606     
+  -10.0071097953322       -10.0071089778320       -10.0023229292760     
+  -9.99881894648196       -9.99881870897980       -9.99829463397345     
+  -9.99305921491471       -9.98993278375242       -9.98993278374387     
+  -9.98938792911213       -9.98047930805989       -9.98047930325993     
+  -9.97544655388848       -9.96453493024077       -9.96453492906805     
+  -9.96422294679249       -9.96422270398850       -9.95839381478736     
+  -9.94047039901980       -9.94047025590151       -9.93017584340540     
+  -9.91566686183916       -9.91062376636276       -9.91062329903905     
+  -9.90545636620533       -9.90288806437373       -9.90288806426449     
+  -9.90177926152926       -9.90177829865441       -9.89415004149394     
+  -9.88740375649482       -9.87908647314132       -9.86986271008733     
+  -9.86289682358382       -9.86289682068306       -9.84562878452177     
+  -9.84562864453165       -9.84549370665489       -9.84549370629245     
+  -9.83363868019773       -9.83053023035226       -9.83052980983360     
+  -9.80595786175879       -9.78986332238260       -9.78585804713349     
+  -9.78585804328470       -9.78489691915285       -9.78489660404945     
+  -9.77701576696386       -9.76668900186406       -9.75906030434314     
+  -9.75905907076675       -9.74242588463982       -9.73524757510943     
+  -9.73524729700064       -9.72358796116623       -9.70188017498351     
+  -9.70188017384283       -9.69733174487120       -9.67881484215762     
+  -9.67568842228119       -9.67568838525350       -9.63040636177516     
+  -9.63040599733291       -9.62288997532483       -9.62288997463070     
+  -9.61979177060283       -9.61979133493844       -9.60657662547407     
+  -9.59778684292521       -9.56523320422752       -9.56040421227523     
+  -9.56040392116054       -9.55675032719296       -9.52539700459074     
+  -9.52539610698224       -9.51788792249258       -9.50883582986261     
+  -9.50883581934307       -9.48842148996665       -9.48810425694208     
+  -9.48810400925573       -9.44906137258483       -9.44665767677901     
+  -9.40277696313581       -9.40277693659661       -9.40074889682305     
+  -9.40074889194081       -9.33810851111379       -9.32133705521182     
+  -9.29694752854301       -9.29694722950710       -9.25417423213727     
+  -9.25364381758680       -9.25364334543008       -9.25137991777217     
+  -9.25137991719050       -9.19367359376607       -9.18873897106713     
+  -9.18873888595981       -9.18608115802359       -9.12865516029691     
+  -9.12865513525315       -9.08873739520824     
+Wall time: 0:00:24
+
+Date: 17/03/2020 10:33:04
+===============
+Quantum Package
+===============
+
+Git Commit: 
+Git Date  : 
+Git SHA1  : 
+EZFIO Dir : LiHe.ezfio
+
+
+Task server running : tcp://134.157.137.177:41279
+.. >>>>> [ IO READ: ifcsf ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.007565 GB ] [ VIRT MEM :       0.091236 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.000381  s ] [ CPU  TIME:       0.020685  s ] <<<<< ..
+ 
+* mo_num                                                       247
+* N_int                                                          4
+.. >>>>> [ IO READ: io_mo_two_e_integrals ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.013325 GB ] [ VIRT MEM :       1.094307 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.331518  s ] [ CPU  TIME:       4.074390  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: mo_class ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.013489 GB ] [ VIRT MEM :       1.094307 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.332202  s ] [ CPU  TIME:       4.084489  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: no_vvvv_integrals ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       0.013489 GB ] [ VIRT MEM :       1.094307 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       0.332401  s ] [ CPU  TIME:       4.087649  s ] <<<<< ..
+ 
+ MO map initialized:              469052506
+ Reading the MO integrals
+ MO integrals provided
+.. >>>>> [ IO READ: elec_alpha_num ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       4.054123 GB ] [ VIRT MEM :       5.363659 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:       1.560176  s ] [ CPU  TIME:       8.184944  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: elec_beta_num ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.280750 GB ] [ VIRT MEM :       7.364151 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.360300  s ] [ CPU  TIME:      71.580399  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: io_mo_one_e_integrals ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.280769 GB ] [ VIRT MEM :       7.364151 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.360451  s ] [ CPU  TIME:      71.580554  s ] <<<<< ..
+ 
+ Providing the one-electron integrals
+.. >>>>> [ IO READ: do_pseudo ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.280769 GB ] [ VIRT MEM :       7.364151 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.360589  s ] [ CPU  TIME:      71.580692  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: io_mo_integrals_kinetic ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.280769 GB ] [ VIRT MEM :       7.364151 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.360683  s ] [ CPU  TIME:      71.580786  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: ao_num ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.280769 GB ] [ VIRT MEM :       7.364151 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.360797  s ] [ CPU  TIME:      71.580900  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: io_ao_integrals_kinetic ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.280769 GB ] [ VIRT MEM :       7.364151 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.360899  s ] [ CPU  TIME:      71.581002  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: ao_prim_num ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.280880 GB ] [ VIRT MEM :       7.364151 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.369630  s ] [ CPU  TIME:      71.698369  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: ao_expo ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.280888 GB ] [ VIRT MEM :       7.364151 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.373576  s ] [ CPU  TIME:      71.746650  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: ao_coef ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.280891 GB ] [ VIRT MEM :       7.364151 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.377372  s ] [ CPU  TIME:      71.792741  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: ao_power ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.280895 GB ] [ VIRT MEM :       7.364151 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.378992  s ] [ CPU  TIME:      71.813162  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: ao_nucl ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.280983 GB ] [ VIRT MEM :       7.364151 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.380318  s ] [ CPU  TIME:      71.831718  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: nucl_num ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.280983 GB ] [ VIRT MEM :       7.364151 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.380543  s ] [ CPU  TIME:      71.835074  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: nucl_label ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.280998 GB ] [ VIRT MEM :       7.364151 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.380921  s ] [ CPU  TIME:      71.840676  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: nucl_charge ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.281002 GB ] [ VIRT MEM :       7.364151 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.381269  s ] [ CPU  TIME:      71.845870  s ] <<<<< ..
+ 
+ 
+.. >>>>> [ RES  MEM :       6.281006 GB ] [ VIRT MEM :       7.364151 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.381652  s ] [ CPU  TIME:      71.851506  s ] <<<<< ..
+ 
+
+Nuclear Coordinates (Angstroms)
+===============================
+
+================ ============ ============ ============ ============
+      Atom          Charge          X            Y            Z 
+================ ============ ============ ============ ============
+Li                   3.000000     0.000000     0.000000     0.000000
+He                   2.000000     0.000000     0.000000     4.000000
+X                    0.000000     0.000000     0.000000     2.000000
+================ ============ ============ ============ ============
+
+ Read  mo_coef
+.. >>>>> [ IO READ: io_mo_integrals_e_n ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.344673 GB ] [ VIRT MEM :       7.478275 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.531891  s ] [ CPU  TIME:      73.979379  s ] <<<<< ..
+ 
+.. >>>>> [ IO READ: io_ao_integrals_e_n ] <<<<< ..
+ 
+.. >>>>> [ RES  MEM :       6.344673 GB ] [ VIRT MEM :       7.478275 GB ] <<<<< ..
+.. >>>>> [ WALL TIME:      14.532167  s ] [ CPU  TIME:      73.983511  s ] <<<<< ..
+ 
+Wall time: 0:00:24
+
+ 
+ 
+Transferring files from compute nodes to server
+Writing files in permanent directory /home/nicolas/QP_testruns/LiHe_Fano/inputs
+Final files in permanent data directory:
+total 104
+-rw-rw-r--  1 nicolas nicolas  5758 Mar 17 11:42 cippres_fano_LiHe.ezfio.out
+-rw-rw-r--  1 nicolas nicolas 44100 Mar 17 11:42 cippres_runci_LiHe.ezfio.out
+-rw-r--r--  1 nicolas nicolas  6013 Mar 17 08:42 he-test
+-rw-r--r--  1 nicolas nicolas  8120 Mar 17 11:20 job_qp.sh
+drwxrwxr-x 26 nicolas nicolas  4096 Mar 17 11:25 LiHe.ezfio
+-rw-r--r--  1 nicolas nicolas   556 Mar 17 08:42 lihe.xml
+-rw-r--r--  1 nicolas nicolas    40 Mar 17 08:42 LiHe.xyz
+-rw-rw-r--  1 nicolas nicolas 16444 Mar 17 11:25 scf_log
+-rwxr-xr-x  1 nicolas nicolas   494 Mar 17 11:35 script_running.sh
+ 
+ 
