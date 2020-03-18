@@ -8,7 +8,7 @@ program cippres_prop_collision
 ! CIPPRES stands for Configuration Interaction Plugin for Photoionized and Resonant Electronic States.
 ! cippres_prop_collision solves the TDSE using the matrix elements from cippres_collision
   END_DOC
-  
+
   logical :: exists
 
   integer :: i, j, ib
@@ -83,6 +83,13 @@ program cippres_prop_collision
 
 ! loop over b
 
+    open(unit=20,file='Prop_collision.out')
+    write(20,*)n_bimp,ntotsta
+    do i = 1, ntotsta
+      write(20,*)esta(i)
+      write(*,*)esta(i)
+    enddo
+
     do ib = 1, n_bimp
 
      do i = 1, ntime
@@ -100,7 +107,10 @@ program cippres_prop_collision
 !  write(*,*)'DYN takes',tdyn
 !     print*,bgrid(ib),ntotsta,psi
      write(*,'(5000(f12.6,1X))')bgrid(ib),(cdabs(psi(i))**2,i=1,ntotsta), sum(cdabs(psi(:))**2),v_coll
+     write(20,'(5000(f12.6,1X))')bgrid(ib),(cdabs(psi(i))**2,i=1,ntotsta), sum(cdabs(psi(:))**2),v_coll
     enddo 
+
+    close(20)
 
     deallocate(mcoup,timegrid,esta,mat)
     deallocate(matintrp,psi,rmat2intrp,cmat2intrp)
