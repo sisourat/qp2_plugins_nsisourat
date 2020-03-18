@@ -11,6 +11,16 @@ use general
      call ezfio_get_cippres_i_state_coll(i_state_coll)
  END_PROVIDER 
 
+ BEGIN_PROVIDER [integer, stamin_coll]
+  implicit none
+     call ezfio_get_cippres_stamin_coll(stamin_coll)
+ END_PROVIDER 
+
+ BEGIN_PROVIDER [integer, stamax_coll]
+  implicit none
+     call ezfio_get_cippres_stamax_coll(stamax_coll)
+ END_PROVIDER 
+
  BEGIN_PROVIDER [integer, n_time]
   implicit none
      call ezfio_get_cippres_n_time(n_time)

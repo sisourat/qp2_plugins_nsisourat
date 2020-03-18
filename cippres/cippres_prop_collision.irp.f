@@ -31,6 +31,12 @@ program cippres_prop_collision
                 call ezfio_has_cippres_v_coll(exists)
                 if (exists) then
                   call ezfio_has_cippres_i_state_coll(exists)
+                  if (exists) then
+                    call ezfio_has_cippres_stamin_coll(exists)
+                    if (exists) then
+                      call ezfio_has_cippres_stamax_coll(exists)
+                    endif
+                  endif
                 endif
               endif
             endif
@@ -47,12 +53,15 @@ program cippres_prop_collision
     call ezfio_get_cippres_tgrid(tgrid)
     call ezfio_get_cippres_bgrid(bgrid)
     call ezfio_get_cippres_coll_couplings_cippres(coll_couplings_cippres)
+    call ezfio_get_cippres_stamin_coll(stamin_coll)
+    call ezfio_get_cippres_stamax_coll(stamax_coll)
     call ezfio_get_cippres_i_state_coll(i_state_coll)
     call ezfio_get_cippres_v_coll(v_coll)
     print*, "" 
     print*, "Collision info"
     print*, "" 
     print*,"n_bimp,n_time,i_state_coll,v_coll =", n_bimp, n_time, i_state_coll, v_coll
+    print*,"stamin, stamax, ntotsta =", stamin_coll, stamax_coll, stamax_coll-stamin_coll
 !    print*,"impact. param. =", bgrid
 !   print*,"tgrid = ", tgrid
 !   print*,"zgrid = ", zgrid
@@ -62,13 +71,7 @@ program cippres_prop_collision
     call ezfio_get_cippres_n_csf_cippres(n_csf_cippres)
 
     ntime= n_time
-    ntotsta = 10 !n_csf_cippres(ici1)
-
-!    do ib = 1, n_bimp
-!     do i = 1, n_time
-!      print*,'cc',ib,i,coll_couplings_cippres(1:ntotsta,1:ntotsta,i,ib)
-!!     enddo
-!    enddo
+    ntotsta = stamax_coll-stamin_coll
 
     allocate(mcoup(ntime,ntotsta,ntotsta),timegrid(ntime),esta(ntotsta),mat(ntotsta,ntotsta))
     allocate(psi(ntotsta))
@@ -76,14 +79,17 @@ program cippres_prop_collision
     allocate(matintrp(ntotsta,ntotsta))
 
     timegrid(1:ntime) = tgrid(1:n_time)
+    esta(1:ntotsta) = eigvalues_cippres(stamin_coll:stamax_coll,ici1)
+
 ! loop over b
 
     do ib = 1, n_bimp
 
      do i = 1, ntime
-      mcoup(i,1:ntotsta,1:ntotsta) = dcmplx(coll_couplings_cippres(1:ntotsta,1:ntotsta,i,ib),0d0)
+      mcoup(i,1:ntotsta,1:ntotsta) = dcmplx(coll_couplings_cippres(stamin_coll:stamax_coll,stamin_coll:stamax_coll,i,ib),0d0)
 !     print*,'mcoup',i,mcoup(i,:,:)
      enddo
+
      psi(:) = 0d0
      psi(i_state_coll) = 1d0
 ! propagation 

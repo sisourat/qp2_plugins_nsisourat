@@ -1,7 +1,8 @@
 <CollInput>
-  <ImpactParam type='linear' bmin='0.45' bmax='2.2' nb='1' />
+  <ImpactParam type='linear' bmin='1.05' bmax='2.2' nb='1' />
   <ImpactVel vx='0.1' vy='0.0' vz='2.0' />
   <Zgrid type='exp' zmin='-100' zmax='100' nzgrid='200' />
+  <States stamin='1' stamax='11'/>
   <InitState   type='target' state='1' />
   <Potential charge='-1.0' exponent='0.0' />
 </CollInput>

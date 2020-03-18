@@ -32,6 +32,10 @@ zmax = zgrid[0].getAttribute("zmax")
 nzgrid = zgrid[0].getAttribute("nzgrid")
 print ztype, zmin, zmax, nzgrid
 
+states = coll_input[0].getElementsByTagName('States')
+stamin = states[0].getAttribute("stamin")
+stamax = states[0].getAttribute("stamax")
+print stamin, stamax
 
 state = coll_input[0].getElementsByTagName('InitState')
 istate = state[0].getAttribute("state")
