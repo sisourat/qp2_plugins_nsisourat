@@ -108,6 +108,9 @@ use general
    charge_coulomb_center(1:n_pcenter) = charge_pcenter(1:n_pcenter)
    touch charge_coulomb_center
 
+   call ezfio_get_cippres_stamin_coll(stamin_coll)
+   call ezfio_get_cippres_stamax_coll(stamax_coll)
+
  do ib = 1, n_bimp
   do it = 1, n_time
 
@@ -133,8 +136,10 @@ use general
     enddo
 
     coll_mat(:,:) = 0d0
-    do i = 1, n_csf_cippres(ici1) ! first loop on the first eigenvectors
-     do j = 1, n_csf_cippres(ici1) ! then on the second eigenvectors
+!    do i = 1, n_csf_cippres(ici1) ! first loop on the first eigenvectors
+!     do j = 1, n_csf_cippres(ici1) ! then on the second eigenvectors
+    do i = stamin_coll, stamax_coll
+     do j = stamin_coll, stamax_coll
       do k = 1, n_csf_cippres(ici1) ! loop over the csfs of the ici1 run
        do l = 1, n_csf_cippres(ici1) ! then over the csfs of the ici1 run
           coll_mat(j,i) += coll_csf_mat(l,k) * eigvec1(k,i) * eigvec2(l,j)
