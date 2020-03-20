@@ -1,8 +1,29 @@
+subroutine myprint_det(string,Nint,output) 
+  use bitmasks
+  implicit none
+  BEGIN_DOC
+  ! Subroutine to print the content of a determinant using the '+-' notation
+  END_DOC
+  integer, intent(in)            :: Nint
+  integer(bit_kind), intent(in)  :: string(Nint,2)
+  character*(2048)                :: output(2)
+
+  call bitstring_to_str( output(1), string(1,1), Nint )
+  call bitstring_to_str( output(2), string(1,2), Nint )
+!  print *,  trim(output(1))
+!  print *,  trim(output(2))
+
+end
+ 
+
 subroutine from_csf_to_det(irun)
  implicit none
  use bitmasks ! you need to include the bitmasks_module.f90 features
  integer, intent(in) :: irun
  integer :: i,j,k,idet_tmp,istate
+
+ character*(2048)   :: output(2)
+
  print*,'*************************************'
  print*,'n_det_max_csf, n_csf_max',n_det_max_csf, n_csf_max
  print*,'*************************************'
@@ -71,10 +92,9 @@ subroutine from_csf_to_det(irun)
    idet_tmp += 1
    psi_det(:,1,idet_tmp) = psi_alpha_uniq_tmp(:,j)
    psi_det(:,2,idet_tmp) = psi_beta_uniq_tmp(:,i)
-!  print*,'i,j'
-!  call print_det(psi_det(1,1,idet_tmp),N_int)
-!  call print_det(psi_det(1,2,idet_tmp),N_int)
-!  print*,''
+   print*,'idet = ', idet_tmp
+   call print_det(psi_det(1,1,idet_tmp),N_int)
+   print*,''
    do istate = 1, N_states
     psi_coef(idet_tmp,istate) = coef_alpha_beta(j,i,istate)
    enddo
@@ -83,6 +103,20 @@ subroutine from_csf_to_det(irun)
 
  touch psi_det psi_coef 
 
+  print*,mo_num,N_det,N_states
+  do i = 1, N_det
+    print*,i
+    call myprint_det(psi_det(1,1,i),N_int,output)
+    print *,  trim(output(1))
+    print *,  trim(output(2))
+  enddo
+  do istate = 1, N_states
+      print*,istate, eigvalues_cippres(istate,irun), N_states
+    do i = 1, N_det
+      print*, psi_coef(i,istate)
+    enddo  
+  enddo
+  stop
 ! do istate = 1, N_states
 !  double precision :: accu,hij
 !  accu = 0.d0

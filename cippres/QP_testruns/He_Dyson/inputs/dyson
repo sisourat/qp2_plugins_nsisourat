@@ -1,0 +1,277 @@
+Number of MO 5
+Number of Determinants 25
+1
+Number of MO 5
+Number of Determinants 5
+
+1
+(N-1)e & (N)e states =  0 0
+Dyson orb. norm 0.9927455217308645
+
+(N-1)e & (N)e states =  1 0
+Dyson orb. norm 0.004162419062533386
+
+(N-1)e & (N)e states =  2 0
+Dyson orb. norm 0.0010306864022010085
+
+(N-1)e & (N)e states =  3 0
+Dyson orb. norm 0.0010306864022010085
+
+(N-1)e & (N)e states =  4 0
+Dyson orb. norm 0.001030686402201002
+
+1.0000000000000009
+
+
+(N-1)e & (N)e states =  0 1
+Dyson orb. norm 0.49826344796816435
+
+(N-1)e & (N)e states =  1 1
+Dyson orb. norm 0.5014162479267612
+
+(N-1)e & (N)e states =  2 1
+Dyson orb. norm 0.00010676803502420266
+
+(N-1)e & (N)e states =  3 1
+Dyson orb. norm 0.00010676803502420266
+
+(N-1)e & (N)e states =  4 1
+Dyson orb. norm 0.00010676803502420266
+
+0.9999999999999981
+
+
+(N-1)e & (N)e states =  0 2
+Dyson orb. norm 0.4991990241639991
+
+(N-1)e & (N)e states =  1 2
+Dyson orb. norm 0.0008009758360011489
+
+(N-1)e & (N)e states =  2 2
+Dyson orb. norm 0.000299788462174435
+
+(N-1)e & (N)e states =  3 2
+Dyson orb. norm 0.49970021153762634
+
+(N-1)e & (N)e states =  4 2
+Dyson orb. norm 1.9934080226979627e-13
+
+1.0000000000000004
+
+
+(N-1)e & (N)e states =  0 3
+Dyson orb. norm 0.49919902416399853
+
+(N-1)e & (N)e states =  1 3
+Dyson orb. norm 0.0008009758360011467
+
+(N-1)e & (N)e states =  2 3
+Dyson orb. norm 0.4996992229803029
+
+(N-1)e & (N)e states =  3 3
+Dyson orb. norm 0.00029978789085506933
+
+(N-1)e & (N)e states =  4 3
+Dyson orb. norm 9.89128841533047e-07
+
+0.9999999999999991
+
+
+(N-1)e & (N)e states =  0 4
+Dyson orb. norm 0.49919902416399825
+
+(N-1)e & (N)e states =  1 4
+Dyson orb. norm 0.0008009758360011473
+
+(N-1)e & (N)e states =  2 4
+Dyson orb. norm 9.885575221625823e-07
+
+(N-1)e & (N)e states =  3 4
+Dyson orb. norm 5.715187112674231e-10
+
+(N-1)e & (N)e states =  4 4
+Dyson orb. norm 0.4999990108709583
+
+0.9999999999999986
+
+
+(N-1)e & (N)e states =  0 5
+Dyson orb. norm 0.005552758981983671
+
+(N-1)e & (N)e states =  1 5
+Dyson orb. norm 0.9935043217080397
+
+(N-1)e & (N)e states =  2 5
+Dyson orb. norm 0.00031430643665946513
+
+(N-1)e & (N)e states =  3 5
+Dyson orb. norm 0.00031430643665946866
+
+(N-1)e & (N)e states =  4 5
+Dyson orb. norm 0.00031430643665946513
+
+1.0000000000000018
+
+
+(N-1)e & (N)e states =  0 6
+Dyson orb. norm 0.0008009758360011495
+
+(N-1)e & (N)e states =  1 6
+Dyson orb. norm 0.4991990241639981
+
+(N-1)e & (N)e states =  2 6
+Dyson orb. norm 0.3507298186192097
+
+(N-1)e & (N)e states =  3 6
+Dyson orb. norm 0.0012922068461869878
+
+(N-1)e & (N)e states =  4 6
+Dyson orb. norm 0.14797797453460237
+
+0.9999999999999983
+
+
+(N-1)e & (N)e states =  0 7
+Dyson orb. norm 0.0008009758360011484
+
+(N-1)e & (N)e states =  1 7
+Dyson orb. norm 0.49919902416399814
+
+(N-1)e & (N)e states =  2 7
+Dyson orb. norm 0.0018354062426611626
+
+(N-1)e & (N)e states =  3 7
+Dyson orb. norm 0.498164593757338
+
+(N-1)e & (N)e states =  4 7
+Dyson orb. norm 1.5064758612956617e-29
+
+0.9999999999999984
+
+
+(N-1)e & (N)e states =  0 8
+Dyson orb. norm 0.0008009758360011485
+
+(N-1)e & (N)e states =  1 8
+Dyson orb. norm 0.49919902416399764
+
+(N-1)e & (N)e states =  2 8
+Dyson orb. norm 0.1474347751381277
+
+(N-1)e & (N)e states =  3 8
+Dyson orb. norm 0.0005431993964741758
+
+(N-1)e & (N)e states =  4 8
+Dyson orb. norm 0.3520220254653967
+
+0.9999999999999973
+
+
+(N-1)e & (N)e states =  0 9
+Dyson orb. norm 2.5420055365676015e-33
+
+(N-1)e & (N)e states =  1 9
+Dyson orb. norm 2.401458845363471e-33
+
+(N-1)e & (N)e states =  2 9
+Dyson orb. norm 0.3080276076145495
+
+(N-1)e & (N)e states =  3 9
+Dyson orb. norm 0.4551167031630008
+
+(N-1)e & (N)e states =  4 9
+Dyson orb. norm 0.23685568922244685
+
+0.9999999999999971
+
+
+(N-1)e & (N)e states =  0 10
+Dyson orb. norm 1.0993646604409667e-33
+
+(N-1)e & (N)e states =  1 10
+Dyson orb. norm 1.024138290236919e-31
+
+(N-1)e & (N)e states =  2 10
+Dyson orb. norm 0.4865484352424574
+
+(N-1)e & (N)e states =  3 10
+Dyson orb. norm 0.14414311377666528
+
+(N-1)e & (N)e states =  4 10
+Dyson orb. norm 0.369308450980876
+
+0.9999999999999987
+
+
+(N-1)e & (N)e states =  0 11
+Dyson orb. norm 3.238028595906119e-34
+
+(N-1)e & (N)e states =  1 11
+Dyson orb. norm 8.413592523017827e-33
+
+(N-1)e & (N)e states =  2 11
+Dyson orb. norm 0.2218793875059175
+
+(N-1)e & (N)e states =  3 11
+Dyson orb. norm 0.4030280370514596
+
+(N-1)e & (N)e states =  4 11
+Dyson orb. norm 0.37509257544262176
+
+0.9999999999999989
+
+
+(N-1)e & (N)e states =  0 12
+Dyson orb. norm 4.393406931286765e-33
+
+(N-1)e & (N)e states =  1 12
+Dyson orb. norm 1.6744987816328104e-32
+
+(N-1)e & (N)e states =  2 12
+Dyson orb. norm 0.51014839350468
+
+(N-1)e & (N)e states =  3 12
+Dyson orb. norm 0.46947979062694917
+
+(N-1)e & (N)e states =  4 12
+Dyson orb. norm 0.020371815868369027
+
+0.9999999999999982
+
+
+(N-1)e & (N)e states =  0 13
+Dyson orb. norm 1.0183457781038208e-32
+
+(N-1)e & (N)e states =  1 13
+Dyson orb. norm 1.654435686143971e-32
+
+(N-1)e & (N)e states =  2 13
+Dyson orb. norm 0.14006284279906164
+
+(N-1)e & (N)e states =  3 13
+Dyson orb. norm 0.19489902204858905
+
+(N-1)e & (N)e states =  4 13
+Dyson orb. norm 0.6650381351523497
+
+1.0000000000000004
+
+
+(N-1)e & (N)e states =  0 14
+Dyson orb. norm 0.0034382713189874147
+
+(N-1)e & (N)e states =  1 14
+Dyson orb. norm 0.0009170113026666217
+
+(N-1)e & (N)e states =  2 14
+Dyson orb. norm 0.3318815724594476
+
+(N-1)e & (N)e states =  3 14
+Dyson orb. norm 0.3318815724594487
+
+(N-1)e & (N)e states =  4 14
+Dyson orb. norm 0.33188157245945105
+
+1.0000000000000013
+
+

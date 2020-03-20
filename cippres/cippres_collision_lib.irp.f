@@ -68,6 +68,14 @@ use general
 
  logical :: exists
 
+ call ezfio_has_cippres_coll_couplings_cippres(exists)
+
+ if (exists) then
+
+   call ezfio_get_cippres_coll_couplings_cippres(coll_couplings_cippres)
+
+ else
+
    coll_couplings_cippres(:,:,:,:) = 0d0
 
    allocate(coll_csf_mat(n_csf_cippres(ici1),n_csf_cippres(ici1)))
@@ -140,6 +148,8 @@ use general
  enddo
 
  deallocate(coll_csf_mat,eigval1,eigval2,eigvec1,eigvec2,coll_mat) 
+
+ endif
 
  END_PROVIDER
 

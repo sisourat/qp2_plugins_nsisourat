@@ -55,12 +55,20 @@ open(unit=10,file='stieltjes.info.txt')
  write(10,*)nmin,nmax,shift1
 close(10)
 
+k =1
 do i = nmin+2, nmax
+  k = k + 1
   write(fname, '(A16,I2,A4)')"stieltjes.order.",i,".txt"
+  write(*, '(A16,I2,A4)')"stieltjes.order.",i,".txt"
   open(238,file=fname)
   do  j = nmin, i-1
      write(238,'(2(f20.16,1X))')e1(j,i)-shift1,g1(j,i)
   enddo
+  if(ijob==1) then
+    call interp(e1(nmin:i-1,i)-shift1,g1(nmin:i-1,i),i-nmin,0q0,g_)
+    g_ = 2.0d0*pi*g_
+    write(*,'(I3,A3,F23.15,A)')i," ",g_*27211,' in meV'
+  endif
   close(238)
 enddo
 
