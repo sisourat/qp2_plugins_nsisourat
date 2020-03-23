@@ -9,6 +9,7 @@ program cippres_prop_collision
 ! cippres_prop_collision solves the TDSE using the matrix elements from cippres_collision
   END_DOC
 
+  double precision :: t1, t2, tdyn
   logical :: exists
 
   integer :: i, j, ib
@@ -16,7 +17,7 @@ program cippres_prop_collision
   PROVIDE ezfio_filename !HF_bitmask mo_coef
 
   if (mpi_master) then
-    call ezfio_has_cippres_n_time(exists)
+   call ezfio_has_cippres_n_time(exists)
     if (exists) then
       call ezfio_has_cippres_n_bimp(exists)
       if (exists) then
@@ -25,17 +26,14 @@ program cippres_prop_collision
           call ezfio_has_cippres_zgrid(exists)
           if (exists) then
             call ezfio_has_cippres_bgrid(exists)
-            if (exists) then
-              call ezfio_has_cippres_coll_couplings_cippres(exists)
+             if (exists) then
+              call ezfio_has_cippres_v_coll(exists)
               if (exists) then
-                call ezfio_has_cippres_v_coll(exists)
+                call ezfio_has_cippres_i_state_coll(exists)
                 if (exists) then
-                  call ezfio_has_cippres_i_state_coll(exists)
+                  call ezfio_has_cippres_stamin_coll(exists)
                   if (exists) then
-                    call ezfio_has_cippres_stamin_coll(exists)
-                    if (exists) then
-                      call ezfio_has_cippres_stamax_coll(exists)
-                    endif
+                    call ezfio_has_cippres_stamax_coll(exists)
                   endif
                 endif
               endif
@@ -52,7 +50,6 @@ program cippres_prop_collision
    call ezfio_get_cippres_zgrid(zgrid)
    call ezfio_get_cippres_tgrid(tgrid)
    call ezfio_get_cippres_bgrid(bgrid)
-   call ezfio_get_cippres_coll_couplings_cippres(coll_couplings_cippres)
    call ezfio_get_cippres_stamin_coll(stamin_coll)
    call ezfio_get_cippres_stamax_coll(stamax_coll)
    call ezfio_get_cippres_i_state_coll(i_state_coll)
@@ -62,7 +59,7 @@ program cippres_prop_collision
    print*, "" 
    print*,"n_bimp,n_time,i_state_coll,v_coll =", n_bimp, n_time, i_state_coll, v_coll
    print*,"stamin, stamax, ntotsta =", stamin_coll, stamax_coll, stamax_coll-stamin_coll
-    print*,"impact. param. =", bgrid
+   print*,"impact. param. =", bgrid
    print*,"tgrid = ", tgrid
    print*,"zgrid = ", zgrid
    print*, "" 
@@ -71,7 +68,7 @@ program cippres_prop_collision
    call ezfio_get_cippres_n_csf_cippres(n_csf_cippres)
 
    ntime= n_time
-   ntotsta = stamax_coll-stamin_coll
+   ntotsta = stamax_coll-stamin_coll+1
 
    allocate(mcoup(ntime,ntotsta,ntotsta),timegrid(ntime),esta(ntotsta),mat(ntotsta,ntotsta))
    allocate(psi(ntotsta))
@@ -94,18 +91,18 @@ program cippres_prop_collision
    do ib = 1, n_bimp
 
     do i = 1, ntime
-     mcoup(i,1:ntotsta,1:ntotsta) = dcmplx(coll_couplings_cippres(stamin_coll:stamax_coll,stamin_coll:stamax_coll,i,ib),0d0)
+     mcoup(i,1:ntotsta,1:ntotsta) = dcmplx(coll_couplings(stamin_coll:stamax_coll,stamin_coll:stamax_coll,i,ib),0d0)
 !     print*,'mcoup',i,mcoup(i,1,1)
     enddo
 
     psi(:) = 0d0
     psi(i_state_coll) = 1d0
 ! propagation 
-!  call cpu_time(t1)
+  call cpu_time(t1)
     call dyn
-!  call cpu_time(t2)
-!  tdyn = t2-t1
-!  write(*,*)'DYN takes',tdyn
+  call cpu_time(t2)
+  tdyn = t2-t1
+  write(*,*)'DYN takes',tdyn
 !     print*,bgrid(ib),ntotsta,psi
     write(*,'(5000(f12.6,1X))')bgrid(ib),(cdabs(psi(i))**2,i=1,ntotsta), sum(cdabs(psi(:))**2),v_coll
     write(20,'(5000(f12.6,1X))')bgrid(ib),(cdabs(psi(i))**2,i=1,ntotsta), sum(cdabs(psi(:))**2),v_coll

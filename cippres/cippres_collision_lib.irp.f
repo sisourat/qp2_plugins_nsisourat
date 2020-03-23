@@ -56,7 +56,7 @@ use general
      call ezfio_get_cippres_tgrid(tgrid)
  END_PROVIDER 
 
- BEGIN_PROVIDER [double precision, coll_couplings_cippres, (n_csf_max,n_csf_max,n_time,n_bimp)]
+ BEGIN_PROVIDER [double precision, coll_couplings, (n_csf_max,n_csf_max,n_time,n_bimp)]
  use general
  implicit none
  integer :: i, j, k, l
@@ -67,18 +67,27 @@ use general
  integer :: nsta, ncsf
  double precision :: hij
 
+ double precision :: t1, t2
+
  logical :: exists
 
  PROVIDE ezfio_filename !HF_bitmask mo_coef
- call ezfio_has_cippres_coll_couplings_cippres(exists)
+! call ezfio_has_cippres_coll_couplings_cippres(exists)
 
- if (exists) then
+! if (exists) then
+!
+!   print*,'coll_couplings_cippres found in EZFIO'
+!   call cpu_time(t1)
+!   call ezfio_get_cippres_coll_couplings_cippres(coll_couplings)
+!   call cpu_time(t2)
+!   print*,t2-t1
+!   print*,' '
 
-   call ezfio_get_cippres_coll_couplings_cippres(coll_couplings_cippres)
+! else
 
- else
-
-   coll_couplings_cippres(:,:,:,:) = 0d0
+   print*,'Computing coll_couplings'
+   call cpu_time(t1)
+   coll_couplings(:,:,:,:) = 0d0
 
    allocate(coll_csf_mat(n_csf_cippres(ici1),n_csf_cippres(ici1)))
  
@@ -93,10 +102,10 @@ use general
 
 
    if (mpi_master) then
-     call ezfio_has_cippres_n_pcenter(exists)
-      if (exists) then
-        call ezfio_has_cippres_charge_pcenter(exists)
-      endif
+    call ezfio_has_cippres_n_pcenter(exists)
+    if (exists) then
+     call ezfio_has_cippres_charge_pcenter(exists)
+    endif
    endif
 
    call ezfio_get_cippres_n_pcenter(n_pcenter)
@@ -164,13 +173,16 @@ use general
     CALL DGEMM('N','N',ncsf,nsta,ncsf,1.d0,coll_csf_mat(1:ncsf,1:ncsf),ncsf,eigvec1(1:ncsf,stamin_coll:stamax_coll),ncsf,0.d0,mattmp,ncsf)
     CALL DGEMM('N','N',nsta,nsta,ncsf,1.d0,transpose(eigvec2(1:ncsf,stamin_coll:stamax_coll)),nsta,mattmp,ncsf,0.d0,coll_mat(1:nsta,1:nsta),nsta)
 
-    coll_couplings_cippres(stamin_coll:stamax_coll,stamin_coll:stamax_coll,it,ib) = coll_mat(1:nsta,1:nsta)
+    coll_couplings(stamin_coll:stamax_coll,stamin_coll:stamax_coll,it,ib) = coll_mat(1:nsta,1:nsta)
    enddo
  enddo
+   call cpu_time(t2)
+   print*,t2-t1
+   print*,' '
 
  deallocate(coll_csf_mat,eigval1,eigval2,eigvec1,eigvec2,coll_mat,mattmp) 
 
- endif
+! endif
 
  END_PROVIDER
 
