@@ -61,13 +61,15 @@ use general
  implicit none
  integer :: i, j, k, l
  integer :: ib, ic, it
- double precision, allocatable :: eigval1(:),eigvec1(:,:),eigval2(:),eigvec2(:,:),coll_csf_mat(:,:),coll_mat(:,:)
+ double precision, allocatable :: eigval1(:),eigvec1(:,:),eigval2(:),eigvec2(:,:),coll_csf_mat(:,:),coll_mat(:,:), mattmp(:,:)
  double precision, dimension(mo_num,mo_num) :: w1e
 
+ integer :: nsta, ncsf
  double precision :: hij
 
  logical :: exists
 
+ PROVIDE ezfio_filename !HF_bitmask mo_coef
  call ezfio_has_cippres_coll_couplings_cippres(exists)
 
  if (exists) then
@@ -89,11 +91,7 @@ use general
    eigvec1(:,:) = eigvectors_cippres(1:n_csf_cippres(ici1),1:n_csf_cippres(ici1),ici1)
    eigvec2(:,:) = eigvectors_cippres(1:n_csf_cippres(ici1),1:n_csf_cippres(ici1),ici1)
 
-   allocate(coll_mat(n_csf_cippres(ici1),n_csf_cippres(ici1)))
 
-   coll_mat(:,:) = 0d0
-
-   PROVIDE ezfio_filename !HF_bitmask mo_coef
    if (mpi_master) then
      call ezfio_has_cippres_n_pcenter(exists)
       if (exists) then
@@ -111,6 +109,12 @@ use general
    call ezfio_get_cippres_stamin_coll(stamin_coll)
    call ezfio_get_cippres_stamax_coll(stamax_coll)
 
+   nsta = stamax_coll-stamin_coll+1
+   ncsf = n_csf_cippres(ici1)
+   allocate(coll_mat(nsta,nsta))
+   coll_mat(:,:) = 0d0
+   allocate(mattmp(ncsf,nsta))
+
  do ib = 1, n_bimp
   do it = 1, n_time
 
@@ -124,35 +128,47 @@ use general
     enddo
 
     coll_csf_mat(:,:) = 0d0
+
+!$OMP PARALLEL DO PRIVATE(i,j,k,l,hij)
+! SCHEDULE(DYNAMIC) 
     do i = 1, n_csf_cippres(ici1) ! first loop on the csf of the space ispace 
-     do j = 1, n_csf_cippres(ici1)
+     do j = i, n_csf_cippres(ici1)
       do k = 1, n_det_csf_cippres(i,ici1) ! then on the determinants belonging to the ith CSF of space ispace
        do l = 1, n_det_csf_cippres(j,ici1)
           call i_w1e_j(csf_basis(1,1,k,i,ici1),csf_basis(1,1,l,j,ici1),N_int,w1e,hij)
           coll_csf_mat(j,i) += hij * coef_det_csf_basis(k,i,ici1) * coef_det_csf_basis(l,j,ici1)
        enddo
       enddo
+      coll_csf_mat(i,j) = coll_csf_mat(j,i)
      enddo
     enddo
+!$OMP END PARALLEL DO
 
     coll_mat(:,:) = 0d0
 !    do i = 1, n_csf_cippres(ici1) ! first loop on the first eigenvectors
 !     do j = 1, n_csf_cippres(ici1) ! then on the second eigenvectors
-    do i = stamin_coll, stamax_coll
-     do j = stamin_coll, stamax_coll
-      do k = 1, n_csf_cippres(ici1) ! loop over the csfs of the ici1 run
-       do l = 1, n_csf_cippres(ici1) ! then over the csfs of the ici1 run
-          coll_mat(j,i) += coll_csf_mat(l,k) * eigvec1(k,i) * eigvec2(l,j)
-       enddo
-      enddo
-     enddo
-    enddo
 
-     coll_couplings_cippres(1:n_csf_cippres(ici1),1:n_csf_cippres(ici1),it,ib) = coll_mat(1:n_csf_cippres(ici1),1:n_csf_cippres(ici1))
+!!$OMP PARALLEL DO PRIVATE(i,j,k,l)
+!! SCHEDULE(DYNAMIC) 
+!    do i = stamin_coll, stamax_coll
+!     do j = stamin_coll, stamax_coll
+!      do k = 1, n_csf_cippres(ici1) ! loop over the csfs of the ici1 run
+!       do l = 1, n_csf_cippres(ici1) ! then over the csfs of the ici1 run
+!          coll_mat(j,i) += coll_csf_mat(l,k) * eigvec1(k,i) * eigvec2(l,j)
+!       enddo
+!      enddo
+!     enddo
+!    enddo
+!!$OMP END PARALLEL DO
+
+    CALL DGEMM('N','N',ncsf,nsta,ncsf,1.d0,coll_csf_mat(1:ncsf,1:ncsf),ncsf,eigvec1(1:ncsf,stamin_coll:stamax_coll),ncsf,0.d0,mattmp,ncsf)
+    CALL DGEMM('N','N',nsta,nsta,ncsf,1.d0,transpose(eigvec2(1:ncsf,stamin_coll:stamax_coll)),nsta,mattmp,ncsf,0.d0,coll_mat(1:nsta,1:nsta),nsta)
+
+    coll_couplings_cippres(stamin_coll:stamax_coll,stamin_coll:stamax_coll,it,ib) = coll_mat(1:nsta,1:nsta)
    enddo
  enddo
 
- deallocate(coll_csf_mat,eigval1,eigval2,eigvec1,eigvec2,coll_mat) 
+ deallocate(coll_csf_mat,eigval1,eigval2,eigvec1,eigvec2,coll_mat,mattmp) 
 
  endif
 
