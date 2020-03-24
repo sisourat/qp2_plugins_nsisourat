@@ -53,10 +53,12 @@ do i = 1, nsta
    sig(i) =  sig(i) + 0.5d0*(bproj(j+1)-bproj(j))*(bproj(j)*prob(i,j)+bproj(j+1)*prob(i,j+1))
  enddo
   sig(i) =  sig(i)*2d0*pi
-  print*, i, esta(i), sig(i)/3.57d0
+!  print*, i, esta(i), sig(i)/3.57d0
 enddo
 
- print*, sum(sig(6:nsta))/3.57d0
+do i = 1, nsta
+ write(*,'(i5,1X,10(f16.9,1X))'), i, esta(i), sig(i)/3.57d0, (sum(sig(:))-sum(sig(1:i)))/3.57d0
+enddo
 
 deallocate(esta,bproj,prob,sig)
 end
