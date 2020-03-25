@@ -49,7 +49,7 @@ subroutine setup_coll(finput)
  integer :: npcenter
  double precision, allocatable :: ch_pcenter(:)
 
- integer :: istate, istamin, istamax
+ integer :: istate, istamin, istamax, sistamin, sistamax, distamin, distamax
  logical :: exists
 
  call system('python $QP_ROOT/plugins/qp2_plugins_nsisourat/cippres/libs/coll_input.py '//trim(finput)//' > collinp')
@@ -59,6 +59,8 @@ subroutine setup_coll(finput)
   read(10,*)vproj
   read(10,*)ztype,zmin,zmax,nz
   read(10,*)istamin,istamax
+  read(10,*)sistamin,sistamax
+  read(10,*)distamin,distamax
   read(10,*)istate
   read(10,*)npcenter
   allocate(ch_pcenter(npcenter))
@@ -71,8 +73,12 @@ subroutine setup_coll(finput)
 
  print*,nb,nz,npcenter
  call ezfio_set_cippres_v_coll(vproj)
- call ezfio_set_cippres_stamin_coll(istamin)
- call ezfio_set_cippres_stamax_coll(istamax)
+ call ezfio_set_cippres_stamin_bound(istamin)
+ call ezfio_set_cippres_stamax_bound(istamax)
+ call ezfio_set_cippres_stamin_si(sistamin)
+ call ezfio_set_cippres_stamax_si(sistamax)
+ call ezfio_set_cippres_stamin_di(distamin)
+ call ezfio_set_cippres_stamax_di(distamax)
  call ezfio_set_cippres_i_state_coll(istate)
 
  call ezfio_set_cippres_n_time(nz)

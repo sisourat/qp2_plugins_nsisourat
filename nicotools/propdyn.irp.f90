@@ -175,9 +175,11 @@ end subroutine interp
       END SUBROUTINE locate
 !  (C) Copr. 1986-92 Numerical Recipes Software #>.)@1.
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 end module linearinterp
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
 module propdyn
 use splineinterp
 use linearinterp
@@ -186,12 +188,18 @@ implicit none
 double complex, dimension(:,:), allocatable :: matintrp
 double precision, dimension(:,:,:), allocatable :: rmat2intrp, cmat2intrp
 double complex, dimension(:), allocatable :: psi
-double complex, dimension(:,:), allocatable ::  mat
+double precision, dimension(:,:,:,:), allocatable ::  mat
 double complex, dimension(:,:,:), allocatable ::  mcoup
 
-integer :: ntime, ntotsta
+integer :: ntime, ntotsta, nsi, ndi, nsta
 double precision, dimension(:), allocatable :: timegrid
 double precision, dimension(:), allocatable :: esta
+
+double precision, dimension(:,:,:), allocatable :: g_si_intrp, g_ddi_intrp
+double precision, dimension(:,:,:), allocatable :: g_si, g_ddi
+double precision, dimension(:,:), allocatable :: g_sdi_intrp
+double precision, dimension(:,:), allocatable :: g_sdi
+double precision :: p_si, p_ddi, p_sdi
 
 contains
 
@@ -231,23 +239,33 @@ integer :: klo, khi, k
        ksave = klo
       endif
 
-!$OMP PARALLEL DO COLLAPSE(2)  PRIVATE(i,j,rmat,cmat)
+matintrp(:,:)=0d0
+!!!$OMP PARALLEL DO COLLAPSE(2)  PRIVATE(i,j,rmat,cmat)
+!$OMP PARALLEL DO PRIVATE(i,j,rmat,cmat)
 ! SCHEDULE(DYNAMIC) 
-do i = 1, ntotsta
- do j = 1, ntotsta
+do i = 1, nsta
+ do j = 1, nsta
 !   call interp(timegrid%a,mcoup(:,j,i),timegrid%na,time,rmat,cmat)
    call splint(klo,khi,timegrid,real(mcoup(:,j,i)),aimag(mcoup(:,j,i)),rmat2intrp(:,j,i),cmat2intrp(:,j,i),ntime,time,rmat,cmat)
-   matintrp(j,i) = dcmplx(rmat,cmat)*exp(-imag*(esta(i)-esta(j))*time)
+   matintrp(j,i) = matintrp(j,i) +dcmplx(rmat,cmat)*exp(-imag*(esta(i)-esta(j))*time)
+
+!   call splint(klo,khi,timegrid,g_si(:,j,i),g_si(:,j,i),g_si_intrp(:,j,i),g_si_intrp(:,j,i),ntime,time,rmat,cmat)
+!   matintrp(j,i) = matintrp(j,i) - imag*rmat
+!   call splint(klo,khi,timegrid,g_ddi(:,j,i),g_ddi(:,j,i),g_ddi_intrp(:,j,i),g_ddi_intrp(:,j,i),ntime,time,rmat,cmat)
+!   matintrp(j,i) = matintrp(j,i) - imag*rmat
+!   matintrp(j,i) = matintrp(j,i)*exp(-imag*(esta(i)-esta(j))*time)
+
  enddo
+   call splint(klo,khi,timegrid,g_si(:,i,i),g_si(:,i,i),g_si_intrp(:,i,i),g_si_intrp(:,i,i),ntime,time,rmat,cmat)
+   matintrp(i,i) = matintrp(i,i) - imag*rmat
 enddo
 !$OMP END PARALLEL DO
 
 ! --- COMPUTE ACTION OF HAMILTONIAN ON WAVEFUNCTION ---
  psiout = -dcmplx(0d0,1d0)*matmul(matintrp,psiin)
 
-! call pmatvec(mat,psiin,psiout,psidim)
 ! write(60,'(60(f15.6,1X))')time,mat(1,1)*dcmplx(0d0,-1d0)/vproj
-! write(*,'(60(f15.6,1X))')time,(cdabs(psiin(i))**2,i=1,ntotsta)
+! write(*,'(60(f15.6,1X))')time,(cdabs(psiin(i))**2,i=1,nsta)
 
 
 end subroutine hpsit
@@ -281,21 +299,24 @@ External   AbsABMError
 
 integer :: i, j
 
- psidim = ntotsta
+ psidim = nsta
  IntOrder = 6
  TolError = 1d-09
 
- allocate(Psit(ntotsta),dtPsit(ntotsta))
- allocate(RData(ntotsta),CData(ntotsta),IData(ntotsta),LData(ntotsta))
+ allocate(Psit(nsta),dtPsit(nsta))
+ allocate(RData(nsta),CData(nsta),IData(nsta),LData(nsta))
  allocate(AuxPsi(psidim,IntOrder+2))
 
 ! for spline interpolation
 ksave = 1
-do i = 1, ntotsta
- do j = 1, ntotsta
+do i = 1, nsta
+ do j = 1, nsta
    call spline(timegrid,real(mcoup(:,j,i)),ntime,0d0,0d0,rmat2intrp(:,j,i))
    call spline(timegrid,aimag(mcoup(:,j,i)),ntime,0d0,0d0,cmat2intrp(:,j,i))
+   call spline(timegrid,g_si(:,j,i),ntime,0d0,0d0,g_si_intrp(:,j,i))
+   call spline(timegrid,g_ddi(:,j,i),ntime,0d0,0d0,g_ddi_intrp(:,j,i))
  enddo
+   call spline(timegrid,g_sdi(:,i),ntime,0d0,0d0,g_sdi_intrp(:,i))
 enddo
 
 ! psi is declared in module general and must be given in main with the proper initial conditions
@@ -360,22 +381,6 @@ end subroutine rk4
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-      subroutine pmatvec(mat,vecin,vecout,n)
-!
-! multiply n*n matrices
-      integer i, j, k, n
-      double complex  mat(n,n),vecin(n),vecout(n)
-      double complex, parameter :: imag = dcmplx(0d0,1d0)
-
-       vecout(:)=0d0
-      do 30 i=1,n
-        do 15 k=1,n
-         vecout(i)=vecout(i)+mat(i,k)*vecin(k)
-15      enddo
-         vecout(i) = -imag*vecout(i)
-30    enddo
-      return
-      end subroutine
 
 end module propdyn
 

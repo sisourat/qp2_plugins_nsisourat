@@ -32,7 +32,17 @@ zmax = zgrid[0].getAttribute("zmax")
 nzgrid = zgrid[0].getAttribute("nzgrid")
 print ztype, zmin, zmax, nzgrid
 
-states = coll_input[0].getElementsByTagName('States')
+states = coll_input[0].getElementsByTagName('Bound')
+stamin = states[0].getAttribute("stamin")
+stamax = states[0].getAttribute("stamax")
+print stamin, stamax
+
+states = coll_input[0].getElementsByTagName('SingIon')
+stamin = states[0].getAttribute("stamin")
+stamax = states[0].getAttribute("stamax")
+print stamin, stamax
+
+states = coll_input[0].getElementsByTagName('DoubIon')
 stamin = states[0].getAttribute("stamin")
 stamax = states[0].getAttribute("stamax")
 print stamin, stamax

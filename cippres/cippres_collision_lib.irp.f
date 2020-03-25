@@ -11,14 +11,34 @@ use general
      call ezfio_get_cippres_i_state_coll(i_state_coll)
  END_PROVIDER 
 
- BEGIN_PROVIDER [integer, stamin_coll]
+ BEGIN_PROVIDER [integer, stamin_bound]
   implicit none
-     call ezfio_get_cippres_stamin_coll(stamin_coll)
+     call ezfio_get_cippres_stamin_bound(stamin_bound)
  END_PROVIDER 
 
- BEGIN_PROVIDER [integer, stamax_coll]
+ BEGIN_PROVIDER [integer, stamax_bound]
   implicit none
-     call ezfio_get_cippres_stamax_coll(stamax_coll)
+     call ezfio_get_cippres_stamax_bound(stamax_bound)
+ END_PROVIDER 
+
+ BEGIN_PROVIDER [integer, stamin_si]
+  implicit none
+     call ezfio_get_cippres_stamin_si(stamin_si)
+ END_PROVIDER 
+
+ BEGIN_PROVIDER [integer, stamax_si]
+  implicit none
+     call ezfio_get_cippres_stamax_si(stamax_si)
+ END_PROVIDER 
+
+ BEGIN_PROVIDER [integer, stamin_di]
+  implicit none
+     call ezfio_get_cippres_stamin_di(stamin_di)
+ END_PROVIDER 
+
+ BEGIN_PROVIDER [integer, stamax_di]
+  implicit none
+     call ezfio_get_cippres_stamax_di(stamax_di)
  END_PROVIDER 
 
  BEGIN_PROVIDER [integer, n_time]
@@ -69,23 +89,13 @@ use general
 
  double precision :: t1, t2
 
+ integer :: ni, nf
+
  logical :: exists
 
  PROVIDE ezfio_filename !HF_bitmask mo_coef
-! call ezfio_has_cippres_coll_couplings_cippres(exists)
 
-! if (exists) then
-!
-!   print*,'coll_couplings_cippres found in EZFIO'
-!   call cpu_time(t1)
-!   call ezfio_get_cippres_coll_couplings_cippres(coll_couplings)
-!   call cpu_time(t2)
-!   print*,t2-t1
-!   print*,' '
-
-! else
-
-   print*,'Computing coll_couplings'
+   print*,'Computing coll_couplings',stamax_di
    call cpu_time(t1)
    coll_couplings(:,:,:,:) = 0d0
 
@@ -115,10 +125,16 @@ use general
    charge_coulomb_center(1:n_pcenter) = charge_pcenter(1:n_pcenter)
    touch charge_coulomb_center
 
-   call ezfio_get_cippres_stamin_coll(stamin_coll)
-   call ezfio_get_cippres_stamax_coll(stamax_coll)
+   if(stamax_di == 0) then
+    nsta = stamax_bound-stamin_bound+1
+    ni = stamin_bound
+    nf = stamax_bound
+   else
+    nsta = stamax_di-stamin_bound+1
+    ni = stamin_bound
+    nf = stamax_di
+   endif
 
-   nsta = stamax_coll-stamin_coll+1
    ncsf = n_csf_cippres(ici1)
    allocate(coll_mat(nsta,nsta))
    coll_mat(:,:) = 0d0
@@ -154,26 +170,10 @@ use general
 !$OMP END PARALLEL DO
 
     coll_mat(:,:) = 0d0
-!    do i = 1, n_csf_cippres(ici1) ! first loop on the first eigenvectors
-!     do j = 1, n_csf_cippres(ici1) ! then on the second eigenvectors
+    CALL DGEMM('N','N',ncsf,nsta,ncsf,1.d0,coll_csf_mat(1:ncsf,1:ncsf),ncsf,eigvec1(1:ncsf,ni:nf),ncsf,0.d0,mattmp,ncsf)
+    CALL DGEMM('N','N',nsta,nsta,ncsf,1.d0,transpose(eigvec2(1:ncsf,ni:nf)),nsta,mattmp,ncsf,0.d0,coll_mat(1:nsta,1:nsta),nsta)
 
-!!$OMP PARALLEL DO PRIVATE(i,j,k,l)
-!! SCHEDULE(DYNAMIC) 
-!    do i = stamin_coll, stamax_coll
-!     do j = stamin_coll, stamax_coll
-!      do k = 1, n_csf_cippres(ici1) ! loop over the csfs of the ici1 run
-!       do l = 1, n_csf_cippres(ici1) ! then over the csfs of the ici1 run
-!          coll_mat(j,i) += coll_csf_mat(l,k) * eigvec1(k,i) * eigvec2(l,j)
-!       enddo
-!      enddo
-!     enddo
-!    enddo
-!!$OMP END PARALLEL DO
-
-    CALL DGEMM('N','N',ncsf,nsta,ncsf,1.d0,coll_csf_mat(1:ncsf,1:ncsf),ncsf,eigvec1(1:ncsf,stamin_coll:stamax_coll),ncsf,0.d0,mattmp,ncsf)
-    CALL DGEMM('N','N',nsta,nsta,ncsf,1.d0,transpose(eigvec2(1:ncsf,stamin_coll:stamax_coll)),nsta,mattmp,ncsf,0.d0,coll_mat(1:nsta,1:nsta),nsta)
-
-    coll_couplings(stamin_coll:stamax_coll,stamin_coll:stamax_coll,it,ib) = coll_mat(1:nsta,1:nsta)
+    coll_couplings(ni:nf,ni:nf,it,ib) = coll_mat(1:nsta,1:nsta)
    enddo
  enddo
    call cpu_time(t2)
