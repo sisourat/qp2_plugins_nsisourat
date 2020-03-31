@@ -57,3 +57,8 @@ slave
 tools
 utils
 zmq
+*~
+coll_cross_section
+mo_analysis
+mymulliken_analysis
+

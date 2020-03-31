@@ -86,7 +86,7 @@ program cippres_prop_collision
    endif
    ntotsta = nsta + nsi + ndi
 
-   allocate(mcoup(ntime,nsta,nsta),timegrid(ntime),esta(ntotsta),mat(ntime,ntotsta,ntotsta,n_bimp))
+   allocate(mcoup(ntime,nsta,nsta),timegrid(ntime),esta(ntotsta),mat(ntime,ntotsta,ntotsta))
    allocate(psi(nsta))
    allocate(rmat2intrp(ntime,nsta,nsta),cmat2intrp(ntime,nsta,nsta))
    allocate(matintrp(nsta,nsta))
@@ -106,22 +106,37 @@ program cippres_prop_collision
      write(*,*)esta(i)
    enddo
 
-   do it = 1, ntime
-     mat(it,1:ntotsta,1:ntotsta,1:n_bimp) = coll_couplings(ni:nf,ni:nf,it,1:n_bimp)
-   enddo
 
    print*,'start dyn'
    do ib = 1, n_bimp
+
+    b_coll = bgrid(ib)
+    touch b_coll
+    do it = 1, ntime
+      mat(it,1:ntotsta,1:ntotsta) = coll_couplings(ni:nf,ni:nf,it)
+    enddo
 
     g_si(:,:,:) = 0d0; p_si = 0d0
     g_ddi(:,:,:) = 0d0; p_sdi = 0d0
     g_sdi(:,:) = 0d0; p_ddi = 0d0
 
     mcoup(:,:,:) = 0d0
-    mcoup(:,1:nsta,1:nsta) = mat(:,1:nsta,1:nsta,ib)
+    mcoup(:,1:nsta,1:nsta) = mat(:,1:nsta,1:nsta)
 
-    do i = 1, nsta
-      do j = 1, nsta
+! testing
+
+!    mcoup(:,1:26,1089:1508) = 0d0
+!    mcoup(:,1089:1508,1:26) = 0d0
+
+!    mcoup(:,28:1088,1089:1508) = 0d0
+!    mcoup(:,1089:1508,28:1088) = 0d0
+
+!    do i = 28, 1088
+!       mcoup(:,i,i) = mcoup(:,i,i) - dcmplx(0d0,dsqrt(2d0))
+!    enddo
+!
+!    do i = 1, nsta
+!      do j = 1, nsta
 
 ! coupling between bound states and single ionization states
 !        do k = nsta+1, nsta+nsi
@@ -136,30 +151,32 @@ program cippres_prop_collision
 !             g_ddi(:,j,i) = g_ddi(:,j,i) + mat(:,l,j,ib)*mat(:,k,i,ib)
 !           enddo
 !         enddo
-
-      enddo ! loop over j
-
+!
+!      enddo ! loop over j
+!
 ! coupling between bound states and single ionization states
-        do k = nsta+1, nsta+nsi
-            g_si(:,i,i) = g_si(:,i,i) + mat(:,k,i,ib)**2/abs(esta(i)-esta(k))
-        enddo
+!        do k = nsta+1, nsta+nsi
+!            g_si(:,i,i) = g_si(:,i,i) + mat(:,k,i,ib)**2/abs(esta(i)-esta(k))
+!        enddo
 !   do it = 1, ntime
 !     print*,timegrid(it),g_si(it,1,1)
 !   enddo
-
-       
+!
+!       
 ! coupling between bound states and double ionization states via single ionization states
-      do k = nsta+nsi+1, nsta+nsi+ndi
-        do l = nsta+1, nsta+nsi
-          g_sdi(:,i) = g_sdi(:,i) + mat(:,l,i,ib)*mat(:,l,k,ib)  
-        enddo
-      enddo
-
-    enddo ! loop over i
+!      do k = nsta+nsi+1, nsta+nsi+ndi
+!        do l = nsta+1, nsta+nsi
+!          g_sdi(:,i) = g_sdi(:,i) + mat(:,l,i,ib)*mat(:,l,k,ib)  
+!        enddo
+!      enddo
+!
+!    enddo ! loop over i
 
 !   do it = 1, ntime
 !    write(*,*)g_si(it,1,1)
 !   enddo
+
+! end testing
 
     psi(:) = 0d0
     psi(i_state_coll) = 1d0

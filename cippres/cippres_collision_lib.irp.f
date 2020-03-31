@@ -1,6 +1,11 @@
 use bitmasks ! you need to include the bitmasks_module.f90 features
 use general
 
+ BEGIN_PROVIDER [double precision, b_coll]
+  implicit none
+   b_coll = 0d0
+ END_PROVIDER 
+
  BEGIN_PROVIDER [double precision, v_coll]
   implicit none
      call ezfio_get_cippres_v_coll(v_coll)
@@ -76,7 +81,9 @@ use general
      call ezfio_get_cippres_tgrid(tgrid)
  END_PROVIDER 
 
- BEGIN_PROVIDER [double precision, coll_couplings, (n_csf_max,n_csf_max,n_time,n_bimp)]
+
+
+ BEGIN_PROVIDER [double precision, coll_couplings, (n_csf_max,n_csf_max,n_time)]
  use general
  implicit none
  integer :: i, j, k, l
@@ -95,9 +102,9 @@ use general
 
  PROVIDE ezfio_filename !HF_bitmask mo_coef
 
-   print*,'Computing coll_couplings',stamax_di
+   print*,'Computing coll_couplings', b_coll
    call cpu_time(t1)
-   coll_couplings(:,:,:,:) = 0d0
+   coll_couplings(:,:,:) = 0d0
 
    allocate(coll_csf_mat(n_csf_cippres(ici1),n_csf_cippres(ici1)))
  
@@ -140,12 +147,11 @@ use general
    coll_mat(:,:) = 0d0
    allocate(mattmp(ncsf,nsta))
 
- do ib = 1, n_bimp
   do it = 1, n_time
 
     w1e(:,:) = 0d0
     do ic = 1, n_coulomb_center
-      coulomb_center(1,ic) = bgrid(ib)
+      coulomb_center(1,ic) = b_coll
       coulomb_center(2,ic) = 0d0 
       coulomb_center(3,ic) = zgrid(it)
       touch coulomb_center
@@ -173,16 +179,14 @@ use general
     CALL DGEMM('N','N',ncsf,nsta,ncsf,1.d0,coll_csf_mat(1:ncsf,1:ncsf),ncsf,eigvec1(1:ncsf,ni:nf),ncsf,0.d0,mattmp,ncsf)
     CALL DGEMM('N','N',nsta,nsta,ncsf,1.d0,transpose(eigvec2(1:ncsf,ni:nf)),nsta,mattmp,ncsf,0.d0,coll_mat(1:nsta,1:nsta),nsta)
 
-    coll_couplings(ni:nf,ni:nf,it,ib) = coll_mat(1:nsta,1:nsta)
+    coll_couplings(ni:nf,ni:nf,it) = coll_mat(1:nsta,1:nsta)
    enddo
- enddo
+
    call cpu_time(t2)
    print*,t2-t1
    print*,' '
 
  deallocate(coll_csf_mat,eigval1,eigval2,eigvec1,eigvec2,coll_mat,mattmp) 
-
-! endif
 
  END_PROVIDER
 

@@ -188,7 +188,7 @@ implicit none
 double complex, dimension(:,:), allocatable :: matintrp
 double precision, dimension(:,:,:), allocatable :: rmat2intrp, cmat2intrp
 double complex, dimension(:), allocatable :: psi
-double precision, dimension(:,:,:,:), allocatable ::  mat
+double precision, dimension(:,:,:), allocatable ::  mat
 double complex, dimension(:,:,:), allocatable ::  mcoup
 
 integer :: ntime, ntotsta, nsi, ndi, nsta
