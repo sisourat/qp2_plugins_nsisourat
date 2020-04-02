@@ -4,9 +4,14 @@ from determinants import *
 
 nbitkind=64
 
+nstate_dyson = int(sys.argv[3])
+
 # READS THE DETERMINANTS OF CISTATES 1 AND 2 AND LIST THOSE DIFFERING BY ONLY ONE ORBITAL (THE ONE "MISSING")
 fcistate1 = open(sys.argv[1],"r")
 mo_num, ndets1, nstate1 = ( int(x) for x in fcistate1.readline().split())
+if(nstate_dyson>nstate1):
+ print "nstate_dyson should be smaller than nstate1"
+ sys.exit()
 print 'Number of MO', mo_num
 print 'Number of Determinants', ndets1
 
@@ -90,11 +95,11 @@ for i in range(nstate2):
 
 # COMPUTES NORM OF THE DYSON ORBITALS
 fdyson = open('Dyson_norms.txt','w')
-for i1 in range(nstate1):
+for i1 in range(nstate_dyson):
   normtot = 0.0
   print >> fdyson, i1, esta1[i1]
   for i2 in range(nstate2):
-    print "(N-1)e & (N)e states = ",i2,i1
+#    print "(N-1)e & (N)e states = ",i2,i1
     mocoeffs = np.zeros(mo_num+1)
     for l in ldets:
       j2, j1, orbalp, orbbet = l
@@ -108,12 +113,12 @@ for i1 in range(nstate1):
 #      c1 = cista1[i1]
     normtot+=np.sum(np.square(mocoeffs))
     print >> fdyson, np.sum(np.square(mocoeffs)),
-    print 'Dyson orb. norm',np.sum(np.square(mocoeffs))
-    print 
+#    print 'Dyson orb. norm',np.sum(np.square(mocoeffs))
+#    print 
   print >> fdyson, normtot
-  print normtot
-  print 
-  print 
+#  print normtot
+#  print 
+print "Dyson norms in Dyson_norms.txt"
 
 
 

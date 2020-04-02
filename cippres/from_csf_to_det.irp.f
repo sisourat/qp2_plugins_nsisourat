@@ -92,9 +92,9 @@ subroutine from_csf_to_det(irun)
    idet_tmp += 1
    psi_det(:,1,idet_tmp) = psi_alpha_uniq_tmp(:,j)
    psi_det(:,2,idet_tmp) = psi_beta_uniq_tmp(:,i)
-   print*,'idet = ', idet_tmp
-   call print_det(psi_det(1,1,idet_tmp),N_int)
-   print*,''
+!   print*,'idet = ', idet_tmp
+!   call print_det(psi_det(1,1,idet_tmp),N_int)
+!   print*,''
    do istate = 1, N_states
     psi_coef(idet_tmp,istate) = coef_alpha_beta(j,i,istate)
    enddo
@@ -103,19 +103,21 @@ subroutine from_csf_to_det(irun)
 
  touch psi_det psi_coef 
 
-  print*,mo_num,N_det,N_states
+  open(unit=10,file='cistates_det.txt')
+  write(10,*),mo_num,N_det,N_states
   do i = 1, N_det
-    print*,i
+   write(10,*),i
     call myprint_det(psi_det(1,1,i),N_int,output)
-    print *,  trim(output(1))
-    print *,  trim(output(2))
+    write(10,*),  trim(output(1))
+    write(10,*),  trim(output(2))
   enddo
   do istate = 1, N_states
-      print*,istate, eigvalues_cippres(istate,irun), N_states
+     write(10,*),istate, eigvalues_cippres(istate,irun), N_states
     do i = 1, N_det
-      print*, psi_coef(i,istate)
+     write(10,*), psi_coef(i,istate)
     enddo  
   enddo
+  close(10)
   stop
 ! do istate = 1, N_states
 !  double precision :: accu,hij
