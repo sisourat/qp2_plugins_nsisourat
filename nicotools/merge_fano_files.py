@@ -4,9 +4,7 @@ import gzip
 fdir = sys.argv[1]
 nfiles = int(sys.argv[2])
 
-ftot = open(fdir+'/cippres/fanotot.txt','w')
 
-print >> ftot, '1'
 for i in range(nfiles):
  fcinp = gzip.open(fdir+'/cippres/cfano_cippres'+str(i+1)+'.gz','r')
 
@@ -17,14 +15,18 @@ for i in range(nfiles):
  ntmp = fcinp.readline()
  l = fcinp.readline()
  d = l.split()
- nsta = int(d[0])
+ nsta_d = int(d[0])
+ nsta_f = int(d[1])
 
- if(i==0):
-  print >> ftot, nsta*nfiles
-
- for j in range(nsta):
-   lc = fcinp.readline()
-   dc = lc.split()
-   le = feinp.readline()
-   de = le.split()
-   print >> ftot, de[0], dc[0]
+ for j in range(nsta_d):
+  ftot = open(fdir+'/cippres/fanotot'+str(j)+'.txt','a')
+  if(i==0):
+    print >> ftot, '1'
+    print >> ftot, nsta_d*nfiles
+  for k in range(nsta_f):
+    lc = fcinp.readline()
+    dc = lc.split()
+    le = feinp.readline()
+    de = le.split()
+    print >> ftot, de[0], dc[0]
+  ftot.close()
