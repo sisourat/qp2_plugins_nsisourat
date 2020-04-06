@@ -1,0 +1,4406 @@
+%-----------------------------------------------------------------------
+%                           Miteva Thesis - REFERENCES
+%
+% This file contains a list of references which may be useful for
+% people who are using the Heidelberg MCTDH package.
+% The reference labels are built according to the following rules:
+%   1. Take the first three characters of the first author's family name
+%      (small letters).
+%   2. Add the year of the publication (two digits), followed by a ":".
+%   3. Append the number of the first page of the reference.
+%-----------------------------------------------------------------------
+
+%-----------------------------------------------------------------------
+% Abbreviations for frequently used papers
+%-----------------------------------------------------------------------
+
+@string{angw={Angew.\ Chem.\ Int.\ Ed.}}
+@string{acr={Acc.\ Chem.\ Res.}}
+@string{ao = {Acta\ Oncol.}}
+@string{acp={Adv.\ Chem.\ Phys.}}
+@string{ap={Ann.\ Phys.}}
+@string{arpc={Ann.\ Rev.\ Phys.\ Chem.}}
+@string{bioinf={Bioinformatics}}
+@string{cjp={Can.\ J.\ Phys.}}
+@string{cmp={Comm.\ Math.\ Phys.}}
+@string{comp={J.~Comp.\ Phys.}}
+@string{compc={J.~Comp.\ Chem.}}
+@string{cp={Chem.\ Phys.}}
+@string{cpchem={Chem.\ Phys.\ Chem.}}
+@string{cpc={Computer Phys.\ Comm.}}
+@string{cpl={Chem.\ Phys.\ Lett.}}
+@string{cpr={Computer Phys.\ Rep.}}
+@string{cr={Chem.\ Res.}}
+@string{crev={Chem.\ Rev.}}
+@string{dfs={Discuss.\ Farad.\ Soc.}}
+@string{epjd={Eur.\ Phys.\ J.~D}}
+@string{fdcs={Faraday Discuss.\ Chem.\ Soc.}}
+@string{ft={J.~Chem.\ Soc., Faraday Trans.}}
+@string{ijck={Int.\ J.\ Chem.\ Kinet.}}
+@string{ijrb={Int.\ J.\ Radiat.\ Biol.}}
+@string{ijqc={Int.\ J.\ Quant.\ Chem.}}
+@string{jacs={J.~Am.\ Chem.\ Soc.}}
+@string{jcedu={J.\ Chem.\ Educ.}}
+@string{jcs={J.\ Chem.\ Soc.}}
+@string{jcsft={J.\ Chem.\ Soc.\ Faraday.\ Trans.}}
+@string{jctc={J.\ Chem.\ Theory\ Comput.}}
+@string{jcp={J.~Chem.\ Phys.}}
+@string{jesrp={J.~Electron~Spectrosc.~Relat.~Phenom.}}
+@string{jmg = {J.~of~Mol.~Graphics}}
+@string{jmp={J.~Math.\ Phys.}}
+@string{jms={J.~Mol.\ Struct.\ (Theochem)}}
+@string{jmsp={J.~Mol.\ Spec.}}
+@string{jpa={J.~Phys.~A}}
+@string{jpb={J.~Phys.~B~At.\ Mol.\ Opt.\ Phys.}}
+@string{jpc0={J.~Phys.~C}}
+@string{jpc={J.~Phys.\ Chem.}}
+@string{jpca={J.~Phys.\ Chem.~A}}
+@string{jpcb={J.~Phys.\ Chem.~B}}
+@string{jpcl={J.~Phys.\ Chem.\ Lett.}}
+@string{jpcrd={J.~Phys.\ Chem. ~Ref. ~Data}}
+@string{jpsj={J.\ Phys.\ Soc.\ Jpn.}}
+@string{jstrc={J.~Sruct.\ Chem.}}
+@string{laa={Lin.\ Alg.\ Appl.}}
+@string{ma={Math.\ Ann.}}
+@string{mp={Mol.\ Phys.}}
+@string{mnras={Mon.\ Not.\ R.\ Astron.\ Soc}}
+@string{nat={Nature}}
+@string{natc={Nat.\ Chem.}}
+@string{natp={Nat.\ Phys.}}
+@string{np={Nucl.\ Phys.}}
+@string{nima={Nucl.\ Instrum.\ Meth.\ A}}
+@string{njp={New~J.~Phys.}}
+@string{pams={Proc.\ Amer.\ Math.\ Soc.}}
+@string{pnas={P.\ Natl.\ Acad.\ Sci.\ USA}}
+@string{pccp={Phys.\ Chem.\ Chem.\ Phys.}}
+@string{plb={Phys.\ Lett.~B}}
+@string{prep={Phys.\ Rep.}}
+@string{pr={Phys.\ Rev.}}
+@string{pra={Phys.\ Rev.~A}}
+@string{prb={Phys.\ Rev.~B}}
+@string{prc={Phys.\ Rep.~C}}
+@string{prd={Phys.\ Rev.~D}}
+@string{pre={Phys.\ Rev.~E}}
+@string{prl={Phys.\ Rev.\ Lett.}}
+@string{psa={Physica}}
+@string{pscr={Phys. Scr.}}
+@string{pss={Progr.\ Surf.\ Sci.}}
+@string{ptp={Progr.\ Theor.\ Phys.}}
+@string{rmp={Rev.\ Mod.\ Phys.}}
+@string{sa={Spectrochimica Acta}}
+@string{sci={Science}}
+@string{sch={Struct.\ Chem.}}
+@string{ss={Surf.\ Sci.}}
+@string{tca={Theor.\ Chim.\ Acta}}
+@string{TCA={Theor.\ Chem.\ Acc.}}
+@string{tfs={Trans.\ Faraday\ Soc.}}
+@string{tbs={Trends\ Biochem.\ Sci.}}
+@string{zp={Z.~Phys.}}
+@string{zpa={Z.~Phys.~A}}
+@string{zpb={Z.~Phys.~B}}
+@string{zpd={Z.~Phys.~D}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INTRO
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@book{NimrodBook,
+author = "Nimrod Moiseyev",
+title = {Non-Hermitian Quantum Mechanics}, 
+publisher = {Cambridge University Press}, 
+year = {2011},
+isbn = {9780511976186}, 
+note = {Cambridge Books Online}, 
+url = {http://dx.doi.org/10.1017/CBO9780511976186}
+}
+
+@article{Auger25,
+	author = {{Auger, Pierre}},
+	title = {Sur l'effet photoélectrique composé},
+	DOI= "10.1051/jphysrad:0192500606020500",
+	url= "http://dx.doi.org/10.1051/jphysrad:0192500606020500",
+	journal = {J. Phys. Radium},
+	year = 1925,
+	volume = 6,
+	number = 6,
+	pages = "205-208",
+}
+
+@article{Tarantelli06,
+title = "The calculation of molecular double ionization spectra by Green’s functions ",
+journal = "Chemical Physics ",
+volume = "329",
+number = "1–3",
+pages = "11 - 21",
+year = "2006",
+note = "Electron Correlation and Multimode Dynamics in Molecules(in honour of Lorenz S. Cederbaum) ",
+issn = "0301-0104",
+doi = "http://dx.doi.org/10.1016/j.chemphys.2006.07.001",
+url = "http://www.sciencedirect.com/science/article/pii/S0301010406003697",
+author = "Francesco Tarantelli",
+keywords = "Green’s function",
+keywords = "Algebraic diagrammatic construction",
+keywords = "Computational chemistry",
+keywords = "Algorithms",
+keywords = "Double ionization ",
+abstract = "The Green’s function ADC(2) has long proved to be a successful method for the study of dense double ionization spectra of molecules and clusters. This paper focuses on the computational aspects of the method, illustrating in particular the algorithms it entails in the context of subspace iteration techniques to compute eigenvalues and eigenvectors, and how these can be efficiently implemented. It is shown that, as in direct-CI procedures, the key matrix-multiply operation is effectively reduced to a number of smaller cache-size operations with matrix blocks built on-the-fly from the two-electron integrals, which can be implemented through fast basic linear algebra routines. Some parallelization aspects and specific diagonalization procedures are briefly discussed. "
+}
+
+@article{Trofimov05,
+   author = "Trofimov, A. B. and Schirmer, J.",
+   title = "Molecular ionization energies and ground- and ionic-state properties using a non-Dyson electron propagator approach",
+   journal = "The Journal of Chemical Physics",
+   year = "2005",
+   volume = "123",
+   number = "14", 
+   eid = 144115,
+   pages = "",
+   url = "http://scitation.aip.org/content/aip/journal/jcp/123/14/10.1063/1.2047550",
+   doi = "http://dx.doi.org/10.1063/1.2047550" 
+}
+
+@article{Velkov11,
+   author = "Velkov, Yasen and Miteva, Tsveta and Sisourat, Nicolas and Schirmer, Jochen",
+   title = "Intermediate state representation approach to physical properties of dicationic states",
+   journal = "The Journal of Chemical Physics",
+   year = "2011",
+   volume = "135",
+   number = "15", 
+   eid = 154113,
+   pages = "",
+   url = "http://scitation.aip.org/content/aip/journal/jcp/135/15/10.1063/1.3653229",
+   doi = "http://dx.doi.org/10.1063/1.3653229" 
+}
+
+﻿@article{Schirmer84,
+author="Schirmer, J.
+and Barth, A.",
+title="Higher-order approximations for the particle-particle propagator",
+journal="Zeitschrift f{\"u}r Physik A Atoms and Nuclei",
+volume="317",
+number="3",
+pages="267--279",
+abstract="A new type of approximations for many-body Green's functions proposed recently is applied to the particle-particle (pp) propagator for anN-particle fermion system. The new approach which is referred to as the algebraic diagrammatic construction (ADC) is based on an exact resummation of the perturbation series for the pp-propagator in terms of a simple algebraic form introducing energy-independent effective interaction matrix elements and transition amplitudes. These effective quantities are represented by perturbation expansions and can be determined consistently through a given ordern of perturbation theory by comparing the algebraic form with the diagrammatic perturbation series of the pp-propagator through ordern. By this procedure one obtaines a systematic set of approximation schemes (ADC(n)) that represent infinite partial summations for the pp-propagator being complete throughnth order of perturbation theory. The explicit ADC equations forn=1 and 2 are presented and discussed. Comparison is made with the particle-particle random phase approximation (RPA). It is demonstrated that the second-order ADC scheme constitutes an essential step beyond the RPA which is consistent only through first order.",
+issn="0939-7922",
+doi="10.1007/BF01438358",
+url="http://dx.doi.org/10.1007/BF01438358"
+}
+
+@article {Danovich11,
+author = {Danovich, David},
+title = {Green's function methods for calculating ionization potentials, electron affinities, and excitation energies},
+journal = {Wiley Interdisciplinary Reviews: Computational Molecular Science},
+volume = {1},
+number = {3},
+publisher = {John Wiley & Sons, Inc.},
+issn = {1759-0884},
+url = {http://dx.doi.org/10.1002/wcms.38},
+doi = {10.1002/wcms.38},
+pages = {377--387},
+year = {2011},
+}
+
+@article{Schirmer83,
+  title = {New approach to the one-particle Green's function for finite Fermi systems},
+  author = {Schirmer, J. and Cederbaum, L. S. and Walter, O.},
+  journal = {Phys. Rev. A},
+  volume = {28},
+  issue = {3},
+  pages = {1237--1259},
+  numpages = {0},
+  year = {1983},
+  month = {Sep},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.28.1237},
+  url = {http://link.aps.org/doi/10.1103/PhysRevA.28.1237}
+}
+
+@article{Tarantelli87,
+   author = "Tarantelli, F. and Sgamellotti, A. and Cederbaum, L. S. and Schirmer, J.",
+   title = "Theoretical investigation of many dicationic states and the Auger spectrum of benzene",
+   journal = "The Journal of Chemical Physics",
+   year = "1987",
+   volume = "86",
+   number = "4", 
+   pages = "2201-2206",
+   url = "http://scitation.aip.org/content/aip/journal/jcp/86/4/10.1063/1.452118",
+   doi = "http://dx.doi.org/10.1063/1.452118" 
+}
+
+@article{Tarantelli91,
+   author = "Tarantelli, F. and Sgamellotti, A. and Cederbaum, L. S.",
+   title = "Many dicationic states and two‐hole population analysis as a bridge to Auger spectra: Strong localization phenomena in BF3",
+   journal = "The Journal of Chemical Physics",
+   year = "1991",
+   volume = "94",
+   number = "1", 
+   pages = "523-532",
+   url = "http://scitation.aip.org/content/aip/journal/jcp/94/1/10.1063/1.460369",
+   doi = "http://dx.doi.org/10.1063/1.460369" 
+}
+
+
+@article{Cederbaum93,
+author = {L. S. Cederbaum and F. Tarantelli},
+collaboration = {},
+title = {Nuclear dynamics of decaying states: A time-dependent formulation},
+publisher = {AIP},
+year = {1993},
+journal = {J. Chem. Phys.},
+volume = {98},
+number = {12},
+pages = {9691-9706},
+keywords = {TIME DEPENDENCE; WAVE PACKETS; EXCITATION; RELAXATION; CROSS SECTIONS; SEMICLASSICAL APPROXIMATION; SERIES EXPANSION; FRANCKCONDON PRINCIPLE; ATOMS; NUCLEI; EQUATIONS OF MOTION; TARGETS; LIFETIME},
+url = {http://link.aip.org/link/?JCP/98/9691/1},
+doi = {10.1063/1.464348}
+}
+
+@article{Chiang11,
+  author = {Chiang, Y.-C. and Otto, F. and Meyer, H.-D. and Cederbaum, L. S. },
+  title = {{Interrelation between the distributions of kinetic energy release and emitted electron energy following the decay of electronic states}},
+  journal = {Phys. Rev. Lett.},
+  year = {2011},
+  volume = {107},
+  issue = {17},
+  pages = {173001},
+  numpages = {5},
+  note = {theory},
+  doi = {http://dx.doi.org/10.1103/PhysRevLett.107.173001}
+}
+
+@article{Sisourat13,
+author = {N. Sisourat},
+collaboration = {},
+title = {Nuclear dynamics of decaying states: A semiclassical approach},
+publisher = {AIP},
+year = {2013},
+journal = {J. Chem. Phys.},
+volume = {139},
+number = {7},
+numpages = {5},
+pages = {074111},
+keywords = {quantum theory},
+url = {http://link.aip.org/link/?JCP/139/074111/1},
+doi = {10.1063/1.4818491}
+}
+
+@misc {ICDdatabase,
+note={see http://www.pci.uni-heidelberg.de/tc/usr/icd/ICD.refbase.html for a complete list of ICD publications}
+}
+
+@article{Zobeley01,
+  author = {Zobeley, J. and Santra, R. and Cederbaum, L. S.},
+  title = {{Electronic decay in weakly bound heteroclusters: Energy transfer versus electron transfer}},
+  journal = {J. Chem. Phys.},
+  publisher = {AIP},
+  year = {2001},
+  volume = {115},
+  issue = {11},
+  pages = {5076},
+  numpages = {13},
+  note = {theory},
+  doi = {http://dx.doi.org/10.1063/1.1395555}
+}
+
+@article{Gokhberg09,
+  author = {Gokhberg, K. and Cederbaum, L. S.},
+  title = {{Environment assisted electron capture}},
+  journal = {J. Phys. B: Atomic, Molecular and Optical Physics},
+  year = {2009},
+  volume = {42},
+  issue = {23},
+  pages = {231001},
+  numpages = {4},
+  note = {theory},
+  doi = {http://dx.doi.org/10.1088/0953-4075/42/23/231001}
+}
+
+@article{Stumpf16,
+  author = {Stumpf, V. and Gokhberg, K. and Cederbaum, L. S.},
+  title = {{The role of metal ions in X-ray-induced photochemistry}},
+  journal = {Nature Chemistry},
+  year = {2016},
+  volume = {8},
+  pages = {237},
+  numpages = {5},
+  note = {theory},
+  doi = {http://dx.doi.org/10.1038/nchem.2429}
+}
+
+@article{Gokhberg14,
+  author = {Gokhberg, K. and Kolorenč, P. and Kuleff, A. I. and Cederbaum, L. S.},
+  title = {{Site- and energy-selective slow-electron production through intermolecular Coulombic decay}},
+  journal = {Nature},
+  year = {2014},
+  volume = {505},
+  issue = {7485},
+  pages = {661},
+  numpages = {3},
+  note = {theory},
+  doi = {http://dx.doi.org/10.1038/nature12936}
+}
+
+@article{Harbach13,
+  author = {Harbach, Ph.H.P. and Schneider, M. and Faraji, S. and Dreuw, A.},
+  title = {{Intermolecular Coulombic Decay in Biology: The Initial Electron Detachment from FADH- in DNA Photolyases}},
+  journal = {J. Phys. Chem. Lett.},
+  year = {2013},
+  volume = {4},
+  issue = {6},
+  pages = {943},
+  numpages = {7},
+  note = {theory},
+  doi = {http://dx.doi.org/10.1021/jz400104h}
+}
+
+@article{Dreuw13,
+  author = {Dreuw, A. and Faraji, S. },
+  title = {{A quantum chemical perspective on (6-4) photolesion repair by photolyases}},
+  journal = {Phys. Chem. Chem. Phys.},
+  year = {2013},
+  volume = {15},
+  issue = {46},
+  pages = {19957},
+  numpages = {13},
+  note = {theory},
+  doi = {http://dx.doi.org/10.1039/C3CP53313A}
+}
+
+@article{Carravetta87,
+  title = {Stieltjes imaging method for molecular Auger transition rates: Application to the Auger spectrum of water},
+  author = {Carravetta, Vincenzo and gren, Hans},
+  journal = {Phys. Rev. A},
+  volume = {35},
+  issue = {3},
+  pages = {1022--1032},
+  numpages = {0},
+  year = {1987},
+  month = {Feb},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.35.1022},
+  url = {http://link.aps.org/doi/10.1103/PhysRevA.35.1022}
+}
+
+@article{Schimmelpfennig95,
+title = "Ab initio calculation of transition rates for autoionization: the Auger spectra of HF and F−",
+journal = "Journal of Electron Spectroscopy and Related Phenomena",
+volume = "74",
+number = "3",
+pages = "173 - 186",
+year = "1995",
+note = "",
+issn = "0368-2048",
+doi = "http://dx.doi.org/10.1016/0368-2048(95)02373-9",
+url = "http://www.sciencedirect.com/science/article/pii/0368204895023739",
+author = "B. Schimmelpfennig and B.M. Nestmann and S.D. Peyerimhoff",
+abstract = "A method for the quantitative computation angular integrated molecular Auger spectra is proposed. It combines quantum chemistry procedures for the description of the bound states involved with scattering theory for the representation of the scattering states. The bound states are described by configuration-interaction (CI) wavefunctions; the scattering problem is solved by a Green operator formalism. The method is illustrated by computing the Auger spectra of hydrogen fluoride and because we want to investigate the molecular effects, the isoelectronic fluoride ion."
+}
+
+@article{Colle89,
+  title = {Method for calculating Auger decay rates in molecules},
+  author = {Colle, Renato and Simonucci, Stefano},
+  journal = {Phys. Rev. A},
+  volume = {39},
+  issue = {12},
+  pages = {6247--6258},
+  numpages = {0},
+  year = {1989},
+  month = {Jun},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.39.6247},
+  url = {http://link.aps.org/doi/10.1103/PhysRevA.39.6247}
+}
+
+@article{Chelkowska91,
+title = "Auger spectroscopy for molecules: Tables of matrix elements for transition-rate calculations corresponding to an s-, p-, or d-type initial hole",
+journal = "Atomic Data and Nuclear Data Tables",
+volume = "49",
+number = "1",
+pages = "121 - 206",
+year = "1991",
+note = "",
+issn = "0092-640X",
+doi = "http://dx.doi.org/10.1016/0092-640X(91)90013-T",
+url = "http://www.sciencedirect.com/science/article/pii/0092640X9190013T",
+author = "Elzbieta Z. Chelkowska and Frank P. Larkins",
+abstract = "Auger transition rate matrix element expressions for molecules based upon s, p, and d atomic basis sets to describe the valence molecular orbitals are presented for processes involving s-, p-, or d-type initial holes. The expressions are tabulated in terms of the real and imaginary parts of the singlet and triplet components for the various allowed continuum channels. Auger transition rates for molecules may be calculated within an intra-atomic model using these expressions and published atomic Auger matrix elements (M. H. Chen, F. P. Larkins, and B. Crasemann, Atomic Data and Nuclear Data Tables, 41, 1, 1990). Values from the latter relevant to the present work are also tabulated. An example is presented for the Cl(L23-VV) spectrum associated with the HCl molecule."
+}
+
+@article{Mitani03,
+title = "Theoretical molecular Auger spectra with electron population analysis ",
+journal = "Journal of Electron Spectroscopy and Related Phenomena ",
+volume = "128",
+number = "2–3",
+pages = "103 - 117",
+year = "2003",
+note = "",
+issn = "0368-2048",
+doi = "http://dx.doi.org/10.1016/S0368-2048(02)00270-0",
+url = "http://www.sciencedirect.com/science/article/pii/S0368204802002700",
+author = "Masaki Mitani and Osamu Takahashi and Ko Saito and Suehiro Iwata",
+keywords = "Core excitation",
+keywords = "Auger transition rate",
+keywords = "Normal Auger spectrum",
+keywords = "Molecular orbital method",
+keywords = "Electron population analysis ",
+abstract = "An approximation method is proposed to simulate the molecular Auger spectra. Auger transition rates are estimated with atomic populations of valence orbitals on an excited atom by Mulliken and Löwdin population analyses. Normal Auger energies and relative rates for \{H2O\} and \{NH3\} molecules are evaluated using a full \{CI\} wave functions among the valence orbitals constructed from \{SCF\} orbitals for the neutral ground state and for the core-hole excited state. Theoretical spectra show fairly good correspondence with the experimental spectra. It is demonstrated that the present approach is applicable for qualitative assignment and analysis of Auger spectra for larger molecules. "
+}
+
+
+%%%CAP/CI
+@article{Santra01_2,
+  author = {Santra, R. and Cederbaum, L. S.},
+  title = {{An efficient combination of computational techniques for investigating electronic resonance states in molecules}},
+  journal = {J. Chem. Phys.},
+  publisher = {AIP},
+  year = {2001},
+  volume = {115},
+  issue = {15},
+  pages = {6853},
+  numpages = {9},
+  note = {theory},
+  doi = {http://dx.doi.org/10.1063/1.1405117}
+}
+
+%%% CAP/ADC
+
+@article{Vaval07,
+  author = {Vaval, N. and Cederbaum, L. S.},
+  title = {{Ab initio lifetimes in the interatomic Coulombic decay of neon clusters computed with propagators}},
+  journal = {J. Chem. Phys.},
+  publisher = {AIP},
+  year = {2007},
+  volume = {126},
+  issue = {16},
+  pages = {164110},
+  numpages = {6},
+  note = {theory},
+  doi = {http://dx.doi.org/10.1063/1.2723117}
+}
+
+%%% CAP/EOMCC
+@article{Ghosh13a,
+  author = {Ghosh, A. and Pal, S. and Vaval, N. },
+  title = {{Study of interatomic Coulombic decay of Ne(H2O)n (n=1,3) clusters using equation-of-motion coupled-cluster method}},
+  journal = {J. Chem. Phys.},
+  year = {2013},
+  volume = {139},
+  issue = {6},
+  pages = {064112},
+  numpages = {5},
+  note = {theory},
+  doi = {http://dx.doi.org/10.1063/1.4817966}
+}
+
+@article{Ghosh14,
+  author = {Ghosh, A. and Pal, S. and Vaval, N. },
+  title = {{Interatomic Coulombic decay in (HF)n (n=2-3) clusters using CAP/EOM-CCSD method}},
+  journal = {Mol. Phys.},
+  year = {2014},
+  volume = {112},
+  issue = {5-6},
+  pages = {669},
+  numpages = {5},
+  note = {theory},
+  doi = {http://dx.doi.org/10.1080/00268976.2013.852263}
+}
+
+@article{Averbukh05,
+  author = {Averbukh, V. and Cederbaum, L. S.},
+  title = {{Ab initio calculation of interatomic decay rates by a combination of the Fano ansatz, Green's-function methods, and the Stieltjes imaging technique}},
+  journal = {J. Chem. Phys.},
+  publisher = {AIP},
+  year = {2005},
+  volume = {123},
+  issue = {20},
+  pages = {204107},
+  numpages = {13},
+  note = {theory},
+  doi = {http://dx.doi.org/10.1063/1.2126976}
+}
+
+@article{Santra01_3,
+  author = {Santra, R. and Zobeley, J. and Cederbaum, L. S.},
+  title = {{Electronic decay of valence holes in clusters and condensed matter}},
+  journal = {Phys. Rev. B},
+  publisher = {American Physical Society},
+  year = {2001},
+  volume = {64},
+  issue = {24},
+  pages = {245104},
+  numpages = {10},
+  note = {theory},
+  doi = {http://dx.doi.org/10.1103/PhysRevB.64.245104}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                                             ICD EXPERIMENTS
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+@article{Jahnke04:163401,
+  title = {Experimental Observation of Interatomic Coulombic Decay in Neon Dimers},
+  author = {Jahnke, T. and Czasch, A. and Sch\"offler, M. S. and Sch\"ossler, S. and Knapp, A. and K\"asz, M. and Titze, J. and Wimmer, C. and Kreidi, K. and Grisenti, R. E. and Staudte, A. and Jagutzki, O. and Hergenhahn, U. and Schmidt-B\"ocking, H. and D\"orner, R.},
+  journal = prl,
+  volume = {93},
+  issue = {16},
+  pages = {163401},
+  numpages = {4},
+  year = {2004},
+  month = {Oct},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevLett.93.163401}
+}
+
+
+@article{Morishita06:243402,
+  author = {Morishita, Y. and Liu, X.-J. and Saito, N. and Lischke, T. and Kato, M. and Pr\"umper, G. and Oura, M. and Yamaoka, H. and Tamenori, Y. and Suzuki, I. H. and Ueda, K.},
+  title = {Experimental Evidence of Interatomic Coulombic Decay from the Auger Final States in Argon Dimers},
+  journal = prl,
+  volume = {96},
+  issue = {24},
+  pages = {243402},
+  numpages = {4},
+  year = {2006},
+  month = {Jun},
+  publisher = {Am. Phys. Soc.}
+}
+
+
+@article{Kreidi08:043422,
+  author = {Kreidi, K. and Jahnke, T. and Weber, Th. and Havermeier, T. and Liu, X. and Morisita, Y. and Sch\"ossler, S. and Schmidt, L. Ph. H. and Sch\"offler, M. and Odenweller, M. and Neumann, N. and Foucar, L. and Titze, J. and Ulrich, B. and Sturm, F. and Stuck, C. and Wallauer, R. and Voss, S. and Lauter, I. and Kim, H. K. and Rudloff, M. and Fukuzawa, H. and Pr\"umper, G. and Saito, N. and Ueda, K. and Czasch, A. and Jagutzki, O. and Schmidt-B\"ocking, H. and Stoychev, S. and Demekhin, Ph. V. and D\"orner, R.},
+  title = {Relaxation processes following 1s photoionization and Auger decay in Ne2},
+  journal = pra,
+  volume = {78},
+  issue = {4},
+  pages = {043422},
+  numpages = {9},
+  year = {2008},
+  month = {Oct},
+  publisher = {American Physical Society}
+}
+
+
+@article{Kim11:11821,
+  author = {Kim, Hong-Keun and Titze, Jasmin and Sch\"offler, Markus and Trinter, Florian and Waitz, Markus and Voigtsberger, J\"org and Sann, Hendrik and Meckel, Moritz and Stuck, Christian and Lenz, Ute and Odenweller, Matthias and Neumann, Nadine and Sch\"ossler, Sven and Ullmann-Pfleger, Klaus and Ulrich, Birte and Fraga, Rui Costa and Petridis, Nikos and Metz, Daniel and Jung, Annika and Grisenti, Robert and Czasch, Achim and Jagutzki, Ottmar and Schmidt, Lothar and Jahnke, Till and Schmidt-B\"ocking, Horst and D\"orner, Reinhard}, 
+  title = {Enhanced production of low energy electrons by alpha particle impact},
+  volume = {108}, 
+  number = {29}, 
+  pages = {11821--11824}, 
+  year = {2011},
+  journal = pnas
+}
+
+
+@article{Hergenhahn11:78,
+  author = {Hergenhahn, U.},
+  title = {{Interatomic and Intermolecular Coulombic Decay: The Early Years}},
+  journal = jesrp,
+  year = {2011},
+  volume = {184},
+  issue = {3-6},
+  pages = {78},
+  numpages = {13},
+  doi = {http://dx.doi.org/10.1016/j.elspec.2010.12.020}
+}
+
+
+@article{Ouchi2011,
+  author = {Ouchi, T. and Sakai, K. and Fukuzawa, H. and Higuchi, I. and Demekhin, Ph. V. and Chiang, Y.-C. and Stoychev, S. D. and Kuleff, A. I. and Mazza, T. and Sch\"offler, M. and Nagaya, K. and Yao, M. and Tamenori, Y. and Saito, N. and Ueda, K.},
+  title = {Interatomic Coulombic decay following Ne 1s Auger decay in NeAr},
+  journal = pra,
+  volume = {83},
+  issue = {5},
+  pages = {053415},
+  numpages = {6},
+  year = {2011},
+  month = {May},
+  publisher = {American Physical Society}
+}
+
+
+@article{OKeeffe13:1797,
+  author = {O'Keeffe, Patrick and Ripani, Enrico and Bolognesi, Paola and Coreno, Marcello and Devetta, Michele and Callegari, Carlo and Di Fraia, Michele and Prince, Kevin Charles and Richter, Robert and Alagia, Michele and Kivimäki, Antti and Avaldi, Lorenzo},
+  title = {The Role of the Partner Atom and Resonant Excitation Energy in Interatomic Coulombic Decay in Rare Gas Dimers},
+  journal = jpcl,
+  volume = {4},
+  number = {11},
+  pages = {1797--1801},
+  year = {2013},
+  doi = {10.1021/jz400671h}
+}
+
+
+@article{Kimura13:1838,
+  author = {Kimura, Miku and Fukuzawa, Hironobu and Tachibana, Tetsuya and Ito, Yuta and Mondal, Subhendu and Okunishi, Misaki and Sch\"offler, Markus and Williams, Joshua and Jiang, Yuhai and Tamenori, Yusuke and Saito, Norio and Ueda, Kiyoshi},
+  title = {{Controlling Low-Energy Electron Emission via Resonant-Auger-Induced Interatomic Coulombic Decay}},
+  journal = jpcl,
+  volume = {4},
+  number = {11},
+  pages = {1838--1842},
+  year = {2013},
+  doi = {10.1021/jz4006674}
+}
+
+
+@article{Kimura13:043414,
+  author = {Kimura, M. and Fukuzawa, H. and Sakai, K. and Mondal, S. and Kukk, E. and Kono, Y. and Nagaoka, S. and Tamenori, Y. and Saito, N. and Ueda, K.},
+  title = {{Efficient site-specific low-energy electron production via interatomic Coulombic decay following resonant Auger decay in argon dimers}},
+  journal = pra,
+  volume = {87},
+  issue = {4},
+  pages = {043414},
+  numpages = {4},
+  year = {2013},
+  month = {Apr},
+  doi = {10.1103/PhysRevA.87.043414},
+  publisher = {American Physical Society}
+}
+
+
+@article{Schnorr13:093402,
+  author = {Schnorr, K. and Senftleben, A. and Kurka, M. and Rudenko, A. and Foucar, L. and Schmid, G. and Broska, A. and Pfeifer, T. and Meyer, K. and Anielski, D. and Boll, R. and Rolles, D. and Kübel, M. and Kling, M. F. and Jiang, Y. H. and Mondal, S. and Tachibana, T. and Ueda, K. and Marchenko, T. and Simon, M. and Brenner, G. and Treusch, R. and Scheit, S. and Averbukh, V. and Ullrich, J. and Schröter, C. D. and Moshammer, R.},
+  title = {{Time-Resolved Measurement of Interatomic Coulombic Decay in Ne2}},
+  journal = prl,
+  year = {2013},
+  volume = {111},
+  issue = {9},
+  pages = {093402},
+  numpages = {5}
+}
+
+
+@article{Trinter14:664,
+  author = {Trinter, F. and Sch\"offler, M. S. and Kim, H.-K. and Sturm, F. P. and Cole, K. and Neumann, N. and Vredenborg, A. and Williams, J. and Bocharova, I. and Guillemin, R. and Simon, M. and Belkacem, A. and Landers, A. L. and Weber, Th. and Schmidt-B\"ocking, H. and D\"orner, R. and Jahnke, T.},
+  title = {{Resonant Auger decay driving intermolecular Coulombic decay in molecular dimers}},
+  journal = nat,
+  year = {2014},
+  volume = {505},
+  number = {7485},
+  pages = {664--666},
+  doi = {10.1038/nature12927}
+}
+
+
+@article{OKeeffe14:042508,
+  title = {Experimental investigation of the interatomic Coulombic decay in NeAr dimers},
+  author = {O'Keeffe, P. and Ciavardini, A. and Ripani, E. and Bolognesi, P. and Coreno, M. and Avaldi, L. and Devetta, M. and Di Fraia, M. and Callegari, C. and Prince, K. C. and Richter, R.},
+  journal = pra,
+  volume = {90},
+  issue = {4},
+  pages = {042508},
+  numpages = {6},
+  year = {2014},
+  month = {Oct},
+  publisher = {American Physical Society}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                                              ICD THEORY
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+@article{Cederbaum97:4778,
+  author = {Cederbaum, L. S. and Zobeley, J. and Tarantelli, F. },
+  title = {{Giant Intermolecular Decay and Fragmentation of Clusters}},
+  journal = prl,
+  publisher = {American Physical Society},
+  year = {1997},
+  volume = {79},
+  issue = {24},
+  pages = {4778},
+  numpages = {4}
+}
+
+
+@article{Santra01:6853,
+  author = {Santra, R. and Cederbaum, L. S.},
+  title = {{An efficient combination of computational techniques for investigating electronic resonance states in molecules}},
+  journal = jcp,
+  publisher = {AIP},
+  year = {2001},
+  volume = {115},
+  issue = {15},
+  pages = {6853},
+  numpages = {9}
+}
+
+
+@article{Moiseyev01:7351,
+  author = {Moiseyev, Nimrod and Santra, Robin and Zobeley, J\"urgen and Cederbaum, Lorenz S.},
+  title = {{Fingerprints of the nodal structure of autoionizing vibrational wave functions in clusters: Interatomic Coulombic decay in Ne dimer}},
+  journal = jcp,
+  year = {2001},
+  volume = {114},
+  number = {17}, 
+  pages = {7351--7360}
+}
+
+
+@article{Averbukh06:094107,
+  author = {Averbukh, Vitali and Cederbaum, Lorenz S.},
+  title = {{Calculation of interatomic decay widths of vacancy states delocalized due to inversion symmetry}},
+  journal = jcp,
+  year = {2006},
+  volume = {125},
+  number = {9}, 
+  eid = 094107,
+  pages = {-},
+  doi = {http://dx.doi.org/10.1063/1.2244567} 
+}
+
+
+@article{Scheit06:154305,
+  author = {Scheit, S. and Averbukh, V. and Meyer, H.-D. and Zobeley, J. and Cederbaum, L. S.},
+  title = {{Interatomic Coulombic decay in a heteroatomic rare gas cluster}},
+  journal = jcp,
+  publisher = {AIP},
+  year = {2006},
+  volume = {124},
+  issue = {15},
+  pages = {154305},
+  numpages = {8}
+}
+
+
+@article{Kolorenc08:244102,
+  author = {Koloren\v{c}, P. and Averbukh, V. and Gokhberg, K. and Cederbaum, L.S.},
+  title = {{Ab initio calculation of interatomic decay rates of excited doubly ionized states in clusters}},
+  journal = jcp,
+  year = {2008},
+  volume = {129},
+  number = {24}, 
+  eid = 244102,
+  doi = {http://dx.doi.org/10.1063/1.3043437},
+}
+
+
+@article{Demekhin08:043421,
+  author = {Demekhin, Ph. V. and Scheit, S. and Stoychev, S. D. and Cederbaum, L. S.},
+  title = {Dynamics of interatomic Coulombic decay in a Ne dimer following the K-L$_{1}$L$_{2,3}$(^{1}P) Auger transition in the Ne atom},
+  journal = pra,
+  volume = {78},
+  issue = {4},
+  pages = {043421},
+  numpages = {8},
+  year = {2008}
+}
+
+
+@article{Demekhin09:104303,                            
+  author = {Demekhin, Ph. V. and Chiang, Y.-C. and Stoychev, S. D. and Koloren\v{c}, P. and Scheit, S. and Kuleff, A. I. and  Tarantelli, F. and Cederbaum, L. S.},
+  title = {{Interatomic Coulombic decay and its dynamics in NeAr following K-LL Auger transition in the Ne atom}},
+  journal = jcp,
+  year = {2009},
+  volume = {131},
+  pages = {104303}
+
+}
+
+
+@article{Sisourat10_1,
+  author = {Sisourat, N. and Kryzhevoi, N. V. and Koloren\v{c}, P. and Scheit, S. and Jahnke, T. and Cederbaum, L. S.},
+  title = {{Ultralong-range energy transfer by interatomic Coulombic decay in an extreme quantum system}},
+  journal = natp,
+  year = {2010},
+  volume = {6},
+  pages = {508},
+  numpages = {4},
+  doi = {http://dx.doi.org/10.1038/NPHYS1685}
+}
+
+
+@article{Sisourat10_3,
+  author = {Sisourat, N. and Sann, H. and Kryzhevoi, N. V. and Koloren\v{c}, P. and Havermeier, T. and Sturm, F. and Jahnke, T. and Kim, H.-K. and Dâ–’rner, R. and Cederbaum, L. S.},
+  title = {{Interatomic electronic decay driven by nuclear motion}},
+  journal = prl,
+  publisher = {AIP},
+  year = {2010},
+  volume = {105},
+  pages = {173401}
+}
+
+
+@article{Averbukh11:36,
+  author = {Averbukh, V. and Demekhin, Ph. V. and Koloren\v{c}, P. and Scheit, S. and Stoychev, S. D. and Kuleff, A. I. and Chiang, Y.-C. and Gokhberg, K. and Kopelke, S. and Sisourat, N. and Cederbaum, L. S.},
+  title = {{Interatomic electronic decay processes in singly and multiply ionized clusters}},
+  journal = jesrp,
+  year = {2011},
+  volume = {183},
+  issue = {1-3},
+  pages = {36},
+  numpages = {12},
+  doi = {http://dx.doi.org/10.1016/j.elspec.2010.03.003}
+}
+
+
+%KER mirror image
+@article{Chiang2012,
+  author = {Chiang, Y.-C. and Otto, F. and Meyer, H.-D. and Cederbaum, L. S.},
+  title = {{Kinetic energy release in fragmentation processes following electron emission: A time-dependent approach}},
+  journal = jcp,
+  year = {2012},
+  volume = {136},
+  pages = {114111},
+  doi = {http://dx.doi.org/10.1063/1.3694536}
+}
+
+
+@article{Gokhberg14:661,
+  author = {Gokhberg, Kirill and Koloren\v{c}, P\v{r}emysl and Kuleff, Alexander I and Cederbaum, Lorenz S},
+  title = {{Site- and energy-selective slow-electron production through intermolecular Coulombic decay}},
+  journal = nat,
+  month = jan,
+  number = {7485},
+  pages = {661--663},
+  volume = {505},
+  year = {2014}
+}
+
+
+@article{Stumpf13:258302,
+  title = {Efficient Pathway to Neutralization of Multiply Charged Ions Produced in Auger Processes},
+  author = {Stumpf, V. and Koloren\v{c}, P. and Gokhberg, K. and Cederbaum, L. S.},
+  journal = prl,
+  volume = {110},
+  issue = {25},
+  pages = {258302},
+  numpages = {5},
+  year = {2013}
+}
+
+
+@article{Stumpf14:193001,
+  title = {Enhanced One-Photon Double Ionization of Atoms and Molecules in an Environment of Different Species},
+  author = {Stumpf, V. and Kryzhevoi, N. V. and Gokhberg, K. and Cederbaum, L. S.},
+  journal = prl,
+  volume = {112},
+  issue = {19},
+  pages = {193001},
+  numpages = {5},
+  year = {2014}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                                       RESONANT AUGER
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% RA Ar; confirmation of the spectator model and shake-up processes
+@article{Aksela1988,
+  author = {Aksela, H. and Aksela, S. and Pulkkinen, H},
+  title = {{Anomalously strong shake-up processes in Auger decay of the resonsmtly excited 2p5 3s2 3p6 nl states of Ar}},
+  journal = pra,
+  year = {1988},
+  volume = {37},
+  issue = {5},
+  pages = {1798--1801},
+  numpages = {4}
+}
+
+
+% Spectator model
+@article{Carlson1989,
+  author = {Carlson, T. A. and Mullins, D. R. and Beall, Ch. E. and Yates, B. W. and Taylor, J. W. and Lindle, D. W. and Grimm, F. A.},
+  title = {{Angular distribution of ejected electrons in resonant Auger processes of Ar, Kr, and Xe}},
+  journal = pra,
+  year = {1989},
+  volume = {39},
+  issue = {3},
+  pages = {1170--1185},
+  numpages = {15}
+}
+
+
+% RA Ar many data, calculations, exp.
+@article{Meyer1991,
+  author = {Meyer, M. and Raven, E. v. and Sonntag, B. and Hansen, J.},
+  title = {{Decay of the Ar 2p nd core resonances: An autoionization spectrum dominated by shake processes}},
+  journal = pra,
+  year = {1991},
+  volume = {43},
+  issue = {1},
+  pages = {177--188},
+  numpages = {11}
+}
+
+
+% Ar resonant Auger - main paper
+@article{deGouw1995,
+  author = {de Gouw, J. A. and van Eck, J. and Peters, A. C. and van der Weg, J. and Heideman, H. G. M.},
+  title = {{Resonant Auger spectra of the 2p-1 nl states of argon}},
+  journal = jpb,
+  year = {1995},
+  volume = {28},
+  issue = {11},
+  pages = {2127--2141},
+  numpages = {14},
+  doi = {10.1088/0953-4075/28/11/012}
+}
+
+
+% Spectator model in Ar, as well as RA spectra
+@article{Mursu96:4387,
+  author = {Mursu, J. and Aksela, H. and Sairanen, O.-P. and Kivim{\"a}ki, A and N{\~o}mmiste, E. and Ausmees, A. and Svensson, S. and Aksela, S.},
+  title = {{Decay of the 2p$^{5}$4s, 2p$^{5}$3d and 2p$^{5}$4d states of Ar studied by utilizing the Auger resonant Raman effect}},
+  journal = jpb,
+  year = {1996},
+  volume = {29},
+  pages = {4387--4399},
+  numpages = {12}
+}
+
+
+@article{Hiltunen1998,
+  author = {Hiltunen, A. and Kylli, T. and Mursu, J. and Sairanen, O.-P. and Aksela, H. and Aksela, S.},
+  title = {{Resonant Auger decay in the L$2,3$-MM spectrum of Ar excited by electron bombardment }},
+  journal = jesrp,
+  volume = {87},
+  number = {3},
+  pages = {203--210},
+  year = {1998},
+  doi = {http://dx.doi.org/10.1016/S0368-2048(97)00097-2}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                                       ADC(2)/ISR 
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@article{fuk64:932,
+  author = {Fukuda, Nobuyuki and Iwamoto, Fumiaki and Sawada, Katuro},
+  title = {Linearized Many-Body Problem},
+  journal = pr,
+  volume = {135},
+  issue = {4A},
+  pages = {A932--A944},
+  numpages = {0},
+  year = {1964},
+  month = {Aug},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRev.135.A932}
+}
+
+
+@article{sch64:531,
+  author={Schmidt, Hartwig},
+  title={Monopole vibrations of closed shell nuclei},
+  journal=zp,
+  year={1964},
+  volume={181},
+  number={5},
+  doi={10.1007/BF01380565},
+  publisher={Springer-Verlag},
+  pages={532-541},
+  language={English}
+}
+
+
+@article{lie82:188,
+  author = {Liegener, Christoph-Maria}, 
+  title = {Auger spectra by the Green's function method },
+  journal = cpl,
+  volume = {90},
+  number = {3},
+  pages = {188--192},
+  year = {1982},
+  doi = {http://dx.doi.org/10.1016/0009-2614(82)80022-5},
+}
+
+
+@article{lie83:256,
+  author = {Liegener, Christoph-Maria},
+  title = {Calculations on the Auger spectrum of F$_2$},
+  journal = pra,
+  volume = {28},
+  issue = {1},
+  pages = {256--260},
+  numpages = {0},
+  year = {1983},
+  month = {Jul},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.28.256}
+}
+
+
+@article{lie96:2940,
+  author = {Liegener, Christoph-Maria},
+  title = {Auger spectrum of octatetraene by a two-particle propagator method},
+  journal = jcp,
+  year = {1996},
+  volume = {104},
+  number = {8}, 
+  pages = {2940--2945},
+  doi = {http://dx.doi.org/10.1063/1.471114} 
+}
+
+
+@article{ort84:5873,
+  author = {Ortiz, J. V.},
+  title = {Qualitative propagator theory of AX4 Auger spectra},
+  journal = jcp,
+  year = {1984},
+  volume = {81},
+  number = {12}, 
+  pages = {5873--5888},
+  doi = {http://dx.doi.org/10.1063/1.447588} 
+}
+
+
+@article{tar85:4683,
+  author = {Tarantelli, F. and Tarantelli, A. and Sgamellotti, A. and Schirmer, J. and Cederbaum, L. S.},
+  title = {A Green's function and configuration interaction investigation on the doubly ionized states of H2O},
+  journal = jcp,
+  year = {1985},
+  volume = {83},
+  number = {9}, 
+  pages = {4683--4690},
+  doi = {http://dx.doi.org/10.1063/1.448992} 
+}
+
+
+@article{tar87:2201,
+  author = {Tarantelli, F. and Sgamellotti, A. and Cederbaum, L. S. and Schirmer, J.},
+  title = {Theoretical investigation of many dicationic states and the Auger spectrum of benzene},
+  journal = jcp,
+  year = {1987},
+  volume = {86},
+  number = {4}, 
+  pages = {2201--2206},
+  doi = {http://dx.doi.org/10.1063/1.452118} 
+}
+
+
+@article{ohr89:1734,
+  author = {Ohrendorf, E. and K\"{o}ppel, H. and Cederbaum, L. S. and Tarantelli, F. and Sgamellotti, A.},
+  title = {{Doubly ionized states of ethylene: Auger spectrum, potential energy surfaces and nuclear dynamics}},
+  journal = jcp,
+  year = {1989},
+  volume = {91},
+  number = {3}, 
+  pages = {1734--1753}
+}
+
+
+@article{gra93:2884,
+  author = {Graham, Richard L. and Yeager, Danny L.},
+  title = {The multiconfigurational particle-particle propagator method for directly determining vertical double ionization potentials and double electron affinities},
+  journal = jcp,
+  year = {1991},
+  volume = {94},
+  number = {4}, 
+  pages = {2884--2893},
+  doi = {http://dx.doi.org/10.1063/1.459810} 
+}
+
+
+@article{tar93:649,
+  author = {Tarantelli, Francesco and Cederbaum, Lorenz S.},
+  title = {Foreign imaging in Auger spectroscopy: The Si 2p spectrum of silicon tetrafluoride},
+  journal = prl,
+  volume = {71},
+  issue = {4},
+  pages = {649--652},
+  numpages = {0},
+  year = {1993},
+  month = {Jul},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevLett.71.649}
+}
+
+
+@article{tar94:428,
+  author = {Tarantelli, F. and Sgamellotti, A. and Cederbaum, L. S.},
+  title = {Aggregation state effects in Auger spectroscopy: The fluorine KLL spectrum of KF},
+  journal = prl,
+  volume = {72},
+  issue = {3},
+  pages = {428--431},
+  numpages = {0},
+  year = {1994},
+  month = {Jan},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevLett.72.428}
+}
+
+
+@article{tar96:789,
+  author = {Tarantelli, F. and Sgamellotti, A. and Cederbaum, L. S.},
+  title = {Green's function calculations for doubly ionized molecular states and simulation of Auger spectra},
+  journal = cjp,
+  volume = {74},
+  number = {11},
+  pages = {789--803},
+  year = {1996}
+}
+
+
+@article{gri98:21,
+  author = {I.W. Griffiths and D.E. Parry and F.M. Harris},
+  title = {Vertical double ionization of the sulphur dioxide molecule },
+  journal = cp,
+  volume = {238},
+  number = {1},
+  pages = {21--32},
+  year = {1998},
+  doi = {http://dx.doi.org/10.1016/S0301-0104(98)00284-5}
+}
+
+
+@article{nog05:144112,
+  author = {Noguchi, Yoshifumi and Kudo, Yohei and Ishii, Soh and Ohno, Kaoru},
+  title = {First-principles T-matrix calculations of double-ionization energy spectra of atoms and molecules},
+  journal = jcp,
+  year = {2005},
+  volume = {123},
+  number = {14}, 
+  eid = 144112,
+  pages = {-},
+  doi = {http://dx.doi.org/10.1063/1.2069907} 
+}
+
+
+@article{ida08:084105,
+  author = {Ida, T. and Ortiz, J. V.},
+  title = {Second-order, two-electron Dyson propagator theory: Comparisons for vertical double ionization potentials},
+  journal = jcp,
+  year = {2008},
+  volume = {129},
+  number = {8}, 
+  eid = 084105,
+  pages = {-},
+  doi = {http://dx.doi.org/10.1063/1.2973533} 
+}
+
+
+@article{sch83:1237,
+  author = {Schirmer, J. and Cederbaum, L. S. and Walter, O.},
+  title = {New approach to the one-particle Green's function for finite Fermi systems},
+  journal = pra,
+  volume = {28},
+  issue = {3},
+  pages = {1237--1259},
+  numpages = {0},
+  year = {1983},
+  month = {Sep},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.28.1237}
+}
+
+
+@article{sch82:2395,
+  author = {Schirmer, Jochen},
+  title = {Beyond the random-phase approximation: A new approximation scheme for the polarization propagator},
+  journal = pra,
+  volume = {26},
+  issue = {5},
+  pages = {2395--2416},
+  numpages = {0},
+  year = {1982},
+  month = {Nov},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.26.2395}
+}
+
+
+@article{sch84:267,
+  author={Schirmer, J. and Barth, A.},
+  title={Higher-order approximations for the particle-particle propagator},
+  journal=zpa,
+  year={1984},
+  volume={317},
+  number={3},
+  doi={10.1007/BF01438358},
+  publisher={Springer-Verlag},
+  pages={267-279}
+}
+
+
+@article {sch96:329,
+  author = {Schirmer, J. and Mertins, F.},
+  title = {Size consistency of an algebraic propagator approach},
+  journal = ijqc,
+  volume = {58},
+  number = {4},
+  publisher = {John Wiley \& Sons, Inc.},
+  pages = {329--339},
+  year = {1996}
+}
+
+
+@article{sch04:11449,
+  author = {Schirmer, J. and Trofimov, A. B.},
+  title = {Intermediate state representation approach to physical properties of electronically excited molecules},
+  journal = jcp,
+  year = {2004},
+  volume = {120},
+  number = {24}, 
+  pages = {11449--11464},
+  doi = {http://dx.doi.org/10.1063/1.1752875} 
+}
+
+
+@article{jol85:106,
+  author = { Jolicard, Georges and Austin, Elizabeth J.},
+  title = {Optical potential stabilisation method for predicting resonance levels },
+  journal = cpl,
+  volume = {121},
+  number = {1-2},
+  pages = {106--110},
+  year = {1985},
+  doi = {http://dx.doi.org/10.1016/0009-2614(85)87164-5}
+}
+
+
+@article{ris93:4503,
+  author={Riss, U. V. and Meyer, H.-D.},
+  title={Calculation of resonance energies and widths using the complex absorbing potential method},
+  journal=jpb,
+  volume={26},
+  number={23},
+  pages={4503},
+  year={1993}
+}
+
+
+@article{tro05:144115,
+  author = {Trofimov, A. B. and Schirmer, J.},
+  title = {Molecular ionization energies and ground- and ionic-state properties using a non-Dyson electron propagator approach},
+  journal = jcp,
+  year = {2005},
+  volume = {123},
+  number = {14}, 
+  eid = 144115,
+  pages = {-},
+  doi = {http://dx.doi.org/10.1063/1.2047550} 
+}
+
+
+@article{dut10:144302,
+  author = {Dutoi, Anthony D. and Cederbaum, Lorenz S. and Wormit, Michael and Starcke, Jan Hendrik and Dreuw, Andreas},
+  title = {Tracing molecular electronic excitation dynamics in real time and space},
+  journal = jcp,
+  year = {2010},
+  volume = {132},
+  number = {14}, 
+  eid = 144302,
+  pages = {-},
+  doi = {http://dx.doi.org/10.1063/1.3353161} 
+}
+
+
+@article{vav07:164110,
+  author = {Vaval, Nayana and Cederbaum, Lorenz S.},
+  title = {Ab initio lifetimes in the interatomic Coulombic decay of neon clusters computed with propagators},
+  journal = jcp,
+  year = {2007},
+  volume = {126},
+  number = {16}, 
+  eid = 164110,
+  pages = {-},
+  doi = {http://dx.doi.org/10.1063/1.2723117} 
+}
+
+
+@article{kul05:044111,
+  author = {Kuleff, Alexander I. and Breidbach, J\"org and Cederbaum, Lorenz S.},
+  title = {Multielectron wave-packet propagation: General theory and application},
+  journal = jcp,
+  year = {2005},
+  volume = {123},
+  number = {4}, 
+  eid = 044111,
+  pages = {-},
+  doi = {http://dx.doi.org/10.1063/1.1961341} 
+}
+
+
+@article{sch91:4647,
+  author = {Schirmer, Jochen},
+  title = {Closed-form intermediate representations of many-body propagators and resolvent matrices},
+  journal = pra,
+  volume = {43},
+  issue = {9},
+  pages = {4647--4659},
+  numpages = {0},
+  year = {1991},
+  month = {May},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.43.4647}
+}
+
+
+@article{mer95:2140,
+  author = {Mertins, F. and Schirmer, J.},
+  title = {Algebraic propagator approaches and intermediate-state representations. I. The biorthogonal and unitary coupled-cluster methods},
+  journal = pra,
+  volume = {53},
+  issue = {4},
+  pages = {2140--2152},
+  numpages = {0},
+  year = {1996},
+  month = {Apr},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.53.2140}
+}
+
+
+@article{tar89:1656,
+  author = {Torggler, P. and Leubner, C.},
+  title = {{Accurate analytic off-axis electron trajectories in realistic two-dimensional transverse wigglers with arbitrary magnetic field variation}},
+  journal = pra,
+  volume = {39},
+  issue = {4},
+  pages = {1989--1999},
+  numpages = {0},
+  year = {1989},
+  month = {Feb},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.39.1989}
+}
+
+
+@article{ADC2impl,
+  author = {Tarantelli, Francesco},
+  title = {The calculation of molecular double ionization spectra by Green's functions },
+  journal = cp,
+  volume = {329},
+  number = {1-3},
+  pages = {11--21},
+  year = {2006},
+  doi = {http://dx.doi.org/10.1016/j.chemphys.2006.07.001}
+}
+
+
+@article{tro02:6402,
+  author = {Trofimov, A. B. and Stelter, G. and Schirmer, J.},
+  title = {Electron excitation energies using a consistent third-order propagator approach: Comparison with full configuration interaction and coupled cluster results},
+  journal = jcp,
+  year = {2002},
+  volume = {117},
+  number = {14}, 
+  pages = {6402--6410},
+  doi = {http://dx.doi.org/10.1063/1.1504708} 
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                                       ArHe paper
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+@article{Howell2008,
+  author = {Howell, Roger W.},
+  title = {Auger processes in the 21st century},
+  journal = ijrb,
+  volume = {84},
+  number = {12},
+  pages = {959--975},
+  year = {2008}
+}
+
+
+@article{Bolognesi2010,
+  author = {Bolognesi, P. and O'Keeffe, P. and Ovcharenko, Y. and Coreno, M. and Avaldi, L. and Feyer, V. and Plekan, O. and Prince, K. C. and Zhang, W. and Carravetta, V.},
+  title = {Pyrimidine and halogenated pyrimidines near edge x-ray absorption fine structure spectra at C and N K-edges: experiment and theory},
+  journal = jcp,
+  year = {2010},
+  volume = {133},
+  number = {3}
+}
+
+
+@article{Armen00:R49,
+  author={G Bradley Armen and Helena Aksela and Teijo {\AA}berg and Seppo Aksela},
+  title={The resonant Auger effect},
+  journal=jpb,
+  volume={33},
+  number={2},
+  pages={R49},
+  year={2000},
+}
+
+
+@article{Bellert2002,
+  author = {Bellert, D. and Breckenridge, W. H.},
+  title = {Bonding in Ground-State and Excited-State A+A-Rg van der Waals Ions (A = Atom, Rg = Rare-Gas Atom): A Model-Potential Analysis},
+  journal = crev,
+  volume = {102},
+  pages = {1595--1622},
+  year = {2002},
+}
+
+
+@article{leung:8443,
+  author = {Allen W. K. Leung and Ryan R. Julian and W. H. Breckenridge},
+  title = {Potential curves for the ground states and some excited states of MgNe, Mg[sup  + ]Ne, and Mg[sup  + 2]Ne van der Waals complexes},
+  year = {1999},
+  journal = jcp,
+  volume = {110},
+  number = {17},
+  pages = {8443--8447},
+}
+
+
+@article{leung1999,
+  author = {A.W. Leung and R.R Julian and W.H. Breckenridge},
+  year = {1999},
+  journal = jcp,
+  volume = {111},
+  pages = {4999}
+}
+
+
+@article{hald2002,
+  author = {K. Hald and P. J{\o}rgensen and W. H. Breckenridge and M. Jaszunski},
+  title= {{Calculation of ground and excited state potential energy curves of the MgAr complex using the coupled cluster approximate method}},
+  year = {2002},
+  journal = cpl,
+  volume = {364},
+  pages = {402--408}
+}
+
+
+@article{burns:7877,
+  author = {Katherine L. Burns and D. Bellert and Allen W.-K. Leung and W. H. Breckenridge},
+  title = {M[sup +]/Rg bonding: The effects of M[sup +] permanent quadrupole moments (M[sup +] = atomic metal ion; Rg=rare gas atom)},
+  year = {2001},
+  journal = jcp,
+  volume = {114},
+  pages = {7877--7885},
+}
+
+
+@article{leung:9197,
+  author = {Allen W. K. Leung and W. H. Breckenridge},
+  title = {An ab initio study of the ground states and some excited states of BeRG, Be[sup  + ]RG, and Be[sup  + 2]RG van der Waals complexes (RG = He, Ne)},
+  year = {1999},
+  journal = jcp,
+  volume = {111},
+  pages = {9197--9202}
+}
+
+
+@article{leung:2484,
+  author = {Allen W. K. Leung and John G. Kaup and D. Bellert and John G. McCaffrey and W. H. Breckenridge},
+  title = {Spectroscopic characterization of the weakly bound Ca(4s4d sigma  [sup 3]D[sub 3]) [center-dot] Ar[[sup 3] Sigma[sup +]] state: Evidence for a substantial maximum in the potential curve at long range},
+  year = {1999},
+  journal = jcp,
+  volume = {111},
+  pages = {2484--2489}
+}
+
+
+@article{Greene00:2458,
+  author = {Greene, Chris H. and Dickinson, A. S. and Sadeghpour, H. R.},
+  title = {Creation of Polar and Nonpolar Ultra-Long-Range Rydberg Molecules},
+  journal = prl,
+  volume = {85},
+  pages = {2458--2461},
+  year = {2000}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                                       ArAr paper
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+@article{Fuggle80:1615,
+author = {Fuggle, John C. and Alvarado, Santos F.},
+doi = {10.1103/PhysRevA.22.1615},
+journal = pra,
+month = oct,
+number = {4},
+pages = {1615--1624},
+title = {{Core-level lifetimes as determined by x-ray photoelectron spectroscopy measurements}},
+volume = {22},
+year = {1980}
+}
+
+
+@article{Herman88:4535,
+  author = {Herman, P. R. and Larocque, P. E. and Stoicheff, B. P.},
+  title = {{Vacuum ultraviolet laser spectroscopy. V. Rovibronic spectra of Ar$_2$ and constants of the ground and excited states}},
+  journal = jcp,
+  year = {1988},
+  volume = {89},
+  issue = {8},
+  pages = {4535--4549}
+}
+
+
+% Spectator model in Ar, as well as RA spectra
+@article{RA_Ar_Mursu,
+  author = {Mursu, J and Aksela, H. and Sairanen, O.-P. and Kivim{\"a}ki, A and N{\~o}mmiste, E. and Ausmees, A. and Svensson, S. and Aksela, S.},
+  title = {{Decay of the $2p^5 4s$, $2p^5 3d$ and $2p^5 4d$ states of Ar studied by utilizing the Auger resonant Raman effect}},
+  journal = jpb,
+  publisher = {},
+  year = {1996},
+  volume = {29},
+  issue = {},
+  pages = {4387--4399},
+  numpages = {12}
+}
+
+
+@article{mey90:73,
+title={The Multi-Configurational Time-Dependent {H}artree Approach},
+author={Meyer, H.-D.  and Manthe, U. and Cederbaum, L. S.},
+journal=cpl,
+year={1990},
+volume={165},pages={73-78}
+}
+
+
+@article{Scheit03:2092,
+  author = {Scheit, S. and Cederbaum, L. S. and Meyer, H.-D.},
+  title = {{Time-dependent interplay between electron emission and fragmentation in the interatomic Coulombic decay}},
+  journal = jcp,
+  year = {2003},
+  volume = {118},
+  number = {5}, 
+  pages = {2092--2107}
+}
+
+@article{Scheit04:8393,
+  author = {Scheit, S. and Averbukh, V. and Meyer, H.-D. and Moiseyev, N. and Santra, R. and Sommerfeld, T. and Zobeley, J. and Cederbaum, L. S.},
+  title = {{On the interatomic Coulombic decay in the Ne dimer}},
+  journal = jcp,
+  publisher = {AIP},
+  year = {2004},
+  volume = {121},
+  number = {17},
+  pages = {8393}
+}
+
+
+@article{Trinter13_1,
+  title = {{Evolution of Interatomic Coulombic Decay in the Time Domain}},
+  author = {Trinter, F. and Williams, J. B. and Weller, M. and Waitz, M. and Pitzer, M. and Voigtsberger, J. and Schober, C. and Kastirke, G. and M\"uller, C. and Goihl, C. and Burzynski, P. and Wiegandt, F. and Bauer, T. and Wallauer, R. and Sann, H. and Kalinin, A. and Schmidt, L. Ph. H. and Sch\"offler, M. and Sisourat, N. and Jahnke, T.},
+  journal = prl,
+  volume = {111},
+  issue = {9},
+  pages = {093401},
+  numpages = {5},
+  year = {2013},
+  month = {Aug},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevLett.111.093401},
+}
+
+
+@book{Mozumder,
+ title = {{Fundamentals of Radiation Chemistry}},
+ author = {Mozumder, A.},
+ year = {1999},
+ publisher = {Academic Press}
+ }
+
+
+@article{Stoychev11:6817,
+  author = {Stoychev, S. D. and Kuleff, A. I. and Cederbaum, L. S.},
+  title = {{Intermolecular Coulombic Decay in Small Biochemically Relevant Hydrogen-Bonded Systems}},
+  journal = jacs,
+  year = {2011},
+  volume = {133},
+  issue = {17},
+  pages = {6817},
+  numpages = {8}
+}
+
+@article{Kryzhevoi11:1306,
+  author = {Kryzhevoi, N. V. and Cederbaum, L. S.},
+  title = {{Using pH Value To Control Intermolecular Electronic Decay}},
+  journal = angw,
+  year = {2011},
+  volume = {50},
+  issue = {6},
+  pages = {1306},
+  numpages = {4}
+}
+
+@proceedings{Ueda08_1,
+  author = {Ueda, K.},
+  title = {{Photoemission and coincidence studies on gas-phase molecules}},
+  journal = {Appl. Phys. A: Materials Science & Processing},
+  series= {The 15th international conference on vacuum ultraviolet radiation physics: VUV XV},
+  year = {2008},
+  volume = {92},
+  issue = {3},
+  pages = {487},
+  numpages = {8},
+  doi = {http://dx.doi.org/10.1007/s00339-008-4552-9}
+}
+
+
+@article{Bolognesi10:034302,
+   author = {Bolognesi, P. and O'Keeffe, P. and Ovcharenko, Y. and Coreno, M. and Avaldi, L. and Feyer, V. and Plekan, O. and Prince, K. C. and Zhang, W. and Carravetta, V.},
+   title = {Pyrimidine and halogenated pyrimidines near edge x-ray absorption fine structure spectra at C and N K-edges: experiment and theory},
+   journal = jcp,
+   year = {2010},
+   volume = {133},
+   number = {3}, 
+   eid = 034302
+}
+
+
+@article{Averbukh05:204107,
+  author = {Averbukh, V. and Cederbaum, L. S.},
+  title = {{Ab initio calculation of interatomic decay rates by a combination of the Fano ansatz, Green's-function methods, and the Stieltjes imaging technique}},
+  journal = jcp,
+  publisher = {AIP},
+  year = {2005},
+  volume = {123},
+  issue = {20},
+  pages = {204107},
+  numpages = {13},
+  doi = {http://dx.doi.org/10.1063/1.2126976}
+}
+
+
+@article{Hergenhahn2003,
+author = {U. Hergenhahn and A. R\"udel and K. Maier and A.M. Bradshaw and R.F. Fink and A.T. Wen},
+title = {The resonant Auger spectra of formic acid, acetaldehyde, acetic acid and methyl formate},
+journal = cp,
+volume = {289},
+number = {1},
+pages = {57--67},
+year = {2003}
+}
+
+
+@article{Gorczyca1999,
+  title = {Auger decay of the photoexcited 2p-1nl Rydberg series in argon},
+  author = {Gorczyca, T. W. and Robicheaux, F.},
+  journal = pra,
+  volume = {60},
+  issue = {2},
+  pages = {1216--1225},
+  numpages = {0},
+  year = {1999},
+  month = {Aug},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRevA.60.1216}
+}
+
+
+@article{Jabbari14:224305,
+ author = {Jabbari, G. and Klaiman, S. and Chiang, Y.-C. and Trinter, F. and Jahnke, T. and Gokhberg, K.},
+ title = {{Ab initio calculation of ICD widths in photoexcited HeNe}},
+ journal = jcp,
+ volume = {140}, 
+ eid = {224305},
+ pages = {-},
+ year = {2014}
+}
+
+
+@misc{KiyoshiKER,
+  note = {K. Ueda and H. Fukuzawa (private communication)}
+}
+
+  	
+@article{Ced81:4665,
+  author={Cederbaum, L. S. and Domcke, W.},
+  title={Local against non-local complex potential in resonant electron-molecule scattering},
+  journal=jpb,
+  volume={14},
+  number={23},
+  pages={4665},
+  year={1981}
+}
+	
+
+@article{OMalley66:14,
+  title = {Theory of Dissociative Attachment},
+  author = {O'Malley, T. F.},
+  journal = pr,
+  volume = {150},
+  issue = {1},
+  pages = {14--29},
+  numpages = {0},
+  year = {1966},
+  month = {Oct},
+  publisher = {American Physical Society},
+  doi = {10.1103/PhysRev.150.14}
+}
+
+
+@article{Bardsley68:349,
+  author={Bardsley, J. N.},
+  title={Configuration interaction in the continuum states of molecules},
+  journal=jpb,
+  volume={1},
+  number={3},
+  pages={349},
+  year={1968}
+}
+	
+
+@article{Averbukh04:263002,
+  author = {Averbukh, V. and M\"uller, I. B. and Cederbaum, L. S.},
+  title = {{Mechanism of Interatomic Coulombic Decay in Clusters}},
+  journal = prl,
+  publisher = {American Physical Society},
+  year = {2004},
+  volume = {93},
+  issue = {26},
+  pages = {263002},
+  numpages = {4},
+  doi = {http://dx.doi.org/10.1103/PhysRevLett.93.263002}
+}
+
+
+@article{Ueda2006:032001,
+author = {Ueda, Kiyoshi},
+title = {Core Excitation and De-excitation Spectroscopies of Free Atoms and Molecules},
+journal = jpsj,
+volume = {75},
+number = {3},
+pages = {032001},
+year = {2006},
+doi = {10.1143/JPSJ.75.032001}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                                       ArKr paper
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@article{Parr83:7512,
+author = {Parr, Robert G. and Pearson, Ralph G.},
+title = {Absolute hardness: companion parameter to absolute electronegativity},
+journal = jacs,
+volume = {105},
+number = {26},
+pages = {7512--7516},
+year = {1983},
+doi = {10.1021/ja00364a005}
+}
+
+
+@article{Mantina09:5806,
+author = {Mantina, Manjeera and Chamberlin, Adam C. and Valero, Rosendo and Cramer, Christopher J. and Truhlar, Donald G.},
+title = {Consistent van der Waals Radii for the Whole Main Group},
+journal = jpca,
+volume = {113},
+number = {19},
+pages = {5806--5812},
+year = {2009}
+}
+
+
+@article{Fasshauer13:014305,
+  author = {Fasshauer, E. and Pernpointner, M. and Gokhberg, K.},
+  title = {{Interatomic decay of inner-valence ionized states in ArXe clusters: Relativistic approach}},
+  journal = jcp,
+  publisher = {AIP},
+  year = {2013},
+  volume = {138},
+  issue = {1},
+  pages = {014305},
+  numpages = {10}
+}
+
+
+@article{Dimitrieva27:402,
+  author={Dmitrieva, K. I. and Plindov, G. I.},
+  title={Dipole Polarizability, Radius and Ionization Potential for Atomic Systems},
+  journal={Phys. Scr.},
+  volume={27},
+  number={6},
+  pages={402},
+  year={1983}
+}
+	
+
+@article{Hohm90:803,
+author = {Hohm, Uwe and Kerl, Klaus},
+title = {Interferometric measurements of the dipole polarizability α of molecules between 300 K and 1100 K},
+journal = mp,
+volume = {69},
+number = {5},
+pages = {803--817},
+year = {1990}
+}
+
+
+@article{Barth06:3218,
+  author = {Barth, S. and Marburger, S. and Joshi, S. and Ulrich, V. and Kugeler, O. and Hergenhahn, U.},
+  title = {{Interface identification by non-local autoionization transitions}},
+  journal = pccp,
+  year = {2006},
+  volume = {8},
+  issue = {27},
+  pages = {3218},
+  numpages = {5}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                                       THEORY
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@article {Gonzalez12:28,
+author = {Gonz\'{a}lez, Leticia and Escudero, Daniel and Serrano-Andr\'{e}s, Luis},
+title = {Progress and Challenges in the Calculation of Electronic Excited States},
+journal = cpchem,
+volume = {13},
+number = {1},
+publisher = {WILEY-VCH Verlag},
+issn = {1439-7641},
+pages = {28--51},
+year = {2012}
+}
+
+
+%-----------------------------------------------------
+% ADC(2)-CVS part core-excitation spectra
+
+
+% ADC(2)-x
+  	
+@article{tro95:2299,
+  author={Trofimov, A. B. and Schirmer, J.},
+  title={An efficient polarization propagator approach to valence electron excitation spectra},
+  journal=jpb,
+  volume={28},
+  number={12},
+  pages={2299},
+  year={1995}
+}
+
+%%%%%%%
+
+@article{tro00:483,
+author={Trofimov, A.B. and Moskovskaya, T.É. and Gromov, E.V. and Vitkovskaya, N.M. and Schirmer, J.},
+title={Core-level electronic spectra in ADC(2) approximation for polarization propagator: Carbon monoxide and nitrogen molecules},
+journal=jstrc,
+year={2000},
+volume={41},
+number={3},
+pages={483--494}
+}
+
+@article{Plekan08:360,
+author = {O. Plekan and V. Feyer and R. Richter and M. Coreno and M. de Simone and K.C. Prince and A.B. Trofimov and E.V. Gromov and I.L. Zaytseva and J. Schirmer},
+title = {A theoretical and experimental study of the near edge X-ray absorption fine structure (NEXAFS) and X-ray photoelectron spectra (XPS) of nucleobases: Thymine and adenine },
+journal = cp,
+volume = {347},
+number = {1-3},
+pages = {360--375},
+year = {2008}
+}
+
+@article{tro01:022504,
+  title = {Theoretical study of \textit{K}-shell excitations in formaldehyde},
+  author = {Trofimov, A. B. and Moskovskaya, T. E. and Gromov, E. V. and K\"oppel, H. and Schirmer, J.},
+  journal = pra,
+  volume = {64},
+  issue = {2},
+  pages = {022504},
+  numpages = {15},
+  year = {2001}
+}
+
+
+%--------------------------------------------------
+
+
+
+%Decay widths
+@article{Fano61:1866,
+  title = {Effects of Configuration Interaction on Intensities and Phase Shifts},
+  author = {Fano, U.},
+  journal = pr,
+  volume = {124},
+  issue = {6},
+  pages = {1866--1878},
+  numpages = {0},
+  year = {1961},
+  month = {Dec}
+}
+
+
+@article{Howat78:1575,
+author = {Howat, G and \r{A}berg, T and Goscinski, O},
+title = {{Relaxation and final-state channel mixing in the Auger effect}},
+journal = jpb,
+month = may,
+number = {9},
+pages = {1575--1588},
+volume = {11},
+year = {1978}
+}
+
+
+@article{Dirac27:585,
+author={Dirac, P.},
+title={\"{U}ber die Quantenmechanik der Stoßvorg\"{a}nge},
+year={1927},
+journal=zp,
+volume={44},
+number={8},
+pages={585--595}
+}
+
+
+@article{Santra02:1,
+author = {Robin Santra and Lorenz S. Cederbaum},
+title = {Non-Hermitian electronic theory and applications to clusters},
+journal = pr,
+volume = {368},
+number = {1},
+pages = {1--117},
+year = {2002}
+}
+
+
+%CAP/CI
+@article{Santra99:413,
+author = {R. Santra and L.S. Cederbaum and H.-D. Meyer},
+title = {Electronic decay of molecular clusters: non-stationary states computed by standard quantum chemistry methods },
+journal = cpl,
+volume = {303},
+number = {3–4},
+pages = {413--419},
+year = {1999}
+}
+
+%CAP/ADC
+@article{Santra02:5511,
+   author = {Santra, Robin and Cederbaum, Lorenz S.},
+   title = {Complex absorbing potentials in the framework of electron propagator theory. I. General formalism},
+   journal = jcp,
+   year = {2002},
+   volume = {117},
+   number = {12}, 
+   pages = {5511-=5521}
+}
+
+@article{Feuerb03:6188,
+   author = {Feuerbacher, Sven and Sommerfeld, Thomas and Santra, Robin and Cederbaum, Lorenz S.},
+   title = {Complex absorbing potentials in the framework of electron propagator theory. II. Application to temporary anions},
+   journal = jcp,
+   year = {2003},
+   volume = {118},
+   number = {14}, 
+   pages = {6188--6199}
+}
+
+%EOM-CCSD/CAP
+@article{Ghosh13:064112,
+   author = {Ghosh, Aryya and Pal, Sourav and Vaval, Nayana},
+   title = {{Study of interatomic Coulombic decay of Ne(H2O)$_n$ (n = 1,3) clusters using equation-of-motion coupled-cluster method}},
+   journal = jcp,
+   year = {2013},
+   volume = {139},
+   number = {6}, 
+   eid = {064112},
+   pages = "-"
+}
+
+
+@article{Jagau14:310,
+author = {Jagau, Thomas-C. and Zuev, Dmitry and Bravaya, Ksenia B. and Epifanovsky, Evgeny and Krylov, Anna I.},
+title = {A Fresh Look at Resonances and Complex Absorbing Potentials: Density Matrix-Based Approach},
+journal = jpcl,
+volume = {5},
+number = {2},
+pages = {310--315},
+year = {2014}
+}
+
+
+%Siegert states
+@article{Siegert39:750,
+  title = {On the Derivation of the Dispersion Formula for Nuclear Reactions},
+  author = {Siegert, A.},
+  journal = pr,
+  volume = {56},
+  issue = {8},
+  pages = {750--752},
+  numpages = {3},
+  year = {1939},
+  month = {Oct},
+  publisher = {American Physical Society}
+}
+
+%Theory of resonances
+@book{Kukulin1989,
+address = {Dordrecht},
+author = {Kukulin, V. I. and Krasnopol'sky, V. M. and Hor\'{a}\v{c}ek, J.},
+publisher = {Springer Netherlands},
+title = {{Theory of Resonances}},
+year = {1989}
+}
+
+ 
+@article{Moiseyev98:212,
+author = {Nimrod Moiseyev},
+title = {Quantum theory of resonances: calculating energies, widths and cross-sections by complex scaling},
+journal = prep,
+volume = {302},
+number = {5-6},
+pages = {212--293},
+year = {1998}
+}
+
+
+@incollection{Klaiman12:1,
+author = {Klaiman, Shachar and Gilary, Ido},
+booktitle = {Advances in Quantum Chemistry},
+isbn = {9780123970091},
+issn = {00653276},
+pages = {1--31},
+publisher = {Academic Press},
+title = {Chapter\ 1\ – On\ Resonance:\ A\ First\ Glance\ into\ the\ Behavior\ of\ Unstable\ States},
+volume = {63},
+year = {2012}
+}
+
+
+@article{Reinhardt82:223,
+author = {Reinhardt, W P},
+title = {Complex Coordinates in the Theory of Atomic and Molecular Structure and Dynamics},
+journal = arpc,
+volume = {33},
+number = {1},
+pages = {223--255},
+year = {1982}
+}
+
+
+@article{Aguilar71:269,
+author={Aguilar, J. and Combes, J.M.},
+title={A class of analytic perturbations for one-body Schr\"{o}dinger Hamiltonians},
+journal= cmp,
+volume={22},
+number={4},
+pages={269--279},
+year={1971},
+publisher={Springer-Verlag}
+}
+
+
+@article{Balslev71:280,
+author={Balslev, E. and Combes, J.M.},
+title={Spectral properties of many-body Schr\"{o}dinger operators with dilatation-analytic interactions},
+journal= cmp,
+volume={22},
+number={4},
+pages={280--294},
+year={1971},
+publisher={Springer-Verlag}
+}
+
+
+@article{Muga04:357,
+author = {Muga, J.G. and Palao, J.P. and Navarro, B. and Egusquiza, I.L.},
+title = {Complex absorbing potentials},
+journal = prep,
+volume = {395},
+number = {6},
+pages = {357--426},
+year = {2004}
+}
+
+
+%nuclear dynamics
+@article{Ced93:9691,
+   author = {Cederbaum, L. S. and Tarantelli, F.},
+   title = {Nuclear dynamics of decaying states: A time-dependent formulation},
+   journal = jcp,
+   year = {1993},
+   volume = {98},
+   number = {12},
+   pages = {9691--9706}
+}
+
+
+@article{Ced93:5871,
+   author = {Cederbaum, L. S. and Tarantelli, F.},
+   title = {Nuclear dynamics of several decaying overlapping electronic states: A time‐dependent formulation},
+   journal = jcp,
+   year = {1993},
+   volume = {99},
+   number = {8}, 
+   pages = {5871--5884}
+}
+
+
+@article{Pahl99:1070,
+  title = {Resonant decay spectra for energetically unselective excitation exemplified by the broadband resonant Auger spectrum of HF},
+  author = {Pahl, E. and Cederbaum, L. S. and Tarantelli, F.},
+  journal = pra,
+  volume = {60},
+  issue = {2},
+  pages = {1070--1078},
+  numpages = {0},
+  year = {1999},
+  month = {Aug},
+  publisher = {American Physical Society}
+}
+
+
+@article{Pahl99:1079,
+  title = {Impact of narrow-band excitation on resonant decay spectra},
+  author = {Pahl, E. and Brand, J. and Cederbaum, L. S. and Tarantelli, F.},
+  journal = pra,
+  volume = {60},
+  issue = {2},
+  pages = {1079--1090},
+  numpages = {0},
+  year = {1999},
+  month = {Aug},
+  publisher = {American Physical Society}
+}
+
+
+%kinetic-energy release
+@article{Chiang12:114111,
+   author = {Chiang, Ying-Chih and Otto, Frank and Meyer, Hans-Dieter and Cederbaum, Lorenz S.},
+   title = {Kinetic energy release in fragmentation processes following electron emission: A time-dependent approach},
+   journal = jcp,
+   year = {2012},
+   volume = {136},
+   number = {11}, 
+   eid = 114111,
+   pages = {-}
+}
+
+
+@article{Schirmer10:145,
+author={Schirmer, Jochen and Mertins, Frank},
+title={Review of biorthogonal coupled cluster representations for electronic excitation},
+year={2010},
+journal=TCA,
+volume={125},
+number={3-6},
+publisher={Springer-Verlag},
+pages={145--172},
+language={English}
+}
+
+
+@article{Baeppler14:052521,
+  title = {Exciton analysis of many-body wave functions: Bridging the gap between the quasiparticle and molecular orbital pictures},
+  author = {B\"appler, Stefanie A. and Plasser, Felix and Wormit, Michael and Dreuw, Andreas},
+  journal = pra,
+  volume = {90},
+  issue = {5},
+  pages = {052521},
+  numpages = {12},
+  year = {2014},
+  month = {Nov},
+  publisher = {American Physical Society}
+}
+
+
+%------------------------------------- B3LYP ---------------------------
+@article{Lee88:785,
+  title = {Development of the Colle-Salvetti correlation-energy formula into a functional of the electron density},
+  author = {Lee, Chengteh and Yang, Weitao and Parr, Robert G.},
+  journal = prb,
+  volume = {37},
+  issue = {2},
+  pages = {785--789},
+  numpages = {0},
+  year = {1988},
+  month = {Jan},
+  publisher = {American Physical Society}
+}
+
+
+@article{Becke93:5648,
+   author = {Becke, Axel D.},
+   title = {Density-functional thermochemistry. III. The role of exact exchange},
+   journal = jcp,
+   year = {1993},
+   volume = {98},
+   number = {7}, 
+   pages = {5648--5652}
+}
+
+
+@article{Becke93:1372,
+   author = {Becke, Axel D.},
+   title = {A new mixing of Hartree–Fock and local density-functional theories},
+   journal = jcp,
+   year = {1993},
+   volume = {98},
+   number = {2},
+   pages = {1372--1377}
+}
+%--------------------------------------B3LYP--------------------------------
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                                       SOFTWARE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%------------ MCTDH ------------------------
+@misc{mctdh84,
+  author = {Hans-Dieter Meyer and Graham~A. Worth and Michael~H. Beck and Andreas J{\"a}ckle and Uwe Manthe and Masahiro Ehara and Andreas Raab and Marie-Catherine Heitz and Suren Sukiasyan and Christoph Cattarius and Stephan Wefing and Fabien Gatti and Mathias Nest and Frank Otto and Andreas Markmann and Michael~R. Brill and Oriol Vendrell},
+  title = {The {MCTDH} {P}ackage, {V}ersion 8.4},
+  howpublished = {{S}ee http://mctdh.uni-hd.de/},
+  organization = {University of Heidelberg, Germany},
+  year = {2007}
+}
+%------------ MCTDH ------------------------
+
+
+%FFT method
+@article{Kosloff1983,
+  author = {Kosloff, D. and Kosloff, R.},
+  title = {{A fourier method solution for the time dependent Schr\"odinger equation as a tool in molecular dynamics}},
+  journal = comp,
+  volume = {52},
+  number = {1},
+  pages = {35 - 53},
+  year = {1983},
+  doi = {http://dx.doi.org/10.1016/0021-9991(83)90015-3}
+}
+
+
+% Lanczos-Arnoldi algorithm
+@article{Pollard94:5054,
+  author = {Pollard, W. Thomas and Friesner, Richard A.},
+  title = {{Solution of the Redfield equation for the dissipative quantum dynamics of multilevel systems}},
+  journal = jcp,
+  year = {1994},
+  volume = {100},
+  number = {7}, 
+  pages = {5054-5065},
+  doi = {http://dx.doi.org/10.1063/1.467222} 
+}
+
+
+%------------ GAMESS-US ------------------------
+@article{GUS,
+  author = {Schmidt, Michael W. and Baldridge, Kim K. and Boatz, Jerry A. and Elbert, Steven T. and Gordon, Mark S. and Jensen, Jan H. and Koseki, Shiro and Matsunaga, Nikita and Nguyen, Kiet A. and Su, Shujun and Windus, Theresa L. and Dupuis, Michel and Montgomery, John A.},
+  title = {{General atomic and molecular electronic structure system}},
+  journal = compc,
+  year = {1993},
+  volume = {14},
+  number = {11},
+  publisher = {John Wiley \& Sons, Inc.},
+  doi = {10.1002/jcc.540141112},
+  pages = {1347--1363}
+}
+
+
+@inbook{GUSBook,
+  author = {Gordon, M. S. and Schmidt, M. W.},
+  title = {Advances in electronic structure theory: {GAMESS} a decade later},
+  address = {Amsterdam},
+  booktitle = {{Theory and Applications of Computational Chemistry: the first forty years}},
+  citeulike-article-id = {3013672},
+  editor = {Dykstra, C. E. and Frenking, G. and Kim, K. S. and Scuseria, G. E.},
+  keywords = {computational-chemistry, thesis2008},
+  pages = {1167--1189},
+  posted-at = {2008-07-17 07:01:22},
+  priority = {2},
+  publisher = {Elsevier},
+  year = {2005}
+}
+
+
+% Coupled clusters GAMESS US citation
+@article{Piecuch2002:71,
+  author = {Piecuch, P. and Kucharski, S. A. and Kowalski, K. and Musia\l, M.},
+  title = {{Efficient computer implementation of the renormalized coupled-cluster methods: The R-CCSD[T], R-CCSD(T), CR-CCSD[T], and CR-CCSD(T) approaches }},
+  journal = cpc, 
+  volume = {149},
+  number = {2},
+  pages = {71 - 96},
+  year = {2002},
+  doi = {http://dx.doi.org/10.1016/S0010-4655(02)00598-2}
+}
+
+
+% CCSD(T) GAMESS US
+@article{Raghavachari1989:479,
+  author = {Raghavachari, Krishnan and Trucks, Gary W. and Pople, John A. and Head-Gordon, Martin},
+  title = {{A fifth-order perturbation comparison of electron correlation theories}},
+  journal = cpl,
+  volume = {157},
+  number = {6},
+  pages = {479 - 483},
+  year = {1989},
+  doi = {http://dx.doi.org/10.1016/S0009-2614(89)87395-6}
+}
+
+
+ % GUGA GAMESS US
+@article{GUGA_JCP_70,
+  author = {Brooks, Bernard R. and Schaefer, Henry F.},
+  title = {{The graphical unitary group approach to the electron correlation problem. Methods and preliminary applications}},
+  journal = jcp,
+  year = {1979},
+  volume = {70},
+  number = {11}, 
+  pages = {5092-5106},
+  doi = "http://dx.doi.org/10.1063/1.437351" 
+}
+
+
+@article{GUGA_PhysScr_21,
+  author={Brooks, Bernard R and Laidig, William D and Saxe, Paul and Handy, Nicholas C  and Schaefer III, Henry F},
+  title={{The Loop-Driven Graphical Unitary Group Approach: A Powerful Method for the Variational Description of Electron Correlation}},
+  journal= pscr,
+  volume={21},
+  number={3-4},
+  pages={312},
+  year={1980}
+}
+%------------ GAMESS-US ------------------------
+
+@misc{Yasen,
+  note = { Double ionization ADC(2) program written by Y. Velkov, Heidelberg},
+  year = {2010}
+}
+
+
+
+
+
+%------------ MOLCAS ------------------------
+@article {molcas,
+  author = {Aquilante, Francesco and De Vico, Luca and Ferr\'e, Nicolas and Ghigo, Giovanni and Malmqvist, Per\aake and Neogr\'ady, Pavel and Pedersen, Thomas Bondo and Pito\v{n}\'ak, Michal and Reiher, Markus and Roos, Bj\"orn O. and Serrano-Andr\'es, Luis and Urban, Miroslav and Veryazov, Valera and Lindh, Roland},
+  title = {MOLCAS 7: The Next Generation},
+  journal = compc,
+  volume = {31},
+  number = {1},
+  publisher = {Wiley Subscription Services, Inc., A Wiley Company},
+  doi = {10.1002/jcc.21318},
+  pages = {224--247},
+  year = {2010}
+}
+%------------ MOLCAS ------------------------
+
+
+%------------ VMD ------------------------
+@article{Humphrey96:33,
+  author={William Humphrey and Andrew Dalke and Klaus Schulten},
+  title={{VMD} -- {V}isual {M}olecular {D}ynamics},
+  journal= jmg,
+  year=1996,
+  volume=14,
+  pages={33-38},
+  note={},
+  tbstatus={Published.},
+  techrep={},
+  tbreference={222}
+}
+%------------ VMD ------------------------
+
+
+%------------ Q-CHEM ------------------------
+@article{QChem4.2,
+author ={Shao, Yihan and Molnar, Laszlo Fusti and Jung, Yousung and Kussmann, Jorg and Ochsenfeld, Christian and Brown, Shawn T. and Gilbert, Andrew T.B. and Slipchenko, Lyudmila V. and Levchenko, Sergey V. and O{'}Neill, Darragh P. and DiStasio Jr, Robert A. and Lochan, Rohini C. and Wang, Tao and Beran, Gregory J.O. and Besley, Nicholas A. and Herbert, John M. and Yeh Lin, Ching and Van Voorhis, Troy and Hung Chien, Siu and Sodt, Alex and Steele, Ryan P. and Rassolov, Vitaly A. and Maslen, Paul E. and Korambath, Prakashan P. and Adamson, Ross D. and Austin, Brian and Baker, Jon and Byrd, Edward F. C. and Dachsel, Holger and Doerksen, Robert J. and Dreuw, Andreas and Dunietz, Barry D. and Dutoi, Anthony D. and Furlani, Thomas R. and Gwaltney, Steven R. and Heyden, Andreas and Hirata, So and Hsu, Chao-Ping and Kedziora, Gary and Khalliulin, Rustam Z. and Klunzinger, Phil and Lee, Aaron M. and Lee, Michael S. and Liang, WanZhen and Lotan, Itay and Nair, Nikhil and Peters, Baron and Proynov, Emil I. and Pieniazek, Piotr A. and Min Rhee, Young and Ritchie, Jim and Rosta, Edina and David Sherrill, C. and Simmonett, Andrew C. and Subotnik, Joseph E. and Lee Woodcock III, H. and Zhang, Weimin and Bell, Alexis T. and Chakraborty, Arup K. and Chipman, Daniel M. and Keil, Frerich J. and Warshel, Arieh and Hehre, Warren J. and Schaefer III, Henry F. and Kong, Jing and Krylov, Anna I. and Gill, Peter M. W. and Head-Gordon, Martin},
+title  = {Advances in methods and algorithms in a modern quantum chemistry program package},
+journal  = pccp,
+year  = {2006},
+volume  ={8},
+issue  ={27},
+pages  ={3172-3191},
+publisher  = {The Royal Society of Chemistry}
+}
+%------------ Q-CHEM ------------------------
+
+
+%------------ GROMACS ------------------------
+@article {Spoel05:1701,
+author = {Van Der Spoel, David and Lindahl, Erik and Hess, Berk and Groenhof, Gerrit and Mark, Alan E. and Berendsen, Herman J. C.},
+title = {GROMACS: Fast, flexible, and free},
+journal = compc,
+volume = {26},
+number = {16},
+publisher = {Wiley Subscription Services, Inc., A Wiley Company},
+pages = {1701--1718},
+year = {2005}
+}
+
+@article{Hess08:435,
+author = {Hess, Berk and Kutzner, Carsten and van der Spoel, David and Lindahl, Erik},
+title = {GROMACS 4:  Algorithms for Highly Efficient, Load-Balanced, and Scalable Molecular Simulation},
+journal = jctc,
+volume = {4},
+number = {3},
+pages = {435-447},
+year = {2008}
+}
+
+
+@article{Pronk13:845,
+author = {Pronk, Sander and P\'{a}ll, Szil\'{a}rd and Schulz, Roland and Larsson, Per and Bjelkmar, Pär and Apostolov, Rossen and Shirts, Michael R. and Smith, Jeremy C. and Kasson, Peter M. and van der Spoel, David and Hess, Berk and Lindahl, Erik}, 
+title = {GROMACS 4.5: a high-throughput and highly parallel open source molecular simulation toolkit},
+volume = {29}, 
+number = {7}, 
+pages = {845-854}, 
+year = {2013}, 
+journal = bioinf
+}
+%------------ GROMACS ------------------------
+
+
+%------------ GAUSSIAN ------------------------
+@misc{g09,
+author= {M. J. Frisch and G. W. Trucks and H. B. Schlegel and G. E. Scuseria and M. A. Robb and J. R. Cheeseman and G. Scalmani and V. Barone and B. Mennucci and G. A. Petersson and H. Nakatsuji and M. Caricato and X. Li and H. P. Hratchian and A. F. Izmaylov and J. Bloino and G. Zheng and J. L. Sonnenberg and M. Hada and M. Ehara and K. Toyota and R. Fukuda and J. Hasegawa and M. Ishida and T. Nakajima and Y. Honda and O. Kitao and H. Nakai and T. Vreven and Montgomery, {Jr.}, J. A. and J. E. Peralta and F. Ogliaro and M. Bearpark and J. J. Heyd and E. Brothers and K. N. Kudin and V. N. Staroverov and R. Kobayashi and J. Normand and K. Raghavachari and A. Rendell and J. C. Burant and S. S. Iyengar and J. Tomasi and M. Cossi and N. Rega and J. M. Millam and M. Klene and J. E. Knox and J. B. Cross and V. Bakken and C. Adamo and J. Jaramillo and R. Gomperts and R. E. Stratmann and O. Yazyev and A. J. Austin and R. Cammi and C. Pomelli and J. W. Ochterski and R. L. Martin and K. Morokuma and V. G. Zakrzewski and G. A. Voth and P. Salvador and J. J. Dannenberg and S. Dapprich and A. D. Daniels and \"{O}. Farkas and J. B. Foresman and J. V. Ortiz and J. Cioslowski and D. J. Fox},
+title={{G}aussian~09 {R}evision {D}.01},
+note={{G}aussian {I}nc. {W}allingford {CT} 2009}
+} 
+%------------ GAUSSIAN ------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                                                BASIS SETS
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%Al - Ar basis sets
+@article{Woon93:1358,
+  author = {Woon, D. E. and Dunning, Jr.,  T. H.},
+  title = {{Gaussian basis sets for use in correlated molecular calculations. III. The atoms aluminum through argon}},
+  journal = jcp,
+  publisher = {AIP},
+  year = {1993},
+  volume = {98},
+  issue = {2},
+  pages = {1358-1371},
+  numpages = {13},
+  doi = {http://dx.doi.org/10.1063/1.464303}
+}
+
+
+%cc
+@article{cc,
+  author = {Dunning, Thom H.},
+  title = {Gaussian basis sets for use in correlated molecular calculations. I. The atoms boron through neon and hydrogen},
+  journal = jcp,
+  year = {1989},
+  volume = {90},
+  number = {2},
+  pages = {1007-1023},
+  doi = {http://dx.doi.org/10.1063/1.456153} 
+}
+
+%aug
+@article{aug,
+  author = {Kendall, Rick A. and Dunning, Thom H. and Harrison, Robert J.},
+  title = {Electron affinities of the first-row atoms revisited. Systematic basis sets and wave functions},
+  journal = jcp,
+  year = {1992},
+  volume = {96},
+  number = {9}, 
+  pages = {6796-6806},
+  doi = {http://dx.doi.org/10.1063/1.462569} 
+}
+
+
+@article{Woon94:2975,
+  author = {D. Woon and T. H. Dunning, Jr.},
+  title = {{Gaussian basis sets for use in correlated molecular calculations. IV. Calculation of static electrical response properties}},
+  journal = jcp,
+  year = {1994},
+  volume = {100},
+  number = {4},
+  pages = {2975}
+}
+
+
+@article{Wilson1999,
+  author = {Wilson, A. K. and Woon, D. E. and Peterson, K. A. and Dunning, Jr., T. H.},
+  title = {{Gaussian basis sets for use in correlated molecular calculations. IX. The atoms gallium through krypton }},
+  journal = jcp,
+  publisher = {AIP},
+  year = {1999},
+  volume = {110},
+  issue = {16},
+  pages = {7667}
+}
+
+
+@article{dunning89:1007,
+   author = {Dunning, Thom H.},
+   title = {Gaussian basis sets for use in correlated molecular calculations. I. The atoms boron through neon and hydrogen},
+   journal = jcp,
+   year = {1989},
+   volume = {90},
+   number = {2}, 
+   pages = {1007-1023}
+}
+
+
+%Al-ArAug6z
+@article{Mourik2000:205,
+  author = {Van Mourik, T. and Dunning, T. H.},
+  title = {{Gaussian basis sets for use in correlated molecular calculations. VIII. Standard and augmented sextuple zeta correlation consistent basis sets for aluminum through argon}},
+  journal = ijqc,
+  publisher = {John Wiley \& Sons, Inc.},
+  year = {2000},
+  volume = {76},
+  issue = {2},
+  pages = {205--221}
+}
+
+
+@article{Nicklass1995:8942,
+   author = {Nicklass, Andreas and Dolg, Michael and Stoll, Hermann and Preuss, Heinzwerner},
+   title = {{\textit{Ab initio} energy-adjusted pseudopotentials for the noble gases Ne through Xe: Calculation of atomic dipole and quadrupole polarizabilities}},
+   journal = jcp,
+   year = {1995},
+   volume = {102},
+   number = {22},
+   pages = {8942-8952},
+   doi = {http://dx.doi.org/10.1063/1.468948} 
+}
+
+  	
+@article{Kaufmann89:2223,
+  author = {Kaufmann, K. and Baumeister, W. and Jungen, M.},
+  title = {Universal Gaussian basis sets for an optimum representation of Rydberg and continuum wavefunctions},
+  journal = jpb,
+  volume = {22},
+  number = {14},
+  pages = {2223},
+  year = {1989}
+}
+	
+
+@misc{EvTempBSet,
+ note = {The exponents of the diffuse $s$-functions are 0.0739 and 0.0234. The exponents of the $d$-functions are: 2.3300 and 7.3800 for the two compact $d$-functions, and 0.2330 and 0.0738 for the two diffuse $d$-functions.}
+}
+
+
+@misc{EvTempBSetGam,
+ note = {The exponents of the diffuse $s$-, $p$- and $d$-functions ranged between 100.0 and 1.0. The exponents were obtained according to the relation $\xi_{k} = \xi_1 \beta ^ {\frac{k-1}{n-1}}$, where $\xi_{1} = 100.0$, $\beta = 0.01$ and $n$ is the number of even tempered basis functions.}
+}
+
+
+@article{McLean80:5639,
+   author = {McLean, A. D. and Chandler, G. S.},
+   title = {Contracted Gaussian basis sets for molecular calculations. I. Second row atoms, Z=11–18},
+   journal = jcp,
+   year = {1980},
+   volume = {72},
+   number = {10}, 
+   pages = {5639-5648}
+}
+
+
+@article{Woon95:4572,
+   author = {Woon, David E. and Dunning, Thom H.},
+   title = {Gaussian basis sets for use in correlated molecular calculations. V. Core-valence basis sets for boron through neon},
+   journal = jcp,
+   year = {1995},
+   volume = {103},
+   number = {11}, 
+   pages = {4572-4585}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                                        MISCELLANEOUS
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+@misc{NIST,
+  author = {Kramida, A. and Ralchenko, Yu. and Reader, J. and NIST ASD Team},
+  title = {{NIST}\ {A}tomic\ {S}pectra\ {D}atabase\ (version 5.1)\ ({N}ational\ {I}nstitute\ of\ {S}tandards\ and\ {T}echnology,\ {G}aithersburg,\ {MD})},
+  year = {2013},
+  url = {http://physics.nist.gov/asd}
+}
+
+
+@misc{BWGrid,
+  title={bw{GR}i{D} (http://www.bw-grid.de), member of the {G}erman {D}-{G}rid initiative, funded by the {M}inistry for {E}ducation and {R}esearch ({B}undesministerium f\"ur {B}ildung und {F}orschung) and the {M}inistry for {S}cience, {R}esearch and {A}rts {B}aden-{W}uerttemberg ({M}inisterium f\"ur {W}issenschaft, {F}orschung und {K}unst {B}aden-{W}\"urttemberg)}
+}
+
+
+@article{Tanaka73:5160,
+  author = {Tanaka, Y. and Yoshino, K. and Freeman, D. E.},
+  title = {{Vacuum ultraviolet absorption spectra of the van der Waals molecules Kr$_2$ and ArKr}},
+  journal = jcp,
+  year = {1973},
+  volume = {59},
+  issue = {9},
+  pages = {5160 -- 5183},
+  numpages = {24}
+}
+
+
+% Electron correlation!!! GOOD ONE!
+@article{Raghavachari96:12960,
+author = {Raghavachari, Krishnan and Anderson, James B.},
+title = {Electron Correlation Effects in Molecules},
+journal = jpc,
+volume = {100},
+number = {31},
+pages = {12960-12973},
+year = {1996}
+}
+
+
+
+%  LIFETIME BROADENING ATOMS & MOLECULES
+@article{Nicolas12:267,
+author = {Christophe Nicolas and Catalin Miron},
+title = {Lifetime broadening of core-excited and -ionized states},
+journal = jesrp,
+volume = {185},
+number = {8–9},
+pages = {267-272},
+year = {2012}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                                        METHODS
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+@article{Pahl96:215,
+  author = {Pahl, E. and  Meyer, H.-D. and Cederbaum, L. S.},
+  title = {{Competition between excitation and electronic decay of short-lived molecular states}},
+  journal = zpd,
+  publisher = {Springer Verlag},
+  year = {1996},
+  volume = {38},
+  issue = {3},
+  pages = { 215-232},
+  numpages = {17}
+}
+
+
+@book{Cramer,
+  author = {Cramer, Christopher J.},
+  title = {Essentials\ of\ Computational\ Chemistry:\ Theories\ and\ Models,\  Second\ edition},
+  year = {2004},
+  publisher = {John Wiley \& Sons, Ltd.}
+}
+
+
+@book{Jensen,
+  author = {Jensen, Frank},
+  title = {Introduction\ to\ Computational\ Chemistry,\ Second\ edition},
+  year = {2007},
+  publisher = {John Wiley \& Sons, Ltd.}
+}
+
+
+@book{Szabo,
+  author = {Szabo, Atilla and Ostlund, Neil},
+  title = {Modern\ Quantum\ Chemistry:\ Introduction\ to\ Advanced\ Electronic\ Structure\ Theory},
+  year = {1996},
+  publisher = {Courier Dover Publications}
+}
+
+
+@book{Griffiths,
+  author = {Griffiths, David J.},
+  title = {{Introduction to quantum mechanics}},
+  year = {1995},
+  publisher = {Prentice Hall, Inc.}
+}
+
+@book{Robin,
+  author = {Robin, Melvin B.},
+  title = {Higher\ Excited\ States\ of\ Polyatomic\ Molecules},
+  volume = {I},
+  year = {1974},
+  publisher = {Academic Press, New York and London}
+}
+
+
+@article{Merkt97:675,
+author = {Merkt, F.},
+title = {Molecules in high Rydberg states},
+journal = arpc,
+volume = {48},
+number = {1},
+pages = {675-709},
+year = {1997}
+}
+
+
+
+@article{Szalay2012:108,
+author = {Szalay, P\'eter G. and M\"uller, Thomas and Gidofalvi, Gergely and Lischka, Hans and Shepard, Ron},
+title = {Multiconfiguration Self-Consistent Field and Multireference Configuration Interaction Methods and Applications},
+journal = crev,
+volume = {112},
+number = {1},
+pages = {108-181},
+year = {2012},
+doi = {10.1021/cr200137a}
+}
+
+
+@article{Shavitt98:3,
+author = {Shavitt, Isaiah},
+title = {The history and evolution of configuration interaction},
+journal = mp,
+volume = {94},
+number = {1},
+pages = {3-17},
+year = {1998}
+}
+
+
+@book{FetterWalecka,
+ author = {Fetter, A. L. and Walecka, J. D.},
+ title = {Quantum\ Theory\ of\ Many-Particle\ Systems},
+ year = {2003},
+ publisher = {Dover Publications}
+}
+
+
+@book{Mattuck,
+ author = {Mattuck, Richard D.},
+ title = {A\ Guide\ to\ Feynman\ Diagrams\ in\ the\ Many-Body\ Problem},
+ year = {1992},
+ publisher = {Dover Publications}
+}
+
+
+@article{Schirmer98:4734,
+   author = {Schirmer, J. and Trofimov, A. B. and Stelter, G.},
+   title = {{A non-Dyson third-order approximation scheme for the electron propagator}},
+   journal = jcp,
+   year = {1998},
+   volume = {109},
+   number = {12}, 
+   pages = {4734-4744},
+   doi = {http://dx.doi.org/10.1063/1.477085} 
+}
+
+
+@article {Schirmer96:329,
+author = {Schirmer, J. and Mertins, F.},
+title = {Size consistency of an algebraic propagator approach},
+journal = ijqc,
+volume = {58},
+number = {4},
+pages = {329--339},
+year = {1996}
+}
+
+
+%CI
+@incollection{Shavitt77:189,
+  author={Shavitt, Isaiah},
+  title={The Method of Configuration Interaction},
+  booktitle={Methods of Electronic Structure Theory},
+  year={1977},
+  isbn={978-1-4757-0889-9},
+  volume={3},
+  series={Modern Theoretical Chemistry},
+  editor={Schaefer, HenryF., III},
+  publisher={Springer US},
+  pages={189-275},
+  language={English}
+}
+
+
+%parallel filter diagonalization
+@article{Santra00:9243,
+   author = {Santra, R. and Breidbach, J. and Zobeley, J. and Cederbaum, L. S.},
+   title = {Parallel filter diagonalization: A novel method to resolve quantum states in dense spectral regions},
+   journal = jcp,
+   year = {2000},
+   volume = {112},
+   number = {21}, 
+   pages = {9243-9252}
+}
+
+
+@article {Sommerfeld01:218,
+author = {Sommerfeld, Thomas and Santra, Robin},
+title = {Efficient method to perform CAP/CI calculations for temporary anions},
+journal = ijqc,
+volume = {82},
+number = {5},
+publisher = {John Wiley & Sons, Inc.},
+pages = {218--226},
+year = {2001},
+}
+
+
+%Stieltjes imaging technique
+@incollection{Hazi79,
+ booktitle = {Electron-Molecule and Photon-Molecule Collisions},
+ editor = {Rescigno, Thomas and McKoy, Vincent and Schneider, Barry},
+ author = {Hazi, A. U.},
+ year = {1979},
+ publisher = {Plenum Press, New York and London}
+}
+
+
+@incollection{Langhoff79,
+ booktitle = {Electron-Molecule and Photon-Molecule Collisions},
+ editor = {Rescigno, Thomas and McKoy, Vincent and Schneider, Barry},
+ author = {Langhoff, P. W.},
+ year = {1979},
+ publisher = {Plenum Press, New York and London}
+}
+
+
+% Time-dependent theory of wave packet propagation
+@phdthesis{Scheit07,
+  author = {Scheit, Simona},
+  title = {Nuclear dynamics in the decay of excited electronic states: theory including cascades and multimechanism decays and applications to the Interatomic Coulombic Decay},
+  school = {Ruprecht-Karls-Universit\"{a}t Heidelberg},
+  year = {2007}
+}
+
+
+@phdthesis{Letitia12,
+  author = {Chiang, Ying-Chih},
+  title = {Nuclear dynamics in electronic decay processes followed by fragmentation},
+  school = {Ruprecht-Karls-Universit\"{a}t Heidelberg},
+  year = {2012}
+}
+
+
+@book{Helgaker2000,
+author = {Helgaker, Trygve and J{\o}rgensen, Poul and Olsen, Jeppe},
+title = {Molecular\ electronic-structure\ theory},
+year = {2000},
+publisher = {John Wiley \& Sons, Ltd.}
+}
+
+
+@misc{CedRydbergStates,
+  note = {The wave function ansatz as well as the derivation of the equations ware done by L. S. Cederbaum. The derivation of the matrix equations and the spin-free formulas was done by the author.}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Core-hole methods
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@article{ced81:1038,
+  author = {Barth, A. and Cederbaum, L. S.},
+  title = {Many-body theory of core-valence excitations},
+  journal = pra,
+  volume = {23},
+  issue = {3},
+  pages = {1038--1061},
+  numpages = {0},
+  year = {1981}
+}
+
+
+@article{ced80:206,
+  author = {Cederbaum, L. S. and Domcke, W. and Schirmer, J.},
+  title = {Many-body theory of core holes},
+  journal = pra,
+  volume = {22},
+  issue = {1},
+  pages = {206--222},
+  numpages = {0},
+  year = {1980}
+}
+
+
+@article{bar85:867,
+  author={Barth, A. and Schirmer, J.},
+  title={Theoretical core-level excitation spectra of N$_2$ and CO by a new polarisation propagator method},
+  journal= jpb,
+  volume={18},
+  number={5},
+  pages={867},
+  year={1985}
+}
+
+
+%------------------------CVS-ADC(2)-------------------------------------
+@article {Wenzel14:1900,
+author = {Wenzel, Jan and Wormit, Michael and Dreuw, Andreas},
+title = {Calculating core-level excitations and x-ray absorption spectra of medium-sized closed-shell molecules with the algebraic-diagrammatic construction scheme for the polarization propagator},
+journal = compc,
+volume = {35},
+number = {26},
+pages = {1900--1915},
+year = {2014}
+}
+
+
+@article{Wenzel14:4583,
+author = {Wenzel, Jan and Wormit, Michael and Dreuw, Andreas},
+title = {Calculating X-ray Absorption Spectra of Open-Shell Molecules with the Unrestricted Algebraic-Diagrammatic Construction Scheme for the Polarization Propagator},
+journal =jctc,
+volume = {10},
+number = {10},
+pages = {4583-4598},
+year = {2014}
+}
+
+
+@article{QChem2015,
+author = {Shao, Yihan and Gan, Zhengting and Epifanovsky, Evgeny and Gilbert, Andrew T.B. and Wormit, Michael and Kussmann, Joerg and Lange, Adrian W. and Behn, Andrew and Deng, Jia and Feng, Xintian and Ghosh, Debashree and Goldey, Matthew and Horn, Paul R. and Jacobson, Leif D. and Kaliman, Ilya and Khaliullin, Rustam Z. and Ku\'{s}, Tomasz and Landau, Arie and Liu, Jie and Proynov, Emil I. and Rhee, Young Min and Richard, Ryan M. and Rohrdanz, Mary A. and Steele, Ryan P. and Sundstrom, Eric J. and Woodcock, H. Lee and Zimmerman, Paul M. and Zuev, Dmitry and Albrecht, Ben and Alguire, Ethan and Austin, Brian and Beran, Gregory J. O. and Bernard, Yves A. and Berquist, Eric and Brandhorst, Kai and Bravaya, Ksenia B. and Brown, Shawn T. and Casanova, David and Chang, Chun-Min and Chen, Yunqing and Chien, Siu Hung and Closser, Kristina D. and Crittenden, Deborah L. and Diedenhofen, Michael and DiStasio, Robert A. and Do, Hainam and Dutoi, Anthony D. and Edgar, Richard G. and Fatehi, Shervin and Fusti-Molnar, Laszlo and Ghysels, An and Golubeva-Zadorozhnaya, Anna and Gomes, Joseph and Hanson-Heine, Magnus W.D. and Harbach, Philipp H.P. and Hauser, Andreas W. and Hohenstein, Edward G. and Holden, Zachary C. and Jagau, Thomas-C. and Ji, Hyunjun and Kaduk, Benjamin and Khistyaev, Kirill and Kim, Jaehoon and Kim, Jihan and King, Rollin A. and Klunzinger, Phil and Kosenkov, Dmytro and Kowalczyk, Tim and Krauter, Caroline M. and Lao, Ka Un and Laurent, Adèle D. and Lawler, Keith V. and Levchenko, Sergey V. and Lin, Ching Yeh and Liu, Fenglai and Livshits, Ester and Lochan, Rohini C. and Luenser, Arne and Manohar, Prashant and Manzer, Samuel F. and Mao, Shan-Ping and Mardirossian, Narbe and Marenich, Aleksandr V. and Maurer, Simon A. and Mayhall, Nicholas J. and Neuscamman, Eric and Oana, C. Melania and Olivares-Amaya, Roberto and O’Neill, Darragh P. and Parkhill, John A. and Perrine, Trilisa M. and Peverati, Roberto and Prociuk, Alexander and Rehn, Dirk R. and Rosta, Edina and Russ, Nicholas J. and Sharada, Shaama M. and Sharma, Sandeep and Small, David W. and Sodt, Alexander and Stein, Tamar and St\"uck, David and Su, Yu-Chuan and Thom, Alex J.W. and Tsuchimochi, Takashi and Vanovschi, Vitalii and Vogt, Leslie and Vydrov, Oleg and Wang, Tao and Watson, Mark A. and Wenzel, Jan and White, Alec and Williams, Christopher F. and Yang, Jun and Yeganeh, Sina and Yost, Shane R. and You, Zhi-Qiang and Zhang, Igor Ying and Zhang, Xing and Zhao, Yan and Brooks, Bernard R. and Chan, Garnet K.L. and Chipman, Daniel M. and Cramer, Christopher J. and Goddard, William A. and Gordon, Mark S. and Hehre, Warren J. and Klamt, Andreas and Schaefer, Henry F. and Schmidt, Michael W. and Sherrill, C. David and Truhlar, Donald G. and Warshel, Arieh and Xu, Xin and Aspuru-Guzik, Alán and Baer, Roi and Bell, Alexis T. and Besley, Nicholas A. and Chai, Jeng-Da and Dreuw, Andreas and Dunietz, Barry D. and Furlani, Thomas R. and Gwaltney, Steven R. and Hsu, Chao-Ping and Jung, Yousung and Kong, Jing and Lambrecht, Daniel S. and Liang, WanZhen and Ochsenfeld, Christian and Rassolov, Vitaly A. and Slipchenko, Lyudmila V. and Subotnik, Joseph E. and Van Voorhis, Troy and Herbert, John M. and Krylov, Anna I. and Gill, Peter M.W. and Head-Gordon, Martin},
+title = {Advances in molecular quantum chemistry contained in the Q-Chem 4 program package},
+journal = mp,
+volume = {113},
+number = {2},
+pages = {184-215},
+year = {2015}
+}
+
+
+@article{Wormit14:774,
+author = {Wormit, Michael and Rehn, Dirk R. and Harbach, Philipp H.P. and Wenzel, Jan and Krauter, Caroline M. and Epifanovsky, Evgeny and Dreuw, Andreas},
+title = {Investigating excited electronic states using the algebraic diagrammatic construction (ADC) approach of the polarisation propagator},
+journal = mp,
+volume = {112},
+number = {5-6},
+pages = {774-784},
+year = {2014}
+}
+%-----------------------------------------------------CVS-ADC(2)-------------------------------------------------------------------------------------------------
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                                        METAL-WATER CLUSTERS
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@article{Neela13:67,
+author={Neela, Y.Indra and Mahadevi, A.Subha and Sastry, G.Narahari},
+title={First principles study and database analyses of structural preferences for sodium ion (Na+) solvation and coordination},
+journal=sch,
+year={2013},
+volume={24},
+number={1},
+pages={67-79},
+publisher={Springer US}
+}
+
+
+@article{Rao08:12944,
+author = {Rao, J. Srinivasa and Dinadayalane, T. C. and Leszczynski, Jerzy and Sastry, G. Narahari},
+title = {Comprehensive Study on the Solvation of Mono- and Divalent Metal Cations: Li$^{+}$, Na$^{+}$, K$^{+}$, Be$^{2+}$, Mg$^{2+}$ and Ca$^{2+}$},
+journal = jpca,
+volume = {112},
+number = {50},
+pages = {12944-12953},
+year = {2008}
+}
+
+
+@article{Wasserman97:9769,
+   author = {Wasserman, Evgeny and Rustad, James R. and Xantheas, Sotiris S.},
+   title = {{Interaction potential of Al$^{3+}$ in water from first principles calculations}},
+   journal = jcp,
+   year = {1997},
+   volume = {106},
+   number = {23}, 
+   pages = {9769-9780}
+}
+
+
+@article{Ohtaki93:1157,
+author = {Ohtaki, Hitoshi and Radnai, Tam\'{a}s},
+title = {{Structure and dynamics of hydrated ions}},
+journal = crev,
+volume = {93},
+number = {3},
+pages = {1157-1204},
+year = {1993}
+}
+
+
+@article{Baig07:9,
+	author = {{Baig, M. A.} and {Mahmood, S.} and {Kalyar, M. A.} and {Rafiq, M.} and {Amin, N.} and {Haq, S. U.}},
+	title = {Oscillator strength measurements of the 3p $\rightarrow$ nd Rydberg transitions of sodium},
+	journal =epjd,
+	year = {2007},
+	volume = {44},
+	number = {1},
+	pages = {9-16}
+}
+
+
+@article{Federmann94:1549,
+  title = {Resonant X-Ray Absorption of Neon Clusters: The Influence of Cluster Size on the Character of Core Excited States},
+  author = {Federmann, F. and Bj\"orneholm, O. and Beutler, A. and M\"oller, T.},
+  journal = prl,
+  volume = {73},
+  issue = {11},
+  pages = {1549--1552},
+  numpages = {0},
+  year = {1994}
+}
+
+
+@article{Bjorneholm95:3017,
+  title = {Core Level Photelectron and X-Ray Absorption Spectroscopy of Free Argon Clusters: Size-Dependent Energy Shifts and Determination of Surface Atom Coordination},
+  author = {Bj\"orneholm, O. and Federmann, F. and F\"ossing, F. and M\"oller, T.},
+  journal = prl,
+  volume = {74},
+  issue = {15},
+  pages = {3017--3020},
+  numpages = {0},
+  year = {1995}
+}
+
+
+@article{Wurth93:6697,
+  title = {Core excitation and deexcitation in argon multilayers: Surface- and bulk-specific transitions and autoionization versus Auger decay},
+  author = {Wurth, W. and Rocker, G. and Feulner, P. and Scheuerer, R. and Zhu, L. and Menzel, D.},
+  journal = prb,
+  volume = {47},
+  issue = {11},
+  pages = {6697--6704},
+  numpages = {0},
+  year = {1993}
+}
+
+
+@article{Pokapanich11:13430,
+  author = {Pokapanich, W. and Kryzhevoi, N. V. and Ottosson, N. and Svensson, S. and Cederbaum, L. S. and \"Ohrwall, G. and Bj\"orneholm, O. },
+  title = {{Ionic-charge dependence of the intermolecular Coulombic decay time-scale for aqueous ions probed by the core-hole clock}},
+  journal = jacs,
+  year = {2011},
+  volume = {133},
+  issue = {34},
+  pages = {13430},
+  numpages = {7}
+}
+
+
+@article{Pokapanich09:7264,
+author = {Pokapanich, Wandared and Bergersen, Henrik and Bradeanu, Ioana L. and Marinho, Ricardo R. T. and Lindblad, Andreas and Legendre, Sebastien and Rosso, Aldana and Svensson, Svante and Bj\"orneholm , Olle and Tchaplyguine, Maxim and \"Ohrwall, Gunnar and Kryzhevoi, Nikolai V. and Cederbaum, Lorenz S.},
+title = {Auger Electron Spectroscopy as a Probe of the Solution of Aqueous Ions},
+journal = jacs,
+volume = {131},
+number = {21},
+pages = {7264-7271},
+year = {2009}
+}
+
+
+
+@article{Stumpf15:arXiv,
+   author = {{Stumpf}, V. and {Gokhberg}, K. and {Cederbaum}, L.~S.},
+   title = {{The role of metal ions in X-ray induced photochemistry}},
+  journal = {ArXiv e-prints},
+  archivePrefix = "arXiv",
+  eprint = {1505.02079},
+  primaryClass = "physics.chem-ph",
+  keywords = {Physics - Chemical Physics, Physics - Atomic and Molecular Clusters},
+   year = 2015,
+   month = may
+}
+
+
+@misc{Stumpf15:priv,
+  note = {V. Stumpf (private communication)}
+}
+
+
+@article{Ahrens52:155,
+author = {L.H. Ahrens},
+title = {{The use of ionization potentials Part 1. Ionic radii of the elements}},
+journal = {Geochim. Cosmochim. Acta},
+volume = {2},
+number = {3},
+pages = {155 - 169},
+year = {1952},
+doi = {http://dx.doi.org/10.1016/0016-7037(52)90004-5}
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                                         MY PUBLICATIONS
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+@article{velkov11:154113,
+   author = {Velkov, Yasen and Miteva, Tsveta and Sisourat, Nicolas and Schirmer, Jochen},
+   title = {{Intermediate state representation approach to physical properties of dicationic states}},
+   journal = jcp,
+   year = {2011},
+   volume = {135},
+   number = {15}, 
+   eid = 154113,
+   pages = "-"
+}
+
+
+@article{Miteva14:204320,
+   author = {Miteva, T. and Klaiman, S. and Gromov, E. V. and Gokhberg, K.},
+   title = {{Ionization Satellites of the ArHe Dimer}},
+   journal = jcp,
+   volume = {140},
+   number = {20},
+   year = {2014},
+   eid = {204320}
+}
+
+
+@article{Miteva14:064307,
+   author = {Miteva, T. and Chiang, Y.-C. and Koloren\v{c}, P. and Kuleff, A. I. and Gokhberg, K. and Cederbaum, L. S.},
+   title = {Interatomic Coulombic decay following resonant core excitation of Ar in argon dimer},
+   journal = jcp,
+   year = {2014},
+   volume = {141},
+   number = {6}, 
+   eid = {064307}
+}
+
+
+@article{Miteva14:164303,
+   author = {Miteva, T. and Chiang, Y.-C. and Koloren\v{c}, P. and Kuleff, A. I. and Cederbaum, L. S. and Gokhberg, K.},
+   title = {{The effect of the partner atom on the spectra of interatomic Coulombic decay triggered by resonant Auger processes}},
+   journal = jcp,
+   year = {2014},
+   volume = {141},
+   number = {16}, 
+   eid = 164303,
+   pages = "-"
+}
+
+
+
+
+@article{Jabbari15:22160,
+author ={Jabbari, Ghazal and Miteva, Tsveta and Stumpf, Vasili and Gokhberg, Kirill and O{'}Keeffe, Patrick and Ciavardini, Alessandra and Bolognesi, Paola and Coreno, Marcello and Avaldi, Lorenzo and Keshavarz, Elham and Ghandehari, Maryam and Tozihi, Manijeh and Callegari, Carlo and Alagia, Michele and Prince, Kevin Charles and Kivim\"aki, Antti and Richter, Robert},
+title  = {Soft X-ray absorption spectroscopy of Ar$_{2}$ and ArNe dimers and small Ar clusters},
+journal  = pccp,
+year  ={2015},
+volume  ={17},
+issue  ={34},
+pages  ={22160-22169},
+publisher  = {The Royal Society of Chemistry}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%                                             INTRODUCTION
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@article{Jahnke10:139,
+  author = {Jahnke, T. and Sann, H. and Havermeier, T. and Kreidi, K. and Stuck, C. and Meckel, M. and Sch\"offler, M. and Neumann, N. and Wallauer, R. and Voss, S. and Czasch, A. and Jagutzki, O. and Malakzadeh, A. and Afaneh, F. and Weber, Th. and Schmidt-B\"ocking, H. and D\"orner, R.},
+  title = {{Ultrafast energy transfer between water molecules}},
+  journal = natp,
+  year = {2010},
+  volume = {6},
+  pages = {139},
+  numpages = {4}
+}
+
+
+@article{Mucke10:143,
+  author = {Mucke, M. and Braune, M. and Barth, S. and F\"orstel, M. and Lischke, T. and Ulrich, V. and Arion, T. and Becker, U. and Bradshaw, A and Hergenhahn, U.},
+  title = {{A hitherto unrecognized source of low-energy electrons in water}},
+  journal = natp,
+  year = {2010},
+  volume = {6},
+  pages = {143},
+  numpages = {4}
+}
+
+
+@article{Hergenhahn12:871,
+  author = {Hergenhahn, U. },
+  title = {{Production of low kinetic energy electrons and energetic ion pairs by Intermolecular Coulombic Decay}},
+  journal = ijrb,
+  year = {2012},
+  volume = {88},
+  issue = {12},
+  pages = {871},
+  numpages = {13}
+}
+
+
+@article{Jahnke15:082001,
+  author = {Jahnke, T. },
+  title = {{Interatomic and intermolecular Coulombic decay: the coming of age story}},
+  journal = jpb,
+  year = {2015},
+  volume = {48},
+  issue = {8},
+  pages = {082001},
+  numpages = {20}
+}
+
+@article{Fasshauer14:103026,
+  author = {Fasshauer, E. and F\"orstel, M. and Pallmann, S. and Pernpointner, M. and Hergenhahn, U.},
+  title = {{Using ICD for structural analysis of clusters: a case study on NeAr clusters}},
+  journal = njp,
+  year = {2014},
+  volume = {16},
+  pages = {103026},
+  numpages = {32}
+}
+
+
+@article{Barth06:246,
+  author = {Barth, S. and Marburger, S. and Kugeler, O. and Ulrich, V. and Joshi, S. and Bradshaw, A. M. and Hergenhahn, U.},
+  title = {{The efficiency of Interatomic Coulombic Decay in Ne clusters}},
+  journal = cp,
+  year = {2006},
+  volume = {329},
+  issue = {1--3},
+  pages = {246},
+  numpages = {5}
+}
+
+
+@article{Harbach13:943,
+author = {Harbach, Philipp H. P. and Schneider, Matthias and Faraji, Shirin and Dreuw, Andreas},
+title = {Intermolecular Coulombic Decay in Biology: The Initial Electron Detachment from FADH– in DNA Photolyases},
+journal = jpcl,
+volume = {4},
+number = {6},
+pages = {943-949},
+year = {2013}
+}
+
+
+@article{Grieves11:016104,
+  author = {Grieves, G. A. and Orlando, T. M. },
+  title = {{Intermolecular Coulomb decay at weakly coupled heterogeneous interfaces}},
+  journal = prl,
+  publisher = {American Physical Society},
+  year = {2011},
+  volume = {107},
+  issue = {1},
+  pages = {016104},
+  numpages = {4}
+}
+
+
+@article{Alizadeh15:379,
+  author = {Alizadeh, E. and Orlando, T. M. and Sanche, L. },
+  title = {{Biomolecular Damage Induced by Ionizing Radiation: The Direct and Indirect Effects of Low-Energy Electrons on DNA}},
+  journal = arpc,
+  year = {2015},
+  volume = {66},
+  pages = {379},
+  numpages = {20}
+}
+
+
+@article{Carugo05:213,
+author = {Oliviero Carugo and Kristina Djinovi\'c Carugo},
+title = {{When X-rays modify the protein structure: radiation damage at work}},
+journal = tbs,
+volume = {30},
+number = {4},
+pages = {213-219},
+year = {2005}
+}
+
+
+
+@article{Nordlund07:217406,
+  author = {Nordlund, D. and Ogasawara, H. and Bluhm, H. and Takahashi, O. and Odelius, M. and Nagasono, M. and Pettersson, L. G. M. and Nilsson, A.},
+  title = {{Probing the Electron Delocalization in Liquid Water and Ice at Attosecond Time Scales}},
+  journal = prl,
+  volume = {99},
+  issue = {21},
+  pages = {217406},
+  numpages = {4},
+  year = {2007},
+  month = {Nov},
+  publisher = {American Physical Society}
+}
+
+
+@incollection{Anastassopoulou95:209,
+author={Anastassopoulou, J. and Theophanides, T.},
+title={The Role of Metal Ions in Biological Systems and Medicine},
+booktitle={Bioinorganic Chemistry},
+volume={459},
+year={1995},
+pages={209--218},
+publisher={Springer Netherlands},
+series={NATO ASI Series},
+editor={Kessissoglou, DimitrisP.},
+isbn={978-94-010-4113-3}
+}
+
+
+@article{Averbukh06:053401,
+  author = {Averbukh, V. and Cederbaum, L. S.},
+  title = {{Interatomic Electronic Decay in Endohedral Fullerenes}},
+  journal = prl,
+  publisher = {APS},
+  year = {2006},
+  volume = {96},
+  issue = {5},
+  pages = {053401},
+  numpages = {4}
+}
+
+
+@article{Fink66:513,
+  author = {Fink, R. W. and Jopson, R. C. and Mark, H. and Swift, C. D.},
+  title = {Atomic Fluorescence Yields},
+  journal = rmp,
+  volume = {38},
+  issue = {3},
+  pages = {513--540},
+  numpages = {0},
+  year = {1966},
+  month = {Jul},
+  publisher = {American Physical Society}
+}
+
+
+@article{Yan13:042712,
+  title = {{Observation of interatomic Coulombic decay and electron-transfer-mediated decay in high-energy electron-impact ionization of Ar${}_{2}$}},
+  author = {Yan, S. and Zhang, P. and Ma, X. and Xu, S. and Li, B. and Zhu, X. L. and Feng, W. T. and Zhang, S. F. and Zhao, D. M. and Zhang, R. T. and Guo, D. L. and Liu, H. P.},
+  journal = pra,
+  volume = {88},
+  issue = {4},
+  pages = {042712},
+  numpages = {5},
+  year = {2013},
+  month = {Oct},
+  publisher = {American Physical Society}
+}
+
+
+@article{Yan14:062707,
+  title = {Dissociation mechanisms of the Ar trimer induced by a third atom in high-energy electron-impact ionization},
+  author = {Yan, S. and Zhang, P. and Ma, X. and Xu, S. and Tian, S. X. and Li, B. and Zhu, X. L. and Feng, W. T. and Zhao, D. M.},
+  journal = pra,
+  volume = {89},
+  issue = {6},
+  pages = {062707},
+  numpages = {5},
+  year = {2014},
+  month = {Jun},
+  publisher = {American Physical Society}
+}
+
+
+@proceedings{Ueda08:3,
+  author = {Ueda, K. and Fukuzawa, H. and Liu, X.-J. and Sakai, K. and Pr\"umper, G. and Morishita, Y. and Saito, N. and Suzuki, I. H. and Nagaya, K. and Iwayama, H. and Yao, M. and Kreidi, K. and Sch\"offler, M. and Jahnke, T. and Sch\"ossler, S. and D\"orner, R. and Weber, Th. and Harries, J. and Tamenori, Y.},
+  title = {{Interatomic Coulombic decay following the Auger decay: Experimental evidence in rare-gas dimers}},
+  journal = jesrp,
+  series= {52nd\ IUVSTA\ Workshop\ on\ Structure\ and\ Dynamics\ of\ Free\ and\ Supported\ Nanoparticles\ using\ Short-Wavelength\ Radiation},
+  year = {2008},
+  volume = {166-167},
+  pages = {3--10},
+  numpages = {8}
+}
+
+
+
+@incollection{Urch88:155,
+  author={Urch, David S.},
+  title={Pax (Photoelectron and X-Ray Emission) Spectroscopy: Basic Principles and Chemical Effects},
+  booktitle={{X-Ray Spectroscopy in Atomic and Solid State Physics}},
+  year={1988},
+  isbn={978-1-4612-8054-5},
+  volume={187},
+  series={NATO ASI Series},
+  editor={Ferreira, J.Gomes and Ramos, M.Teresa},
+  publisher={Springer US},
+  pages={155--175},
+  language={English}
+}
+
+
+@article{Kim13:042707,
+  author = {Kim, H. K. and Gassert, H. and Sch\"offler, M. S. and Titze, J. N. and Waitz, M. and Voigtsberger, J. and Trinter, F. and Becht, J. and Kalinin, A. and Neumann, N. and Zhou, C. and Schmidt, L.Ph.H. and Jagutzki, O. and Czasch, A. and Merabet, H. and Schmidt-B\"ocking, H. and Jahnke, T. and Cassimi, A. and D\"orner, R.},
+  title = {{Ion-impact-induced interatomic Coulombic decay in neon and argon dimers}},
+  journal = pra,
+  year = {2013},
+  volume = {88},
+  issue = {4},
+  pages = {042707},
+  numpages = {9}
+}
+
+
+@article{Bande11:144112,
+  author = {Bande, A. and Gokhberg, K. and Cederbaum, L. S. },
+  title = {{Dynamics of interatomic Coulombic decay in quantum dots}},
+  journal = jcp,
+  year = {2011},
+  volume = {135},
+  issue = {14},
+  pages = {144112},
+  numpages = {13}
+}
+
+
+@article{Cherkes11:113303,
+  author = {Cherkes, I. and Moiseyev, N.},
+  title = {{Electron relaxation in quantum dots by the interatomic Coulombic decay mechanism}},
+  journal = prb,
+  year = {2011},
+  volume = {83},
+  issue = {11},
+  pages = {113303},
+  numpages = {4}
+}
+
+
+@article{Santra00:4490,
+  author = {Santra, R. and Zobeley, J. and Cederbaum, L. S. and Moiseyev, N. },
+  title = {{Interatomic Coulombic Decay in van der Waals Clusters and Impact of Nuclear Motion}},
+  journal = prl,
+  publisher = {American Physical Society},
+  year = {2000},
+  volume = {85},
+  issue = {21},
+  pages = {4490},
+  numpages = {4}
+}
+
+
+@article{Kuleff07:083201,
+  author = {Kuleff, A. I. and Cederbaum, L. S.},
+  title = {{Tracing Ultrafast Interatomic Electronic Decay Processes in Real Time and Space}},
+  journal = prl,
+  publisher = {APS},
+  year = {2007},
+  volume = {98},
+  issue = {8},
+  pages = {083201},
+  numpages = {4}
+}
+
+
+@article{Ohrwall04:173401,
+  author = {\"Ohrwall, G. and Tchaplyguine, M. and Lundwall, M. and Feifel, R. and Bergersen, H. and Rander, T. and Lindblad, A. and Schulz, J. and Peredkov, S. and Barth, S. and Marburger, S. and Hergenhahn, U. and Svensson, S. and Bj\"orneholm, O. },
+  title = {{Femtosecond Interatomic Coulombic Decay in Free Neon Clusters: Large Lifetime Differences between Surface and Bulk}},
+  journal = prl,
+  publisher = {American Physical Society},
+  year = {2004},
+  volume = {93},
+  issue = {17},
+  pages = {173401},
+  numpages = {4}
+}
+
+
+@article{Takakura96:883,
+author = {Takakura, Kaoru},
+title = {Double-Strand Breaks in Dna Induced by the K-Shell Ionization of Calcium Atoms},
+journal = ao,
+volume = {35},
+number = {7},
+pages = {883--888},
+year = {1996}
+}
+
+
+@article{Jaffe66:469,
+author = {Jaffe, H. H. and Miller, Albert L.},
+title = {The fates of electronic excitation energy},
+journal = jcedu,
+volume = {43},
+number = {9},
+pages = {469},
+year = {1966},
+doi = {10.1021/ed043p469}
+}
+
+
+@inbook {Hill08:3,
+author = {Hill, Wendell T. and Lee, Chi H.},
+title = {{Hydrogen-Like Ion: An Atom (Ion) with One Electron}},
+publisher = {Wiley-VCH Verlag GmbH \& Co. KGaA},
+isbn = {9783527619016},
+doi = {10.1002/9783527619016.ch1},
+pages = {3--32},
+booktitle = {Light-Matter Interaction},
+year = {2008},
+}
+
+
+@article{Santra03:153401,
+  author = {Santra, Robin and Cederbaum, Lorenz S.},
+  title = {Coulombic Energy Transfer and Triple Ionization in Clusters},
+  journal = prl,
+  volume = {90},
+  issue = {15},
+  pages = {153401},
+  numpages = {4},
+  year = {2003},
+  month = {Apr},
+  publisher = {American Physical Society}
+}
+
+
+@article{Stoychev08:014307,
+   author = {Stoychev, Spas D. and Kuleff, Alexander I. and Tarantelli, Francesco and Cederbaum, Lorenz S.},
+   title = {On the doubly ionized states of Ar$_2$ and their intra- and interatomic decay to Ar$_{2}^{3+}$},
+   journal = jcp,
+   year = {2008},
+   volume = {128},
+   number = {1}, 
+   eid = 014307,
+   pages = "-",
+   doi = {http://dx.doi.org/10.1063/1.2814241} 
+}
+
+
+@article{ONeill02:329,
+author = {O'Neill, Peter and Stevens, David L. and Garman, Elspeth F.},
+title = {{Physical and chemical considerations of damage induced in protein crystals by synchrotron radiation: a radiation chemical perspective}},
+journal = {J. Synchrotron Radiat.},
+year = {2002},
+volume = {9},
+number = {6},
+pages = {329--332},
+month = {Nov}
+}
+
+
+@INPROCEEDINGS{Aberg82,
+    author = {T. {\AA}berg and G. Howat},
+    title = {Encyclopedia of Physics. Vol. XXXI},
+    year = {1982},
+    editor = {W. Mehlhorn},
+    publisher = {Springer},
+    address = {Berlin}
+}
+
+
+
+@article{Zobeley01:5076,
+    author = {J. Zobeley and R. Santra and L. S. Cederbaum},
+    year = {2001},
+    journal = jcp,
+    volume = {115},
+    title = {Electronic decay in weakly bound heteroclusters: Energy transfer versus electron transfer},
+    pages = {5076-5088}
+}
+
+
+@article{Stumpf16:237,
+  author = {Stumpf, V. and Gokhberg, K. and Cederbaum, L. S.},
+  title = {{The role of metal ions in X-ray-induced photochemistry}},
+  journal = natc,
+  volume = {8},
+  pages = {237–-241},
+  year = {2016},
+  numpages = {5}
+}
+
+
+@article{Kivimaeki05:033204,
+  author = {Kivim\"{a}ki, A. and Sorensen, S. L. and Tchaplyguine, M. and Gisselbrecht, M. and Marinho, R. R. T. and Feifel, R. and \"{O}hrwall, G. and Svensson, S. and Bj\"{o}rneholm, O.},
+  title = {Resonant Auger spectroscopy of argon clusters at the $2p$ threshold},
+  journal = pra,
+  volume = {71},
+  issue = {3},
+  pages = {033204},
+  numpages = {7},
+  year = {2005},
+  month = {Mar},
+  publisher = {American Physical Society}
+}
+
+
+@article{Bjorneholm09:161,
+  author = {Olle Bj\"orneholm and Gunnar \"Ohrwall and Maxim Tchaplyguine},
+  title = {Free clusters studied by core-level spectroscopies },
+  journal = nima,
+  year = {2009},
+  volume = {601},
+  pages = {161 - 181},
+  number = {1–2}
+}
+
+
+@article{Ottosson11:13489,
+  author = {Niklas Ottosson and Michael Odelius and Daniel Sp{\aa}ngberg and Wandared Pokapanich and Mattias Svanqvist and Gunnar \"Ohrwall and Bernd Winter and Olle Bj\"orneholm},
+  title = {Cations Strongly Reduce Electron-Hopping Rates in Aqueous Solutions},
+  journal = jacs,
+  year = {2011},
+  volume = {133},
+  pages = {13489-13495},
+  number = {34}
+}
+
+
+@article{Stace_sci,
+  author = {A. Stace},
+  title = {Cluster Solutions},
+  journal = {Science},
+  volume = {294},
+  pages = {1292},
+  year = {2001},
+}
+
+
+@article{Wenzel16:1214,
+  author = {Jan Wenzel and Andreas Dreuw},
+  title = {Physical Properties, Exciton Analysis, and Visualization of Core-Excited States: An Intermediate State Representation Approach},
+  journal = jctc,
+  year = {2016},
+  volume = {12},
+  pages = {1314-1330},
+  number = {3}
+}
+
+
+@article {Plasser15:1609,
+author = {Plasser, Felix and Thomitzni, Benjamin and B\"{a}ppler, Stefanie A. and Wenzel, Jan and Rehn, Dirk R. and Wormit, Michael and Dreuw, Andreas},
+title = {Statistical analysis of electronic excitation processes: Spatial location, compactness, charge transfer, and electron-hole correlation},
+journal = compc,
+volume = {36},
+number = {21},
+pages = {1609--1620},
+keywords = {excited states, wavefunction analysis, excitons, correlation},
+year = {2015},
+}
+
+@article{Aziz06:114502,
+  author = {Aziz, Emad F. and Zimina, A. and Freiwald, M. and Eisebitt, S. and Eberhardt, W.},
+  title = {Molecular and electronic structure in NaCl electrolytes of varying concentration: Identification of spectral fingerprints},
+  journal = jcp,
+  year = {2006},
+  volume = {124},
+  number = {11},
+  eid = {114502}
+}
+
+@article{Yizhak09:1346,
+  author = {Yizhak Marcus},
+  title = {Effect of Ions on the Structure of Water: Structure Making and Breaking},
+  journal = crev,
+  year = {2009},
+  volume = {109},
+  pages = {1346-1370},
+  number = {3}
+}
+
+@article {Dreuw15:82,
+author = {Dreuw, Andreas and Wormit, Michael},
+title = {The algebraic diagrammatic construction scheme for the polarization propagator for the calculation of excited states},
+journal = {WIREs Comput. Mol. Sci.},
+volume = {5},
+number = {1},
+publisher = {Wiley Periodicals, Inc.},
+pages = {82--95},
+year = {2015}
+}
+
+
+@article{Plasser14:024106,
+   author = {Plasser, Felix and Wormit, Michael and Dreuw, Andreas},
+   title = {New tools for the systematic analysis and visualization of electronic excitations. I. Formalism},
+   journal = jcp,
+   year ={2014},
+   volume = {141},
+   number = {2}, 
+   eid = 024106,
+   pages = ""
+}
+
+@article{Plasser14:024107,
+   author = {Plasser, Felix and B\"{a}ppler, Stefanie A. and Wormit, Michael and Dreuw, Andreas},
+   title = {New tools for the systematic analysis and visualization of electronic excitations. II. Applications},
+   journal = jcp,
+   year = {2014},
+   volume = {141},
+   number = {2}, 
+   eid = 024107,
+   pages = ""
+}
+
+
+
+@article{Cacelli86:385,
+author = { I.   Cacelli  and  V.   Carravetta  and  R.   Moccia },
+title = {Photoionization cross section calculations of HCl by the Stieltjes technique},
+journal = mp,
+volume = {59},
+number = {3},
+pages = {385-402},
+year = {1986}
+}
+
+
+@article{Plathe89:696,
+  title = {Perturbative-polarization-propagator study of the photoionization cross section of the water molecule},
+  author = {M\"uller-Plathe, Florian and Diercksen, Geerd H. F.},
+  journal = pra,
+  volume = {40},
+  issue = {2},
+  pages = {696--711},
+  numpages = {0},
+  year = {1989},
+  month = {Jul},
+  publisher = {American Physical Society},
+}
+
+
+@article{Krause79:329,
+   author = {Krause, M. O. and Oliver, J. H.},
+   title = {{Natural widths of atomic K and L levels, K$\alpha$ X-ray lines and several KLL Auger lines}},
+   journal = {J. Phys. Chem. Ref. Data},
+   year = {1979},
+   volume = {8},
+   number = {2}, 
+   pages = {329-338}
+}
+
+
+@article{Griffin01:4401,
+  author={Griffin, D.C. and Mitnik, D. M. and Badnell, N. R.},
+  title={Electron-impact excitation of Ne$^{+}$},
+  journal= jpb,
+  volume={34},
+  number={22},
+  pages={4401},
+  year={2001}
+}
+
+
+%=========================================================
+%    Fano-CI paper
+%=========================================================
+
+@article{Wagner75:291,
+author ={Wagner, C. D.},
+title  ={{Chemical shifts of Auger lines{,} and the Auger parameter}},
+journal  ={Faraday Discuss. Chem. Soc.},
+year  ={1975},
+volume  ={60},
+issue  ={0},
+pages  ={291--300},
+publisher  ={The Royal Society of Chemistry}
+}
+
+
+%equivalent core approximation
+@article{Jolly70:1863,
+author = {William L. Jolly and David N. Hendrickson},
+title = {Thermodynamic interpretation of chemical shifts in core-electron binding energies},
+journal = jacs,
+volume = {92},
+number = {7},
+pages = {1863--1871},
+year = {1970}
+}
+
+@article{Hollander70:193,
+author = {Jack M. Hollander and William L. Jolly},
+title = {X-ray photoelectron spectroscopy},
+journal = {Acc. Chem. Res.},
+volume = {3},
+number = {6},
+pages = {193--200},
+year = {1970}
+}
+
+
+@article{Marr76:497,
+author = {G.V. Marr and J.B. West},
+title = {Absolute photoionization cross-section tables for helium, neon, argon, and krypton in the VUV spectral regions},
+journal = {Atomic Data and Nuclear Data Tables},
+volume = {18},
+number = {5},
+pages = {497 - 508},
+year = {1976}
+}
+
+
+
+
+
+
+@article{Matthew75:716,
+author = {J.A.D. Matthew and Y. Komninos},
+title = {{Transition rates for interatomic Auger processes}},
+journal = {Surf. Sci.},
+volume = {53},
+number = {1},
+pages = {716 -- 725},
+year = {1975}
+}
+
+
+@article{Fano68:441,
+  author = {Fano, U. and Cooper, J. W.},
+  title = {Spectral Distribution of Atomic Oscillator Strengths},
+  journal = {Rev. Mod. Phys.},
+  volume = {40},
+  issue = {3},
+  pages = {441--507},
+  numpages = {0},
+  year = {1968},
+  month = {Jul}
+}
+
+
+@article{Kolorenc15:224310,
+  author = {Koloren\v{c}, P. and Sisourat, N.},
+  title = {{Interatomic Coulombic decay widths of helium trimer: Ab initio calculations}},
+  journal = jcp,
+  year = {2015},
+  volume = {143},
+  issue = {22},
+  pages = {224310},
+  numpages = {12}
+}
+
+% NeAr equilibrium distance
+@article{Grabow95:1181,
+   author = {Grabow, J.-U. and Pine, A. S. and Fraser, G. T. and Lovas, F. J. and Suenram, R. D. and Emilsson, T. and Arunan, E. and Gutowsky, H. S.},
+   title = {{Rotational spectra and van der Waals potentials of Ne–Ar}},
+   journal = jcp,
+   year = {1995},
+   volume = {102},
+   number = {3},
+   pages = {1181--1187}
+}
+
+%Ne2 equilibrium distance
+@article{Aziz89:187,
+author = {Ronald A. Aziz and M.J. Slaman},
+title = {{The Ne-Ne interatomic potential revisited}},
+journal = cp,
+volume = {130},
+number = {1},
+pages = {187--194},
+year = {1989}
+}
+
+%Ne2
+
+
+@article{Jabbari16:164307,
+   author = {Jabbari, Ghazal and Sadri, Keyvan and Cederbaum, Lorenz S. and Gokhberg, Kirill},
+   title = {{Strong enhancement of cage effects in water photolysis caused by interatomic Coulombic decay}},
+   journal = jcp,
+   year = {2016},
+   volume = {144},
+   number = {16}, 
+   eid = 164307
+}
+
+
+% COLLISIONS
+
+@article{Moshammer2003,
+  author={J Ullrich and R Moshammer and A Dorn and R Dörner and L Ph H Schmidt and H Schmidt-Böcking},
+  title={Recoil-ion and electron momentum spectroscopy: reaction-microscopes},
+  journal={Reports on Progress in Physics},
+  volume={66},
+  number={9},
+  pages={1463},
+  year={2003}
+}
+@article{Isler1991,
+  author={R.C. Isler and E.C. Crume and L.D. Horton and M. Murakami and L.R. Baylor and G.L. Bell and T.S. Bigelow and A.C. England and J.C.
+Glowienka and T.C. Jernigan and R.A. Langley and P.K. Mioduszewski and D.A. Rasmussen and J.E. Simpkins and J.B. Wilgen and W.R.
+Wing},
+  journal={Nuclear Fusion},
+  volume={31},
+  number={2},
+  pages={245},
+  year={1991}
+}
+
+@article{PhysRev.112.1141,
+  author = {Fite, Wade L. and Brackmann, R. T.},
+  journal = {Phys. Rev.},
+  volume = {112},
+  issue = {4},
+  pages = {1141--1151},
+  numpages = {0},
+  year = {1958},
+  month = {Nov},
+  publisher = {American Physical Society},
+}
+@article{olson_charge-transfer_1977,
+	volume = {16},
+	number = {2},
+	urldate = {2014-12-04},
+	journal = {Physical Review A},
+	author = {Olson, R. and Salop, A.},
+	month = aug,
+	year = {1977},
+	pages = {531--541}
+}
+@book{bransden1992charge,
+  title={Charge exchange and the theory of ion-atom collisions},
+  author={Bransden, Brian Harold and McDowell, Martin Rastall Coulter},
+  year={1992},
+  publisher={Clarendon Press}
+}
+@article{0953-4075-45-6-065203,
+  author={K Igenbergs and J Schweinzer and A Veiter and L Perneczky and E Frühwirth and M Wallerberger and R E Olson and F Aumayr},
+  journal={Journal of Physics B: Atomic, Molecular and Optical Physics},
+  volume={45},
+  number={6},
+  pages={065203},
+  year={2012},
+}
+@article{jorge_calculation_2014,
+	volume = {68},
+	number = {8},
+	urldate = {2014-12-04},
+	journal = {The European Physical Journal D},
+	author = {Jorge, Alba and Errea, L. F. and Illescas, Clara and Méndez, L.},
+	month = aug,
+	year = {2014},
+	pages = {1--11}
+}
+@article{otranto_role_2014,
+	volume = {89}
+	number = {2},
+	urldate = {2014-12-04},
+	journal = {Physical Review A},
+	author = {Otranto, S. and Hoekstra, R. and Olson, R. E.},
+	month = feb,
+	year = {2014},
+	pages = {022705}
+}
+@article{focke2017role,
+  author={Focke, P and Olson, RE and Cariatore, ND and Alessi, M and Otranto, S},
+  journal={Physical Review A},
+  volume={95},
+  number={5},
+  pages={052707},
+  year={2017},
+  publisher={APS}
+}
+@article{boyd1958charge,
+  title={Charge Transfer of Protons in Excited Atomic Hydrogen},
+  author={Boyd, TJM and Dalgarno, A},
+  journal={Proceedings of the Physical Society},
+  volume={72},
+  number={5},
+  pages={694},
+  year={1958},
+  publisher={IOP Publishing}
+}
+@article{bates1969resonance,
+  author={Bates, DR and Reid, RHG},
+  journal={Journal of Physics B: Atomic and Molecular Physics},
+  volume={2},
+  number={8},
+  pages={851},
+  year={1969},
+  publisher={IOP Publishing}
+}
+@article{malaviya1970resonance,
+  author={Malaviya, V},
+  journal={Journal of Physics B: Atomic and Molecular Physics},
+  volume={3},
+  number={11},
+  pages={1492},
+  year={1970},
+  publisher={IOP Publishing}
+}
+@inproceedings{bates1958electron,
+  author={Bates, DR and McCarroll, R},
+  booktitle={Proceedings of the Royal Society of London A: Mathematical, Physical and Engineering Sciences},
+  volume={245},
+  number={1241},
+  pages={175--183},
+  year={1958},
+  organization={The Royal Society}
+}
+@article{gallaher1968coupled,
+  author={Gallaher, DF and Wilets, L},
+  journal={Physical Review},
+  volume={169},
+  number={1},
+  pages={139},
+  year={1968},
+  publisher={APS}
+}
+@article{shakeshaft1976coupled,
+  author={Shakeshaft, Robin},
+  journal={Physical Review A},
+  volume={14},
+  number={5},
+  pages={1626},
+  year={1976},
+  publisher={APS}
+}
+@article{fritsch_semiclassical_1991,
+	volume = {202},
+	number = {1},
+	urldate = {2016-02-17},
+	journal = {Physics Reports},
+	author = {Fritsch, Wolfgang and Lin, C. D},
+	month = apr,
+	year = {1991},
+	pages = {1--97}
+}
+article{abrines_generalized_1966,
+	volume = {88},
+	number = {4},
+	urldate = {2015-02-18},
+	journal = {Proceedings of the Physical Society},
+	author = {Abrines, R. and Percival, I. C.},
+	month = aug,
+	year = {1966},
+	pages = {873}
+}
+@article{becker_theoretical_1984,
+	volume = {17},
+	number = {19},
+	urldate = {2015-11-19},
+	journal = {Journal of Physics B: Atomic and Molecular Physics},
+	author = {Becker, R. L. and MacKellar, A. D.},
+	year = {1984},
+	pages = {3923}
+}
+@inproceedings{bates1958electron,
+  author={Bates, DR and McCarroll, R},
+  booktitle={Proceedings of the Royal Society of London A: Mathematical, Physical and Engineering Sciences},
+  volume={245},
+  number={1241},
+  pages={175--183},
+  year={1958},
+  organization={The Royal Society}
+}
+@article{fritsch_semiclassical_1991,
+	volume = {202},
+	number = {1},
+	urldate = {2016-02-17},
+	journal = {Physics Reports},
+	author = {Fritsch, Wolfgang and Lin, C. D},
+	month = apr,
+	year = {1991},
+	pages = {1--97}
+}
+@misc{ADAS,
+author = {},
+title = {Atomic Data and Analysis Structure},
+howpublished = {\url{http://open.adas.ac.uk/}}
+}
+@article{abrines_classical_1966,
+	title = {Classical theory of charge transfer and ionization of hydrogen atoms by protons},
+	volume = {88},
+	number = {4},
+	urldate = {2014-12-04},
+	journal = {Proceedings of the Physical Society},
+	author = {Abrines, R. and Percival, I. C.},
+	month = aug,
+	year = {1966},
+	pages = {861}
+}
+@article{abrines_generalized_1966,
+	volume = {88},
+	language = {en},
+	number = {4},
+	urldate = {2015-02-18},
+	journal = {Proceedings of the Physical Society},
+	author = {Abrines, R. and Percival, I. C.},
+	month = aug,
+	year = {1966},
+	pages = {873}
+}
+@inproceedings{hunter1977proton,
+  author={Hunter, G and Kuriyan, Mary},
+  booktitle={Proceedings of the Royal Society of London A: Mathematical, Physical and Engineering Sciences},
+  volume={353},
+  number={1675},
+  pages={575--588},
+  year={1977},
+  organization={The Royal Society}
+}
+@article{bates1962effect,
+  author={Bates, DR and Boyd, Anne H},
+  journal={Proceedings of the Physical Society},
+  volume={80},
+  number={6},
+  pages={1301},
+  year={1962},
+  publisher={IOP Publishing}
+}
+@book{janev2003collision,
+  title={Collision processes in low-temperature hydrogen plasmas},
+  author={Janev, Ratko K and Reiter, Detlev and Samm, Ulrich},
+  year={2003},
+  publisher={Forschungszentrum J{\"u}lich, Zentralbibliothek}
+}
+@article{eichler1981eikonal,
+  author={Eichler, J{\"o}rg KM},
+  journal={Physical Review A},
+  volume={23},
+  number={2},
+  pages={498},
+  year={1981},
+  publisher={APS}
+}
+@article{ranitovic2014attosecond,
+  author={Ranitovic, Predrag and Hogle, Craig W and Rivi{\`e}re, Paula and Palacios, Alicia and Tong, Xiao-Ming and Toshima, Nobuyuki and Gonz{\'a}lez-Castrillo, Alberto and Martin, Leigh and Mart{\'\i}n, Fernando and Murnane, Margaret M and others},
+  journal={Proceedings of the National Academy of Sciences},
+  volume={111},
+  number={3},
+  pages={912--917},
+  year={2014},
+  publisher={National Acad Sciences}
+}
+@article{marante2014hybrid,
+  author={Marante, Carlos and Argenti, Luca and Mart{\'\i}n, Fernando},
+  journal={Physical Review A},
+  volume={90},
+  number={1},
+  pages={012506},
+  year={2014},
+  publisher={APS}
+}
+@article{marante2017hybrid,
+  author={Marante, Carlos and Klinker, Markus and Corral, Ines and Gonzalez-Vazquez, Jesus and Argenti, Luca and Mart{\'\i}n, Fernando},
+  journal={Journal of chemical theory and computation},
+  volume={13},
+  number={2},
+  pages={499--514},
+  year={2017},
+  publisher={ACS Publications}
+}
+@article{reinhold1987ionisation,
+  author={Reinhold, CO and Falcon, CA and Miraglia, JE},
+  journal={Journal of Physics B: Atomic and Molecular Physics},
+  volume={20},
+  number={15},
+  pages={3737},
+  year={1987},
+  publisher={IOP Publishing}
+}
+@article{belkic1979electron,
+  author={Belki{\'c}, D{\v{z}} and Gayet, R and Salin, A},
+  journal={Physics Reports},
+  volume={56},
+  number={6},s
+  pages={279--369},
+  year={1979},
+  publisher={Elsevier}
+}
+@article{belkic2008four,
+  author={Belki{\'c}, D{\v{z}}evad and Man{\v{c}}ev, Ivan and Hanssen, Jocelyn},
+  journal={Reviews of Modern Physics},
+  volume={80},
+  number={1},
+  pages={249},
+  year={2008},
+  publisher={APS}
+}
+@article{cheshire1964continuum,
+  title={Continuum distorted wave approximation; resonant charge transfer by fast protons in atomic hydrogen},
+  author={Cheshire, IM},
+  journal={Proceedings of the Physical Society},
+  volume={84},
+  number={1},
+  pages={89},
+  year={1964},
+  publisher={IOP Publishing}
+}
+
+@article{fite1960ionization,
+  title={Ionization and charge transfer in proton-hydrogen atom collisions},
+  author={Fite, Wade L and Stebbings, RF and Hummer, David G and Brackmann, RT},
+  journal={Physical Review},
+  volume={119},
+  number={2},
+  pages={663},
+  year={1960},
+  publisher={APS}
+}
+@article{fite1962charge,
+  title={Charge transfer in collisions involving symmetric and asymmetric resonance},
+  author={Fite, WL and Smith, ACH and Stebbings, RF},
+  journal={Proc. R. Soc. Lond. A},
+  volume={268},
+  number={1335},
+  pages={527--536},
+  year={1962},
+  publisher={The Royal Society}
+}
+@article{mcclure1966electron,
+  title={Electron transfer in proton-hydrogen-atom collisions: 2-117 keV},
+  author={McClure, GW},
+  journal={Physical Review},
+  volume={148},
+  number={1},
+  pages={47},
+  year={1966},
+  publisher={APS}
+}
+@article{wittkower1966experimental,
+  title={An experimental study of charge transfer in proton-atomic-hydrogen collisions using a furnace target method},
+  author={Wittkower, AB and Ryding, G and Gilbody, HB},
+  journal={Proceedings of the Physical Society},
+  volume={89},
+  number={3},
+  pages={541},
+  year={1966},
+  publisher={IOP Publishing}
+}
+@article{Bayfield1969,
+  author = {Bayfield, James E.},
+  journal = {Phys. Rev.},
+  volume = {185},
+  issue = {1},
+  pages = {105--112},
+  numpages = {0},
+  year = {1969},
+  month = {Sep},
+  publisher = {American Physical Society}
+}
+@article{hvelplund1982electron,
+  title={Electron capture by fast H+, He+, and He++ ions in collisions with atomic and molecular hydrogen},
+  author={Hvelplund, Preben and Andersen, A},
+  journal={Physica Scripta},
+  volume={26},
+  number={5},
+  pages={375},
+  year={1982},
+  publisher={IOP Publishing}
+}
+
+@article{newman1982charge,
+  title={Charge transfer in H+-H and H+-D collisions within the energy range 0.1—150 eV},
+  author={Newman, JH and Cogan, JD and Ziegler, DL and Nitz, DE and Rundel, RD and Smith, KA and Stebbings, RF},
+  journal={Physical Review A},
+  volume={25},
+  number={6},
+  pages={2976},
+  year={1982},
+  publisher={APS}
+}
+@article{schwab1987measurement,
+  title={Measurement of the total cross sections for electron capture of 2.0-7.5 MeV H+ in H, H2 and He},
+  author={Schwab, W and Baptista, GB and Justiniano, E and Schuch, R and Vogt, H and Weber, EW},
+  journal={Journal of Physics B: Atomic and Molecular Physics},
+  volume={20},
+  number={12},
+  pages={2825},
+  year={1987},
+  publisher={IOP Publishing}
+}
+
+@article{gealy1987cross,
+  title={Cross sections for electron capture and loss. I. H+ and H- impact on H and H 2},
+  author={Gealy, MW and Van Zyl, B},
+  journal={Physical Review A},
+  volume={36},
+  number={7},
+  pages={3091},
+  year={1987},
+  publisher={APS}
+}
+
+@book{belkic2003principles,
+  title={Principles of quantum scattering theory},
+  author={Belkic, Dzevad},
+  year={2003},
+  publisher={CRC Press}
+
+@book{belkic2008quantum,
+  title={Quantum theory of high-energy ion-atom collisions},
+  author={Belkic, Dzevad},
+  year={2008},
+  publisher={CRC Press}
+}
+
+@article{kadyrov2006shell,
+  title={On-shell coupled-channel approach to proton-hydrogen collisions without partial-wave expansion},
+  author={Kadyrov, AS and Bray, Igor and Stelbovics, AT},
+  journal={Physical Review A},
+  volume={73},
+  number={1},
+  pages={012710},
+  year={2006},
+  publisher={APS}
+}
+@article{Ferreira2003electron,
+  title={Electron capture in H+--H (1s) collisions: two-state approximation with a continuum distorted wave basis},
+  author={da Silva, MF Ferreira and Serrao, JMP},
+  journal={Journal of Physics B: Atomic, Molecular and Optical Physics},
+  volume={36},
+  number={11},
+  pages={2357},
+  year={2003},
+  publisher={IOP Publishing}
+}
+
+@article{abdurakhmanov2016solution,
+  title={Solution of the proton-hydrogen scattering problem using a quantum-mechanical two-center convergent close-coupling method},
+  author={Abdurakhmanov, IB and Kadyrov, AS and Avazbaev, SK and Bray, Igor},
+  journal={Journal of Physics B: Atomic, Molecular and Optical Physics},
+  volume={49},
+  number={11},
+  pages={115203},
+  year={2016},
+  publisher={IOP Publishing}
+}
+
+@article{mccarroll1961resonance,
+  title={Resonance charge transfer between H (1s) and H+ calculated by means of an approximation based on an expansion in atomic eigenfunctions},
+  author={McCarroll, R},
+  journal={Proc. R. Soc. Lond. A},
+  volume={264},
+  number={1319},
+  pages={547--557},
+  year={1961},
+  publisher={The Royal Society}
+}
+@article{oppenheimer1928quantum,
+  title={On the quantum theory of the capture of electrons},
+  author={Oppenheimer, J Robert},
+  journal={Physical review},
+  volume={31},
+  number={3},
+  pages={349},
+  year={1928},
+  publisher={APS}
+}
+@article{shakeshaft1974connection,
+  title={Connection between the classical and quantum mechanical treatments of the forward capture of a light particle in the high velocity limit},
+  author={Shakeshaft, Robin},
+  journal={Journal of Physics B: Atomic and Molecular Physics},
+  volume={7},
+  number={9},
+  pages={1059},
+  year={1974},
+  publisher={IOP Publishing}
+}
+

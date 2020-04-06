@@ -1,0 +1,27 @@
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.1.1}{What is CIPPRES?}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{How to install CIPPRES?}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{List of tools}{chapter.1}% 4
+\BOOKMARK [0][-]{chapter.2}{Quickstart tutorial}{}% 5
+\BOOKMARK [1][-]{section.2.1}{Computing CI \(ORMAS-like\) states}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{Computing Dyson norms}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.3}{Computing Fano resonance widths}{chapter.2}% 8
+\BOOKMARK [2][-]{subsection.2.3.1}{Cases where the P-space is obtained using only one CI run}{section.2.3}% 9
+\BOOKMARK [2][-]{subsection.2.3.2}{Cases where the P-space is obtained using several CI runs}{section.2.3}% 10
+\BOOKMARK [1][-]{section.2.4}{Computing dipole transition moments and Photoionization cross sections}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.5}{Computing electronic processes cross sections in ion-molecule collisions}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.5.1}{Total and partial cross sections}{section.2.5}% 13
+\BOOKMARK [2][-]{subsection.2.5.2}{Cross sections for a given ionized state using the ad hoc projection operator method}{section.2.5}% 14
+\BOOKMARK [0][-]{chapter.3}{The theory behind CIPPRES}{}% 15
+\BOOKMARK [1][-]{section.3.1}{Fano theory of resonances and Fano-CI-Stieltjes method}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.1.1}{Fano theory of resonances}{section.3.1}% 17
+\BOOKMARK [2][-]{subsection.3.1.2}{Fano-CI method}{section.3.1}% 18
+\BOOKMARK [2][-]{subsection.3.1.3}{Stieltjes procedure}{section.3.1}% 19
+\BOOKMARK [2][-]{subsection.3.1.4}{Choice of basis sets and Hartree-Fock reference}{section.3.1}% 20
+\BOOKMARK [2][-]{subsection.3.1.5}{Choice of the PQ partitioning}{section.3.1}% 21
+\BOOKMARK [1][-]{section.3.2}{Impact parameter method and Target-states expansion}{chapter.3}% 22
+\BOOKMARK [2][-]{subsection.3.2.1}{The Impact parameter method}{section.3.2}% 23
+\BOOKMARK [2][-]{subsection.3.2.2}{Close-coupling approach}{section.3.2}% 24
+\BOOKMARK [1][-]{section.3.3}{Ad hoc projection operator method}{chapter.3}% 25
+\BOOKMARK [0][-]{chapter*.2}{Acknowledgements}{}% 26
+\BOOKMARK [0][-]{chapter*.2}{Bibliography}{}% 27

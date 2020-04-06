@@ -1,0 +1,64 @@
+This is BibTeX, Version 0.99d (TeX Live 2017/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: manual.aux
+The style file: alpha.bst
+Database file #1: Bibliography.bib
+I was expecting a `,' or a `}'---line 3992 of file Bibliography.bib
+ :  
+ :  number = {2},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting an "="---line 4213 of file Bibliography.bib
+ :   
+ :   pages={279--369},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 4337 of file Bibliography.bib
+ : 
+ : @book{belkic2008quantum,
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty title in Hazi79
+Warning--empty title in Langhoff79
+You've used 14 entries,
+            2543 wiz_defined-function locations,
+            818 strings with 8634 characters,
+and the built_in function-call counts, 5749 in all, are:
+= -- 549
+> -- 339
+< -- 3
++ -- 118
+- -- 117
+* -- 460
+:= -- 1005
+add.period$ -- 42
+call.type$ -- 14
+change.case$ -- 93
+chr.to.int$ -- 13
+cite$ -- 16
+duplicate$ -- 205
+empty$ -- 384
+format.name$ -- 132
+if$ -- 1129
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 15
+newline$ -- 72
+num.names$ -- 46
+pop$ -- 79
+preamble$ -- 1
+purify$ -- 110
+quote$ -- 0
+skip$ -- 160
+stack$ -- 0
+substring$ -- 266
+swap$ -- 14
+text.length$ -- 3
+text.prefix$ -- 3
+top$ -- 0
+type$ -- 108
+warning$ -- 2
+while$ -- 52
+width$ -- 17
+write$ -- 180
+(There were 3 error messages)

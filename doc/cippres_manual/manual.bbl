@@ -1,0 +1,87 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{MCK{\etalchar{+}}14b}
+
+\bibitem[AC05]{Averbukh05:204107}
+V.~Averbukh and L.~S. Cederbaum.
+\newblock {Ab initio calculation of interatomic decay rates by a combination of
+  the Fano ansatz, Green's-function methods, and the Stieltjes imaging
+  technique}.
+\newblock {\em J.~Chem.\ Phys.}, 123:204107, 2005.
+
+\bibitem[BM92]{bransden1992charge}
+Brian~Harold Bransden and Martin Rastall~Coulter McDowell.
+\newblock {\em Charge exchange and the theory of ion-atom collisions}.
+\newblock Clarendon Press, 1992.
+
+\bibitem[Fan61]{Fano61:1866}
+U.~Fano.
+\newblock Effects of configuration interaction on intensities and phase shifts.
+\newblock {\em Phys.\ Rev.}, 124:1866--1878, Dec 1961.
+
+\bibitem[Haz79]{Hazi79}
+A.~U. Hazi.
+\newblock In Thomas Rescigno, Vincent McKoy, and Barry Schneider, editors, {\em
+  Electron-Molecule and Photon-Molecule Collisions}. Plenum Press, New York and
+  London, 1979.
+
+\bibitem[HrG78]{Howat78:1575}
+G~Howat, T~\r{A}berg, and O~Goscinski.
+\newblock {Relaxation and final-state channel mixing in the Auger effect}.
+\newblock {\em J.~Phys.~B~At.\ Mol.\ Opt.\ Phys.}, 11(9):1575--1588, May 1978.
+
+\bibitem[JSCG16]{Jabbari16:164307}
+Ghazal Jabbari, Keyvan Sadri, Lorenz~S. Cederbaum, and Kirill Gokhberg.
+\newblock {Strong enhancement of cage effects in water photolysis caused by
+  interatomic Coulombic decay}.
+\newblock {\em J.~Chem.\ Phys.}, 144(16), 2016.
+
+\bibitem[KAGC08]{Kolorenc08:244102}
+P.~Koloren\v{c}, V.~Averbukh, K.~Gokhberg, and L.S. Cederbaum.
+\newblock {Ab initio calculation of interatomic decay rates of excited doubly
+  ionized states in clusters}.
+\newblock {\em J.~Chem.\ Phys.}, 129(24), 2008.
+
+\bibitem[KBJ89]{Kaufmann89:2223}
+K.~Kaufmann, W.~Baumeister, and M.~Jungen.
+\newblock Universal gaussian basis sets for an optimum representation of
+  rydberg and continuum wavefunctions.
+\newblock {\em J.~Phys.~B~At.\ Mol.\ Opt.\ Phys.}, 22(14):2223, 1989.
+
+\bibitem[KS15]{Kolorenc15:224310}
+P.~Koloren\v{c} and N.~Sisourat.
+\newblock {Interatomic Coulombic decay widths of helium trimer: Ab initio
+  calculations}.
+\newblock {\em J.~Chem.\ Phys.}, 143:224310, 2015.
+
+\bibitem[Lan79]{Langhoff79}
+P.~W. Langhoff.
+\newblock In Thomas Rescigno, Vincent McKoy, and Barry Schneider, editors, {\em
+  Electron-Molecule and Photon-Molecule Collisions}. Plenum Press, New York and
+  London, 1979.
+
+\bibitem[MCK{\etalchar{+}}14a]{Miteva14:164303}
+T.~Miteva, Y.-C. Chiang, P.~Koloren\v{c}, A.~I. Kuleff, L.~S. Cederbaum, and
+  K.~Gokhberg.
+\newblock {The effect of the partner atom on the spectra of interatomic
+  Coulombic decay triggered by resonant Auger processes}.
+\newblock {\em J.~Chem.\ Phys.}, 141(16):--, 2014.
+
+\bibitem[MCK{\etalchar{+}}14b]{Miteva14:064307}
+T.~Miteva, Y.-C. Chiang, P.~Koloren\v{c}, A.~I. Kuleff, K.~Gokhberg, and L.~S.
+  Cederbaum.
+\newblock Interatomic coulombic decay following resonant core excitation of ar
+  in argon dimer.
+\newblock {\em J.~Chem.\ Phys.}, 141(6), 2014.
+
+\bibitem[MPD89]{Plathe89:696}
+Florian M\"uller-Plathe and Geerd H.~F. Diercksen.
+\newblock Perturbative-polarization-propagator study of the photoionization
+  cross section of the water molecule.
+\newblock {\em Phys.\ Rev.~A}, 40:696--711, Jul 1989.
+
+\bibitem[SGC16]{Stumpf16:237}
+V.~Stumpf, K.~Gokhberg, and L.~S. Cederbaum.
+\newblock {The role of metal ions in X-ray-induced photochemistry}.
+\newblock {\em Nat.\ Chem.}, 8:237–--241, 2016.
+
+\end{thebibliography}

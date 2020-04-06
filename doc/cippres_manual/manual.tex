@@ -1,0 +1,645 @@
+\documentclass[a4paper, 10 pt]{report}
+
+\usepackage{color}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    linktoc=all,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\usepackage{geometry}
+\geometry{top=1cm, bottom=1cm, left=2cm, right=2cm}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{xr}
+\usepackage{amsmath}
+\usepackage{blkarray}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{float}
+\usepackage[titletoc, toc]{appendix}
+
+\newcommand{\bra}[1]{\ensuremath{\langle #1 |}}
+\newcommand{\ket}[1]{\ensuremath{| #1 \rangle}}
+\newcommand{\bracket}[2]{\ensuremath{\langle #1 | #2 \rangle}}
+\newcommand{\Vee}[2]{\ensuremath{\langle #1 || #2 \rangle}}
+\newcommand{\dirint}[3]{\ensuremath{\langle #1|#2|#3\rangle}}
+
+% -------------------------------------------------------------------------------------
+% BEGIN DOCUMENT
+% -------------------------------------------------------------------------------------
+\begin{document}
+\title{CIPPRES User Manual}
+\author{Nicolas SISOURAT}
+\maketitle
+\pagestyle{empty}
+
+
+
+% -------------------------------------------------------------------------------------
+% TABLE OF CONTENTS
+% -------------------------------------------------------------------------------------
+\tableofcontents
+\newpage
+
+% -------------------------------------------------------------------------------------
+% INTRODUCTION
+% -------------------------------------------------------------------------------------
+\chapter{Introduction}
+
+\section{What is CIPPRES?}
+
+CIPPRES stands for Configuration Interaction Plugin for Photoionized and Resonant Electronic States. It is a set of tools to compute resonant widths, dipole transitions moments, and photoionization cross sections using ORMAS-like CI states. CIPPRES contains also tools to compute the electron-loss and excitation cross sections in ion-molecule collisions.
+
+CIPPRES is a plugin for Quantum Package 2.0 (QP2). It uses as much as possible the QP2 machinery (e.g. HF orbitals, integrals,...)
+
+\section{How to install CIPPRES?}
+
+CIPPRES can be installed as any QP2 plugin. Look at \\
+https://quantum-package.readthedocs.io/en/master/ \\
+for the QP2 documentation (installation, plugins, scf calculations,...). CIPPRES plugin is here:\\ https://github.com/sisourat/qp2\_plugins\_nsisourat
+
+\section{List of tools}
+\begin{description}
+	\item[cippres\_gencsf] generate lists of CSF to built the CI matrices
+	\item[cippres\_runci] built and diagonalize the CI matrices defined by cippres\_gencsf
+	\item[cistate\_analysis] provides some infos on the CI states
+	\item[mymulliken\_analysis] Mulliken analysis
+	\item[cippres\_dip] computes the dipole transition moments between CI states (e.g. to compute photoionization cross sections)
+    \item[cippres\_fano] computes 2e matrix elements between CI states (to compute decay widths)
+    \item[cippres\_stieltjes] computes decay widths or photoion cs using Stieltjes imaging
+    \item[cippres\_setup\_collision] read input collision xml file and set up the calc.	
+	\item[cippres\_prop\_collision] and computes V\_proj (defined in cippres\_setup\_collision) matrix elements between CI states solves the TDSE (i.e. TDCI) using the matrix elements from cippres\_collision
+	\item[Compute\_Dyson.py] Python script that computes the norm of the Dyson orbitals = $<\psi^{(N-1)}|\psi^{(N)}>$
+	\item[Partial\_cross\_section.py] Python script that using the Projector method computes the ionization cross sections for $\psi^{(N-1)}$ states.
+	\item[merge\_fano\_files.py]  Python script that merges Fano output files in the case the P-space is built on several CI runs.
+	\item[generate\_xml.py] Python script to generate XML files for cippres\_gencsf
+\end{description}
+
+\newpage
+
+\chapter{Quickstart tutorial}
+
+\section{Computing CI (ORMAS-like) states}
+
+In the following example, one can compute CI-states for helium dimer. HF orbitals are optimized for He$_2^+$. Two kind of CI calculations are done (defined in hehe.xml): in the first CIrun, CSFs with 2e in the two lowest orbitals and 2e in orbitals from 3 to 10 are included. In the second CIrun, CSFs with 3e in the two lowest orbitals and 1e in orbitals from 23 to 134 are included.\\
+
+\noindent qp create\_ezfio -b "he-test" HeHe.xyz -o HeHe.ezfio\\
+qp set electrons elec\_alpha\_num 1\\
+qp set electrons elec\_beta\_num 1 \\
+qp run scf\\
+qp set electrons elec\_alpha\_num 2\\
+qp set electrons elec\_beta\_num 2 \\
+qp set cippres finput\_cippres hehe.xml\\
+qp run cippres\_gencsf\\
+qp run four\_idx\_transform\\
+qp run cippres\_runci\\
+
+\noindent hehe.xml file:\\
+$<$input$>$\\
+$<$cirun$>$\\
+$<$general$>$\\
+$<$spin$>$ 1 $<$/spin$>$\\
+$<$electron na=' 2 ' nb=' 2 ' /$>$\\
+$<$/general$>$\\
+$<$block$>$\\
+$<$space ne='2' imo='1' fmo='2' /$>$\\
+$<$space ne='2' imo='3' fmo='10' /$>$\\
+$<$/block$>$\\
+$<$/cirun$>$\\
+$<$cirun$>$\\
+$<$general$>$\\
+$<$spin$>$ 1 $<$/spin$>$\\
+$<$electron na='2' nb='2' /$>$\\
+$<$/general$>$\\
+$<$block$>$\\
+$<$space ne='3' imo='1' fmo='2' /$>$\\
+$<$space ne='1' imo='23' fmo='134' /$>$\\
+$<$/block$>$\\
+$<$/cirun$>$\\
+$<$/input$>$\\
+
+\section{Computing Dyson norms}
+
+One computes the N-electrons and (N-1)-electrons CI states in two separate EZFIO directories. Then using cistate\_analysis, the CI states as linear combination of Slater determinants are obtained. The Dyson norms are computed using the Python script Compute\_Dyson.py.\\
+
+\noindent qp create\_ezfio -b "aug-cc-pvdz-kbj-4spd" He.xyz -o He.ezfio\\
+qp run scf\\
+qp set cippres finput\_cippres he.xml\\
+qp run cippres\_gencsf\\
+qp run cippres\_runci\\
+qp run cistate\_analysis\\
+mv cistates\_det.txt cistates\_det\_he.txt\\
+qp create\_ezfio -b "aug-cc-pvdz-kbj-4spd" He.xyz -o Hep.ezfio\\
+qp run scf\\
+qp set cippres finput\_cippres hep.xml\\
+qp set electrons elec\_beta\_num 0\\
+qp run cippres\_gencsf\\
+qp run cippres\_runci\\
+qp run cistate\_analysis\\
+mv cistates\_det.txt cistates\_det\_hep.txt\\
+python /home/common/quantum\_package/plugins/qp2\_plugins\_nsisourat/nicotools/Compute\_Dyson.py cistates\_det\_he.txt cistates\_det\_hep.txt 1035 | tee dyson\_log\\
+
+\section{Computing Fano resonance widths}
+
+\subsection{Cases where the P-space is obtained using only one CI run}
+
+Once the CI states are computed, they can be used in the Fano calculations: ici1 is the Q-space and ici2 is the P-space.  "i\_stj\_job 1" == Stieltjes should perform a Fano calculations ("i\_stj\_job 2" is used for photoionization cross sections). ifanosta is the index of the CI state to be used as the resonance (from ici1 CIrun).\\
+
+\noindent qp set cippres ici1 1\\
+qp set cippres ici2 2\\
+qp run cippres\_fano\\
+%qp set cippres i\_stj\_job 1  \\
+qp set cippres ifanosta 1  \\
+qp run cippres\_stieltjes  \\
+
+\subsection{Cases where the P-space is obtained using several CI runs}
+
+\noindent qp\_create\_ezfio -b "he-cs-nico" -p bfd HeCs.xyz -m 3\\
+qp run scf\\
+qp set cippres finput\_cippres cshe.xml\\
+qp set electrons elec\_alpha\_num 10\\
+qp set electrons elec\_beta\_num 9\\
+qp run cippres\_gencsf\\
+qp run four\_idx\_transform\\
+qp run cippres\_runci\\
+qp set cippres ici1 1\\
+j=1\\
+for i in {2..189}\\
+do\\
+rm HeCs.ezfio/cippres/cfano\_cippres.gz\\
+rm HeCs.ezfio/cippres/efano\_cippres.gz\\
+qp set cippres ici2 \$i\\
+qp get cippres ici2\\
+qp run cippres\_fano\\
+mv HeCs.ezfio/cippres/cfano\_cippres.gz HeCs.ezfio/cippres/cfano\_cippres\${j}.gz\\
+mv HeCs.ezfio/cippres/efano\_cippres.gz HeCs.ezfio/cippres/efano\_cippres\${j}.gz\\
+((j++))\\
+done\\
+python /home/common/quantum\_package/plugins/qp2\_plugins\_nsisourat/cippres/nicotools/merge\_fano\_files.py HeCs.ezfio 188\\
+/home/common/quantum\_package/plugins/qp2\_plugins\_nsisourat/cippres/libs/stieltjes/stieltjes $<$ HeCs.ezfio/cippres/fanotot1.txt\\
+
+\section{Computing dipole transition moments and Photoionization cross sections}
+
+\noindent More or less as computing Fano resonance widths:\\
+qp set cippres ici1 1 \\
+qp set cippres ici2 2 \\
+qp run cippres\_dip \\
+%qp set cippres i\_stj\_job 2  \\
+qp set cippres ifanosta 1  \\
+qp run cippres\_stieltjes  \\
+
+\section{Computing electronic processes cross sections in ion-molecule collisions}
+
+\subsection{Total and partial cross sections}
+
+\noindent ici1 is the CIrun to be used in the collision simulations\\
+
+\noindent qp set cippres finput\_coll coll\_input.xml \\
+qp set cippres ici1 1\\
+qp run cippres\_setup\_collision\\
+qp run cippres\_prop\_collision\\
+
+\noindent coll\_input.xml:\\
+
+\noindent $<$CollInput$>$\\
+$<$ImpactParam type='linear' bmin='1.05' bmax='2.2' nb='1' /$>$\\
+$<$ImpactVel vx='0.1' vy='0.0' vz='2.0' /$>$\\
+$<$Zgrid type='exp' zmin='-100' zmax='100' nzgrid='200' /$>$\\
+
+$<$States stamin='1' stamax='11'/$>$\\
+
+$<$InitState   type='target' state='1' /$>$\\
+$<$Potential charge='-1.0' exponent='0.0' /$>$\\
+$<$/CollInput$>$\\
+
+\subsection{Cross sections for a given ionized state using the ad hoc projection operator method}
+
+One first needs to obtain the norm of the Dyson orbitals (see above) and the cross sections. The latter is obtained with \\
+/home/common/quantum\_package/plugins/qp2\_plugins\_nsisourat/nicotools/coll\_cross\_section Prop\_collision.out $|$ tee  cross\_section.txt\\
+(Do not forget to delete the first and two list lines of cross\_section.txt). Then\\
+python /home/common/quantum\_package/plugins/qp2\_plugins\_nsisourat/nicotools/Partial\_cross\_section.py cross\_section.txt Dyson\_norms.txt\\
+
+\newpage
+
+\chapter{The theory behind CIPPRES}
+
+\section{Fano theory of resonances and Fano-CI-Stieltjes method}
+
+We briefly outline the Fano theory of resonances following the 
+derivation of Howat et al. \cite{Howat78:1575}. Next, we present and discuss 
+the Fano-CI method. We then sketch the Stieltjes procedure needed to extract a 
+continuous approximation to the decay width from a discrete representation of 
+the continuum. Finally, we discuss the choice of basis set and Hartree-Fock 
+reference in the calculation of Fano-CI decay widths.
+
+\subsection{Fano theory of resonances}
+
+Similarly to the Fano-ADC method \cite{Averbukh05:204107}, the Fano-CI approach 
+is devised for the treatment of Feshbach or Fano resonances. In the Fano 
+formalism \cite{Fano61:1866,Howat78:1575}, the wave function at energy $E$ in 
+the vicinity of the resonance is represented as a superposition of a discrete 
+component, $\Phi$, and continuum components, $\chi_{\beta, \epsilon}$, 
+corresponding to the $N_{c}$ decay channels
+%
+\begin{equation}\label{eq:psi_fano}
+\Psi_{\alpha, E} = a_{\alpha}(E) \Phi + \sum_{\beta = 1}^{N_{c}}\int d\epsilon C_{\alpha,\beta} (E,\epsilon) \chi_{\beta, \epsilon}, \alpha = 1, \dots N_{c}.
+\end{equation}
+%
+Here the index $\beta$ runs over the $N_{c}$ decay channels and $\epsilon$ is 
+the kinetic energy of the outgoing electron. The bound part of the wave 
+function, $\Phi$, is assumed to be an isolated resonance, not interacting with 
+other resonances. It has a mean energy
+%
+\begin{equation}\label{eq:E_phi}
+E_{\Phi} = \langle\Phi | \hat{H} | \Phi\rangle
+\end{equation}
+%
+where $\hat{H}$ is the full electronic Hamiltonian of the system. The continuum 
+states $\chi_{\beta, \epsilon}$, in their turn, are assumed to diagonalise the 
+Hamiltonian
+%
+\begin{equation}\label{eq:chi_orthog}
+\langle\chi_{\beta,\epsilon} | \hat{H} - E | \chi_{\beta', \epsilon'} \rangle \approx \delta_{\beta, \beta'} \delta(E_{\beta} - E_{\beta'} + \epsilon - \epsilon') (E_{\beta} + \epsilon - E)
+\end{equation}
+%
+and are thus also non-interacting.
+
+
+Solving the Schr\"{o}dinger equation $(\hat{H} - E)\Psi_{\alpha, E} = 0$, one 
+can determine the bound and continuum amplitudes, $a_{\alpha} (E)$ and 
+$C_{\alpha, \beta} (E, \epsilon)$, respectively \cite{Fano61:1866,Howat78:1575}. From 
+the expression for $|a_{\alpha}(E)|^2$ \cite{Howat78:1575}, one obtains the 
+relationship between partial $\Gamma_{\beta}$ and total widths
+%
+\begin{equation}\label{eq:gamma_tot}
+\Gamma = \sum_{\beta}^{N_{c}} \Gamma_{\beta} 
+= 2\pi \sum_{\beta}^{N_{c}} |\dirint{\Phi}{\hat{H} - E_{r}}{\chi_{\beta, \epsilon_{\beta}}}|^{2}
+\end{equation}
+%
+where $\epsilon_{\beta}$ is the asymptotic kinetic energy of the emitted 
+electron and $E_{r}$ is the energy of the resonance. In practice, the energy of 
+the resonance is approximated with the expectation value of the Hamiltonian with 
+respect to the bound component of the resonance, i.e.~$E_{r} \approx E_{\Phi}$
+\cite{Averbukh05:204107}. This approximation is justified provided that the 
+shift of the resonance, resulting from the interaction with the continuum, is 
+smaller than the error in the calculation of the energy of the bound state 
+\cite{Averbukh05:204107}.
+
+
+As can be seen from Eq.~\eqref{eq:gamma_tot}, the total decay width is a sum of 
+the partial decay widths to different decay channels. The expression for the 
+partial decay widths given in \eqref{eq:gamma_tot} is known as ``single 
+channel'' approximation, where no interaction between the decay channels is 
+assumed. 
+
+
+\subsection{Fano-CI method}\label{ssec:fanoci}
+
+The evaluation of expression \eqref{eq:gamma_tot} requires suitable 
+approximations for the bound ($\Phi$) and continuum ($\chi_{\beta, \epsilon_
+	{\beta}}$) parts of the resonance. In the following, we discuss the particular 
+approximations made in the Fano-CI method. The discussion is focused on a singly 
+ionised resonance of a closed shell atom or molecule. However, the method can be 
+generalised to $n$-tuply ionised states, as well as ionisation satellites and 
+excited states of both closed and open shell species~\footnote{There is no specific PQ partitioning implemented in CIPPRES, any can be done manually which makes it flexible but also up to the users to do it well.} 
+
+
+Let us consider the specific case of an electronic decay process following 
+single ionisation of an $N$-electron atom or molecule. In this case, the bound 
+part of the resonance state is the initial, singly ionised state of the system, 
+whereas the continuum components comprise all doubly ionised states with an 
+electron in the continuum. Normal Auger decay, ICD and ETMD are examples of such 
+electronic decay processes. Within the \textit{original version of the (see footnote)} Fano-CI method, the initial singly 
+ionised state is approximated as a one-hole (1h) configuration, i.e.~an $(N-1)
+$-electron Slater determinant, where an electron is removed from orbital $
+\varphi_{i}$
+%
+\begin{equation}
+\ket{\tilde{\Phi}} = \ket{\Psi_{i}} = c_{i} \ket{\Psi_{0}}
+\end{equation}
+%
+Here, $c_{i}$ indicates the annihilation operator and \ket{\Psi_{0}} denotes 
+the Hartree-Fock ground state of the system. The continuum states 
+\ket{\chi_{\beta, \epsilon}} are approximated as discrete square integrable 
+states \ket{\tilde{\chi}_{q}^{a}}, which are linear combinations of 
+two-hole-one-particle (2h1p) configurations \ket{\Psi_{akl}}
+%
+\begin{equation}\label{eq:2h1p_ci_state}
+\ket{\chi_{\beta, \epsilon}} \approx \ket{\tilde{\chi}_q^{a}} = \sum_{k, l :\; \epsilon_{k,l} > \epsilon_{i}}^{n_{occ}}C_{akl}^{q} \ket{\Psi_{akl}}
+\end{equation}
+%
+Here, the indices $k, l$ and $a$ stand for occupied and virtual Hartree-Fock 
+orbitals, respectively. The 2h1p configurations \ket{\Psi_{akl}} are 
+characterised with a particle in $\varphi_{a}$ and two holes in the restricted 
+space of only those Hartree-Fock states \{$\varphi_{k}$\}, whose energy $
+\epsilon_{k}$ obeys the relation $\epsilon_{k} > \epsilon_{i}$. Note that in 
+our implementation all 2h1p configurations entering the expansion of a given 
+final state \ket{\tilde{\chi}_{q}^{a}}, have a fixed virtual orbital, 
+$\varphi_{a}$.
+
+
+The coefficients $C_{akl}^{q}$ are determined by solving the eigenvalue problem
+%
+\begin{equation}\label{eq:eigval}
+\hat{H}\ket{\tilde{\chi}_{q}^{a}} = E_{q}^{a}\ket{\tilde{\chi}_{q}^{a}}
+\end{equation}
+%
+in the basis of the following doublet spin adapted configurations (or 
+configuration state functions)
+%
+\begin{align} %\label{eq:2h1p_states}
+\ket{\Psi_{akl}^{S_1}} & = \frac{1}{\sqrt{2}}(\bar{c}^{\dagger}_{a}c_{k}\bar{c}_{l} 
+- \bar{c}^{\dagger}_{a}\bar{c}_{k}c_{l})\ket{\Psi_{0}} \label{eq:2h1p_s1} \\
+\ket{\Psi_{akk}^{S_2}} & = \bar{c}^{\dagger}_{a}c_{k}\bar{c}_{k} \ket{\Psi_{0}}  \label{eq:2h1p_s2} \\
+\ket{\Psi_{akl}^{T}} & = \frac{1}{\sqrt{6}} (\bar{c}^{\dagger}_{a} c_{k} \bar{c}_{l}
++ \bar{c}^{\dagger}_{a} \bar{c}_{k} c_{l}
++ 2 c^{\dagger}_{a} c_{k} c_{l} )\ket{\Psi_{0}} \label{eq:2h1p_t}
+\end{align}
+%
+Here, the superscripts denote the singlet ($S_{1,2}$) and triplet ($T$) spin 
+states of the two holes. A bar over the creation ($c^{\dagger}$) or annihilation 
+($c$) operators stands for creation or annihilation of a spin orbital with spin 
+$\beta$.  The size of the resulting CI matrix is of the order of 
+$n_{occ}^2$, where $n_{occ}$ is the number of occupied Hartree-Fock orbitals. In 
+order to obtain all final states \ket{\tilde{\chi}_{q}^{a}}, one needs to solve 
+the eigenvalue problem \eqref{eq:eigval} $n_{virt}$ times, where $n_{virt}$ is 
+the number of virtual orbitals. The multiple diagonalisation of a small matrix 
+is a substantial reduction in the computational effort compared to, for example, 
+the effort needed to diagonalise a single ADC(2)x matrix, where the size of the 
+2h1p block is of the order of $n_{occ}^2n_{virt}$. The cost for the substantial 
+reduction in the size of the Hamiltonian matrix in the Fano-CI method is that 
+the coupling between the pseudocontinuum final states \ket{\tilde{\chi}_{q}^{a}} 
+is completely neglected. The 2h1p configurations are however partially coupled 
+through Eq.\ \eqref{eq:2h1p_ci_state}.
+
+
+Finally, the states \ket{\tilde{\chi}_{q}^{a}} are used to compute the coupling 
+matrix elements
+%
+\begin{equation}\label{eq:coupling_element}
+\gamma^{a}_{q} = 2\pi|\dirint{\tilde{\Phi}}{\hat{H} - E}{\tilde{\chi}_{q}^{a}}|^2
+\end{equation}
+%
+These coupling matrix elements cannot be directly used in 
+Eq.\ \eqref{eq:gamma_tot} to compute the decay width. However, the total decay 
+width can be recovered from them employing the Stieltjes procedure described 
+below.
+
+
+\subsection{Stieltjes procedure}
+
+The states \ket{\tilde{\chi}_{q}^{a}} computed using the Fano-CI method
+(Eq.\ \eqref{eq:2h1p_ci_state}) cannot be directly associated with the true 
+continuum wave functions. First of all, these states are normalised to unity 
+rather than energy normalised, and as such they do not satisfy the appropriate 
+scattering boundary conditions. Moreover, owing to the finite basis sets 
+employed in practical calculations, these final states do not satisfy the energy 
+conservation condition for a non-radiative decay process
+%
+\begin{equation}
+E_{\beta} + \epsilon_{\beta} = E_{r}
+\end{equation}
+%
+except by a coincidence.
+
+
+These difficulties can be resolved by applying a mathematical approach known as 
+the Stieltjes imaging technique \cite{Hazi79,Langhoff79,Plathe89:696}. It 
+relies on the fact that even though the square integrable ($\mathcal{L}^{2}$) 
+pseudocontinuum states cannot be used to compute the decay width directly, the 
+spectral moments obtained from them are good approximations to the true spectral 
+moments of the decay width.
+%
+\begin{equation}
+S(k) = \sum_{\beta = 1}^{N_{c}} \int dE E^{k} |\dirint{\Phi}{\hat{H}-E_{r}}{\chi_{\beta, \epsilon_{\beta}}}|^{2}
+\approx \sum_{q}\sum_{a} E_{q}^{k} |\dirint{\tilde{\Phi}}{\hat{H}-E_{r}}{\tilde{\chi}_{q}^{a}}|^{2}
+\end{equation}
+%
+The moment theoretical approach is based on the observation that the 
+pseudocontinuum $\mathcal{L}^{2}$ wave functions approach the behaviour of the 
+true continuum wave functions in the molecular interaction region provided that 
+the basis set is sufficiently large to ensure a high density of pseudocontinuum 
+states around the resonance energy. Usually, a series of calculations with an 
+increasing number of spectral moments $S(k)$ is performed until a consistent 
+result is obtained \cite{Hazi79,Langhoff79,Plathe89:696,Averbukh05:204107}.
+
+
+In practice it is difficult to obtain converged results without requiring a 
+prohibitively large basis set. A question thus arises in the choice of the 
+maximal Stieltjes order to be employed. In principle, higher orders provide more 
+accurate results. However, owing to the finite basis sets, high order moments 
+become inaccurate \cite{Plathe89:696}.  By computing the standard deviation 
+for each averaged decay width, one can give an 
+estimate of the error resulting from the Stieltjes imaging procedure. This error is generally small even for moderate basis set size.
+
+\subsection{Choice of basis sets and Hartree-Fock reference}\label{ssec:orbitals}
+
+The choice of basis set is crucial for the accurate calculation of decay widths 
+as the basis set has to provide a reliable description of both the discrete 
+state and the continuum region of interest. This is usually achieved by 
+employing large Gaussian basis sets (see e.g. 
+\cite{Averbukh05:204107,Kolorenc08:244102,Miteva14:064307,Miteva14:164303,Kolorenc15:224310,Stumpf16:237,Jabbari16:164307}), 
+which are a combination of the standard basis sets and diffuse or compact basis 
+functions centred around the atom or molecule. In the case of ICD due to the low 
+energy of the emitted electrons, the most commonly used basis sets include the 
+standard Gaussian basis sets augmented with a large number of diffuse basis 
+functions specifically designed for the description of Rydberg and continuum 
+states \cite{Kaufmann89:2223}. In contrast, the Auger electrons are much faster 
+and in order to describe them the standard Gaussian basis sets are often 
+uncontracted or augmented with compact basis functions
+\cite{Averbukh05:204107,Stumpf16:237}, which ensures a non-zero density of 
+states in the high energy region of the continuum. For ICD widths we augment the standard Gaussian basis sets with diffuse functions of the Kaufmann-Baumeister-Jungen (KBJ) type \cite{Kaufmann89:2223} 
+on the atomic centres. In the case of Auger decay, we uncontract the basis set and we augment it with sets of 
+compact even tempered basis functions.
+
+
+To construct the bound and continuum parts of the resonance state in the 
+Fano-CI method, one needs to provide Hartree-Fock orbital energies and 
+two-electron integrals as input. In the case of a singly ionised decaying state 
+considered here, the ionisation step is accompanied by orbital relaxation 
+effects, which are not accounted for in the Hartree-Fock calculation on the 
+neutral system. These effects can be included by 
+performing a restricted open-shell Hartree-Fock (ROHF) calculation, in which one 
+can force an electron to be removed from the Hartree-Fock orbital of interest. 
+Subsequently, the orbital energies and two-electron integrals generated in the 
+ROHF step can be used in the Fano-CI procedure. 
+
+\subsection{Choice of the PQ partitioning}
+
+As mentioned above, there is no specific PQ partitioning implemented in CIPPRES, any can be done manually (using the several CI runs) . It makes CIPPRES flexible but also it is up to the users to do PQ partitioning well. For singly ionized states of closed-shell systems, the partitioning discussed above has proven to be rather accurate for many systems. There are also several schemes proposed in the Fano-ADC papers. For other kind of states and open-shell systems, more investigations are needed.
+
+\section{Impact parameter method and Target-states expansion}
+
+\subsection{The Impact parameter method}
+An exact theoretical treatment of the electron dynamics requires to solve the full time-independent Schr\"odinger equation:
+
+\begin{equation}
+\Hat{H}^{lab}\Psi_{sys} = E^{lab}\Psi_{sys}
+\label{tiselab}
+\end{equation}
+where $\Hat{H}^{lab}$ and $E^{lab}$ are the Hamiltonian operator and the total energy of the system in the laboratory frame, respectively. 
+For a system with $n_N$ nuclei and $n_e$ electrons, the Hamiltonian $\Hat{H}^{lab}$ reads
+\begin{align}
+\Hat{H}^{lab} & = \Hat{T}^{lab} + \Hat{V} \\
+\Hat{T}^{lab} & = \sum_{I=1}^{n_N} -{1\over 2M_I} \nabla^2_{R_I} -{1\over 2 m_e} \sum_{i=1}^{n_e} \nabla^2_{r_i}  \\
+\Hat{V}  = & \sum_{I=1}^{n_N} \sum_{i=1}^{n_e} V_{Ii} + \sum_{I=1}^{n_N} \sum_{J=I}^{n_N} V_{IJ} + \sum_{i=1}^{n_e} \sum_{j=i}^{n_e} V_{ij} 
+\end{align}
+where $\vec{R_I}$ and $\vec{r_i}$ are the nuclei and electron positions, respectively. The potential energy terms $V_{IJ}$, $V_{ij}$ and $V_{Ii}$ represent the Coulombic potential between the nuclei, the electrons and between the nuclei and the electrons, respectively. Using that the nuclei masses are much larger than the electron mass (i.e. $M_I$ $>>$ $m_e$), the Hamiltonian can be written as
+\begin{equation}
+\Hat{H}^{lab} = -{1\over 2\mu}\sum_{i=1}^{n_e} \nabla^2_{r_i}-{1\over 2\mu_{TP}}\nabla^2_{R}-{1\over 2M_{tot}}\nabla^2_{R_G} + \Hat{V}
+\end{equation}
+where the masses are defined as
+\begin{align}
+\mu & = m_e, \qquad  \mu_{TP}  = {M_T M_P\over M_T + M_P } \qquad \rm{and} \qquad M_{tot}  = M_T + M_P
+\end{align}
+The indexes T and P are used to label the target and the projectile, respectively.
+The vector $\vec{R}_G$ represents the position of the center of mass of all nuclei in the laboratory frame. The kinetic energy $\Hat{T}^{lab}$ can be written as 
+\begin{equation}
+\Hat{T}^{lab} = \Hat{T} - {1\over 2M_{tot}} \nabla^2_{R_G} 
+\end{equation}
+where $ \Hat{T}$ is the internal kinetic energy. Since the potential energy terms depend only of the internal coordinates of the system, one can split the full Hamiltonian into two contributions
+\begin{equation}
+\Hat{H}^{lab} = \Hat{H} - {1\over 2M_{tot}} \nabla^2_{R_G}
+\label{hsys}
+\end{equation}
+Furthermore, $\Psi_{sys}$ and $E^{lab}$ can be written as
+\begin{align}
+\Psi_{sys} &= \Psi_{int}e^{i\vec{k_G}.\vec{R_G}} \\
+E^{lab} &= E + {k_G^2 \over 2M_{tot}}
+\label{psisys}
+\end{align}
+Substituing Eqs.~(\ref{hsys}) to~(\ref{psisys}) into Eq.~(\ref{tiselab}), one is left with
+\begin{equation}
+\Hat{H} \Psi_{int} = E \Psi_{int}.
+\label{tise}
+\end{equation}
+The internal Hamiltonian $\Hat{H}$ reads
+\begin{equation}
+\Hat{H} = \Hat{H_{el}}-{1\over 2\mu_{TP}}\nabla^2_{R}
+\label{hia}
+\end{equation}
+where  $\Hat{H_{el}}$ is the electronic Hamiltonian:
+\begin{equation}
+\Hat{H_{el}} = -{1\over 2m_{e}} \sum_{i=1}^{n_e} \nabla^2_{r_i} + \Hat{V}.
+\end{equation}
+
+To go further, $\Psi_{int}$ is written as a product of an electronic wavefunction $\Psi$ and a nuclear one $\Xi$:
+\begin{equation}
+\Psi_{int} = \Psi(\vec{R},\{\vec{r}\})\Xi(\vec{R})
+\label{psiint}
+\end{equation}
+In this approximation, which is widely known as the Born-Oppenheimer approximation, most dependence on $\vec{R}$ is included in $\Xi(\vec{R})$. In that case, $\nabla_R^2 \Psi(\vec{R},\{\vec{r_i}\})$ can be neglected. Furthermore, in the intermediate energy range the wavefunction $\Xi(\vec{R})$ can be written as a plane-wave~\cite{bransden1992charge}:
+\begin{equation}
+\Xi(\vec{R}) =  e^{i\vec{k}.\vec{R}}
+\label{gamma}
+\end{equation}
+where $\vec{k}$ with a wave vector defined by
+\begin{equation}
+|\vec{k}| = \sqrt{2\mu_{TP}E} 
+\label{kE}
+\end{equation}
+Using Eqs.~(\ref{hia}) to~(\ref{kE}), Eq.(\ref{tise}) reads
+\begin{equation}
+[\Hat{H}_{el} - {i\over\mu_{TP}} \vec{k}.\vec{\nabla_R}]\Psi = 0
+\label{eqint}
+\end{equation}
+
+From there one can introduce the semiclassical approximation where it is assumed that the relative motion of the nuclei $\vec{R}$ is described by a classical trajectory $\vec{R}(t)$. Moreover, for collision energies above 1 keV/amu the projectile scattered dominantly in the forward direction and at very small angles. It is therefore reasonable to further assume that  $\vec{R}(t)$ describes a straight-line constant velocity trajectory:
+\begin{equation}
+\vec{R}(t) = \vec{b} + \vec{v}_Pt
+\label{ipm}
+\end{equation}
+where $\vec{b}$ is the impact parameter and $\vec{v}_P$ is the velocity vector. The latter relates to $\vec{k}$ as follows
+\begin{equation}
+\vec{v}_P = {1 \over \mu_{TP}} \vec{k}
+\label{vk}
+\end{equation}
+Using this relationship, Eq.~(\ref{eqint}) reads
+\begin{equation}
+i\hbar{\partial \Psi \over \partial t}=H_{el}\Psi 
+\label{tdse}
+\end{equation}
+which is known as the eikonal equation, or equivalently the time-dependent Schr\"odinger equation describing the electron dynamics in the moving field of the nuclei.
+
+This equation cannot be solved analytically even for the simplest collision systems (e.g. proton-Hydrogen). A full numerical solution for systems having one active electron is now possible given the tremendous progress in computational technologies. However, in the following we present a more general approach in which Eq.~\ref{tdse} is solved by assuming that the electronic wavefunction can be expanded using a finite set of basis functions. 
+
+\subsection{Close-coupling approach}
+\label{sec:cc}
+
+In a close-coupling description, the electron dynamics is constrained to a configuration space defined by a finite set of basis functions $\chi_k(\{\vec{r}\})$\footnote{It should be mentioned that is also possible, and sometimes numerically advantageous, to employ time-dependent basis functions. However, in the following we restrict the presentation to the case where the time-dependence of the electronic wavefunction is solely included in the expansion coefficients.}. The time-dependent electronic wavefunction is approximated by the following expansion:
+\begin{equation}
+\Psi(\{\vec{r}\},t) = \sum_{k=1}^N a_k(t) \chi_k(\{\vec{r}\})
+\label{ansatz}
+\end{equation}
+If the set of basis functions $\chi_k(\{\vec{r}\})$ is complete, an exact solution is then obtained. For obvious numerical reasons, the expansion must be truncated and the configuration space is thus not complete. It is therefore important to choose wisely the basis functions used in the calculations. 
+
+Substituing the wavefunction ansatz (Eq.~\ref{ansatz}) into Eq.~\ref{tdse} and projecting into each of the basis functions leads to a set of coupled first-order differential equations for the expansion coefficients. This set of equations can be written in a matrix form as
+\begin{equation}
+\textbf{iS}\dot{\textbf{a}} = \textbf{Ma} 
+\label{iscmc}
+\end{equation}
+where $a$ is a vector containing the time-dependent coefficients and $S$ and $M$ are the overlap and coupling matrices, respectively. Various algorithms have been developed and implemented to solve numerically Eq.~\ref{iscmc}~\footnote{In CIPPRES the predictor-corrector Adams-Moulton-Bashford (as implemented in the Heidelberg MCTDH package) is used.}.
+
+We recall here that the electronic Hamiltonian depends on time due to the classical relative motion of the nuclei $\vec{R}(t)$. The latter depends explicitly on the impact parameter $\vec{b}$. For a given collision energy, Eq.~\ref{iscmc} must therefore be solved for a set of impact parameter that reproduces a given experiment. Assuming an uniform and cylindrical ion beam, the total cross section for an inelastic process leading to a final state $\phi_f(\{r\})$ is given by
+\begin{equation}
+\sigma_{f} = 2\pi \int_0^{\infty} b P_f(b) db
+\label{tcs}
+\end{equation}
+where the transition probability $P_f(b)$ reads
+\begin{equation}
+P_f(b) = \lim_{t\rightarrow \infty} |<\phi_f| \Psi(t)>|^2.
+\label{pb}
+\end{equation}
+In the latter equation, we have used the Dirac $bra$-$ket$ notation for simplicity.
+
+Within the impact parameter method, the above derivation is general. In CIPPRES, $ \chi_k(\{\vec{r}\}$ are the (target) CI-states obtained with {\bf cippres\_runci}.
+
+\section{Ad hoc projection operator method}
+
+Since cippres employs gaussian functions, it does not allow one to formulate a rigorous procedure for the calculation of the partial widths/cross sections. Such a rigorous
+calculation must involve the true degenerate continuum functions corresponding to the various channels. Despite the fact that these functions are not available within the framework of the method used in cippres, it is still possible to estimate partial quantities by an ad hoc procedure.
+
+Let us assume the true quantity of interest is 
+
+\begin{equation}\label{eq:totmat}
+|<\psi_f^{(N-1)} k|O|\psi^{((N))}>|^2
+\end{equation}
+where $\psi^{((N))}$ is a bound state with N electrons, $\psi_f^{(N-1)}$ the final \textit{ionic} state with (N-1) electrons and $k$ is a true continuum state. Furthermore, we define the CI states of the P-space as $\psi_p^{(N)}$. A projection operator can be defined as 
+\begin{equation}
+P=\sum_p|\psi_p><\psi_p|.
+\end{equation}
+Inserting this operator into Eq.~\ref{eq:totmat} one obtains
+\begin{equation}
+|<\psi_f^{(N-1)} k|O|\psi^{((N))}>|^2=|\sum_p<\psi_f^{(N-1)} k|\psi_p^{(N)}><\psi_p^{(N)}|O|\psi^{(N)}>|^2
+\end{equation}
+where $<\psi_f^{(N-1)}|\psi_p^{(N)}>$ is a Dyson orbital. The norm of Dyson orbitals are usually smaller to one. Assuming $k$ and the Dyson orbitals form a orthogonal basis set, one obtains
+\begin{equation}
+|<\psi_f^{(N-1)} k|O|\psi^{((N))}>|^2=\sum_p N_{fp}|<\psi_p^{(N)}|O|\psi^{(N)}>|^2.
+\end{equation}
+In the latter equation, $N_{fp}$ is the norm of the Dyson orbital obtained when projecting $\psi_f^{(N-1)}$ and $\psi_p^{(N)}$. These states are computed with independent cippres\_runci runs and $|<\psi_p^{(N)}|O|\psi^{(N)}>|^2$ are obtained from cippres\_fano for example.
+\newpage
+
+\chapter*{Acknowledgements}
+\addcontentsline{toc}{chapter}{Acknowledgements}
+Thanks to Manu GINER for his great help with Quantum Package 2.0, and to Junwen GAO for his outstanding efforts in developing the close-coupling codes which are the starting points of many tools available in CIPPRES.
+\newpage
+
+%\chapter*{Bibliography}
+\addcontentsline{toc}{chapter}{Bibliography}
+\bibliographystyle{alpha}
+\bibliography{Bibliography}
+\newpage
+
+% -------------------------------------------------------------------------------------
+% REFERENCES
+% -------------------------------------------------------------------------------------
+%\bibliography{}
+
+% -------------------------------------------------------------------------------------
+% END DOCUMENT
+% -------------------------------------------------------------------------------------
+\end{document}
