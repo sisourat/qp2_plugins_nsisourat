@@ -3,6 +3,7 @@ import sys
 
 sig = open(sys.argv[1],"r")
 dys = open(sys.argv[2],"r")
+nbound = int(sys.argv[3])
 
 esta = []
 sigsta = []
@@ -34,7 +35,7 @@ for l in dys:
 
    if(esta[ista]>0):
     sigsi = 0
-    for j in range(19):
+    for j in range(nbound):
      sigsi += sigsta[ista]*float(d[j])
     sigsitot += sigsi
     sigditot += sigsta[ista]

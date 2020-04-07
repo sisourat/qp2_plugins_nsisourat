@@ -141,7 +141,7 @@ qp run cippres\_gencsf\\
 qp run cippres\_runci\\
 qp run cistate\_analysis\\
 mv cistates\_det.txt cistates\_det\_hep.txt\\
-python /home/common/quantum\_package/plugins/qp2\_plugins\_nsisourat/nicotools/Compute\_Dyson.py cistates\_det\_he.txt cistates\_det\_hep.txt 1035 | tee dyson\_log\\
+python /home/common/quantum\_package/plugins/qp2\_plugins\_nsisourat/nicotools/Compute\_Dyson.py cistates\_det\_he.txt cistates\_det\_hep.txt ncistates\_he | tee dyson\_log\\
 
 \section{Computing Fano resonance widths}
 
@@ -221,7 +221,7 @@ $<$/CollInput$>$\\
 One first needs to obtain the norm of the Dyson orbitals (see above) and the cross sections. The latter is obtained with \\
 /home/common/quantum\_package/plugins/qp2\_plugins\_nsisourat/nicotools/coll\_cross\_section Prop\_collision.out $|$ tee  cross\_section.txt\\
 (Do not forget to delete the first and two list lines of cross\_section.txt). Then\\
-python /home/common/quantum\_package/plugins/qp2\_plugins\_nsisourat/nicotools/Partial\_cross\_section.py cross\_section.txt Dyson\_norms.txt\\
+python /home/common/quantum\_package/plugins/qp2\_plugins\_nsisourat/nicotools/Partial\_cross\_section.py cross\_section.txt Dyson\_norms.txt nbound\_hep \\
 
 \newpage
 
