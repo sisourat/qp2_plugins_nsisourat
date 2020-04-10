@@ -21,6 +21,7 @@ subroutine from_csf_to_det(irun)
  use bitmasks ! you need to include the bitmasks_module.f90 features
  integer, intent(in) :: irun
  integer :: i,j,k,idet_tmp,istate
+ double precision :: hij, accu
 
  character*(2048)   :: output(2)
 
@@ -112,7 +113,17 @@ subroutine from_csf_to_det(irun)
     write(10,*),  trim(output(2))
   enddo
   do istate = 1, N_states
-     write(10,*),istate, eigvalues_cippres(istate,irun), N_states
+
+
+  accu = 0.d0
+  do i = 1, N_det
+   do j = 1, N_det
+    call i_H_j_one_e(psi_det(1,1,i),psi_det(1,1,j),N_int,hij)
+    accu += hij * psi_coef(j,istate) * psi_coef(i,istate) 
+   enddo
+  enddo
+
+     write(10,*),istate, eigvalues_cippres(istate,irun), accu
     do i = 1, N_det
      write(10,*), psi_coef(i,istate)
     enddo  

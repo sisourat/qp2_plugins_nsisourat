@@ -70,9 +70,12 @@ for i in range(ndets1):
 
 # READS THE CI COEFFS
 esta1 = [] 
+two_e_sta1 = [] 
 cista1 = [] 
 for i in range(nstate1):
-  esta1.append(float(fcistate1.readline().split()[1]))
+  d = fcistate1.readline().split()
+  esta1.append(float(d[1]))
+  two_e_sta1.append(float(d[1])-float(d[2]))
   cicoeff = [] 
   for j in range(ndets1):
     cicoeff.append(float(fcistate1.readline().split()[0]))
@@ -97,7 +100,7 @@ for i in range(nstate2):
 fdyson = open('Dyson_norms.txt','w')
 for i1 in range(nstate_dyson):
   normtot = 0.0
-  print >> fdyson, i1, esta1[i1]
+  print >> fdyson, i1, esta1[i1],two_e_sta1[i1]
   for i2 in range(nstate2):
 #    print "(N-1)e & (N)e states = ",i2,i1
     mocoeffs = np.zeros(mo_num+1)
