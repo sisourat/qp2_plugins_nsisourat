@@ -25,7 +25,8 @@ for l in dys:
    norm = 0
    for j in range(nbound):
      norm += float(d[j])
-   print(two_e_sta, norm, esta[ista],file=fout)
+   if(esta[ista]>0):
+    print(two_e_sta, norm, esta[ista],file=fout)
    ista+=1
 
 fout.close()
@@ -40,8 +41,8 @@ X = dat[:,0:2]
 random_state = 170
 y_pred = KMeans(n_clusters=2, random_state=random_state).fit_predict(X)
 
-for i in y_pred:
-        print(i)
+for i in range(len(y_pred)):
+        print(X[i,0],X[i,1],y_pred[i])
 
 plt.scatter(X[:, 0], X[:, 1], c=y_pred)
 

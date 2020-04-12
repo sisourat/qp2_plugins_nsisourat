@@ -6,7 +6,8 @@ dys = open(sys.argv[2],"r")
 kmean = open(sys.argv[4],"r")
 nprojector = int(sys.argv[3])
 
-ikmean = np.loadtxt(kmean)
+dat = np.loadtxt(kmean)
+ikmean = dat[:,2]
 
 esta = []
 sigsta = []
