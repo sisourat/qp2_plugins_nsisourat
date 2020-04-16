@@ -3,27 +3,27 @@ import numpy as np
 
 elt = {1: 'Hydrogen', 2: 'Helium', 3: 'Lithium', 4: 'Beryllium', 5: 'Boron' , 6: 'Carbon' , 7: 'Nitrogen' , 8: 'Oxygen' , 9: 'Fluorine' , 10: 'Neon' , 11: 'Sodium' , 12: 'Magnesium' , 13: 'Aluminum' , 14: 'Silicon' , 15: 'Phosphorus' , 16: 'Sulfur' , 17: 'Chlorine' , 18: 'Argon' , 19: 'Potassium' , 20: 'Calcium' , 21: 'Scandium' , 22: 'Titanium' , 23: 'Vanadium' , 24: 'Chromium' , 25: 'Manganese' , 26: 'Iron' , 27: 'Cobalt' , 28: 'Nickel' , 29: 'Copper' , 30: 'Zinc' , 31: 'Gallium' , 32: 'Germanium' , 33: 'Arsenic' , 34: 'Selenium' , 35: 'Bromine' , 36: 'Krypton'} 
 
-alpminH_S=0.001
+alpminH_S=0.01
 alpmaxH_S=100
-ngto_S=10
+ngto_S=12
 
-alpminH_P=0.001
+alpminH_P=0.01
 alpmaxH_P=10.0
-ngto_P=7
+ngto_P=9
 
-alpminH_D=0.001
+alpminH_D=0.01
 alpmaxH_D=10.0
-ngto_D=4
+ngto_D=6
 
-alpminH_F=0.001
+alpminH_F=0.01
 alpmaxH_F=10.0
-ngto_F=1
+ngto_F=3
 
-alpminH_G=0.001
+alpminH_G=0.01
 alpmaxH_G=10.0
-ngto_G=0
+ngto_G=1
 
-alpminH_H=0.001
+alpminH_H=0.01
 alpmaxH_H=10.0
 ngto_H=0
 

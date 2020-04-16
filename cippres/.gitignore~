@@ -58,3 +58,9 @@ tools
 utils
 zmq
 *~
+cippres_prop_collision
+cippres_setup_collision
+cippres_stieltjes
+cistate_analysis
+nicotools
+test_uniq_det

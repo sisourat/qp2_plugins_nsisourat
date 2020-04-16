@@ -237,8 +237,10 @@ END_PROVIDER
  use general
  implicit none
  integer :: i, j, k, l
- double precision, allocatable :: eigval1(:),eigvec1(:,:),eigval2(:),eigvec2(:,:),dip_csf_mat(:,:),dip_mat(:,:)
+ double precision, allocatable :: eigval1(:),eigvec1(:,:),eigval2(:),eigvec2(:,:),dip_csf_mat(:,:),dip_mat(:,:), mattmp(:,:)
  double precision, dimension(mo_num,mo_num) :: w1e
+
+ integer :: ncsf1, ncsf2
 
  double precision :: hij
 
@@ -258,13 +260,18 @@ END_PROVIDER
    eigvec1(:,:) = eigvectors_cippres(1:n_csf_cippres(ici1),1:n_csf_cippres(ici1),ici1)
    eigvec2(:,:) = eigvectors_cippres(1:n_csf_cippres(ici2),1:n_csf_cippres(ici2),ici2)
 
+   ncsf1 = n_csf_cippres(ici1) 
+   ncsf2 = n_csf_cippres(ici2) 
+
    allocate(dip_mat(n_csf_cippres(ici2),n_csf_cippres(ici1)))
+   allocate(mattmp(ncsf2,ncsf1))
 
 ! along X
    dip_csf_mat(:,:) = 0d0
-   dip_mat(:,:) = 0d0
    w1e(:,:) = mo_dipole_x(:,:)
 
+!$OMP PARALLEL DO PRIVATE(i,j,k,l,hij)
+! SCHEDULE(DYNAMIC) 
    do i = 1, n_csf_cippres(ici1) ! first loop on the csf of the space ispace 
     do j = 1, n_csf_cippres(ici2)
      do k = 1, n_det_csf_cippres(i,ici1) ! then on the determinants belonging to the ith CSF of space ispace
@@ -276,16 +283,16 @@ END_PROVIDER
 !     print*,j,i,dip_csf_mat(j,i)
     enddo
    enddo
+!$OMP END PARALLEL DO
+
+  dip_mat(:,:) = 0d0
+  CALL DGEMM('N','N',ncsf2,ncsf1,ncsf1,1.d0,dip_csf_mat(1:ncsf2,1:ncsf1),ncsf2,eigvec1(1:ncsf1,1:ncsf1),ncsf1,0.d0,mattmp,ncsf2)
+  CALL DGEMM('N','N',ncsf2,ncsf1,ncsf2,1.d0,transpose(eigvec2(1:ncsf2,1:ncsf2)),ncsf2,mattmp,ncsf2,0.d0,dip_mat(1:ncsf2,1:ncsf1),ncsf2)
 
   do i = 1, n_csf_cippres(ici1) ! first loop on the first eigenvectors
    do j = 1, n_csf_cippres(ici2) ! then on the second eigenvectors
-    do k = 1, n_csf_cippres(ici1) ! loop over the csfs of the ici1 run
-     do l = 1, n_csf_cippres(ici2) ! then over the csfs of the ici2 run
-        dip_mat(j,i) += dip_csf_mat(l,k) * eigvec1(k,i) * eigvec2(l,j)
-     enddo
-    enddo
      edip_couplings_cippres(j,i) = eigval2(j)-eigval1(i)
-     print*,"x",j,i,dip_mat(j,i)
+!     print*,"x",j,i,dip_mat(j,i)
    enddo
   enddo
 
@@ -293,10 +300,11 @@ END_PROVIDER
   call ezfio_set_cippres_cdipx_cippres(dip_mat)
 
 ! along Y
-   dip_csf_mat(:,:) = 0d0
-   dip_mat(:,:) = 0d0
-   w1e(:,:) = mo_dipole_y(:,:)
+  dip_csf_mat(:,:) = 0d0
+  w1e(:,:) = mo_dipole_y(:,:)
 
+!$OMP PARALLEL DO PRIVATE(i,j,k,l,hij)
+! SCHEDULE(DYNAMIC) 
    do i = 1, n_csf_cippres(ici1) ! first loop on the csf of the space ispace 
     do j = 1, n_csf_cippres(ici2)
      do k = 1, n_det_csf_cippres(i,ici1) ! then on the determinants belonging to the ith CSF of space ispace
@@ -308,26 +316,21 @@ END_PROVIDER
 !     print*,j,i,dip_csf_mat(j,i)
     enddo
    enddo
+!$OMP END PARALLEL DO
 
-  do i = 1, n_csf_cippres(ici1) ! first loop on the first eigenvectors
-   do j = 1, n_csf_cippres(ici2) ! then on the second eigenvectors
-    do k = 1, n_csf_cippres(ici1) ! loop over the csfs of the ici1 run
-     do l = 1, n_csf_cippres(ici2) ! then over the csfs of the ici2 run
-        dip_mat(j,i) += dip_csf_mat(l,k) * eigvec1(k,i) * eigvec2(l,j)
-     enddo
-    enddo
-     print*,"y",j,i,dip_mat(j,i)
-   enddo
-  enddo
+  dip_mat(:,:) = 0d0
+  CALL DGEMM('N','N',ncsf2,ncsf1,ncsf1,1.d0,dip_csf_mat(1:ncsf2,1:ncsf1),ncsf2,eigvec1(1:ncsf1,1:ncsf1),ncsf1,0.d0,mattmp,ncsf2)
+  CALL DGEMM('N','N',ncsf2,ncsf1,ncsf2,1.d0,transpose(eigvec2(1:ncsf2,1:ncsf2)),ncsf2,mattmp,ncsf2,0.d0,dip_mat(1:ncsf2,1:ncsf1),ncsf2)
 
   dip_couplings_cippres(1:n_csf_cippres(ici2),1:n_csf_cippres(ici1)) += dip_mat(:,:)**2
   call ezfio_set_cippres_cdipy_cippres(dip_mat)
    
 ! along Z
-   dip_csf_mat(:,:) = 0d0
-   dip_mat(:,:) = 0d0
-   w1e(:,:) = mo_dipole_z(:,:)
+  dip_csf_mat(:,:) = 0d0
+  w1e(:,:) = mo_dipole_z(:,:)
 
+!$OMP PARALLEL DO PRIVATE(i,j,k,l,hij)
+! SCHEDULE(DYNAMIC) 
    do i = 1, n_csf_cippres(ici1) ! first loop on the csf of the space ispace 
     do j = 1, n_csf_cippres(ici2)
      do k = 1, n_det_csf_cippres(i,ici1) ! then on the determinants belonging to the ith CSF of space ispace
@@ -339,23 +342,18 @@ END_PROVIDER
 !     print*,j,i,dip_csf_mat(j,i)
     enddo
    enddo
+!$OMP END PARALLEL DO
 
-  do i = 1, n_csf_cippres(ici1) ! first loop on the first eigenvectors
-   do j = 1, n_csf_cippres(ici2) ! then on the second eigenvectors
-    do k = 1, n_csf_cippres(ici1) ! loop over the csfs of the ici1 run
-     do l = 1, n_csf_cippres(ici2) ! then over the csfs of the ici2 run
-        dip_mat(j,i) += dip_csf_mat(l,k) * eigvec1(k,i) * eigvec2(l,j)
-     enddo
-    enddo
-     print*,"z",j,i,dip_mat(j,i)
-   enddo
-  enddo
+  dip_mat(:,:) = 0d0
+  CALL DGEMM('N','N',ncsf2,ncsf1,ncsf1,1.d0,dip_csf_mat(1:ncsf2,1:ncsf1),ncsf2,eigvec1(1:ncsf1,1:ncsf1),ncsf1,0.d0,mattmp,ncsf2)
+  CALL DGEMM('N','N',ncsf2,ncsf1,ncsf2,1.d0,transpose(eigvec2(1:ncsf2,1:ncsf2)),ncsf2,mattmp,ncsf2,0.d0,dip_mat(1:ncsf2,1:ncsf1),ncsf2)
 
   dip_couplings_cippres(1:n_csf_cippres(ici2),1:n_csf_cippres(ici1)) += dip_mat(:,:)**2
-  dip_couplings_cippres(1:n_csf_cippres(ici2),1:n_csf_cippres(ici1)) = sqrt(dip_couplings_cippres(1:n_csf_cippres(ici2),1:n_csf_cippres(ici1)))
   call ezfio_set_cippres_cdipz_cippres(dip_mat)
+   
+  dip_couplings_cippres(1:n_csf_cippres(ici2),1:n_csf_cippres(ici1)) = sqrt(dip_couplings_cippres(1:n_csf_cippres(ici2),1:n_csf_cippres(ici1)))
 
- deallocate(dip_csf_mat,eigval1,eigval2,eigvec1,eigvec2,dip_mat) 
+ deallocate(dip_csf_mat,eigval1,eigval2,eigvec1,eigvec2,dip_mat,mattmp) 
 
  END_PROVIDER
 
