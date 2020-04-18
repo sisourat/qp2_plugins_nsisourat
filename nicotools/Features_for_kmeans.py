@@ -7,7 +7,8 @@ import matplotlib.pyplot as plt
 dys = open(sys.argv[1],"r")
 nbound = int(sys.argv[2])
 
-fout = open("features_kmean.txt","w")
+fout_di = open("features_kmean_di.txt","w")
+fout    = open("features_kmean.txt","w")
 
 i = 0
 ista = 0
@@ -26,16 +27,19 @@ for l in dys:
    for j in range(nbound):
      norm += float(d[j])
    if(esta[ista]>0):
+    print(two_e_sta, norm, esta[ista],file=fout_di)
+   else:
     print(two_e_sta, norm, esta[ista],file=fout)
    ista+=1
 
+fout_di.close()
 fout.close()
 
 plt.figure(figsize=(12, 12))
 plt.xlabel('e-e repulsion')
 plt.ylabel('Sum of the norm of the Dyson orbitals')
 
-dat=np.loadtxt("features_kmean.txt")
+dat=np.loadtxt("features_kmean_di.txt")
 X = dat[:,0:2]
 
 random_state = 170

@@ -52,6 +52,7 @@ do i = 1, nsta
    sig(i) = 0.5d0*bproj(1)*bproj(1)*prob(i,1)
  do j = 1, nbproj-1
    sig(i) =  sig(i) + 0.5d0*(bproj(j+1)-bproj(j))*(bproj(j)*prob(i,j)+bproj(j+1)*prob(i,j+1))
+!   write(10+i,*)bproj(j),prob(i,j)
  enddo
   sig(i) =  sig(i)*2d0*pi
 !  print*, i, esta(i), sig(i)/3.57d0

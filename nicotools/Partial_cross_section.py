@@ -8,6 +8,7 @@ nprojector = int(sys.argv[3])
 
 dat = np.loadtxt(kmean)
 ikmean = dat[:,2]
+normDyson = dat[:,1]
 
 esta = []
 sigsta = []
@@ -53,7 +54,8 @@ for l in dys:
     for j in range(nprojector):
      norm += float(d[j])
     normtot += norm
-    if ikmean[ista-(nbound+nsi+1)]==1:
+#    if ikmean[ista-(nbound+nsi+1)]==1:
+    if normDyson[ista-(nbound+nsi+1)]>0.3:
      sigsitot += sigsta[ista] 
      nsitot+=1
     else :

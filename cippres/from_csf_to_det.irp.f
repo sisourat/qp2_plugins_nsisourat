@@ -112,9 +112,8 @@ subroutine from_csf_to_det(irun)
     write(10,*),  trim(output(1))
     write(10,*),  trim(output(2))
   enddo
+
   do istate = 1, N_states
-
-
   accu = 0.d0
   do i = 1, N_det
    do j = 1, N_det
