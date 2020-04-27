@@ -10,11 +10,11 @@ double precision, dimension(:), allocatable :: esta
 integer :: nbproj
 double precision, dimension(:), allocatable :: bproj, sig, pion
 double precision, dimension(:,:), allocatable :: prob
-double precision :: norm, sig_ion, sig_si, sig_di, sig_exc
+double precision :: norm, sig_ion, sig_si, sig_di, sig_exc, sip, dip
 
 integer :: istate
 
-character(40) :: finput
+character(40) :: finput, csip, cdip
 character(1) :: again
 
 integer :: ilen, jlen
@@ -22,6 +22,10 @@ logical :: file_e
 integer :: i, j, k, opt
 
 call getarg(1,finput)
+call getarg(2,csip)
+call getarg(3,cdip)
+read(csip,*)sip
+read(cdip,*)dip
 
 ilen=index(finput,' ')
 inquire( file="./"//finput(1:ilen-1), exist=file_e )
@@ -62,9 +66,9 @@ sig_exc = 0d0
 sig_si = 0d0
 sig_di = 0d0
 do i = 2, nsta
- if(esta(i)<-2.0) then
+ if(esta(i)<sip) then
    sig_exc = sig_exc + sig(i)
- elseif(esta(i)<0.0) then
+ elseif(esta(i)<dip) then
    sig_si = sig_si + sig(i)
  else
    sig_di = sig_di + sig(i)

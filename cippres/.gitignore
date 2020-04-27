@@ -65,3 +65,4 @@ cistate_analysis
 nicotools
 test_uniq_det
 cippres_lib.irp.stable
+*.pyc

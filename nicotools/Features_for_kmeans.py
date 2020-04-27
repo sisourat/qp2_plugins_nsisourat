@@ -6,6 +6,7 @@ import matplotlib.pyplot as plt
 
 dys = open(sys.argv[1],"r")
 nbound = int(sys.argv[2])
+dip = float(sys.argv[3])
 
 fout_di = open("features_kmean_di.txt","w")
 fout    = open("features_kmean.txt","w")
@@ -26,7 +27,7 @@ for l in dys:
    norm = 0
    for j in range(nbound):
      norm += float(d[j])
-   if(esta[ista]>0):
+   if(esta[ista]>dip):
     print(two_e_sta, norm, esta[ista],file=fout_di)
    else:
     print(two_e_sta, norm, esta[ista],file=fout)

@@ -1,6 +1,15 @@
 use bitmasks ! you need to include the bitmasks_module.f90 features
 use general
 
+ BEGIN_PROVIDER [integer, n_sta_coll_max]
+  implicit none
+     if(n_csf_max<5000) then
+        n_sta_coll_max = n_csf_max
+     else
+        n_sta_coll_max = 5000
+     endif
+ END_PROVIDER 
+
  BEGIN_PROVIDER [double precision, b_coll]
   implicit none
    b_coll = 0d0
@@ -83,7 +92,7 @@ use general
 
 
 
- BEGIN_PROVIDER [double precision, coll_couplings, (n_csf_max,n_csf_max,n_time)]
+ BEGIN_PROVIDER [double precision, coll_couplings, (n_sta_coll_max,n_sta_coll_max,n_time)]
  use general
  implicit none
  integer :: i, j, k, l
@@ -140,6 +149,11 @@ use general
     nsta = stamax_di-stamin_bound+1
     ni = stamin_bound
     nf = stamax_di
+   endif
+
+   if(nsta>n_sta_coll_max) then
+    print*, "nsta > n_sta_coll_max, I stop"
+    stop
    endif
 
    ncsf = n_csf_cippres(ici1)

@@ -85,34 +85,34 @@ subroutine from_csf_to_det(irun)
  print*,'N_det_alpha_unique',N_det_alpha_unique
  print*,'N_det_beta_unique ',N_det_beta_unique
 
- N_det = N_det_alpha_unique * N_det_beta_unique 
- touch N_det 
- idet_tmp = 0
- do j = 1, n_alpha_tmp 
-  do i = 1, n_beta_tmp 
-   idet_tmp += 1
-   psi_det(:,1,idet_tmp) = psi_alpha_uniq_tmp(:,j)
-   psi_det(:,2,idet_tmp) = psi_beta_uniq_tmp(:,i)
-!   print*,'idet = ', idet_tmp
-!   call print_det(psi_det(1,1,idet_tmp),N_int)
-!   print*,''
-   do istate = 1, N_states
-    psi_coef(idet_tmp,istate) = coef_alpha_beta(j,i,istate)
-   enddo
-  enddo
+!NICON_det = N_det_alpha_unique * N_det_beta_unique 
+!NICOtouch N_det 
+!NICOidet_tmp = 0
+!NICOdo j = 1, n_alpha_tmp 
+!NICO do i = 1, n_beta_tmp 
+!NICO  idet_tmp += 1
+!NICO  psi_det(:,1,idet_tmp) = psi_alpha_uniq_tmp(:,j)
+!NICO  psi_det(:,2,idet_tmp) = psi_beta_uniq_tmp(:,i)
+!NICO   print*,'idet = ', idet_tmp
+!NICO   call print_det(psi_det(1,1,idet_tmp),N_int)
+!NICO   print*,''
+!NICO  do istate = 1, N_states
+!NICO   psi_coef(idet_tmp,istate) = coef_alpha_beta(j,i,istate)
+!NICO  enddo
+!NICO enddo
+!NICOenddo
+!NICO
+!NICOtouch psi_det psi_coef 
+!NICO
+ open(unit=10,file='cistates_det.txt')
+ write(10,*),mo_num,N_det,N_states
+ do i = 1, N_det
+  write(10,*),i
+   call myprint_det(psi_det(1,1,i),N_int,output)
+   write(10,*),  trim(output(1))
+   write(10,*),  trim(output(2))
  enddo
-
- touch psi_det psi_coef 
-
-  open(unit=10,file='cistates_det.txt')
-  write(10,*),mo_num,N_det,N_states
-  do i = 1, N_det
-   write(10,*),i
-    call myprint_det(psi_det(1,1,i),N_int,output)
-    write(10,*),  trim(output(1))
-    write(10,*),  trim(output(2))
-  enddo
-
+ 
   do istate = 1, N_states
   accu = 0.d0
   do i = 1, N_det
@@ -121,7 +121,7 @@ subroutine from_csf_to_det(irun)
     accu += hij * psi_coef(j,istate) * psi_coef(i,istate) 
    enddo
   enddo
-
+ 
      write(10,*),istate, eigvalues_cippres(istate,irun), accu
     do i = 1, N_det
      write(10,*), psi_coef(i,istate)
@@ -129,21 +129,21 @@ subroutine from_csf_to_det(irun)
   enddo
   close(10)
   stop
-! do istate = 1, N_states
-!  double precision :: accu,hij
-!  accu = 0.d0
-!  do i = 1, N_det
-!   do j = 1, N_det
-!!    print*,'i,j',i,j
-!!    call print_det(psi_det(1,1,i),N_int)
-!!    call print_det(psi_det(1,1,j),N_int)
-!    call i_H_j(psi_det(1,1,i),psi_det(1,1,j),N_int,hij)
-!    accu += hij * psi_coef(j,istate) * psi_coef(i,istate) 
-!   enddo
-!  enddo
-!  print*,'accu              = ',accu+nuclear_repulsion
-!  print*,'eigvalues_cippres = ',eigvalues_cippres(istate,irun)
-! enddo
+!NICO do istate = 1, N_states
+!NICO  double precision :: accu,hij
+!NICO  accu = 0.d0
+!NICO  do i = 1, N_det
+!NICO   do j = 1, N_det
+!NICO!    print*,'i,j',i,j
+!NICO!    call print_det(psi_det(1,1,i),N_int)
+!NICO!    call print_det(psi_det(1,1,j),N_int)
+!NICO    call i_H_j(psi_det(1,1,i),psi_det(1,1,j),N_int,hij)
+!NICO    accu += hij * psi_coef(j,istate) * psi_coef(i,istate) 
+!NICO   enddo
+!NICO  enddo
+!NICO  print*,'accu              = ',accu+nuclear_repulsion
+!NICO  print*,'eigvalues_cippres = ',eigvalues_cippres(istate,irun)
+!NICO enddo
  
 end
 
