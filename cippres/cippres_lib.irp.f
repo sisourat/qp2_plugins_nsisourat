@@ -297,7 +297,7 @@ END_PROVIDER
   enddo
 
   dip_couplings_cippres(1:n_csf_cippres(ici2),1:n_csf_cippres(ici1)) += dip_mat(:,:)**2
-  call ezfio_set_cippres_cdipx_cippres(dip_mat)
+!  call ezfio_set_cippres_cdipx_cippres(dip_mat)
 
 ! along Y
   dip_csf_mat(:,:) = 0d0
@@ -323,8 +323,14 @@ END_PROVIDER
   CALL DGEMM('N','N',ncsf2,ncsf1,ncsf2,1.d0,transpose(eigvec2(1:ncsf2,1:ncsf2)),ncsf2,mattmp,ncsf2,0.d0,dip_mat(1:ncsf2,1:ncsf1),ncsf2)
 
   dip_couplings_cippres(1:n_csf_cippres(ici2),1:n_csf_cippres(ici1)) += dip_mat(:,:)**2
-  call ezfio_set_cippres_cdipy_cippres(dip_mat)
+!  call ezfio_set_cippres_cdipy_cippres(dip_mat)
    
+!  do i = 1, n_csf_cippres(ici1) ! first loop on the first eigenvectors
+!   do j = 1, n_csf_cippres(ici2) ! then on the second eigenvectors
+!     print*,"y",j,i,dip_mat(j,i)
+!   enddo
+!  enddo
+
 ! along Z
   dip_csf_mat(:,:) = 0d0
   w1e(:,:) = mo_dipole_z(:,:)
@@ -348,8 +354,14 @@ END_PROVIDER
   CALL DGEMM('N','N',ncsf2,ncsf1,ncsf1,1.d0,dip_csf_mat(1:ncsf2,1:ncsf1),ncsf2,eigvec1(1:ncsf1,1:ncsf1),ncsf1,0.d0,mattmp,ncsf2)
   CALL DGEMM('N','N',ncsf2,ncsf1,ncsf2,1.d0,transpose(eigvec2(1:ncsf2,1:ncsf2)),ncsf2,mattmp,ncsf2,0.d0,dip_mat(1:ncsf2,1:ncsf1),ncsf2)
 
+!  do i = 1, n_csf_cippres(ici1) ! first loop on the first eigenvectors
+!   do j = 1, n_csf_cippres(ici2) ! then on the second eigenvectors
+!     print*,"z",j,i,dip_mat(j,i)
+!   enddo
+!  enddo
+
   dip_couplings_cippres(1:n_csf_cippres(ici2),1:n_csf_cippres(ici1)) += dip_mat(:,:)**2
-  call ezfio_set_cippres_cdipz_cippres(dip_mat)
+!  call ezfio_set_cippres_cdipz_cippres(dip_mat)
    
   dip_couplings_cippres(1:n_csf_cippres(ici2),1:n_csf_cippres(ici1)) = sqrt(dip_couplings_cippres(1:n_csf_cippres(ici2),1:n_csf_cippres(ici1)))
 

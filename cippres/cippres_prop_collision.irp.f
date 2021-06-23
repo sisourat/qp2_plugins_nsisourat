@@ -102,7 +102,7 @@ program cippres_prop_collision
    open(unit=20,file='Prop_collision.out')
    write(20,*)n_bimp,nsta
    do i = 1, nsta
-     write(20,*)esta(i)
+     write(20,*)esta(i)-nuclear_repulsion
      write(*,*)esta(i)
    enddo
 

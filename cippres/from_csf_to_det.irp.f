@@ -1,3 +1,9 @@
+
+BEGIN_PROVIDER [integer, n_sta_cistate_analysis]
+implicit none
+   call ezfio_get_cippres_n_sta_cistate_analysis(n_sta_cistate_analysis)
+END_PROVIDER
+
 subroutine myprint_det(string,Nint,output) 
   use bitmasks
   implicit none
@@ -28,6 +34,7 @@ subroutine from_csf_to_det(irun)
  print*,'*************************************'
  print*,'n_det_max_csf, n_csf_max',n_det_max_csf, n_csf_max
  print*,'*************************************'
+
  idet_tmp = 0
  do i = 1, n_csf_cippres(irun) ! first loop on the csf of the space ispace 
    do k = 1, n_det_csf_cippres(i,irun) ! then on the determinants belonging to the ith CSF of space ispace
@@ -36,7 +43,8 @@ subroutine from_csf_to_det(irun)
   enddo
 
  N_det = idet_tmp 
- N_states = n_csf_max
+! N_states = n_csf_max
+ N_states = n_sta_cistate_analysis
  touch N_det N_states
  print*,'N_det,psi_det_size',N_det,psi_det_size
  idet_tmp = 0
@@ -44,7 +52,7 @@ subroutine from_csf_to_det(irun)
    do k = 1, n_det_csf_cippres(i,irun) ! then on the determinants belonging to the ith CSF of space ispace
     idet_tmp += 1
     psi_det(:,:,idet_tmp) = csf_basis(:,:,k,i,irun) 
-    do istate = 1, n_csf_max
+    do istate = 1, n_sta_cistate_analysis
      psi_coef(idet_tmp,istate) = coef_det_csf_basis(k,i,irun) * eigvectors_cippres(i,istate,irun)
     enddo
    enddo 
@@ -56,34 +64,34 @@ subroutine from_csf_to_det(irun)
  print*,'N_det_beta_unique ',N_det_beta_unique
  print*,'*N_det,N_states    = ',N_det,N_states
 
- double precision, allocatable :: coef_alpha_beta(:,:,:)
- integer(bit_kind), allocatable :: psi_alpha_uniq_tmp(:,:), psi_beta_uniq_tmp(:,:)
- allocate(psi_alpha_uniq_tmp(N_int,N_det_alpha_unique),psi_beta_uniq_tmp(N_int,N_det_beta_unique))
+!NICO double precision, allocatable :: coef_alpha_beta(:,:,:)
+!NICO integer(bit_kind), allocatable :: psi_alpha_uniq_tmp(:,:), psi_beta_uniq_tmp(:,:)
+!NICO allocate(psi_alpha_uniq_tmp(N_int,N_det_alpha_unique),psi_beta_uniq_tmp(N_int,N_det_beta_unique))
 
- psi_alpha_uniq_tmp(:,1:N_det_alpha_unique) = psi_det_alpha_unique(:,1:N_det_alpha_unique)
- psi_beta_uniq_tmp(:,1:N_det_beta_unique) = psi_det_beta_unique(:,1:N_det_beta_unique)
+!NICO psi_alpha_uniq_tmp(:,1:N_det_alpha_unique) = psi_det_alpha_unique(:,1:N_det_alpha_unique)
+!NICO psi_beta_uniq_tmp(:,1:N_det_beta_unique) = psi_det_beta_unique(:,1:N_det_beta_unique)
 
- allocate ( coef_alpha_beta(N_det_alpha_unique,N_det_beta_unique,N_states)  )
+! allocate ( coef_alpha_beta(N_det_alpha_unique,N_det_beta_unique,N_states)  )
  
- integer :: get_index_in_psi_det_alpha_unique,get_index_in_psi_det_beta_unique
- integer :: n_alpha_tmp,n_beta_tmp
- n_alpha_tmp = N_det_alpha_unique
- n_beta_tmp = N_det_beta_unique
- coef_alpha_beta = 0.d0
- do k=1,N_det
-   i = get_index_in_psi_det_alpha_unique(psi_det(1,1,k),N_int)
-   ASSERT (i>0)
-   ASSERT (i<=N_det_alpha_unique)
-
-   j = get_index_in_psi_det_beta_unique (psi_det(1,2,k),N_int)
-   ASSERT (j>0)
-   ASSERT (j<=N_det_beta_unique)
-   do istate = 1, N_states
-    coef_alpha_beta(i,j,istate) += psi_coef(k,istate)
-   enddo
- enddo
- print*,'N_det_alpha_unique',N_det_alpha_unique
- print*,'N_det_beta_unique ',N_det_beta_unique
+!NICO integer :: get_index_in_psi_det_alpha_unique,get_index_in_psi_det_beta_unique
+!NICO integer :: n_alpha_tmp,n_beta_tmp
+!NICO n_alpha_tmp = N_det_alpha_unique
+!NICO n_beta_tmp = N_det_beta_unique
+!NICO coef_alpha_beta = 0.d0
+!NICO do k=1,N_det
+!NICO   i = get_index_in_psi_det_alpha_unique(psi_det(1,1,k),N_int)
+!NICO   ASSERT (i>0)
+!NICO   ASSERT (i<=N_det_alpha_unique)
+!NICO 
+!NICO   j = get_index_in_psi_det_beta_unique (psi_det(1,2,k),N_int)
+!NICO   ASSERT (j>0)
+!NICO   ASSERT (j<=N_det_beta_unique)
+!NICO   do istate = 1, N_states
+!NICO    coef_alpha_beta(i,j,istate) += psi_coef(k,istate)
+!NICO   enddo
+!NICO enddo
+!NICO print*,'N_det_alpha_unique',N_det_alpha_unique
+!NICO print*,'N_det_beta_unique ',N_det_beta_unique
 
 !NICON_det = N_det_alpha_unique * N_det_beta_unique 
 !NICOtouch N_det 
@@ -109,8 +117,8 @@ subroutine from_csf_to_det(irun)
  do i = 1, N_det
   write(10,*),i
    call myprint_det(psi_det(1,1,i),N_int,output)
-   write(10,*),  trim(output(1))
-   write(10,*),  trim(output(2))
+   write(10,'((a))'),  trim(output(1))
+   write(10,'((a))'),  trim(output(2))
  enddo
  
   do istate = 1, N_states
@@ -122,7 +130,7 @@ subroutine from_csf_to_det(irun)
    enddo
   enddo
  
-     write(10,*),istate, eigvalues_cippres(istate,irun), accu
+     write(10,*),eigvalues_cippres(istate,irun), accu, dip_couplings_cippres(1,istate), nuclear_repulsion
     do i = 1, N_det
      write(10,*), psi_coef(i,istate)
     enddo  

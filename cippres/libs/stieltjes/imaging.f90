@@ -102,6 +102,7 @@ implicit none
 ! MAXORD=I-1 is appropriate since the polynomial failing 
 ! the orthogonality check should not be used
              maxord=i-1
+             print*, ' MAXORD=',maxord
              go to 10
           end if
        end do

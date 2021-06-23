@@ -102,6 +102,7 @@ implicit none
 ! MAXORD=I-1 is appropriate since the polynomial failing 
 ! the orthogonality check should not be used
              maxord=i-1
+             print*, ' MAXORD=',maxord,qnorm/qabs(qoverlap)
              go to 10
           end if
        end do
@@ -146,9 +147,7 @@ implicit none
           end do
           abvec(i,i)=1.q0
        end do
-       write(*,*)"nico"
        call tql2(nmax,iord,diag,offdiag,abvec,ierr)
-       write(*,*)"nico"
        if (ierr.ne.0) then
           print*, '***WARNING*** Stieltjes:'
           print*, ' the eigenvalue no. ',ierr,' failed to converge'

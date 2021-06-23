@@ -2,8 +2,6 @@ import sys
 import numpy as np
 from determinants import *
 
-nbitkind=64
-
 nstate_dyson = int(sys.argv[3])
 
 # READS THE DETERMINANTS OF CISTATES 1 AND 2 AND LIST THOSE DIFFERING BY ONLY ONE ORBITAL (THE ONE "MISSING")
@@ -15,22 +13,17 @@ if(nstate_dyson>nstate1):
 print 'Number of MO', mo_num
 print 'Number of Determinants', ndets1
 
-nlines_per_spin = mo_num/nbitkind + 1
-print nlines_per_spin
-
 dets_alp1 = []
 dets_bet1 = []
 for i in range(ndets1):
   fcistate1.readline()
   det = [' ']
-  for j in range(nlines_per_spin):
-    l = fcistate1.readline().split()
-    det += [ x for x in l[0] if (x=='+' or x=='-')]
+  l = fcistate1.readline().split()
+  det += [ x for x in l[0] if (x=='+' or x=='-')]
   dets_alp1.append(det)
   det = [' ']
-  for j in range(nlines_per_spin):
-    l = fcistate1.readline().split()
-    det += [ x for x in l[0] if (x=='+' or x=='-')]
+  l = fcistate1.readline().split()
+  det += [ x for x in l[0] if (x=='+' or x=='-')]
   dets_bet1.append(det)
 
 fcistate2 = open(sys.argv[2],"r")
@@ -39,22 +32,17 @@ print 'Number of MO', mo_num
 print 'Number of Determinants', ndets2
 print 
 
-nlines_per_spin = mo_num/nbitkind + 1
-print nlines_per_spin
-
 dets_alp2 = []
 dets_bet2 = []
 for i in range(ndets2):
   fcistate2.readline()
   det = [' ']
-  for j in range(nlines_per_spin):
-    l = fcistate2.readline().split()
-    det += [ x for x in l[0] if (x=='+' or x=='-')]
+  l = fcistate2.readline().split()
+  det += [ x for x in l[0] if (x=='+' or x=='-')]
   dets_alp2.append(det)
   det = [' ']
-  for j in range(nlines_per_spin):
-    l = fcistate2.readline().split()
-    det += [ x for x in l[0] if (x=='+' or x=='-')]
+  l = fcistate2.readline().split()
+  det += [ x for x in l[0] if (x=='+' or x=='-')]
   dets_bet2.append(det)
 
 ldets = []
@@ -71,11 +59,15 @@ for i in range(ndets1):
 # READS THE CI COEFFS
 esta1 = [] 
 two_e_sta1 = [] 
+dip_sta = [] 
 cista1 = [] 
+nucl_rep = 0.0
 for i in range(nstate1):
   d = fcistate1.readline().split()
-  esta1.append(float(d[1]))
-  two_e_sta1.append(float(d[1])-float(d[2]))
+  nucl_rep = float(fcistate1.readline().split()[0])
+  esta1.append(float(d[0])-nucl_rep)
+  two_e_sta1.append(float(d[0])-float(d[1])-nucl_rep)
+  dip_sta.append(float(d[2]))
   cicoeff = [] 
   for j in range(ndets1):
     cicoeff.append(float(fcistate1.readline().split()[0]))
@@ -87,7 +79,9 @@ for i in range(nstate1):
 esta2 = []
 cista2 = []
 for i in range(nstate2):
-  esta2.append(float(fcistate2.readline().split()[1]))
+  d = fcistate2.readline().split()
+  nucl_rep = float(fcistate2.readline().split()[0])
+  esta2.append(float(d[0])-nucl_rep)
   cicoeff = []
   for j in range(ndets2):
     cicoeff.append(float(fcistate2.readline().split()[0]))
@@ -100,7 +94,7 @@ for i in range(nstate2):
 fdyson = open('Dyson_norms.txt','w')
 for i1 in range(nstate_dyson):
   normtot = 0.0
-  print >> fdyson, i1, esta1[i1],two_e_sta1[i1]
+  print >> fdyson, i1, esta1[i1],two_e_sta1[i1], dip_sta[i1]
   for i2 in range(nstate2):
 #    print "(N-1)e & (N)e states = ",i2,i1
     mocoeffs = np.zeros(mo_num+1)

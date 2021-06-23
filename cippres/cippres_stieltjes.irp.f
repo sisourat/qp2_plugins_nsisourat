@@ -57,13 +57,13 @@ program cippres_stieltjes
         stop
       endif
 
-      open(unit=10,file=finput)   
-      write(10,*) i_stj_job
-      write(10,*) n_csf_cippres(ici2)
-      do i = 1, n_csf_cippres(ici2) 
-        write(10,*), edip_couplings_cippres(i,idipsta), dip_couplings_cippres(i,idipsta)
-      enddo
-      close(10)
+!      open(unit=10,file=finput)   
+!      write(10,*) i_stj_job
+!      write(10,*) n_csf_cippres(ici2)
+!      do i = 1, n_csf_cippres(ici2) 
+!        write(10,*), edip_couplings_cippres(i,idipsta), dip_couplings_cippres(i,idipsta)
+!      enddo
+!      close(10)
 
 
   else

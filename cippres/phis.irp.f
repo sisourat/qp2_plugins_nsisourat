@@ -36,7 +36,7 @@ program phis
   write(10,*)'dipMO x integrals',nmo
   do i = 1, nmo
     do j = i, nmo
-      write(10,*)j,i,mo_dipole_x(j,i)
+      write(10,*)j,i,mo_dipole_x(j,i), mo_spread_x(j,i)
     enddo
   enddo
   close(10)
@@ -45,7 +45,7 @@ program phis
   write(10,*)'dipMO y integrals',nmo
   do i = 1, nmo
     do j = i, nmo
-      write(10,*)j,i,mo_dipole_y(j,i)
+      write(10,*)j,i,mo_dipole_y(j,i), mo_spread_y(j,i)
     enddo
   enddo
   close(10)
@@ -54,9 +54,19 @@ program phis
   write(10,*)'dipMO z integrals',nmo
   do i = 1, nmo
     do j = i, nmo
-      write(10,*)j,i,mo_dipole_z(j,i)
+      write(10,*)j,i,mo_dipole_z(j,i), mo_spread_z(j,i)
     enddo
   enddo
   close(10)
+
+  open(unit=10,file="h1e_moint.txt")
+  write(10,*)'h1e MO integrals',nmo
+  do i = 1, nmo
+    do j = i, nmo
+      write(10,*)j,i,mo_one_e_integrals(j,i)
+    enddo
+  enddo
+  close(10)
+
 
 end

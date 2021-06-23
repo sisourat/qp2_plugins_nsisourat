@@ -5,25 +5,25 @@ elt = {1: 'Hydrogen', 2: 'Helium', 3: 'Lithium', 4: 'Beryllium', 5: 'Boron' , 6:
 
 alpminH_S=0.001
 alpmaxH_S=100
-ngto_S=12
+ngto_S=14
 
 alpminH_P=0.001
 alpmaxH_P=10.0
-ngto_P=9
+ngto_P=11
 
 alpminH_D=0.001
 alpmaxH_D=10.0
-ngto_D=6
+ngto_D=7
 
 alpminH_F=0.001
 alpmaxH_F=10.0
-ngto_F=3
+ngto_F=4
 
 alpminH_G=0.001
 alpmaxH_G=10.0
-ngto_G=1
+ngto_G=0
 
-alpminH_H=0.01
+alpminH_H=0.001
 alpmaxH_H=10.0
 ngto_H=0
 
@@ -97,3 +97,4 @@ for e in elt:
     print 'H 1'
     print '1 ',alpmin*beta**(i-1), ' 1.0'
  print
+
