@@ -1,0 +1,37 @@
+
+subroutine from_csf_to_det_timedep(irun,itime,nsta,tdcoef)
+ implicit none
+ use bitmasks ! you need to include the bitmasks_module.f90 features
+ integer, intent(in) :: irun, itime, nsta
+ double complex, dimension(nsta) :: tdcoef
+ integer :: i,j,k,idet_tmp,istate
+ double precision :: hij, accu
+
+ character*(2048)   :: output(2)
+
+ idet_tmp = 0
+ do i = 1, n_csf_cippres(irun) ! first loop on the csf of the space ispace 
+   do k = 1, n_det_csf_cippres(i,irun) ! then on the determinants belonging to the ith CSF of space ispace
+    idet_tmp += 1
+   enddo 
+  enddo
+
+ N_det = idet_tmp 
+ N_states = 1
+ touch N_det N_states
+ idet_tmp = 0
+ do i = 1, n_csf_cippres(irun) ! first loop on the csf of the space ispace 
+   do k = 1, n_det_csf_cippres(i,irun) ! then on the determinants belonging to the ith CSF of space ispace
+    idet_tmp += 1
+    psi_det(:,:,idet_tmp) = csf_basis(:,:,k,i,irun) 
+    do istate = 1, n_csf_cippres(irun)
+     psi_coef(idet_tmp,1) = coef_det_csf_basis(k,i,irun) * eigvectors_cippres(i,istate,irun) *tdcoef(istate)
+    enddo
+   enddo 
+  enddo
+ touch psi_det psi_coef 
+
+!NICO run density matrix
+ 
+end
+
