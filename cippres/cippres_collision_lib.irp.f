@@ -90,6 +90,55 @@ use general
      call ezfio_get_cippres_tgrid(tgrid)
  END_PROVIDER 
 
+ BEGIN_PROVIDER [double precision, coll_couplings_mo, (mo_num,mo_num,n_time)]
+ use general
+ implicit none
+ integer :: i, j, k, l
+ integer :: ib, ic, it
+ double precision, dimension(mo_num,mo_num) :: w1e
+
+ double precision :: t1, t2
+
+ logical :: exists
+
+ PROVIDE ezfio_filename !HF_bitmask mo_coef
+
+   print*,'Computing coll_couplings', b_coll
+   call cpu_time(t1)
+   coll_couplings_mo(:,:,:) = 0d0
+
+   if (mpi_master) then
+    call ezfio_has_cippres_n_pcenter(exists)
+    if (exists) then
+     call ezfio_has_cippres_charge_pcenter(exists)
+    endif
+   endif
+
+   call ezfio_get_cippres_n_pcenter(n_pcenter)
+   call ezfio_get_cippres_charge_pcenter(charge_pcenter)
+   n_coulomb_center = n_pcenter
+   touch n_coulomb_center
+   charge_coulomb_center(1:n_pcenter) = charge_pcenter(1:n_pcenter)
+   touch charge_coulomb_center
+
+  do it = 1, n_time
+
+    w1e(:,:) = 0d0
+    do ic = 1, n_coulomb_center
+      coulomb_center(1,ic) = b_coll
+      coulomb_center(2,ic) = 0d0
+      coulomb_center(3,ic) = zgrid(it)
+      touch coulomb_center
+      w1e(:,:) += charge_coulomb_center(ic)*mo_integrals_coulomb_center(:,:,ic)
+    enddo
+    coll_couplings_mo(:,:,it) = w1e(:,:)
+   enddo
+
+   call cpu_time(t2)
+   print*,t2-t1
+   print*,' '
+
+ END_PROVIDER
 
 
  BEGIN_PROVIDER [double precision, coll_couplings, (n_sta_coll_max,n_sta_coll_max,n_time)]

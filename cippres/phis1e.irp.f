@@ -5,7 +5,7 @@ program phis
 ! plugin to obtain input data for Fano-CI calculations
 ! scf and four_idx_transformation must be run before
   END_DOC
-  integer :: nmo
+!!nico  integer :: nmo
   integer ::  i, j, k, l, ik, jl
   integer(key_kind) :: i1
   double precision ::  mo_two_e_integral, temp

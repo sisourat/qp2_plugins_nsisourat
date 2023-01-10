@@ -11,16 +11,16 @@ program cippres_flighttime
   logical :: file_e
 
   integer :: i, j, ista, ib, it, k, l
-  double complex, dimension(:,:), allocatable :: cmattmp
+  complex (kind=8), dimension(:,:), allocatable :: cmattmp
   double precision, dimension(:,:), allocatable :: dys_norm
-  double complex, dimension(:), allocatable :: tdcoef
+  complex (kind=8), dimension(:), allocatable :: tdcoef
   double precision, dimension(:), allocatable :: rtdcoef, ctdcoef
   double precision, dimension(:), allocatable :: esta, norm, flighttime, probcation, tdprob
 
   double precision :: b, time, told, rt, ct, tinit
   double precision :: sip, pb
  
-  integer :: irun, nb, nsta, ntime, nmo, nsta_t, ncation, i1, i2, i3, npseudo
+  integer :: irun, nb, nsta, ntime, nsta_t, ncation, i1, i2, i3, npseudo
    irun = 1
    print*,'irun=',irun
    

@@ -86,10 +86,9 @@ for cirun in ciruns:
 
 # print info in CI code format
  fhead = open('header'+str(irun)+'.txt','w')
- print >> fhead, nCSFs, '0.000000000000001'
-# print >> fhead, outfile
- print >> fhead, na, nb
- print >> fhead, nCSFs
+ print(nCSFs, '0.000000000000001',file=fhead)
+ print(na, nb,file=fhead)
+ print(nCSFs,file=fhead)
  fhead.close()
 
  if(nCSFs>nCSFsmax):
@@ -99,7 +98,7 @@ nciruns = irun
 ndetmax = 6 # the maximum of det is 6 and this is for ne4spin1 (see spineigenfunctions.py) 
 
 fparser = open('parser.txt','w')
-print >> fparser, nciruns
-print >> fparser, nCSFsmax
-print >> fparser, ndetmax
+print(nciruns,file=fparser)
+print(nCSFsmax,file=fparser)
+print(ndetmax,file=fparser)
 

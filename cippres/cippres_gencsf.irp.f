@@ -47,7 +47,8 @@ subroutine generate_csfs(finput)
  integer, allocatable :: occ_b(:,:)
  character(1) :: ca, cb
 
- integer :: nciruns, ncsfmax, ndetmax
+!!nico integer :: nciruns, ncsfmax, ndetmax
+ integer :: nciruns, ndetmax
  integer, dimension(:), allocatable :: nsta, ncsf
  integer, dimension(:,:), allocatable :: ndet
  double precision, dimension(:), allocatable :: prttol

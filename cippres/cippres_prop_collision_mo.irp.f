@@ -16,13 +16,14 @@ program cippres_prop_collision_mo
 
   integer :: i, j, ib, k, l, it
   integer :: nocc, nact, ioccmin, ioccmax, iactmin, iactmax
-  integer :: isave_time
+  integer :: isave_time, nsave_time
 
-  integer :: nmo
+!!nico  integer :: nmo
   integer(key_kind) :: i1
   double precision  :: mo_two_e_integral, temp
 
-  double precision, dimension(:), allocatable :: prob_save
+  double precision, dimension(:), allocatable :: prob_save, estatmp
+  complex (kind=8), dimension(:,:), allocatable :: psit_save
 
 ! call to mo_two_e_integral function does not function if one call to big_array_coulomb_integrals is not done before (load ints in memory?)
   nmo = mo_num

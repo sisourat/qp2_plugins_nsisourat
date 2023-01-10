@@ -12,10 +12,10 @@ program cippres_timedep_entropy
 
   integer :: i, j, ista, ib, it, k, l
   double precision, dimension(:,:,:,:), allocatable :: densmatsta
-  double complex, dimension(:,:), allocatable :: densmatvec
+  complex (kind=8), dimension(:,:), allocatable :: densmatvec
   double precision, dimension(:,:), allocatable :: densmat
-  double complex, dimension(:,:), allocatable :: cmattmp
-  double complex, dimension(:), allocatable :: tdcoef
+  complex (kind=8), dimension(:,:), allocatable :: cmattmp
+  complex (kind=8), dimension(:), allocatable :: tdcoef
   double precision, dimension(:), allocatable :: rtdcoef, ctdcoef
   double precision, dimension(:), allocatable :: densmatval, esta
 
@@ -23,7 +23,7 @@ program cippres_timedep_entropy
   double precision :: lin_entrop_approx1, vNentrop_approx1
   double precision :: lin_entrop_approx2, vNentrop_approx2, dens
  
-   integer :: irun, nb, nsta, ntime, nmo, nsta_t, i1, i2, i3
+   integer :: irun, nb, nsta, ntime, nsta_t, i1, i2, i3
    irun = 1
    print*,'irun=',irun
 
@@ -149,3 +149,57 @@ program cippres_timedep_entropy
   deallocate(densmat,densmatvec,densmatval,densmatsta,esta,tdcoef)
 
 end program cippres_timedep_entropy
+
+subroutine lapack_diagc(eigvalues,eigvectors,H,n)
+  implicit none
+  BEGIN_DOC
+  ! Diagonalize complex Hermitian matrix H
+  !
+  ! H is untouched between input and ouptut
+  !
+  ! eigevalues(i) = ith lowest eigenvalue of the H matrix
+  !
+  ! eigvectors(i,j) = <i|psi_j> where i is the basis function and psi_j is the j th eigenvector
+  !
+  END_DOC
+  integer, intent(in)            :: n
+  COMPLEX*16, intent(in)   :: H(n,n)
+
+  double precision, intent(out)  :: eigvectors(n,n)
+  double precision, intent(out)  :: eigvalues(n)
+
+  DOUBLE PRECISION :: W( N ), RWORK( 3*N-2 )
+  integer          :: lda, lwmax, info, i,j,l,k, lwork
+  parameter ( LWMAX = 1000 )
+  COMPLEX*16       :: A( N, N ), WORK( LWMAX )
+
+  A=H
+  lda = n
+  LWORK = -1
+  CALL ZHEEV( 'Vectors', 'Lower', N, A, LDA, W, WORK, LWORK, RWORK,INFO)
+  LWORK = MIN( LWMAX, INT( WORK( 1 ) ) )
+
+  CALL ZHEEV( 'Vectors', 'Lower', N, A, LDA, W, WORK, LWORK, RWORK,INFO)
+!
+!     Check for convergence.
+!
+      IF( INFO.GT.0 ) THEN
+         WRITE(*,*)'The algorithm failed to compute eigenvalues.'
+         STOP
+      END IF
+!
+!     Print eigenvalues.
+!
+!      CALL PRINT_RMATRIX( 'Eigenvalues', 1, N, W, 1 )
+
+  eigvectors = 0.d0
+  eigvalues = 0.d0
+  do j = 1, n
+    eigvalues(j) = w(j)
+!    write(*,*)w(j),A(j,j),H(j,j)
+    do i = 1, n
+      eigvectors(i,j) = A(i,j)
+    enddo
+  enddo
+end
+
