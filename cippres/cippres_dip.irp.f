@@ -13,14 +13,6 @@ program cippres_dip
   double precision :: nucl_contrib
   integer :: i, j
 
-! TODO Read the info (ici1, ici2,...) from an input
-
-! GENERAL
-! MANU : how to get input filename from command line qp run??
-
-! TODO Compute dipole matrix elements between two different CI runs
-! TODO Include Stieltjes in qp
-
   if(ifcsf==2) then
 
     if(ici1==0) then
@@ -53,14 +45,14 @@ program cippres_dip
       enddo
       close(10)
 
-!      call ezfio_set_cippres_ifcsf(3)
+      call ezfio_set_cippres_ifcsf(3)
      endif
 
 
   else 
 
     print*, "ifcsf = ", ifcsf
-    print*, "but it should be equal to 2 for Fano calculations"
+    print*, "but it should be equal to 2 for Dipole calculations"
     print*, "Please run cippres_runci first or type qp set cippres ifcsf 2"
 
   endif

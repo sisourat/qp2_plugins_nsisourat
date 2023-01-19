@@ -123,7 +123,6 @@ END_PROVIDER
 
  else
 
-
   do irun = 1, n_ciruns_cippres
     allocate(eigval(n_csf_cippres(irun)),eigvec(n_csf_cippres(irun),n_csf_cippres(irun)),hmat(n_csf_cippres(irun),n_csf_cippres(irun)))
 

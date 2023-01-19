@@ -64,54 +64,6 @@ subroutine from_csf_to_det(irun)
  print*,'N_det_beta_unique ',N_det_beta_unique
  print*,'*N_det,N_states    = ',N_det,N_states
 
-!NICO double precision, allocatable :: coef_alpha_beta(:,:,:)
-!NICO integer(bit_kind), allocatable :: psi_alpha_uniq_tmp(:,:), psi_beta_uniq_tmp(:,:)
-!NICO allocate(psi_alpha_uniq_tmp(N_int,N_det_alpha_unique),psi_beta_uniq_tmp(N_int,N_det_beta_unique))
-
-!NICO psi_alpha_uniq_tmp(:,1:N_det_alpha_unique) = psi_det_alpha_unique(:,1:N_det_alpha_unique)
-!NICO psi_beta_uniq_tmp(:,1:N_det_beta_unique) = psi_det_beta_unique(:,1:N_det_beta_unique)
-
-! allocate ( coef_alpha_beta(N_det_alpha_unique,N_det_beta_unique,N_states)  )
- 
-!NICO integer :: get_index_in_psi_det_alpha_unique,get_index_in_psi_det_beta_unique
-!NICO integer :: n_alpha_tmp,n_beta_tmp
-!NICO n_alpha_tmp = N_det_alpha_unique
-!NICO n_beta_tmp = N_det_beta_unique
-!NICO coef_alpha_beta = 0.d0
-!NICO do k=1,N_det
-!NICO   i = get_index_in_psi_det_alpha_unique(psi_det(1,1,k),N_int)
-!NICO   ASSERT (i>0)
-!NICO   ASSERT (i<=N_det_alpha_unique)
-!NICO 
-!NICO   j = get_index_in_psi_det_beta_unique (psi_det(1,2,k),N_int)
-!NICO   ASSERT (j>0)
-!NICO   ASSERT (j<=N_det_beta_unique)
-!NICO   do istate = 1, N_states
-!NICO    coef_alpha_beta(i,j,istate) += psi_coef(k,istate)
-!NICO   enddo
-!NICO enddo
-!NICO print*,'N_det_alpha_unique',N_det_alpha_unique
-!NICO print*,'N_det_beta_unique ',N_det_beta_unique
-
-!NICON_det = N_det_alpha_unique * N_det_beta_unique 
-!NICOtouch N_det 
-!NICOidet_tmp = 0
-!NICOdo j = 1, n_alpha_tmp 
-!NICO do i = 1, n_beta_tmp 
-!NICO  idet_tmp += 1
-!NICO  psi_det(:,1,idet_tmp) = psi_alpha_uniq_tmp(:,j)
-!NICO  psi_det(:,2,idet_tmp) = psi_beta_uniq_tmp(:,i)
-!NICO   print*,'idet = ', idet_tmp
-!NICO   call print_det(psi_det(1,1,idet_tmp),N_int)
-!NICO   print*,''
-!NICO  do istate = 1, N_states
-!NICO   psi_coef(idet_tmp,istate) = coef_alpha_beta(j,i,istate)
-!NICO  enddo
-!NICO enddo
-!NICOenddo
-!NICO
-!NICOtouch psi_det psi_coef 
-!NICO
  open(unit=10,file='cistates_det.txt')
  write(10,*),mo_num,N_det,N_states
  do i = 1, N_det

@@ -6,7 +6,7 @@ integer :: npt
 integer, parameter :: QR_K = 16 !selected_real_kind (32)
 real (kind=QR_K), allocatable, dimension(:) :: e, g
 
-integer :: nmin=11, nmax = 23 ! according to Mueller-Plathe and Diercksen Stieltjes is inaccurate for n>=15
+integer :: nmin=11, nmax = 33 ! according to Mueller-Plathe and Diercksen Stieltjes is inaccurate for n>=15
 real (kind=QR_K), allocatable, dimension(:) :: sk, gord
 real (kind=QR_K), allocatable, dimension(:,:) ::  e1, g1
 real (kind=QR_K), allocatable, dimension(:) :: eallord,gallord
@@ -40,6 +40,11 @@ if(sum(g)==0d0) then
 endif
 
 call sort2(npt,e,g)
+open(unit=10,file='input.sorted.txt')
+do i = 1, npt
+  write(10,'(2(f20.16,1X))')e(i),g(i)
+enddo
+close(10)
 shift1 = 0d0
 if(ijob/=2) then
  ishift = 2
@@ -62,12 +67,12 @@ do i = nmin+2, nmax
   write(*, '(A16,I2,A4)')"stieltjes.order.",i,".txt"
   open(238,file=fname)
   do  j = nmin, i-1
-     write(238,'(2(f20.16,1X))')e1(j,i)-shift1,g1(j,i)
+     write(238,'(2(f20.10,1X))')e1(j,i)-shift1,g1(j,i)
   enddo
   if(ijob==1) then
     call interp(e1(nmin:i-1,i)-shift1,g1(nmin:i-1,i),i-nmin,0q0,g_)
     g_ = 2.0d0*pi*g_
-    write(*,'(I3,A3,F23.15,A)')i," ",g_*27211,' in meV'
+    write(*,'(I3,A3,F28.15,A)')i," ",g_*27211,' in meV'
   endif
   close(238)
 enddo

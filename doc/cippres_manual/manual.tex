@@ -73,10 +73,19 @@ for the QP2 documentation (installation, plugins, scf calculations,...). CIPPRES
     \item[cippres\_stieltjes] computes decay widths or photoion cs using Stieltjes imaging
     \item[cippres\_setup\_collision] read input collision xml file and set up the calc.	
 	\item[cippres\_prop\_collision] and computes V\_proj (defined in cippres\_setup\_collision) matrix elements between CI states solves the TDSE (i.e. TDCI) using the matrix elements from cippres\_collision
+	 \item[cippres\_timedep\_entropy] computes the von Neumann entropy of a time dependent wavefunction.
 	\item[Compute\_Dyson.py] Python script that computes the norm of the Dyson orbitals = $<\psi^{(N-1)}|\psi^{(N)}>$
 	\item[Partial\_cross\_section.py] Python script that using the Projector method computes the ionization cross sections for $\psi^{(N-1)}$ states.
 	\item[merge\_fano\_files.py]  Python script that merges Fano output files in the case the P-space is built on several CI runs.
 	\item[generate\_xml.py] Python script to generate XML files for cippres\_gencsf
+    \item[Compute\_density\_matrix\_fast.py] Python script to compute the density matrix and natural energies using CI states. 
+    \item[Compute\_Dyson.py] Python script to compute the Dyson norms (i.e. projecting N-electron states on (N-1) electron states).
+    \item[CorrelationIntegral\_Dyson.py] Python script to compute the Correlation Integral using the Dyson norms.
+    \item[Dyson\_Partial\_cross\_section.py] Python script to compute the partial ionization cross sections in ion-molecule collisions using the Dyson norms. 
+    \item[Even\_temp\_basis\_set.py] Python script to generate even tempered basis sets. 
+    \item[TimeDependent\_ComputeDyson.py] Python script to compute the Time Dependent Dyson norms in ion-molecule collisions. 
+    \item[cippres\_timedep\_entropy] computes the von Neumann entropy of a time dependent wavefunction.
+          
 \end{description}
 
 \newpage
@@ -223,6 +232,7 @@ One first needs to obtain the norm of the Dyson orbitals (see above) and the cro
 (Do not forget to delete the first and two list lines of cross\_section.txt). Then\\
 python /home/common/quantum\_package/plugins/qp2\_plugins\_nsisourat/nicotools/Partial\_cross\_section.py cross\_section.txt Dyson\_norms.txt nbound\_hep \\
 
+\section{Computing Time Dependent Density Matrices, Entropies}
 \newpage
 
 \chapter{The theory behind CIPPRES}

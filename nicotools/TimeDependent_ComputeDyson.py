@@ -2,7 +2,6 @@ import sys
 import numpy as np
 from determinants import *
 
-
 # arg 1 file with N states
 # arg 2 file with N-1 states
 # arg 3 nstate_dyson
@@ -162,14 +161,6 @@ for i1 in range(nstate1):
 
 print len(modys_perstate),len(modys_perstate[0]),len(modys_perstate[0][0])
 
-#k2 = 0
-#k = 2
-#ksta = k/2-1
-#l = 1
-#print (psibt[0][0][k]+psibt[0][0][k+1]*1j)
-#print modys_perstate[ksta][k2][l]*(psibt[0][0][k]+psibt[0][0][k+1]*1j)
-#sys.exit()
-
 # COMPUTES TIME DEP Dyson Norms
 
 for i in range(nbb):
@@ -190,25 +181,7 @@ for i in range(nbb):
    print >> foutb,  time,' '.join(map(str, tdnorm)), np.sum(tdnorm)
  foutb.close()
 # sys.exit()
-      
  
 #    print bimp,time, psibt[i][j][k], psibt[i][j][k+1]
 
-
-
 sys.exit()
-
-
-#      c1 = cista1[i1]
-#    normtot+=np.sum(np.square(mocoeffs))
-#    print >> fdyson, np.sum(np.square(mocoeffs)),
-#    print 'Dyson orb. norm',np.sum(np.square(mocoeffs))
-#    print 
-#  print >> fdyson, normtot
-#  print normtot
-#  print 
-#print "Dyson norms in Dyson_norms.txt"
-
-
-
-

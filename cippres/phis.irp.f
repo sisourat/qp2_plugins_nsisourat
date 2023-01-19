@@ -68,5 +68,4 @@ program phis
   enddo
   close(10)
 
-
 end

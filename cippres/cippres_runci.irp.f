@@ -13,13 +13,6 @@ program cippres_runci
 
   integer :: i, j
 
-! TODO Read lists of CSFs from EZFIO (see cippres_gencsf first)
-
-
-! GENERAL
-! TODO Compute dipole matrix elements between two different CI runs
-! TODO Include Stieltjes in qp
-
   if(ifcsf==1) then
 
     do i = 1, n_ciruns_cippres

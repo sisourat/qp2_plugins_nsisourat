@@ -115,8 +115,7 @@ program cippres_timedep_entropy
          
    close(10)
 
-
-!   do ista = 1, N_states
+!  do ista = 1, N_states
 !   print*,""
 !  print*,"DENSITY MATRIX", ista
 !  print*,""
@@ -128,7 +127,6 @@ program cippres_timedep_entropy
 !    enddo
 !   enddo
 
-
 !   call lapack_diagd(densmatval,densmatvec,densmat,mo_num,mo_num) 
 !      vNentrop = 0d0
 !    do i = 1, mo_num
@@ -139,12 +137,6 @@ program cippres_timedep_entropy
 !  enddo
 !  deallocate(densmat,densmatvec,densmatval)
 !
-! else
-!
-!  print*, "Please run cippres_gencsf first or type qp set cippres ifcsf 1"
-!  print*, "Note that if you rerun cippres_runci, you should first delete the eigval/vec from EZFIO"
-!
-! endif
 
   deallocate(densmat,densmatvec,densmatval,densmatsta,esta,tdcoef)
 

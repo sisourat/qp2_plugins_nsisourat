@@ -7,7 +7,7 @@ program cippres_prop_collision_mo
   implicit none
   BEGIN_DOC
 ! CIPPRES stands for Configuration Interaction Plugin for Photoionized and Resonant Electronic States.
-! cippres_prop_collision solves the TDSE using the matrix elements from cippres_collision
+! cippres_prop_collision_mo solves the TDSE using the matrix elements in the MO basis
   END_DOC
 
   double precision :: t1, t2, tdyn, p1, p2, p3
@@ -199,122 +199,6 @@ program cippres_prop_collision_mo
     do isave_time = 1, nsave_time
       write(30,'(5000(f22.16,1X))')bgrid(ib),zgrid(isave_time),psit_save(:,isave_time)
     enddo
-
-!!!!!!!!!!!!!test 1
-
-!   mat(:,:,:) = 0d0
-!   do it = 1, ntime
-!      mat(it,1,1) = esta(1) + coll_couplings_mo(i_state_coll,i_state_coll,it)
-!      mat(it,1,2:nsta) = dsqrt(2d0)*coll_couplings_mo(i_state_coll,iactmin:iactmax,it)
-!      mat(it,2:nsta,1) = dsqrt(2d0)*coll_couplings_mo(iactmin:iactmax,i_state_coll,it)
-!      do i = 2, nsta
-!        mat(it,i,i) = esta(i)
-!        do j = 2, nsta
-!          k = iactmin + i - 2
-!          l = iactmin + j - 2
-!          mat(it,j,i) = mat(it,j,i) + coll_couplings_mo(l,k,it)
-!        enddo
-!      enddo
-!      mat(it,nsta,nsta) = esta(nsta) + coll_couplings_mo(iactmax,iactmax,it)
-!      mat(it,nsta,2:nsta) = coll_couplings_mo(iactmax,iactmin:iactmax,it)
-!      mat(it,2:nsta,nsta) = coll_couplings_mo(iactmin:iactmax,iactmax,it)
-!    enddo
-!
-!    mcoup(:,:,:) = 0d0
-!    mcoup(:,1:nsta,1:nsta) = mat(:,1:nsta,1:nsta)
-!!   do it = 1, ntime
-!!     print*,timegrid(it),coll_couplings_mo(1,1,it),coll_couplings_mo(1,2,it)
-!!     print*,timegrid(it),cdabs(mcoup(it,1,1)),cdabs(mcoup(it,1,2))
-!!   enddo
-!!   stop
-!
-!    esta(:) = 0d0
-!    psi(:) = 0d0
-!    psi(1) = 1d0
-!
-!! propagation 
-!    call cpu_time(t1)
-!    call dyn
-!    call cpu_time(t2)
-!    tdyn = t2-t1
-!    write(*,*)'DYN takes',tdyn
-!
-!!    print*,bgrid(ib),nsta,psi
-!    write(*,'(5000(f12.6,1X))')bgrid(ib),(cdabs(psi(i))**2,i=1,nsta), sum(cdabs(psi(:))**2),v_coll
-!!    write(20,'(5000(f12.6,1X))')bgrid(ib),(cdabs(psi(i))**2,i=1,nsta), sum(cdabs(psi(:))**2),v_coll
-!
-!    do isave_time = 1, nsave_time
-!      write(30,'(5000(f22.16,1X))')bgrid(ib),zgrid(isave_time),psit_save(:,isave_time)
-!    enddo
-!
-!!! test 2 !! implementation works only for He 
-
-   mat(:,:,:) = 0d0
-   do it = 1, ntime
-
-
-! time dependent energy
-   esta(:) = 0d0
-   j = 1 
-   i = i_state_coll
-   esta(j) =  mo_one_e_integrals(i,i) 
-    do l = 1, nsta
-      esta(j) = esta(j) + (2d0*mo_two_e_integral(i,l,i,l)-mo_two_e_integral(i,i,l,l))*psit_save(l,it)**2
-    enddo
-
-   do i = iactmin, iactmax
-    j = j + 1
-    esta(j) =  mo_one_e_integrals(i,i) 
-    do l = 1, nsta
-        esta(j) = esta(j) + (mo_two_e_integral(i,l,i,l)+mo_two_e_integral(i,i,l,l))*psit_save(l,it)**2
-    enddo
-   enddo
-
-      mat(it,1,1) = esta(1) + coll_couplings_mo(i_state_coll,i_state_coll,it)
-      mat(it,1,2:nsta) = dsqrt(2d0)*coll_couplings_mo(i_state_coll,iactmin:iactmax,it)
-      mat(it,2:nsta,1) = dsqrt(2d0)*coll_couplings_mo(iactmin:iactmax,i_state_coll,it)
-      do i = 2, nsta
-        mat(it,i,i) = esta(i)
-        do j = 2, nsta
-          k = iactmin + i - 2
-          l = iactmin + j - 2
-          mat(it,j,i) = mat(it,j,i) + coll_couplings_mo(l,k,it)
-        enddo
-      enddo
-      mat(it,nsta,nsta) = esta(nsta) + coll_couplings_mo(iactmax,iactmax,it)
-      mat(it,nsta,2:nsta) = coll_couplings_mo(iactmax,iactmin:iactmax,it)
-      mat(it,2:nsta,nsta) = coll_couplings_mo(iactmin:iactmax,iactmax,it)
-    enddo
-
-    mcoup(:,:,:) = 0d0
-    mcoup(:,1:nsta,1:nsta) = mat(:,1:nsta,1:nsta)
-!   do it = 1, ntime
-!     print*,timegrid(it),coll_couplings_mo(1,1,it),coll_couplings_mo(1,2,it)
-!     print*,timegrid(it),cdabs(mcoup(it,1,1)),cdabs(mcoup(it,1,2))
-!   enddo
-!   stop
-
-    esta(:) = 0d0
-    psi(:) = 0d0
-    psi(1) = 1d0
-
-! propagation 
-    call cpu_time(t1)
-    call dyn
-    call cpu_time(t2)
-    tdyn = t2-t1
-    write(*,*)'DYN takes',tdyn
-
-!    print*,bgrid(ib),nsta,psi
-    write(*,'(5000(f12.6,1X))')bgrid(ib),(cdabs(psi(i))**2,i=1,nsta), sum(cdabs(psi(:))**2),v_coll
-    write(21,'(5000(f12.6,1X))')bgrid(ib),(cdabs(psi(i))**2*(1d0-prob_save(i))+prob_save(i)*(1d0-cdabs(psi(i)))**2,i=1,nsta), sum(cdabs(psi(:))**2),v_coll
-    write(22,'(5000(f12.6,1X))')bgrid(ib),(cdabs(psi(i))**2*prob_save(i),i=1,nsta), sum(cdabs(psi(:))**2),v_coll
-
-    do isave_time = 1, nsave_time
-      write(30,'(5000(f22.16,1X))')bgrid(ib),zgrid(isave_time),psit_save(:,isave_time)
-    enddo
-!!!!!!!!!!!!!!!!!!!!!!!!end test
-
 
    enddo 
 
