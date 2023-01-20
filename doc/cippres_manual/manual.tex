@@ -235,6 +235,18 @@ python /home/common/quantum\_package/plugins/qp2\_plugins\_nsisourat/nicotools/P
 \section{Computing Time Dependent Density Matrices, Entropies}
 \newpage
 
+\subsection{Time Dependent Dyson Norm}
+
+python2.7 TimeDependent\_ComputeDyson.py cistates\_N.txt cistates\_Nm1.txt nstate\_dyson Psit\_collision.out
+
+\subsection{Density Matrix}
+
+python2.7 Compute\_density\_matrix\_fast.py cistates\_N.txt
+
+\subsection{Time Dependent Entropy}
+
+qp run cippres\_timedep\_entropy (needs first Density\_matrices.txt and Psit\_collision.out)
+
 \chapter{The theory behind CIPPRES}
 
 \section{Fano theory of resonances and Fano-CI-Stieltjes method}
